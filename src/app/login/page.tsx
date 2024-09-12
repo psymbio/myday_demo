@@ -7,8 +7,8 @@ export default function login() {
                   <img
                       src="/hsbc-logo.png"
                       alt="HSBC Logo"
-                      style={{ height: '100px', width: 'auto' }}
-                      className="mx-auto"
+                      style={{ height: '100px', width: 'auto' }}  // Explicit size in pixels
+                      className="mx-auto w-auto"  // Increased logo size
                   />
                   <h1 className="mt-6 text-2xl font-semibold text-gray-900">
                       Welcome to HSBC MyDay
@@ -17,7 +17,7 @@ export default function login() {
 
               {/* Login Form */}
               <form className="space-y-6">
-                  {/* Email Field */}
+                  {/* Username Field */}
                   <div>
                       <label htmlFor="Email" className="block text-sm font-medium text-gray-700">
                           Username
@@ -26,7 +26,7 @@ export default function login() {
                           type="email"
                           id="Email"
                           name="email"
-                          className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm placeholder-gray-400 focus:ring-red-500 focus:border-red-500"
+                          className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm placeholder-gray-400 text-black focus:ring-red-500 focus:border-red-500"
                           placeholder="Enter your username"
                       />
                   </div>
@@ -40,7 +40,7 @@ export default function login() {
                           type="password"
                           id="Password"
                           name="password"
-                          className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm placeholder-gray-400 focus:ring-red-500 focus:border-red-500"
+                          className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm placeholder-gray-400 text-black focus:ring-red-500 focus:border-red-500"
                           placeholder="Enter your password"
                       />
                   </div>
