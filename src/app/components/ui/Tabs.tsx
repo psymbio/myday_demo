@@ -10,7 +10,7 @@ export default function Tabs() {
           <option>Settings</option>
           <option>Messages</option>
           <option>Archive</option>
-          <option select>Notifications</option>
+          <option selected>Notifications</option>
         </select>
       </div>
 

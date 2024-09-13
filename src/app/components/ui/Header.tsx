@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <header className="border-b border-gray-200 bg-rose-600">
+    <header className="border-b border-gray-200 bg-red-600">
       <div className="mx-auto max-w-screen-xl px-2 py-6 sm:px-4 sm:py-10 lg:px-6">
         <div className="flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between">
           <div>

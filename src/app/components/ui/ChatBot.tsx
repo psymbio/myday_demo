@@ -38,7 +38,7 @@ export default function ChatBot() {
       {isOpen && (
         <div className="w-80 h-96 bg-white shadow-lg rounded-lg flex flex-col p-3 -translate-y-14">
           {/* Header */}
-          <div className="text-black p-3 rounded-t-lg font-bold">Chatbot</div>
+          <div className="text-black p-3 rounded-t-lg font-bold text-xl sm:text-xl">Chatbot</div>
 
           {/* Chat Messages */}
           <div className="flex-1 p-3 overflow-y-auto">
@@ -46,7 +46,7 @@ export default function ChatBot() {
               <div
                 key={index}
                 className={`mb-2 p-2 rounded-lg max-w-lg break-words ${
-                  message.type === "user" ? "bg-gray-100 self-end" : "text-left"
+                  message.type === "user" ? "bg-gray-100 self-end text-right" : "bg-red-100 text-left"
                 }`}
               >
                 {message.text}
@@ -61,7 +61,7 @@ export default function ChatBot() {
                 id="ChatbotMessage"
                 className="w-full resize-none border-none align-top focus:ring-0 overflow-y-auto text-sm"
                 style={{ maxHeight: "6rem" }} // 3 rows, adjust for your line height
-                rows="1"
+                rows={1}
                 placeholder="Ask your MyDay related query"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
@@ -72,7 +72,7 @@ export default function ChatBot() {
                 onClick={handleSend}
                 disabled={!input.trim()} // Disable button if input is empty or only contains whitespace
                 className={`ml-2 mt-auto rounded p-2 text-sm text-white ${
-                  !input.trim() ? "bg-gray-400" : "bg-black hover:bg-rose-600"
+                  !input.trim() ? "bg-gray-400" : "bg-black hover:bg-red-600"
                 }`}
               >
                 <FeatherIcon icon="arrow-up" />
