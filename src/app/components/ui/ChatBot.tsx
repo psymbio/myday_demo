@@ -39,7 +39,6 @@ export default function ChatBot() {
         <div className="w-80 h-96 bg-white border border-gray-300 shadow-md rounded-md flex flex-col p-4">
           {/* Header */}
           <div className="text-red-600 p-3 border-b border-gray-300 font-semibold text-lg">Chatbot</div>
-
           {/* Chat Messages */}
           <div className="flex-1 p-3 overflow-y-auto">
             {messages.map((message, index) => (

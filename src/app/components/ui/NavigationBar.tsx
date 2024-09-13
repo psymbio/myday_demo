@@ -1,16 +1,21 @@
+import Image from "next/image";
+
 export default function NavigationBar() {
   return (
     <header className="bg-white shadow-md">
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="md:flex md:items-center md:gap-12">
-            <a className="block text-black" href="#">
+            <a className="block text-red-600" href="#">
               <span className="sr-only">Home</span>
-              <img
-                src="/hsbc-logo.png"
+              <Image
+                src="/hsbc-logo-without-name.png"
                 alt="HSBC Logo"
-                style={{ height: '100px', width: 'auto' }}
-                className="mx-auto"
+                width={0}
+                height={0}
+                sizes="100vw"
+                style={{ height: "2.5rem", width: "auto" }}
+                className="mx-auto w-auto" // Optional className
               />
             </a>
           </div>
