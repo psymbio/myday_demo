@@ -36,17 +36,17 @@ export default function ChatBot() {
     <div className="fixed bottom-4 right-4">
       {/* Chat Box */}
       {isOpen && (
-        <div className="w-80 h-96 bg-white shadow-lg rounded-lg flex flex-col p-3 -translate-y-14">
+        <div className="w-80 h-96 bg-white border border-gray-300 shadow-md rounded-md flex flex-col p-4">
           {/* Header */}
-          <div className="text-black p-3 rounded-t-lg font-bold">Chatbot</div>
+          <div className="text-red-600 p-3 border-b border-gray-300 font-semibold text-lg">Chatbot</div>
 
           {/* Chat Messages */}
           <div className="flex-1 p-3 overflow-y-auto">
             {messages.map((message, index) => (
               <div
                 key={index}
-                className={`mb-2 p-2 rounded-lg max-w-lg break-words ${
-                  message.type === "user" ? "bg-gray-100 self-end" : "text-left"
+                className={`mb-2 p-3 rounded-lg max-w-lg break-words ${
+                  message.type === "user" ? "bg-gray-100 text-black self-end" : "bg-red-50 text-red-600"
                 }`}
               >
                 {message.text}
@@ -55,29 +55,27 @@ export default function ChatBot() {
           </div>
 
           {/* Input Area */}
-          <div className="overflow-hidden rounded-lg border border-gray-200 shadow-sm focus-within:border-black focus-within:ring-1 focus-within:ring-black">
-            <div className="flex items-start">
-              <textarea
-                id="ChatbotMessage"
-                className="w-full resize-none border-none align-top focus:ring-0 overflow-y-auto text-sm"
-                style={{ maxHeight: "6rem" }} // 3 rows, adjust for your line height
-                rows="1"
-                placeholder="Ask your MyDay related query"
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-              ></textarea>
+          <div className="flex items-center border-t border-gray-300 mt-2 pt-2">
+            <textarea
+              id="ChatbotMessage"
+              className="w-full border border-gray-300 rounded-md p-2 text-sm"
+              style={{ maxHeight: "6rem" }} // 3 rows, adjust for your line height
+              rows={1}
+              placeholder="Ask your question"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+            ></textarea>
 
-              <button
-                type="button"
-                onClick={handleSend}
-                disabled={!input.trim()} // Disable button if input is empty or only contains whitespace
-                className={`ml-2 mt-auto rounded p-2 text-sm text-white ${
-                  !input.trim() ? "bg-gray-400" : "bg-black hover:bg-rose-600"
-                }`}
-              >
-                <FeatherIcon icon="arrow-up" />
-              </button>
-            </div>
+            <button
+              type="button"
+              onClick={handleSend}
+              disabled={!input.trim()} // Disable button if input is empty or only contains whitespace
+              className={`ml-2 rounded-md p-2 text-sm text-white ${
+                !input.trim() ? "bg-gray-400" : "bg-red-600 hover:bg-red-700"
+              }`}
+            >
+              <FeatherIcon icon="arrow-up" />
+            </button>
           </div>
         </div>
       )}
@@ -85,7 +83,7 @@ export default function ChatBot() {
       {/* Chat Toggle Button */}
       <button
         onClick={handleToggle}
-        className="fixed bottom-4 right-4 bg-rose-600 text-white p-3 rounded-md shadow-lg focus:outline-none"
+        className="fixed bottom-4 right-4 bg-red-600 text-white p-3 rounded-md shadow-md focus:outline-none"
       >
         <FeatherIcon icon={isOpen ? "x" : "message-square"} />
       </button>

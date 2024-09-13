@@ -1,17 +1,17 @@
 export default function NavigationBar() {
   return (
-    <header className="bg-white">
+    <header className="bg-white shadow-md">
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="md:flex md:items-center md:gap-12">
-            <a className="block text-teal-600" href="#">
+            <a className="block text-black" href="#">
               <span className="sr-only">Home</span>
               <img
-                      src="/hsbc-logo-without-name.png"
-                      alt="HSBC Logo"
-                      style={{ height: '2.5rem', width: 'auto' }}  // Explicit size in pixels
-                      className="mx-auto w-auto"  // Increased logo size
-                  />
+                src="/hsbc-logo.png"
+                alt="HSBC Logo"
+                style={{ height: '100px', width: 'auto' }}
+                className="mx-auto"
+              />
             </a>
           </div>
 
@@ -20,15 +20,12 @@ export default function NavigationBar() {
               <ul className="flex items-center gap-6 text-sm">
                 <li>
                   <a
-                    className="text-gray-500 transition hover:text-gray-500/75"
+                    className="text-black font-medium transition hover:text-red-600"
                     href="#"
                   >
-                    {" "}
-                    My Menu{" "}
+                    My Menu
                   </a>
                 </li>
-
-                
               </ul>
             </nav>
           </div>
@@ -36,15 +33,15 @@ export default function NavigationBar() {
           <div className="flex items-center gap-4">
             <div className="sm:flex sm:gap-4">
               <a
-                className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow"
+                className="rounded-md bg-red-600 px-5 py-2.5 text-sm font-medium text-white shadow hover:bg-red-700"
                 href="#"
               >
-                Login
+                Log In
               </a>
 
               <div className="hidden sm:flex">
                 <a
-                  className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600"
+                  className="rounded-md border border-red-600 px-5 py-2.5 text-sm font-medium text-red-600 hover:bg-red-600 hover:text-white transition"
                   href="#"
                 >
                   Register
@@ -53,10 +50,10 @@ export default function NavigationBar() {
             </div>
 
             <div className="block md:hidden">
-              <button className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
+              <button className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-800">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="size-5"
+                  className="h-6 w-6"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
