@@ -59,7 +59,7 @@ export default function ChatBot() {
             <div className="flex items-start">
               <textarea
                 id="ChatbotMessage"
-                className="w-full resize-none border-none align-top focus:ring-0 overflow-y-auto"
+                className="w-full resize-none border-none align-top focus:ring-0 overflow-y-auto text-sm"
                 style={{ maxHeight: "6rem" }} // 3 rows, adjust for your line height
                 rows="1"
                 placeholder="Ask your MyDay related query"
