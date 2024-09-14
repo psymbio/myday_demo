@@ -22,11 +22,7 @@ export default function RootLayout({
       {/* <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       > */}
-      <body
-        className={`${hsbcFont.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body className={`${hsbcFont.variable} antialiased`}>{children}</body>
     </html>
   );
 }
