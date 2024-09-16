@@ -10,7 +10,7 @@ export default function TestingPage() {
       <NavigationBar></NavigationBar>
       <Header></Header>
       <Widgets></Widgets>
-      <div className="w-2/5">
+      <div className="w-2/5 mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
         <Carousel></Carousel>
       </div>
       <ChatBot></ChatBot>

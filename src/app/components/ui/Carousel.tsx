@@ -44,29 +44,29 @@ export default function Carousel() {
                 <h2 className="text-lg sm:text-2xl font-bold">{slide.text}</h2> {/* Title */}
                 <p className="text-sm sm:text-lg">{slide.subtext}</p>             {/* Subtext */}
               </div>
+
+              {/* Chevron for Previous and Next Slide on Image */}
+              <div className="absolute inset-0 flex justify-between items-center text-white px-5 text-3xl">
+                <button
+                  onClick={previousSlide}
+                  className="bg-gray-700 bg-opacity-50 p-1 sm:p-2 rounded-full"
+                >
+                  <FeatherIcon icon="chevron-left" />
+                </button>
+                <button
+                  onClick={nextSlide}
+                  className="bg-gray-700 bg-opacity-50 p-1 sm:p-2 rounded-full"
+                >
+                  <FeatherIcon icon="chevron-right" />
+                </button>
+              </div>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Chevron for Previous and Next Slide */}
-      <div className="absolute top-0 h-full w-full justify-between items-center flex text-white px-5 text-3xl">
-        <button
-          onClick={previousSlide}
-          className="bg-gray-700 bg-opacity-50 p-1 sm:p-2 rounded-full"
-        >
-          <FeatherIcon icon="chevron-left" />
-        </button>
-        <button
-          onClick={nextSlide}
-          className="bg-gray-700 bg-opacity-50 p-1 sm:p-2 rounded-full"
-        >
-          <FeatherIcon icon="chevron-right" />
-        </button>
-      </div>
-
-      {/* Slide Indicator Dots */}
-      <div className="flex justify-center gap-2 sm:gap-3 w-full translate-y-3 sm:translate-y-5">
+      {/* Slide Indicator Dots below Image */}
+      <div className="flex justify-center gap-2 sm:gap-3 w-full translate-y-3 sm:translate-y-5 mt-3">
         {slides.map((_, i) => (
           <div
             onClick={() => setCurrent(i)}
