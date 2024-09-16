@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Header from '../components/ui/Header';
 import Menu from '../components/ui/Menu';
+import NavigationBar from '../components/ui/NavigationBar';
 
 interface MenuItemProps {
   id: number;
@@ -21,13 +22,13 @@ const Home: React.FC = () => {
 
   return (
     <div>
-      <Head>
+      {/* <Head>
         <title>Food Delivery</title>
         <meta name="description" content="Order food online" />
         <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <Header />
+      </Head> */}
+      <NavigationBar></NavigationBar>
+      <Header></Header>
       <main className="bg-red-100 min-h-screen">
         <section className="max-w-6xl mx-auto py-8">
           <h2 className="text-2xl font-bold text-center mb-6">Our Menu</h2>
