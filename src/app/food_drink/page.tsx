@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import Header from '../components/ui/Header';
 import Menu from '../components/ui/Menu';
 import NavigationBar from '../components/ui/NavigationBar';
