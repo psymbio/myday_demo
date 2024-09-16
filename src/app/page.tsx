@@ -8,7 +8,7 @@ export default function Home() {
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         {/* HSBC Logo or relevant branding */}
         <Image
-          src="https://www.hsbc.co.in/etc.clientlibs/settings/wcm/designs/hsbc/images/logos/hsbc-logo.svg"
+          src="/hsbc-logo-without-name.png"
           alt="HSBC logo"
           width={180}
           height={38}
