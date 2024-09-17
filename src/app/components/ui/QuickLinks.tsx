@@ -1,5 +1,4 @@
 import React from "react";
-import { FaQrcode, FaBus, FaQuestionCircle, FaUser } from "react-icons/fa"; // Font Awesome Icons
 
 export default function Links() {
   const cards = [
@@ -7,22 +6,19 @@ export default function Links() {
       title: "Attractions",
       description:
         "Located at the heart of London, HSBC's global headquarters offers breathtaking views of the River Thames and is just minutes away from iconic attractions such as the Tower of London, the Shard, and Canary Wharf. Experience the vibrancy of London's financial district while banking with us.",
-      imgSrc:
-        "/attraction.jpg",
+      imgSrc: "/attraction.jpg", // Replace with your image path
     },
     {
       title: "Sustainability",
       description:
         "At HSBC, sustainability is at the core of everything we do. We are committed to driving positive environmental impact through responsible banking practices, supporting green energy projects, and helping customers transition towards a low-carbon future.",
-      imgSrc:
-        "/sustainability-banner.jpg",
+      imgSrc: "/sustainability-banner.jpg", // Replace with your image path
     },
     {
       title: "Spinathon-Blog",
       description:
         "Join us on our Spinathon Blog where we share exciting updates, stories, and tips from our latest spinathon events. Stay inspired and motivated with our community of fitness enthusiasts.",
-      imgSrc:
-        "/spinathon-blog.jpg",
+      imgSrc: "/spinathon-blog.jpg", // Replace with your image path
     },
   ];
 
@@ -31,22 +27,39 @@ export default function Links() {
       {/* Heading Section */}
       <div className="mb-6">
         <h2 className="text-2xl font-bold text-gray-900 mb-4 text-red-700">Quick Links</h2>
-        <div className="flex space-x-72">
+        {/* Icons Section - Responsive Flex Layout with Local Icons */}
+        <div className="flex flex-wrap justify-between md:justify-start gap-4 md:gap-6">
           <a href="#" className="flex flex-col items-center text-center">
-            <FaQrcode className="text-3xl text-gray-600 hover:text-red-700" />
-            <span className="text-sm text-gray-600 mt-1">QR Scanner</span>
+            <img
+              src="/icons/qr_scanner.png" // Replace with your local QR Scanner icon path
+              alt="QR Scanner"
+              className="h-20 w-20 object-contain hover:text-red-700"
+            />
+            {/* <span className="text-sm text-gray-600 mt-1">QR Scanner</span> */}
           </a>
           <a href="#" className="flex flex-col items-center text-center">
-            <FaBus className="text-3xl text-gray-600 hover:text-red-700" />
-            <span className="text-sm text-gray-600 mt-1">Transportation</span>
+            <img
+              src="/icons/transport.png" // Replace with your local Transportation icon path
+              alt="Transport"
+              className="h-20 w-20 object-contain hover:text-red-700"
+            />
+            {/* <span className="text-sm text-gray-600 mt-1">Transportation</span> */}
           </a>
           <a href="#" className="flex flex-col items-center text-center">
-            <FaQuestionCircle className="text-3xl text-gray-600 hover:text-red-700" />
-            <span className="text-sm text-gray-600 mt-1">Help</span>
+            <img
+              src="/icons/help.png" // Replace with your local Help icon path
+              alt="Help"
+              className="h-20 w-20 object-contain hover:text-red-700"
+            />
+            {/* <span className="text-sm text-gray-600 mt-1">Help</span> */}
           </a>
           <a href="#" className="flex flex-col items-center text-center">
-            <FaUser className="text-3xl text-gray-600 hover:text-red-700" />
-            <span className="text-sm text-gray-600 mt-1">User</span>
+            <img
+              src="/icons/user.png" // Replace with your local User icon path
+              alt="User"
+              className="h-20 w-20 object-contain hover:text-red-700"
+            />
+            {/* <span className="text-sm text-gray-600 mt-1">User</span> */}
           </a>
         </div>
       </div>
