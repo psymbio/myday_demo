@@ -43,7 +43,6 @@ export default function NavigationBar() {
               >
                 Log In
               </a>
-
               <div className="hidden sm:flex">
                 <a
                   className="rounded-md border border-red-600 px-5 py-2.5 text-sm font-medium text-red-600 hover:bg-red-600 hover:text-white transition"
