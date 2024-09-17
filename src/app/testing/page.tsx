@@ -11,7 +11,7 @@ export default function TestingPage() {
     <div>
       <NavigationBar></NavigationBar>
       <Header></Header>
-      <Widgets></Widgets>
+      {/* <Widgets></Widgets> */}
       <div className="w-full sm:w-4/5 lg:w-3/5 xl:w-2/5 mx-auto max-w-screen-xl px-2 py-8 sm:px-4 sm:py-10 lg:px-6">
         <Tabs />
         <Carousel2 />
