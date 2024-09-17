@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ChatBot from "./components/ui/ChatBot";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -24,6 +25,14 @@ export default function Home() {
           </li>
           <li>Save to see instant changes.</li>
         </ol>
+
+        <div>
+          <ul>
+            <li><Link href="/testing">Testing Page</Link></li>
+            <li><Link href="/login">Login Page</Link></li>
+            <li><Link href="/food_and_drink">Food and Drink Page</Link></li>
+          </ul>
+        </div>
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
           <a
