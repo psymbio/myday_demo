@@ -2,6 +2,7 @@ import Carousel2 from "../components/ui/Carousel2";
 import ChatBot from "../components/ui/ChatBot";
 import Header from "../components/ui/Header";
 import NavigationBar from "../components/ui/NavigationBar";
+import QuickLinks from "../components/ui/QuickLinks";
 import Tabs from "../components/ui/Tabs";
 import Widgets from "../components/ui/Widgets";
 
@@ -15,6 +16,7 @@ export default function TestingPage() {
         <Tabs />
         <Carousel2 />
       </div>
+      <QuickLinks></QuickLinks>
       <ChatBot></ChatBot>
     </div>
   );
