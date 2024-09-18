@@ -5,7 +5,7 @@ interface FoodItemProps {
   price: number;
   isVeg: boolean;
 }
-let cart: string[] = [];
+const cart: string[] = [];
 
 const FoodItem: React.FC<FoodItemProps> = ({ name, price, isVeg }) => {
   const handleTabClick = (foodName: string) => {
