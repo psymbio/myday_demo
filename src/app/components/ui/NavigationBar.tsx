@@ -39,7 +39,7 @@ export default function NavigationBar() {
             <div className="sm:flex sm:gap-4">
               <a
                 className="rounded-md bg-red-600 px-5 py-2.5 text-sm font-medium text-white shadow hover:bg-red-700"
-                href="#"
+                href="login"
               >
                 Log In
               </a>

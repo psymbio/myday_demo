@@ -6,6 +6,7 @@ import GroupsOutlinedIcon from '@mui/icons-material/GroupsOutlined';
 import RestaurantOutlinedIcon from '@mui/icons-material/RestaurantOutlined';
 import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
 import EventAvailableOutlinedIcon from '@mui/icons-material/EventAvailableOutlined';
+import MyCombinedMeetings from "./MyCombinedMeetings";
 
 export default function Tabs() {
   const [activeTab, setActiveTab] = useState("Meetings");
@@ -13,6 +14,16 @@ export default function Tabs() {
   const handleTabClick = (tabName: string) => {
     setActiveTab(tabName);
   };
+
+  const meetings = [
+    { name: "Meeting 1", time: "9:00 AM", location: "Room 101" },
+    { name: "Meeting 2", time: "2:00 PM", location: "Room 202" },
+  ];
+  
+  const bookings = [
+    { name: "John Doe", time: "10:00 AM", location: "Office 1", mygroup: "Group A" },
+  ];
+  
   return (
     <div>
       {/* Mobile dropdown */}
@@ -113,11 +124,12 @@ export default function Tabs() {
       </div>
 
       {/* Display TabCard based on active tab */}
-      {activeTab === "Meetings" && <TabCard title="Meetings Content" content="Here are the Meetings..." />}
+      {activeTab === "Meetings" && <MyCombinedMeetings meetings={meetings} bookings={bookings} />}
       {activeTab === "My Group" && <TabCard title="My Group Content" content="Here are the Meetings..." />}
       {activeTab === "Food & Drink" && <TabCard title="Food & Drink Content" content="Here are the Meetings..." />}
       {activeTab === "Maps" && <TabCard title="Maps Content" content="Here are the Meetings..." />}
       {activeTab === "Events" && <TabCard title="Events Content" content="Here are the Meetings..." />}
+      
     </div>
   );
 }

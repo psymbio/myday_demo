@@ -5,7 +5,7 @@ interface TabCardProps {
   
   export default function TabCard({ title, content }: TabCardProps) {
     return (
-      <div className="mt-4 p-4 border rounded-lg shadow">
+      <div className="mt-4 p-4 border rounded-lg shadow bg-white">
         <h3 className="text-lg font-medium">{title}</h3>
         <p>{content}</p>
       </div>

@@ -28,7 +28,7 @@ const Home: React.FC = () => {
       </Head>
 
       <Header />
-      <main className="bg-gray-100 min-h-screen">
+      <main className="bg-gray-50 min-h-screen">
         <section className="max-w-6xl mx-auto py-8">
           <h2 className="text-2xl font-bold text-center mb-6">Our Menu</h2>
           <Menu items={menuItems} />

@@ -21,11 +21,11 @@ const FoodItem: React.FC<FoodItemProps> = ({ name, price, isVeg }) => {
   return (
     <a
       onClick={() => handleTabClick(name)}
-      className="p-4 shadow-md rounded-lg flex justify-between items-center cursor-pointer"
+      className="p-4 shadow-md rounded-lg flex justify-between items-center cursor-pointer bg-white"
     >
       <div>
         <h3 className="text-xl font-semibold">{name}</h3>
-        <p className="text-gray-500">${price.toFixed(2)}</p>
+        <p className="text-gray-500">£{price.toFixed(2)}</p>
       </div>
       <span
         className={`${
