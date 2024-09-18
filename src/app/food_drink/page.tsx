@@ -1,37 +1,46 @@
+
+import Head from 'next/head';
+import FoodList from '../components/ui/FoodList';
 import Header from '../components/ui/Header';
-import Menu from '../components/ui/Menu';
+
 import NavigationBar from '../components/ui/NavigationBar';
 
-interface MenuItemProps {
+interface FoodItemProps {
   id: number;
   name: string;
   price: number;
+  isVeg: boolean;
 }
 
 const Home: React.FC = () => {
-  // Example data, in a real app you would fetch this from an API
-  const menuItems: MenuItemProps[] = [
-    { id: 1, name: 'Pizza', price: 12.99 },
-    { id: 2, name: 'Burger', price: 9.99 },
-    { id: 3, name: 'Pasta', price: 14.49 },
-    { id: 4, name: 'Salad', price: 8.99 },
-    { id: 5, name: 'Sushi', price: 18.99 },
-    { id: 6, name: 'Steak', price: 24.99 },
+  const foodItems: FoodItemProps[] = [
+    { id: 1, name: 'Pizza', price: 12.99, isVeg: false },
+    { id: 2, name: 'Veg Burger', price: 9.99, isVeg: true },
+    { id: 3, name: 'Pasta', price: 14.49, isVeg: true },
+    { id: 4, name: 'Chicken Salad', price: 10.99, isVeg: false },
+    { id: 5, name: 'Paneer Tikka', price: 11.99, isVeg: true },
+    { id: 6, name: 'Sushi', price: 18.99, isVeg: false },
+    { id: 7, name: 'Chicken Tikka Masala', price: 11.99, isVeg: false },
+    { id: 8, name: 'Paneer Butter Masala', price: 18.99, isVeg: true },
+    { id: 9, name: 'Noddles', price: 11.99, isVeg: true },
+    { id: 10, name: 'Mutton Curry', price: 18.99, isVeg: false },
+    { id: 9, name: 'Veg Fried Rice', price: 11.99, isVeg: true },
+    { id: 10, name: 'Lamp Curry', price: 18.99, isVeg: false },
   ];
 
   return (
     <div>
-      {/* <Head>
-        <title>Food Delivery</title>
-        <meta name="description" content="Order food online" />
+      <Head>
+        <title>Food Delivery Menu</title>
+        <meta name="description" content="Food items with veg and non-veg options" />
         <link rel="icon" href="/favicon.ico" />
-      </Head> */}
-      <NavigationBar></NavigationBar>
-      <Header></Header>
-      <main className="bg-red-100 min-h-screen">
+      </Head>
+
+      <Header />
+      <main className="bg-gray-100 min-h-screen">
         <section className="max-w-6xl mx-auto py-8">
           <h2 className="text-2xl font-bold text-center mb-6">Our Menu</h2>
-          <Menu items={menuItems} />
+          <FoodList items={foodItems} />
         </section>
       </main>
     </div>
