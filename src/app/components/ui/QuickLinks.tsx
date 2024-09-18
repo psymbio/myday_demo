@@ -28,7 +28,7 @@ export default function Links() {
   ];
 
   return (
-    <div className="py-3 -translate-y-64">
+    <div className="py-3 -translate-y-28">
       <div className="mb-6">
       <Heading2 heading="Quick Links" />
         <div className="flex flex-wrap justify-between md:justify-start gap-4 md:gap-6">
