@@ -5,7 +5,6 @@ import HeaderImage from "../components/ui/HeaderImage";
 import NavigationBar from "../components/ui/NavigationBar";
 import QuickLinks from "../components/ui/QuickLinks";
 import Tabs from "../components/ui/Tabs";
-// import Widgets from "../components/ui/Widgets";
 
 export default function TestingPage() {
   return (
@@ -13,12 +12,11 @@ export default function TestingPage() {
       <NavigationBar></NavigationBar>
       <Header></Header>
       <HeaderImage></HeaderImage>
-      {/* <Widgets></Widgets> */}
-      <div className="w-full sm:w-4/5 lg:w-3/5 xl:w-2/5 mx-auto max-w-screen-xl px-2 py-8 sm:px-4 sm:py-10 lg:px-6">
+      <div className="px-5 sm:px-5 mx-10 md:mx-16 lg:mx-32">
         <Tabs />
         <Carousel2 />
+        <QuickLinks />
       </div>
-      <QuickLinks></QuickLinks>
       <ChatBot></ChatBot>
     </div>
   );

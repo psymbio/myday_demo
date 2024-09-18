@@ -3,8 +3,6 @@ import Head from 'next/head';
 import FoodList from '../components/ui/FoodList';
 import Header from '../components/ui/Header';
 
-import NavigationBar from '../components/ui/NavigationBar';
-
 interface FoodItemProps {
   id: number;
   name: string;

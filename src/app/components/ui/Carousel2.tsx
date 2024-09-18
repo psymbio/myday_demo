@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import FeatherIcon from "feather-icons-react";
+import Heading2 from "./Heading2";
 
 export default function Carousel() {
   const slides = [
@@ -23,6 +24,8 @@ export default function Carousel() {
   };
 
   return (
+    <div className="py-5">
+      <Heading2 heading="Events" />
     <div className="overflow-hidden relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]">
       <div
         className="flex transition-transform ease-out duration-500"
@@ -79,6 +82,7 @@ export default function Carousel() {
           ></div>
         ))}
       </div>
+    </div>
     </div>
   );
 }

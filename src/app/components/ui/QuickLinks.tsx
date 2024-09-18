@@ -1,4 +1,5 @@
 import React from "react";
+import Heading2 from "./Heading2";
 import QrCodeScannerOutlinedIcon from '@mui/icons-material/QrCodeScannerOutlined';
 import DirectionsSubwayFilledOutlinedIcon from '@mui/icons-material/DirectionsSubwayFilledOutlined';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
@@ -27,9 +28,9 @@ export default function Links() {
   ];
 
   return (
-    <section className="p-8 bg-gray-100">
+    <div className="bg-gray-100 py-3">
       <div className="mb-6">
-        <h2 className="text-2xl font-bold text-gray-900 mb-4 text-red-700">Quick Links</h2>
+      <Heading2 heading="Quick Links" />
         <div className="flex flex-wrap justify-between md:justify-start gap-4 md:gap-6">
           <a href="#" className="flex flex-col items-center text-center">
             <QrCodeScannerOutlinedIcon />
@@ -68,6 +69,6 @@ export default function Links() {
           </article>
         ))}
       </div>
-    </section>
+    </div>
   );
 }

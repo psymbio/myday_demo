@@ -17,7 +17,7 @@ export default function Tabs() {
     <div>
       {/* Mobile dropdown */}
       <div className="sm:hidden">
-        <nav className="flex justify-around border-b border-gray-300 py-2">
+        <nav className="flex justify-center border-b border-gray-300 py-5 gap-10">
           <a href="#" className={`p-2 ${activeTab === "Meetings" ? "text-red-600" : "text-gray-700"}`}
           onClick={() => handleTabClick("Meetings")}>
             <TableRestaurantOutlinedIcon />
@@ -47,8 +47,8 @@ export default function Tabs() {
 
       {/* Desktop tabs */}
       <div className="hidden sm:block">
-        <div className="border-b border-gray-300">
-          <nav className="-mb-px flex gap-8" aria-label="Tabs">
+        <div className="border-b border-gray-300 py-5">
+          <nav className="-mb-px flex gap-8 justify-center" aria-label="Tabs">
             {/* Meetings Tab */}
             <a
               href="#"
