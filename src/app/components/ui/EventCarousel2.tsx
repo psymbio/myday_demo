@@ -33,7 +33,7 @@ export default function Carousel() {
       >
         {slides.map((slide, index) => (
           <div key={index} className="w-full flex-shrink-0">
-            <div className="w-full h-full relative bg-gray-100 flex flex-col justify-center items-start p-6 sm:p-10 lg:p-12 text-black shadow-lg">
+            <div className="w-full h-full relative rounded-lg flex flex-col justify-center items-start p-6 sm:p-10 lg:p-12 text-black shadow bg-white">
               {/* Title and Subtext */}
               <h2 className="text-base sm:text-xl lg:text-2xl font-bold mb-2">{slide.text}</h2>
               <p className="text-sm sm:text-lg lg:text-xl mb-4">{slide.subtext}</p>

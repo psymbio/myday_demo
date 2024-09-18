@@ -18,27 +18,27 @@ export default function Tabs() {
       {/* Mobile dropdown */}
       <div className="sm:hidden">
         <nav className="flex justify-center border-b border-gray-300 py-5 gap-10">
-          <a href="#" className={`p-2 ${activeTab === "Meetings" ? "text-red-600" : "text-gray-700"}`}
+          <a  className={`p-2 ${activeTab === "Meetings" ? "text-red-600" : "text-gray-700"}`}
           onClick={() => handleTabClick("Meetings")}>
             <TableRestaurantOutlinedIcon />
           </a>
 
-          <a href="#" className={`p-2 ${activeTab === "My Group" ? "text-red-600" : "text-gray-700"}`}
+          <a  className={`p-2 ${activeTab === "My Group" ? "text-red-600" : "text-gray-700"}`}
           onClick={() => handleTabClick("My Group")}>
             <GroupsOutlinedIcon />
           </a>
 
-          <a href="#" className={`p-2 ${activeTab === "Food & Drink" ? "text-red-600" : "text-gray-700"}`}
+          <a  className={`p-2 ${activeTab === "Food & Drink" ? "text-red-600" : "text-gray-700"}`}
           onClick={() => handleTabClick("Food & Drink")}>
             <RestaurantOutlinedIcon />
           </a>
 
-          <a href="#" className={`p-2 ${activeTab === "Maps" ? "text-red-600" : "text-gray-700"}`}
+          <a  className={`p-2 ${activeTab === "Maps" ? "text-red-600" : "text-gray-700"}`}
           onClick={() => handleTabClick("Maps")}>
             <MapOutlinedIcon />
           </a>
 
-          <a href="#" className={`p-2 ${activeTab === "Events" ? "text-red-600" : "text-gray-700"}`}
+          <a  className={`p-2 ${activeTab === "Events" ? "text-red-600" : "text-gray-700"}`}
           onClick={() => handleTabClick("Events")}>
             <EventAvailableOutlinedIcon />
           </a>
@@ -51,7 +51,7 @@ export default function Tabs() {
           <nav className="-mb-px flex gap-8 justify-center" aria-label="Tabs">
             {/* Meetings Tab */}
             <a
-              href="#"
+              
               onClick={() => handleTabClick("Meetings")}
             className={`inline-flex items-center gap-2 border-b-2 ${
               activeTab === "Meetings" ? "border-red-600 text-red-600" : "border-transparent text-gray-700"
@@ -63,7 +63,7 @@ export default function Tabs() {
 
             {/* My Group Tab */}
             <a
-              href="#"
+              
               onClick={() => handleTabClick("My Group")}
             className={`inline-flex items-center gap-2 border-b-2 ${
               activeTab === "My Group" ? "border-red-600 text-red-600" : "border-transparent text-gray-700"
@@ -75,7 +75,7 @@ export default function Tabs() {
 
             {/* Food & Drink Tab */}
             <a
-              href="#"
+              
               onClick={() => handleTabClick("Food & Drink")}
             className={`inline-flex items-center gap-2 border-b-2 ${
               activeTab === "Food & Drink" ? "border-red-600 text-red-600" : "border-transparent text-gray-700"
@@ -87,7 +87,7 @@ export default function Tabs() {
 
             {/* Maps Tab */}
             <a
-              href="#"
+              
               onClick={() => handleTabClick("Maps")}
             className={`inline-flex items-center gap-2 border-b-2 ${
               activeTab === "Maps" ? "border-red-600 text-red-600" : "border-transparent text-gray-700"
@@ -99,7 +99,7 @@ export default function Tabs() {
 
             {/* Events Tab */}
             <a
-              href="#"
+              
               onClick={() => handleTabClick("Events")}
             className={`inline-flex items-center gap-2 border-b-2 ${
               activeTab === "Events" ? "border-red-600 text-red-600" : "border-transparent text-gray-700"

@@ -1,4 +1,4 @@
-import Carousel2 from "../components/ui/Carousel2";
+import Carousel2 from "../components/ui/EventCarousel2";
 import ChatBot from "../components/ui/ChatBot";
 import Header from "../components/ui/Header";
 import HeaderImage from "../components/ui/HeaderImage";
