@@ -11,11 +11,15 @@ const FoodItem: React.FC<FoodItemProps> = ({ name, price, isVeg }) => {
   const handleTabClick = (foodName: string) => {
     cart.push(foodName);
     console.log(cart);
+    // each food item should have a qty + and - button to add and subtract from the cart
+
+    // cart icon is a common icon for all the food items
 
     // ideally the cart should be a dictionary
     // id of food item as key and the count of the times clicked as value
     // cart icon should be taken from material UI (https://mui.com/material-ui/material-icons/?query=cart&theme=Outlined)
     // on top of the cart display the number of items - sum of all the values in cart dictionary
+    // i.e., if cart dictionary is {1: 2, 3: 4} then cart displays number 6 on top
     // if the number exceeds 99 then simply display as a plus sign
   };
   return (
