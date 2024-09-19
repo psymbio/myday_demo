@@ -5,6 +5,7 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Heading2 from "./Heading2";
 import Heading3 from "./Heading3";
+import CustomButton from "./CustomButton";
 
 export default function Carousel() {
   const slides = [
@@ -51,12 +52,16 @@ export default function Carousel() {
                 </p>
                 <div className="flex justify-between items-center w-full">
                   <div className="flex space-x-4">
-                    <button className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 sm:px-6 sm:py-3 lg:px-8 lg:py-4 rounded font-medium">
-                      View
-                    </button>
-                    <button className="bg-gray-700 hover:bg-gray-800 text-white px-4 py-2 sm:px-6 sm:py-3 lg:px-8 lg:py-4 rounded font-medium">
-                      Register
-                    </button>
+                    <CustomButton
+                      bgColor="bg-red-600"
+                      textColor="text-white"
+                      text="Submit"
+                    />
+                    <CustomButton
+                      bgColor="bg-gray-700"
+                      textColor="text-white"
+                      text="Register"
+                    />
                   </div>
 
                   <div className="flex space-x-2">
