@@ -55,7 +55,7 @@ export default function Carousel() {
                     <CustomButton
                       bgColor="bg-red-600"
                       textColor="text-white"
-                      text="Submit"
+                      text="View"
                     />
                     <CustomButton
                       bgColor="bg-gray-700"

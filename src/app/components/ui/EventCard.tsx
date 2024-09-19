@@ -2,39 +2,41 @@ import React from "react";
 import { format, isSameDay } from "date-fns";
 import CustomButton from "./CustomButton";
 
-type EventData = {
-  startDate: string; // UTC date string
-  endDate: string; // UTC date string
+interface EventData {
+  id: number;
+  startDate: string;
+  endDate: string;
   time: string;
   text: string;
   subtext: string;
-};
+  image: string;
+  subtextLong: string;
+}
 
 interface EventCardProps {
   eventData: EventData[];
+  onView: (event: EventData) => void; // Accept onView prop
 }
 
-export default function EventCard({ eventData }: EventCardProps) {
+export default function EventCard({ eventData, onView }: EventCardProps) {
   const formatDateRange = (startDate: Date, endDate: Date) => {
     if (isSameDay(startDate, endDate)) {
-      // Single-day event
       return format(startDate, "E d");
     } else {
-      // Multi-day event
       return `${format(startDate, "E d")} - ${format(endDate, "E d")}`;
     }
   };
 
   return (
     <div className="flex flex-col space-y-4">
-      {eventData.map((event, index) => {
+      {eventData.map((event) => {
         const start = new Date(event.startDate);
         const end = new Date(event.endDate);
         const isAllDayEvent = event.time.toLowerCase() === "all day";
 
         return (
           <div
-            key={index}
+            key={event.id}
             className="flex items-center p-4 bg-white shadow-md rounded-lg border border-gray-300"
           >
             <div className="flex flex-col w-1/3 text-left">
@@ -53,11 +55,12 @@ export default function EventCard({ eventData }: EventCardProps) {
               <span className="text-sm text-gray-600">{event.subtext}</span>
 
               <div className="flex space-x-4 mt-2">
-                <CustomButton
-                  bgColor="bg-red-600"
-                  textColor="text-white"
-                  text="Submit"
-                />
+                <button
+                  className={`bg-red-600 hover:brightness-110 text-white px-2 py-2 sm:px-6 sm:py-3 lg:px-8 lg:py-4 rounded font-medium`}
+                  onClick={() => onView(event)}
+                >
+                  View
+                </button>
                 <CustomButton
                   bgColor="bg-gray-700"
                   textColor="text-white"
