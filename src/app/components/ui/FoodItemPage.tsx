@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from 'react';
 
 // Food Item Type
@@ -22,17 +23,28 @@ interface RestaurantItemData {
 
 // Sample Food Data
 const foodData: FoodItemData[] = [
-  { id: 1, name: 'Veggie Burger', cost: 5.99, restaurantId: 0, veg: true, pescatarian: false, glutenFree: false },
-  { id: 2, name: 'Grilled Salmon', cost: 12.99, restaurantId: 1, veg: false, pescatarian: true, glutenFree: true },
-  { id: 3, name: 'Gluten-Free Pasta', cost: 9.99, restaurantId: 2, veg: true, pescatarian: false, glutenFree: true },
-  { id: 4, name: 'Chicken Sandwich', cost: 7.99, restaurantId: 1, veg: false, pescatarian: false, glutenFree: false }
+  { id: 1, name: 'Verbena and Lemon Halloumi', cost: 8.20, restaurantId: 0, veg: true, pescatarian: false, glutenFree: false },
+  { id: 2, name: 'Thai Green Vegetable Curry', cost: 6.50, restaurantId: 1, veg: true, pescatarian: true, glutenFree: true },
+  { id: 3, name: 'Tandoori Paneer Flatbread', cost: 7.15, restaurantId: 2, veg: true, pescatarian: false, glutenFree: true },
+  { id: 4, name: 'Thai Green Vegetable Curry', cost: 7.99, restaurantId: 1, veg: true, pescatarian: false, glutenFree: false },
+  { id: 5, name: 'Fries', cost: 2.20, restaurantId: 2, veg: true, pescatarian: true, glutenFree: true },
+  { id: 6, name: 'Ramen Mushroom and Egg', cost: 7.80, restaurantId: 1, veg: true, pescatarian: false, glutenFree: false },
+  { id: 7, name: 'Soba Noodle and Sesame Salad', cost: 6.90, restaurantId: 2, veg: true, pescatarian: false, glutenFree: true },
+  { id: 8, name: 'Bread Roll', cost: 0.75, restaurantId: 1, veg: true, pescatarian: true, glutenFree: false },
+  { id: 9, name: 'Classic Tiramisu', cost: 3.15, restaurantId: 2, veg: true, pescatarian: true, glutenFree: true },
+  { id: 10, name: 'Veggie Sandwich', cost: 7.99, restaurantId: 1, veg: false, pescatarian: true, glutenFree: false },
+  { id: 11, name: 'Ramen Mushroom and Egg', cost: 7.80, restaurantId: 1, veg: true, pescatarian: false, glutenFree: false },
+  { id: 12, name: 'Soba Noodle and Sesame Salad', cost: 6.90, restaurantId: 2, veg: true, pescatarian: false, glutenFree: true },
+  { id: 13, name: 'Mutton Roll', cost: 7.75, restaurantId: 1, veg: false, pescatarian: true, glutenFree: false },
+  { id: 14, name: 'Classic mutton curry', cost: 8.15, restaurantId: 2, veg: false, pescatarian: true, glutenFree: true },
+  { id: 15, name: 'Chicken Sandwich', cost: 7.99, restaurantId: 0, veg: false, pescatarian: true, glutenFree: false }
 ];
 
 // Sample Restaurant Data
 const restaurantData: RestaurantItemData[] = [
-  { id: 0, name: 'Teya', text: 'Healthy & Delicious', subtext: 'Fresh vegetarian options', image: 'https://via.placeholder.com/150' },
-  { id: 1, name: 'Mezzanine', text: 'Grilled Perfection', subtext: 'Best seafood and meats', image: 'https://via.placeholder.com/150' },
-  { id: 2, name: 'Starbucks', text: 'Coffee & More', subtext: 'Gluten-free options available', image: 'https://via.placeholder.com/150' }
+  { id: 0, name: 'Teya', text: 'PSP is a cashless building,purchases can be made via Teya, Chip and Pin and Apple Pay or Google Pay.To download the app,click here to scan a QR code with your mobile device.', subtext: 'Fresh vegetarian options', image: 'src="/image1.jpeg"' },
+  { id: 1, name: 'Mezzanine', text: 'The HSBC restruant serves breakfast and lunch presenting a variety of cuisines intended to showcase local ad seasonal produce,reflected in our weekly changing menu. Our Eat well Live Well programme supports your wellbeing, additionally we focus on vegan,vegetarian,and flexitarian diets.Microwaves are available for use to the rear of the restruant', subtext: 'Best seafood and meats', image: 'src="/images3.jpeg' },
+  { id: 2, name: 'Starbucks', text: 'Currently the worlds largest coffeehouse chain.Barista hot drinks,grab and go inclusing pastries,light lunches,sandwiches,salads,indulgent and healthy snacks.', subtext: 'Gluten-free options available', image: 'src="/images2.jpeg' }
 ];
 
 // Restaurant Item Component
