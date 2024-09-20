@@ -1,0 +1,141 @@
+import React, { useState } from 'react';
+
+// Food Item Type
+interface FoodItemData {
+  id: number;
+  name: string;
+  cost: number;
+  restaurantId: number;
+  veg: boolean;
+  pescatarian: boolean;
+  glutenFree: boolean;
+}
+
+// Restaurant Item Type
+interface RestaurantItemData {
+  id: number;
+  name: string;
+  text: string;
+  subtext: string;
+  image: string;
+}
+
+// Sample Food Data
+const foodData: FoodItemData[] = [
+  { id: 1, name: 'Veggie Burger', cost: 5.99, restaurantId: 0, veg: true, pescatarian: false, glutenFree: false },
+  { id: 2, name: 'Grilled Salmon', cost: 12.99, restaurantId: 1, veg: false, pescatarian: true, glutenFree: true },
+  { id: 3, name: 'Gluten-Free Pasta', cost: 9.99, restaurantId: 2, veg: true, pescatarian: false, glutenFree: true },
+  { id: 4, name: 'Chicken Sandwich', cost: 7.99, restaurantId: 1, veg: false, pescatarian: false, glutenFree: false }
+];
+
+// Sample Restaurant Data
+const restaurantData: RestaurantItemData[] = [
+  { id: 0, name: 'Teya', text: 'Healthy & Delicious', subtext: 'Fresh vegetarian options', image: 'https://via.placeholder.com/150' },
+  { id: 1, name: 'Mezzanine', text: 'Grilled Perfection', subtext: 'Best seafood and meats', image: 'https://via.placeholder.com/150' },
+  { id: 2, name: 'Starbucks', text: 'Coffee & More', subtext: 'Gluten-free options available', image: 'https://via.placeholder.com/150' }
+];
+
+// Restaurant Item Component
+const RestaurantItem: React.FC<{ restaurant: RestaurantItemData; onClick: () => void }> = ({ restaurant, onClick }) => {
+  return (
+    <div onClick={onClick} className="cursor-pointer bg-white rounded-lg shadow-lg p-4 hover:shadow-xl transition">
+      <img 
+        src={restaurant.image} 
+        alt={restaurant.name} 
+        className="w-full h-32 object-cover rounded-t-lg" // object-cover for image fit
+      />
+      <div className="mt-2">
+        <h2 className="text-xl font-semibold">{restaurant.name}</h2>
+        <p className="text-gray-500">{restaurant.text}</p>
+        <p className="text-gray-400 text-sm">{restaurant.subtext}</p>
+      </div>
+    </div>
+  );
+};
+
+// Food Item Component
+const FoodItem: React.FC<{ food: FoodItemData }> = ({ food }) => {
+  return (
+    <div className="bg-white rounded-lg shadow-md p-4">
+      <h3 className="text-lg font-semibold">{food.name}</h3>
+      <p className="text-gray-500">Cost: £{food.cost.toFixed(2)}</p>
+      <p className={`text-sm ${food.veg ? 'text-green-600' : 'text-red-600'}`}>
+        {food.veg ? 'Vegetarian' : 'Non-Vegetarian'}
+      </p>
+      <p className={`text-sm ${food.pescatarian ? 'text-blue-600' : 'text-red-600'}`}>
+        {food.pescatarian ? 'Pescatarian' : 'Not Pescatarian'}
+      </p>
+      <p className={`text-sm ${food.glutenFree ? 'text-purple-600' : 'text-red-600'}`}>
+        {food.glutenFree ? 'Gluten-Free' : 'Contains Gluten'}
+      </p>
+    </div>
+  );
+};
+
+// Main Page Component
+const FoodItemsPage: React.FC = () => {
+  const [selectedRestaurant, setSelectedRestaurant] = useState<number | null>(null);
+
+  // Filter food items based on selected restaurant
+  const filteredFoodData = selectedRestaurant !== null
+    ? foodData.filter(food => food.restaurantId === selectedRestaurant)
+    : foodData;
+
+  const handleFilterClick = (restaurantId: number) => {
+    setSelectedRestaurant(restaurantId);
+  };
+
+  return (
+    <div className="min-h-screen bg-gray-100 p-4">
+      <h1 className="text-2xl font-bold text-center mb-4">Restaurants</h1>
+
+      {/* Filter Button */}
+      <div className="flex justify-center mb-4">
+        <button
+          onClick={() => setSelectedRestaurant(null)} // Reset filter to show all
+          className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition"
+        >
+          Show All Restaurants
+        </button>
+      </div>
+
+      {/* Restaurant Section */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+        {restaurantData.map((restaurant) => (
+          <RestaurantItem
+            key={restaurant.id}
+            restaurant={restaurant}
+            onClick={() => handleFilterClick(restaurant.id)}
+          />
+        ))}
+      </div>
+
+      {/* Food Items Section */}
+      <h2 className="text-2xl font-bold text-center mb-4">Food Items</h2>
+
+      {/* Food Filter by Restaurant */}
+      <div className="mb-6 flex justify-center">
+        <select 
+          onChange={(e) => setSelectedRestaurant(parseInt(e.target.value))} 
+          value={selectedRestaurant ?? ""}
+          className="p-2 border border-gray-300 rounded-lg"
+        >
+          <option value="">Filter by Restaurant</option>
+          {restaurantData.map((restaurant) => (
+            <option key={restaurant.id} value={restaurant.id}>{restaurant.name}</option>
+          ))}
+        </select>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {filteredFoodData.length > 0 ? (
+          filteredFoodData.map((food) => <FoodItem key={food.id} food={food} />)
+        ) : (
+          <p className="text-center col-span-3 text-gray-500">No items available for this restaurant</p>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default FoodItemsPage;
