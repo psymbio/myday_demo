@@ -90,15 +90,17 @@ const FoodItem: React.FC<{ food: FoodItemData }> = ({ food }) => {
     <div className="bg-white rounded-lg shadow-md p-4">
       <h3 className="text-lg font-semibold">{food.name}</h3>
       <p className="text-gray-500">Cost: £{food.cost.toFixed(2)}</p>
-      <p className={`text-sm ${food.veg ? 'text-green-600' : 'text-red-600'}`}>
-        {food.veg ? 'Vegetarian' : 'Non-Vegetarian'}
-      </p>
-      <p className={`text-sm ${food.pescatarian ? 'text-blue-600' : 'text-red-600'}`}>
-        {food.pescatarian ? 'Pescatarian' : 'Not Pescatarian'}
-      </p>
-      <p className={`text-sm ${food.glutenFree ? 'text-purple-600' : 'text-red-600'}`}>
-        {food.glutenFree ? 'Gluten-Free' : 'Contains Gluten'}
-      </p>
+      <div className="flex flex-col space-y-2">
+  <p className={`text-sm font-medium p-2 rounded-lg border ${food.veg ? 'text-green-600 border-green-600' : 'text-red-600 border-red-600'} bg-opacity-10`}>
+    {food.veg ? 'Vegetarian' : 'Non-Vegetarian'}
+  </p>
+  <p className={`text-sm font-medium p-2 rounded-lg border ${food.pescatarian ? 'text-blue-600 border-blue-600' : 'text-red-600 border-red-600'} bg-opacity-10`}>
+    {food.pescatarian ? 'Pescatarian' : 'Not Pescatarian'}
+  </p>
+  <p className={`text-sm font-medium p-2 rounded-lg border ${food.glutenFree ? 'text-purple-600 border-purple-600' : 'text-red-600 border-red-600'} bg-opacity-10`}>
+    {food.glutenFree ? 'Gluten-Free' : 'Contains Gluten'}
+  </p>
+</div>
     </div>
   );
 };

@@ -5,7 +5,7 @@ import TableRestaurantOutlinedIcon from '@mui/icons-material/TableRestaurantOutl
 import GroupsOutlinedIcon from '@mui/icons-material/GroupsOutlined';
 import RestaurantOutlinedIcon from '@mui/icons-material/RestaurantOutlined';
 import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
-import EventAvailableOutlinedIcon from '@mui/icons-material/EventAvailableOutlined';
+// import EventAvailableOutlinedIcon from '@mui/icons-material/EventAvailableOutlined';
 import MyCombinedMeetings from "./MyCombinedMeetings";
 
 export default function Tabs() {
