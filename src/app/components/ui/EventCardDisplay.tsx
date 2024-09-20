@@ -5,7 +5,7 @@ import EventCard from "./EventCard";
 import EventPopup from "./EventPopup"; // Import the EventPopup component
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import { format, addMonths, subMonths, isSameMonth, isSameYear } from "date-fns";
+import { format, addMonths, subMonths, isSameMonth } from "date-fns";
 
 export default function EventCardDisplay() {
   const [currentDate, setCurrentDate] = useState(new Date());
