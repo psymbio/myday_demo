@@ -18,14 +18,9 @@ interface EventData {
   subtextLong: string;
 }
 
-interface EventCardProps {
-  eventData: EventData[];
-  onView: (event: EventData) => void;
-}
-
 export default function EventCardDisplay() {
   const [currentDate, setCurrentDate] = useState(new Date());
-  const [selectedEvent, setSelectedEvent] = useState<any>(null);
+  const [selectedEvent, setSelectedEvent] = useState<EventData | null>(null);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const events = [
@@ -98,7 +93,8 @@ export default function EventCardDisplay() {
   });
 
   // Correct type for event parameter
-  const openPopup = (event: any) => {
+  const openPopup = (event: EventData) => {
+    // Use EventData type instead of any
     setSelectedEvent(event); // Set the selected event data
     setIsPopupOpen(true);
   };

@@ -8,6 +8,18 @@ import Heading3 from "./Heading3";
 import CustomButton from "./CustomButton";
 import EventPopup from "./EventPopup"; // Import the EventPopup component
 
+interface EventData {
+  id: number;
+  startDate: string;
+  endDate: string;
+  time: string;
+  text: string;
+  subtext: string;
+  image: string;
+  subtextLong: string;
+}
+
+
 export default function Carousel() {
   const events = [
     {
@@ -58,7 +70,7 @@ export default function Carousel() {
 
   const [current, setCurrent] = useState(0);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const [selectedEvent, setSelectedEvent] = useState(null);
+  const [selectedEvent, setSelectedEvent] = useState<EventData | null>(null);
 
   const previousSlide = () => {
     if (current === 0) setCurrent(events.length - 1);
