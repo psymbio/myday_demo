@@ -7,9 +7,25 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { format, addMonths, subMonths, isSameMonth } from "date-fns";
 
+interface EventData {
+  id: number;
+  startDate: string;
+  endDate: string;
+  time: string;
+  text: string;
+  subtext: string;
+  image: string;
+  subtextLong: string;
+}
+
+interface EventCardProps {
+  eventData: EventData[];
+  onView: (event: EventData) => void;
+}
+
 export default function EventCardDisplay() {
   const [currentDate, setCurrentDate] = useState(new Date());
-  const [selectedEvent, setSelectedEvent] = useState<any>(null); // Make the type any or a specific event type
+  const [selectedEvent, setSelectedEvent] = useState<any>(null);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const events = [
