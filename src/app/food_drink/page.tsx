@@ -1,7 +1,7 @@
 
 import Head from 'next/head';
 import FoodItemData from '../components/ui/FoodItemData';
-import FoodItemPage from '../components/ui/FoodItemPage';
+// import FoodItemPage from '../components/ui/FoodItemPage';
 import Header from '../components/ui/Header';
 
 

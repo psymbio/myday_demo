@@ -1,5 +1,6 @@
-import React from 'react';
-import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
+import React from "react";
+import CustomButton from "./CustomButton";
+// import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 
 interface EventPopupProps {
   event: {
@@ -13,15 +14,44 @@ interface EventPopupProps {
 export default function EventPopup({ event, onClose }: EventPopupProps) {
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
-      <div className="rounded-2xl border border-blue-100 bg-white p-4 shadow-lg sm:p-6 lg:p-8 max-w-md w-full">
-        <div className="flex items-center justify-between">
-          <h2 className="font-medium sm:text-lg">{event.text}</h2>
-          <button onClick={onClose} className="text-gray-500 hover:text-gray-700">
+      <div className="rounded-2xl border border-blue-100 bg-white p-6 shadow-lg sm:p-6 lg:p-8 max-w-md w-full">
+        {/* Close Button */}
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center gap-4">
+            <h2 className="font-medium text-lg">{event.text}</h2>
+          </div>
+          {/* <button
+            onClick={onClose}
+            className="text-gray-500 hover:text-gray-700"
+          >
             <CloseOutlinedIcon />
-          </button>
+          </button> */}
         </div>
-        <img src={event.image} alt={event.text} className="mt-4 w-full h-auto rounded" />
-        <p className="mt-4 text-gray-500">{event.subtextLong}</p>
+
+        {/* Event Image */}
+        <img
+          src={event.image}
+          alt={event.text}
+          className="w-full h-auto rounded-lg mb-4"
+        />
+
+        {/* Event Description */}
+        <p className="text-gray-500 mb-6">{event.subtextLong}</p>
+
+        {/* Action Buttons */}
+        <div className="flex flex-col sm:flex-row sm:gap-4">
+          <CustomButton
+            bgColor="bg-red-600"
+            textColor="text-white"
+            text="Register"
+          />
+          <CustomButton
+            bgColor="bg-gray-700"
+            textColor="text-white"
+            text="Close"
+            onClick={onClose}
+          />
+        </div>
       </div>
     </div>
   );

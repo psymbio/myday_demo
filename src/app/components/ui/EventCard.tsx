@@ -15,7 +15,7 @@ interface EventData {
 
 interface EventCardProps {
   eventData: EventData[];
-  onView: (event: EventData) => void; // Accept onView prop
+  onView: (event: EventData) => void;
 }
 
 export default function EventCard({ eventData, onView }: EventCardProps) {
@@ -55,12 +55,12 @@ export default function EventCard({ eventData, onView }: EventCardProps) {
               <span className="text-sm text-gray-600">{event.subtext}</span>
 
               <div className="flex space-x-4 mt-2">
-                <button
-                  className={`bg-red-600 hover:brightness-110 text-white px-2 py-2 sm:px-6 sm:py-3 lg:px-8 lg:py-4 rounded font-medium`}
+                <CustomButton
+                  bgColor="bg-red-600"
+                  textColor="text-white"
+                  text="View"
                   onClick={() => onView(event)}
-                >
-                  View
-                </button>
+                />
                 <CustomButton
                   bgColor="bg-gray-700"
                   textColor="text-white"

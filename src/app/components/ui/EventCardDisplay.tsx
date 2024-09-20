@@ -5,17 +5,11 @@ import EventCard from "./EventCard";
 import EventPopup from "./EventPopup"; // Import the EventPopup component
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import {
-  format,
-  addMonths,
-  subMonths,
-  isSameMonth,
-  isSameYear,
-} from "date-fns";
+import { format, addMonths, subMonths, isSameMonth, isSameYear } from "date-fns";
 
 export default function EventCardDisplay() {
   const [currentDate, setCurrentDate] = useState(new Date());
-  const [selectedEvent, setSelectedEvent] = useState(null);
+  const [selectedEvent, setSelectedEvent] = useState<any>(null); // Make the type any or a specific event type
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const events = [
@@ -27,7 +21,8 @@ export default function EventCardDisplay() {
       text: "DevOps",
       subtext: "Event for DevOps Training",
       image: "/events/easter.jpg",
-      subtextLong: "In-depth training on DevOps principles, tools, and workflows.",
+      subtextLong:
+        "In-depth training on DevOps principles, tools, and workflows.",
     },
     {
       id: 2,
@@ -37,7 +32,8 @@ export default function EventCardDisplay() {
       text: "Scrum Meeting",
       subtext: "Daily Scrum Stand-up",
       image: "/events/easter.jpg",
-      subtextLong: "In-depth training on DevOps principles, tools, and workflows.",
+      subtextLong:
+        "In-depth training on DevOps principles, tools, and workflows.",
     },
     {
       id: 3,
@@ -47,7 +43,8 @@ export default function EventCardDisplay() {
       text: "Frontend Review",
       subtext: "Discuss UI Improvements",
       image: "/events/easter.jpg",
-      subtextLong: "In-depth training on DevOps principles, tools, and workflows.",
+      subtextLong:
+        "In-depth training on DevOps principles, tools, and workflows.",
     },
     {
       id: 4,
@@ -57,7 +54,8 @@ export default function EventCardDisplay() {
       text: "Backend Review",
       subtext: "Review backend architecture",
       image: "/events/easter.jpg",
-      subtextLong: "In-depth training on DevOps principles, tools, and workflows.",
+      subtextLong:
+        "In-depth training on DevOps principles, tools, and workflows.",
     },
   ];
 
@@ -69,22 +67,23 @@ export default function EventCardDisplay() {
     }
   };
 
-  const hasEventsInMonth = (date: Date) => {
-    return events.some((event) => {
-      const eventStartDate = new Date(event.startDate);
-      return (
-        isSameMonth(eventStartDate, date) && isSameYear(eventStartDate, date)
-      );
-    });
-  };
+  // const hasEventsInMonth = (date: Date) => {
+  //   return events.some((event) => {
+  //     const eventStartDate = new Date(event.startDate);
+  //     return (
+  //       isSameMonth(eventStartDate, date) && isSameYear(eventStartDate, date)
+  //     );
+  //   });
+  // };
 
   const filteredEvents = events.filter((event) => {
     const eventStartDate = new Date(event.startDate);
     return isSameMonth(eventStartDate, currentDate);
   });
 
-  const openPopup = (event: React.SetStateAction<null>) => {
-    setSelectedEvent(event);
+  // Correct type for event parameter
+  const openPopup = (event: any) => {
+    setSelectedEvent(event); // Set the selected event data
     setIsPopupOpen(true);
   };
 

@@ -4,12 +4,14 @@ interface ButtonProps {
   bgColor: string;
   textColor: string;
   text: string;
+  onClick?: () => void;  // Make onClick optional
 }
 
-export default function CustomButton({ bgColor, textColor, text }: ButtonProps) {
+export default function CustomButton({ bgColor, textColor, text, onClick }: ButtonProps) {
   return (
     <button
-      className={`${bgColor} hover:brightness-110 ${textColor} px-2 py-2 sm:px-6 sm:py-3 lg:px-8 lg:py-4 rounded font-medium`}
+      className={`${bgColor} hover:brightness-110 ${textColor} rounded-md px-5 py-2.5 text-sm font-medium text-white shadow`}
+      onClick={onClick}  // Pass onClick if available, else do nothing
     >
       {text}
     </button>

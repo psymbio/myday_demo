@@ -6,27 +6,71 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Heading2 from "./Heading2";
 import Heading3 from "./Heading3";
 import CustomButton from "./CustomButton";
+import EventPopup from "./EventPopup"; // Import the EventPopup component
 
 export default function Carousel() {
-  const slides = [
-    { text: "Event 1", subtext: "Description 1" },
-    { text: "Event 2", subtext: "Description 2" },
-    { text: "Event 3", subtext: "Description 3" },
+  const events = [
+    {
+      id: 1,
+      startDate: "2024-09-02T00:00:00Z",
+      endDate: "2024-09-02T00:00:00Z",
+      time: "16:00 - 17:00",
+      text: "DevOps",
+      subtext: "Event for DevOps Training",
+      image: "/events/easter.jpg",
+      subtextLong:
+        "In-depth training on DevOps principles, tools, and workflows.",
+    },
+    {
+      id: 2,
+      startDate: "2024-09-02T00:00:00Z",
+      endDate: "2024-09-04T00:00:00Z",
+      time: "16:00 - 17:00",
+      text: "Scrum Meeting",
+      subtext: "Daily Scrum Stand-up",
+      image: "/events/easter.jpg",
+      subtextLong:
+        "In-depth training on DevOps principles, tools, and workflows.",
+    },
+    {
+      id: 3,
+      startDate: "2024-09-02T00:00:00Z",
+      endDate: "2024-09-04T00:00:00Z",
+      time: "All day",
+      text: "Frontend Review",
+      subtext: "Discuss UI Improvements",
+      image: "/events/easter.jpg",
+      subtextLong:
+        "In-depth training on DevOps principles, tools, and workflows.",
+    },
+    {
+      id: 4,
+      startDate: "2024-10-05T00:00:00Z",
+      endDate: "2024-10-05T00:00:00Z",
+      time: "09:00 - 10:00",
+      text: "Backend Review",
+      subtext: "Review backend architecture",
+      image: "/events/easter.jpg",
+      subtextLong:
+        "In-depth training on DevOps principles, tools, and workflows.",
+    },
   ];
 
   const [current, setCurrent] = useState(0);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [selectedEvent, setSelectedEvent] = useState(null);
 
   const previousSlide = () => {
-    if (current === 0) setCurrent(slides.length - 1);
+    if (current === 0) setCurrent(events.length - 1);
     else setCurrent(current - 1);
   };
 
   const nextSlide = () => {
-    if (current === slides.length - 1) setCurrent(0);
+    if (current === events.length - 1) setCurrent(0);
     else setCurrent(current + 1);
   };
 
-  // Automatically change slides every 2 seconds
+  // Automatically change events every 12 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
@@ -34,6 +78,16 @@ export default function Carousel() {
 
     return () => clearInterval(interval); // Clean up interval on component unmount
   }, [current]);
+
+  const openPopup = () => {
+    setSelectedEvent(events[current]); // Get the current event
+    setIsPopupOpen(true);
+  };
+
+  const closePopup = () => {
+    setIsPopupOpen(false);
+    setSelectedEvent(null);
+  };
 
   return (
     <div className="py-5">
@@ -43,7 +97,7 @@ export default function Carousel() {
           className="flex transition-transform ease-out duration-500"
           style={{ transform: `translateX(-${current * 100}%)` }}
         >
-          {slides.map((slide, index) => (
+          {events.map((slide, index) => (
             <div key={index} className="w-full flex-shrink-0">
               <div className="w-full h-full relative rounded-lg flex flex-col justify-center items-start p-6 sm:p-10 lg:p-12 text-black shadow bg-white">
                 <Heading3 heading={slide.text} />
@@ -56,6 +110,7 @@ export default function Carousel() {
                       bgColor="bg-red-600"
                       textColor="text-white"
                       text="View"
+                      onClick={openPopup} // Open popup on click
                     />
                     <CustomButton
                       bgColor="bg-gray-700"
@@ -85,7 +140,7 @@ export default function Carousel() {
         </div>
 
         <div className="flex justify-center gap-2 sm:gap-3 w-full translate-y-3 sm:translate-y-5 mt-3">
-          {slides.map((_, i) => (
+          {events.map((_, i) => (
             <div
               onClick={() => setCurrent(i)}
               key={i}
@@ -96,6 +151,10 @@ export default function Carousel() {
           ))}
         </div>
       </div>
+
+      {isPopupOpen && selectedEvent && (
+        <EventPopup event={selectedEvent} onClose={closePopup} />
+      )}
     </div>
   );
 }
