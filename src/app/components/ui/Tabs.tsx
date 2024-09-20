@@ -48,11 +48,6 @@ export default function Tabs() {
           onClick={() => handleTabClick("Maps")}>
             <MapOutlinedIcon />
           </a>
-
-          <a  className={`p-2 ${activeTab === "Events" ? "text-red-600" : "text-gray-700"}`}
-          onClick={() => handleTabClick("Events")}>
-            <EventAvailableOutlinedIcon />
-          </a>
         </nav>
       </div>
 
@@ -106,18 +101,6 @@ export default function Tabs() {
             >
               <MapOutlinedIcon />
               Maps
-            </a>
-
-            {/* Events Tab */}
-            <a
-              
-              onClick={() => handleTabClick("Events")}
-            className={`inline-flex items-center gap-2 border-b-2 ${
-              activeTab === "Events" ? "border-red-600 text-red-600" : "border-transparent text-gray-700"
-            } px-2 pb-4 text-sm font-medium transition-colors duration-200`}
-            >
-              <EventAvailableOutlinedIcon />
-              Events
             </a>
           </nav>
         </div>
