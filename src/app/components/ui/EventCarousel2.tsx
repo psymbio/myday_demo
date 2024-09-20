@@ -19,7 +19,6 @@ interface EventData {
   subtextLong: string;
 }
 
-
 export default function Carousel() {
   const events = [
     {
@@ -151,7 +150,7 @@ export default function Carousel() {
           ))}
         </div>
 
-        <div className="flex justify-center gap-2 sm:gap-3 w-full translate-y-3 sm:translate-y-5 mt-3">
+        <div className="flex justify-center gap-2 sm:gap-3 w-full translate-y-2 sm:translate-y-4 mt-2">
           {events.map((_, i) => (
             <div
               onClick={() => setCurrent(i)}
