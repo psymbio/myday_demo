@@ -42,10 +42,29 @@ const foodData: FoodItemData[] = [
 
 // Sample Restaurant Data
 const restaurantData: RestaurantItemData[] = [
-  { id: 0, name: 'Teya', text: 'PSP is a cashless building,purchases can be made via Teya, Chip and Pin and Apple Pay or Google Pay.To download the app,click here to scan a QR code with your mobile device.', subtext: 'Fresh vegetarian options', image: 'src="/image1.jpeg"' },
-  { id: 1, name: 'Mezzanine', text: 'The HSBC restruant serves breakfast and lunch presenting a variety of cuisines intended to showcase local ad seasonal produce,reflected in our weekly changing menu. Our Eat well Live Well programme supports your wellbeing, additionally we focus on vegan,vegetarian,and flexitarian diets.Microwaves are available for use to the rear of the restruant', subtext: 'Best seafood and meats', image: 'src="/images3.jpeg' },
-  { id: 2, name: 'Starbucks', text: 'Currently the worlds largest coffeehouse chain.Barista hot drinks,grab and go inclusing pastries,light lunches,sandwiches,salads,indulgent and healthy snacks.', subtext: 'Gluten-free options available', image: 'src="/images2.jpeg' }
+  {
+    id: 0,
+    name: 'Teya',
+    text: 'PSP is a cashless building, purchases can be made via Teya, Chip and Pin and Apple Pay or Google Pay. To download the app, click here to scan a QR code with your mobile device.',
+    subtext: 'Fresh vegetarian options',
+    image: '/restaurants/acai.jpg'
+  },
+  {
+    id: 1,
+    name: 'Mezzanine',
+    text: 'The HSBC restaurant serves breakfast and lunch presenting a variety of cuisines intended to showcase local and seasonal produce, reflected in our weekly changing menu. Our Eat Well Live Well programme supports your wellbeing, additionally, we focus on vegan, vegetarian, and flexitarian diets. Microwaves are available for use to the rear of the restaurant.',
+    subtext: 'Best seafood and meats',
+    image: '/restaurants/hummus.jpg'
+  },
+  {
+    id: 2,
+    name: 'Starbucks',
+    text: "Currently the world's largest coffeehouse chain. Barista hot drinks, grab and go including pastries, light lunches, sandwiches, salads, indulgent and healthy snacks.",
+    subtext: 'Gluten-free options available',
+    image: '/restaurants/starbucks.jpg'
+  }
 ];
+
 
 // Restaurant Item Component
 const RestaurantItem: React.FC<{ restaurant: RestaurantItemData; onClick: () => void }> = ({ restaurant, onClick }) => {
@@ -98,7 +117,7 @@ const FoodItemsPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-4">
+    <div className="min-h-screen p-4">
       <h1 className="text-2xl font-bold text-center mb-4">Restaurants</h1>
 
       {/* Filter Button */}
