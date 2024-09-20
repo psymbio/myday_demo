@@ -6,7 +6,7 @@ export default function NavigationBar() {
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="md:flex md:items-center md:gap-12">
-            <a className="block text-red-600" href="#">
+            <a className="block text-red-600" href="testing">
               <span className="sr-only">Home</span>
               <Image
                 src="/hsbc-logo-without-name.png"
@@ -15,7 +15,7 @@ export default function NavigationBar() {
                 height={0}
                 sizes="100vw"
                 style={{ height: "2.5rem", width: "auto" }}
-                className="mx-auto w-auto" // Optional className
+                className="mx-auto w-auto"
               />
             </a>
           </div>

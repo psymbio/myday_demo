@@ -102,7 +102,15 @@ export default function Carousel() {
 
   return (
     <div className="py-5">
-      <Heading2 heading="Events" />
+      <div className="flex items-center justify-between mb-4">
+        <Heading2 heading="Events" />
+        <a
+          className={`bg-red-600 hover:brightness-110 text-white rounded-md px-5 py-2.5 text-sm font-medium shadow`} // Removed mb-4 from here
+          href="events"
+        >
+          View all events
+        </a>
+      </div>
       <div className="overflow-hidden relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]">
         <div
           className="flex transition-transform ease-out duration-500"

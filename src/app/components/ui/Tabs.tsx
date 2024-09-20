@@ -108,10 +108,9 @@ export default function Tabs() {
 
       {/* Display TabCard based on active tab */}
       {activeTab === "Meetings" && <MyCombinedMeetings meetings={meetings} bookings={bookings} />}
-      {activeTab === "My Group" && <TabCard title="My Group Content" content="Here are the Meetings..." />}
-      {activeTab === "Food & Drink" && <TabCard title="Food & Drink Content" content="Here are the Meetings..." />}
-      {activeTab === "Maps" && <TabCard title="Maps Content" content="Here are the Meetings..." />}
-      {activeTab === "Events" && <TabCard title="Events Content" content="Here are the Meetings..." />}
+      {activeTab === "My Group" && <TabCard title="My Group Content" content="Here are the members in your team" />}
+      {activeTab === "Food & Drink" && (<TabCard title="Food & Drink Content" content="Here are your orders" buttonText="Visit Food & Drink" buttonLink="food_drink" />)}
+      {activeTab === "Maps" && <TabCard title="Maps Content" content="Here is your booking" />}
       
     </div>
   );
