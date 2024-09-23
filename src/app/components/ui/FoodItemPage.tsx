@@ -159,7 +159,7 @@ const RestaurantItem: React.FC<{
               </button>
             </div>
             <h2 className="text-2xl font-bold text-center mb-4">
-              {restaurantData.find(r => r.id === selectedRestaurant)?.name}'s Menu
+              {restaurantData.find(r => r.id === selectedRestaurant)?.name}&apos;s Menu
             </h2>
             {/* Food Items Section */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
