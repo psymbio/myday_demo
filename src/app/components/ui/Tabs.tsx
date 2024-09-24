@@ -8,6 +8,7 @@ import RestaurantOutlinedIcon from '@mui/icons-material/RestaurantOutlined';
 import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
 // import EventAvailableOutlinedIcon from '@mui/icons-material/EventAvailableOutlined';
 import MyCombinedMeetings from "./MyCombinedMeetings";
+import MyGroupWidget from "./MyGroupWidget";
 
 export default function Tabs() {
   const [activeTab, setActiveTab] = useState("Meetings");
@@ -109,7 +110,7 @@ export default function Tabs() {
 
       {/* Display TabCard based on active tab */}
       {activeTab === "Meetings" && <MyCombinedMeetings meetings={meetings} bookings={bookings} />}
-      {activeTab === "My Group" && <TabCard title="My Group Content" content="Here are the members in your team" />}
+      {activeTab === "My Group" && <MyGroupWidget></MyGroupWidget>}
       {activeTab === "Food & Drink" && (<TabCard title="Food & Drink Content" content="Here are your orders" buttonText="Visit Food & Drink" buttonLink="food_drink" />)}
       {activeTab === "Maps" && <TabCard title="Maps Content" content="Here is your booking" />}
       
