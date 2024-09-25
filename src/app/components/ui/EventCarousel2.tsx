@@ -6,7 +6,8 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Heading2 from "./Heading2";
 import Heading3 from "./Heading3";
 import CustomButton from "./CustomButton";
-import EventPopup from "./EventPopup"; // Import the EventPopup component
+import EventPopup from "./EventPopup";
+import events from "../../data/events.json";
 
 interface EventData {
   id: number;
@@ -20,53 +21,6 @@ interface EventData {
 }
 
 export default function Carousel() {
-  const events = [
-    {
-      id: 1,
-      startDate: "2024-09-02T00:00:00Z",
-      endDate: "2024-09-02T00:00:00Z",
-      time: "16:00 - 17:00",
-      text: "DevOps",
-      subtext: "Event for DevOps Training",
-      image: "/events/easter.jpg",
-      subtextLong:
-        "In-depth training on DevOps principles, tools, and workflows.",
-    },
-    {
-      id: 2,
-      startDate: "2024-09-02T00:00:00Z",
-      endDate: "2024-09-04T00:00:00Z",
-      time: "16:00 - 17:00",
-      text: "Scrum Meeting",
-      subtext: "Daily Scrum Stand-up",
-      image: "/events/easter.jpg",
-      subtextLong:
-        "In-depth training on DevOps principles, tools, and workflows.",
-    },
-    {
-      id: 3,
-      startDate: "2024-09-02T00:00:00Z",
-      endDate: "2024-09-04T00:00:00Z",
-      time: "All day",
-      text: "Frontend Review",
-      subtext: "Discuss UI Improvements",
-      image: "/events/easter.jpg",
-      subtextLong:
-        "In-depth training on DevOps principles, tools, and workflows.",
-    },
-    {
-      id: 4,
-      startDate: "2024-10-05T00:00:00Z",
-      endDate: "2024-10-05T00:00:00Z",
-      time: "09:00 - 10:00",
-      text: "Backend Review",
-      subtext: "Review backend architecture",
-      image: "/events/easter.jpg",
-      subtextLong:
-        "In-depth training on DevOps principles, tools, and workflows.",
-    },
-  ];
-
   const [current, setCurrent] = useState(0);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState<EventData | null>(null);

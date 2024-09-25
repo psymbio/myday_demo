@@ -65,27 +65,28 @@ export default function MyGroupWidget() {
 
           return (
             <div key={index} className="relative flex flex-col items-center">
-              <div className="group relative w-16 h-16 rounded-full overflow-hidden mb-1 border-2 border-gray-200">
+              <div className="relative group w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full mb-1 border-2 border-gray-200">
+                {/* Image container without overflow-hidden */}
                 <Image
                   src={`/people/${profile.profile_picture}`}
                   alt={`${profile.first_name} ${profile.last_name}`}
                   fill={true}
                   unoptimized={true}
-                  className="object-cover object-center"
+                  className="object-cover object-center rounded-full" // Add rounded-full to make the image circular
                 />
                 {/* Tooltip */}
                 <div className="absolute left-1/2 bottom-full mb-2 px-2 py-1 bg-gray-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity -translate-x-1/2">
                   {status.tooltip}
                 </div>
+                {/* Status Icon */}
+                <div
+                  className={`absolute bottom-0 right-0 w-2 h-2 sm:w-4 sm:h-4 md:w-5 md:h-5 rounded-full border-[1.5px] border-gray-50 flex items-center justify-center ${status.color}`}
+                  title={status.tooltip}
+                >
+                  <div className="scale-75 flex">{status.icon}</div>
+                </div>
               </div>
-              {/* Status Icon */}
-              <div
-                className={`absolute bottom-0 right-0 -translate-x-5 -translate-y-6 w-3.5 h-3.5 rounded-full border-[1.5px] border-gray-50 flex items-center justify-center ${status.color}`}
-                title={status.tooltip}
-              >
-                <div className="scale-50 flex">{status.icon}</div>
-              </div>
-              <p className="text-xs font-medium text-gray-800 text-center">
+              <p className="text-xs sm:text-sm md:text-base font-medium text-gray-800 text-center">
                 {profile.first_name} {profile.last_name}
               </p>
             </div>
