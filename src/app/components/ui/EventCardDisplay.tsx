@@ -6,6 +6,7 @@ import EventPopup from "./EventPopup"; // Import the EventPopup component
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { format, addMonths, subMonths, isSameMonth } from "date-fns";
+import events from "../../data/events.json";
 
 interface EventData {
   id: number;
@@ -22,53 +23,6 @@ export default function EventCardDisplay() {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [selectedEvent, setSelectedEvent] = useState<EventData | null>(null);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-
-  const events = [
-    {
-      id: 1,
-      startDate: "2024-09-02T00:00:00Z",
-      endDate: "2024-09-02T00:00:00Z",
-      time: "16:00 - 17:00",
-      text: "DevOps",
-      subtext: "Event for DevOps Training",
-      image: "/events/easter.jpg",
-      subtextLong:
-        "In-depth training on DevOps principles, tools, and workflows.",
-    },
-    {
-      id: 2,
-      startDate: "2024-09-02T00:00:00Z",
-      endDate: "2024-09-04T00:00:00Z",
-      time: "16:00 - 17:00",
-      text: "Scrum Meeting",
-      subtext: "Daily Scrum Stand-up",
-      image: "/events/easter.jpg",
-      subtextLong:
-        "In-depth training on DevOps principles, tools, and workflows.",
-    },
-    {
-      id: 3,
-      startDate: "2024-09-02T00:00:00Z",
-      endDate: "2024-09-04T00:00:00Z",
-      time: "All day",
-      text: "Frontend Review",
-      subtext: "Discuss UI Improvements",
-      image: "/events/easter.jpg",
-      subtextLong:
-        "In-depth training on DevOps principles, tools, and workflows.",
-    },
-    {
-      id: 4,
-      startDate: "2024-10-05T00:00:00Z",
-      endDate: "2024-10-05T00:00:00Z",
-      time: "09:00 - 10:00",
-      text: "Backend Review",
-      subtext: "Review backend architecture",
-      image: "/events/easter.jpg",
-      subtextLong:
-        "In-depth training on DevOps principles, tools, and workflows.",
-    },
-  ];
 
   const changeMonth = (direction: "back" | "forward") => {
     if (direction === "back") {
@@ -105,7 +59,7 @@ export default function EventCardDisplay() {
   };
 
   return (
-    <div className="p-6 bg-gray-100">
+    <div className="p-8 bg-gray-100">
       <h1 className="text-2xl font-bold mb-6 text-gray-800">Upcoming Events</h1>
 
       <div className="flex justify-between items-center mb-6">

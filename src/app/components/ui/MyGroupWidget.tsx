@@ -42,6 +42,11 @@ const statusOptions: Status[] = [
     icon: <CloseIcon fontSize="small" className="text-white" />,
     tooltip: "In a meeting",
   },
+  {
+    color: "bg-yellow-400",
+    icon: <CloseIcon fontSize="small" className="text-white" />,
+    tooltip: "Away",
+  },
 ];
 
 export default function MyGroupWidget() {
