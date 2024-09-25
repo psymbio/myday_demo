@@ -102,7 +102,7 @@ export default function MyGroupWidget() {
       <div className="flex justify-between items-center">
         <span>Looking for someone else?</span>
         <a href="/mygroup" className="text-red-600 hover:underline">
-          Go to MyGroup
+          Go to My Group
         </a>
       </div>
     </div>
