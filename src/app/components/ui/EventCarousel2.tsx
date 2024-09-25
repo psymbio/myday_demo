@@ -8,6 +8,9 @@ import Heading3 from "./Heading3";
 import CustomButton from "./CustomButton";
 import EventPopup from "./EventPopup";
 import events from "../../data/events.json";
+import { useDispatch, useSelector } from 'react-redux';
+import { registerForEvent, unregisterForEvent } from "@/slices/registrationSlice";
+import { RootState } from "@/app/store";
 
 interface EventData {
   id: number;
@@ -21,6 +24,21 @@ interface EventData {
 }
 
 export default function Carousel() {
+  const dispatch = useDispatch();
+  
+  // Access the list of registered events from Redux state
+  const registeredEvents = useSelector((state: RootState) => state.registration.registeredEvents);
+
+  const handleRegister = (eventId: number) => {
+    if (registeredEvents.includes(eventId)) {
+      console.log("Unregistering for event", eventId);
+      dispatch(unregisterForEvent(eventId));
+    } else {
+      console.log("Registering for event", eventId);
+      dispatch(registerForEvent(eventId));
+    }
+  };
+
   const [current, setCurrent] = useState(0);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState<EventData | null>(null);
@@ -35,7 +53,6 @@ export default function Carousel() {
     else setCurrent(current + 1);
   };
 
-  // Automatically change events every 12 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
@@ -59,7 +76,7 @@ export default function Carousel() {
       <div className="flex items-center justify-between mb-4">
         <Heading2 heading="Events" />
         <a
-          className={`bg-red-600 hover:brightness-110 text-white rounded-md px-5 py-2.5 text-sm font-medium shadow`} // Removed mb-4 from here
+          className="bg-red-600 hover:brightness-110 text-white rounded-md px-5 py-2.5 text-sm font-medium shadow"
           href="events"
         >
           View all events
@@ -78,7 +95,7 @@ export default function Carousel() {
                 backgroundImage: `url(${slide.image})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
-              }} // Added background styles
+              }}
             >
               <div className="w-full h-full relative rounded-lg flex flex-col justify-center items-start p-6 sm:p-10 lg:p-12 text-white shadow bg-black bg-opacity-50">
                 <Heading3 heading={slide.text} />
@@ -94,9 +111,10 @@ export default function Carousel() {
                       onClick={openPopup}
                     />
                     <CustomButton
-                      bgColor="bg-gray-700"
+                      bgColor={registeredEvents.includes(slide.id) ? "bg-gray-700" : "bg-gray-700"}
                       textColor="text-white"
-                      text="Register"
+                      text={registeredEvents.includes(slide.id) ? "Unregister" : "Register"}
+                      onClick={() => handleRegister(slide.id)}
                     />
                   </div>
 

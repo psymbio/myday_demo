@@ -1,6 +1,12 @@
 import React from "react";
 import { format, isSameDay } from "date-fns";
 import CustomButton from "./CustomButton";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  registerForEvent,
+  unregisterForEvent,
+} from "@/slices/registrationSlice";
+import { RootState } from "@/app/store";
 
 interface EventData {
   id: number;
@@ -19,6 +25,23 @@ interface EventCardProps {
 }
 
 export default function EventCard({ eventData, onView }: EventCardProps) {
+  const dispatch = useDispatch();
+
+  // Access the list of registered events from Redux state
+  const registeredEvents = useSelector(
+    (state: RootState) => state.registration.registeredEvents
+  );
+
+  const handleRegister = (eventId: number) => {
+    if (registeredEvents.includes(eventId)) {
+      console.log("Unregistering for event", eventId);
+      dispatch(unregisterForEvent(eventId));
+    } else {
+      console.log("Registering for event", eventId);
+      dispatch(registerForEvent(eventId));
+    }
+  };
+
   const formatDateRange = (startDate: Date, endDate: Date) => {
     if (isSameDay(startDate, endDate)) {
       return format(startDate, "E d");
@@ -30,6 +53,7 @@ export default function EventCard({ eventData, onView }: EventCardProps) {
   return (
     <div className="flex flex-col space-y-4">
       {eventData.map((event) => {
+        const isRegistered = registeredEvents.includes(event.id);
         const start = new Date(event.startDate);
         const end = new Date(event.endDate);
         const isAllDayEvent = event.time.toLowerCase() === "all day";
@@ -62,9 +86,14 @@ export default function EventCard({ eventData, onView }: EventCardProps) {
                   onClick={() => onView(event)}
                 />
                 <CustomButton
-                  bgColor="bg-gray-700"
+                  bgColor={isRegistered ? "bg-gray-700" : "bg-red-600"}
                   textColor="text-white"
-                  text="Register"
+                  text={isRegistered ? "Unregister" : "Register"}
+                  onClick={() => {
+                    isRegistered
+                      ? dispatch(unregisterForEvent(event.id))
+                      : dispatch(registerForEvent(event.id));
+                  }}
                 />
               </div>
             </div>
