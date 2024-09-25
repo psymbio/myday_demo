@@ -2,7 +2,7 @@ import ChatBot from "../components/ui/ChatBot";
 import Header from "../components/ui/Header";
 import HeaderImage from "../components/ui/HeaderImage";
 import NavigationBar from "../components/ui/NavigationBar";
-import EventCardDisplay from "../components/ui/EventCardDisplay";
+import MyGroupDisplay from "../components/ui/MyGroupDisplay";
 
 export default function TestingPage() {
   return (
@@ -10,7 +10,7 @@ export default function TestingPage() {
       <NavigationBar></NavigationBar>
       <Header></Header>
       <HeaderImage></HeaderImage>
-      <EventCardDisplay></EventCardDisplay>
+      <MyGroupDisplay></MyGroupDisplay>
       <ChatBot></ChatBot>
     </div>
   );

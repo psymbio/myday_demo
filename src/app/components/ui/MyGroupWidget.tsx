@@ -77,7 +77,7 @@ export default function MyGroupWidget() {
                   alt={`${profile.first_name} ${profile.last_name}`}
                   fill={true}
                   unoptimized={true}
-                  className="object-cover object-center rounded-full" // Add rounded-full to make the image circular
+                  className="object-cover object-center rounded-full"
                 />
                 {/* Tooltip */}
                 <div className="absolute left-1/2 bottom-full mb-2 px-2 py-1 min-w-20 max-w-30 bg-gray-800 text-white text-xs text-center rounded-md opacity-0 group-hover:opacity-100 transition-opacity -translate-x-1/2">
