@@ -23,22 +23,22 @@ interface Status {
 // Predefined status options
 const statusOptions: Status[] = [
   {
-    color: "bg-green-500",
+    color: "bg-lime-500",
     icon: <DoneIcon fontSize="small" className="text-white" />,
     tooltip: "In office",
   },
   {
-    color: "bg-blue-500",
+    color: "bg-cyan-500",
     icon: <RampRightIcon fontSize="small" className="text-white" />,
     tooltip: "On the way",
   },
   {
-    color: "bg-purple-500",
+    color: "bg-fuchsia-500",
     icon: <ArrowOutwardIcon fontSize="small" className="text-white" />,
     tooltip: "OOO",
   },
   {
-    color: "bg-red-500",
+    color: "bg-red-600",
     icon: <CloseIcon fontSize="small" className="text-white" />,
     tooltip: "In a meeting",
   },
@@ -83,7 +83,7 @@ export default function MyGroupWidget() {
                   className={`absolute bottom-1 right-1 w-2 h-2 sm:w-4 sm:h-4 md:w-5 md:h-5 rounded-full border-[1.5px] border-gray-50 flex items-center justify-center ${status.color}`}
                   title={status.tooltip}
                 >
-                  <div className="scale-75 flex">{status.icon}</div>
+                  <div className="scale-50 flex justify-center">{status.icon}</div>
                 </div>
               </div>
               <p className="text-xs sm:text-sm md:text-base font-medium text-gray-800 text-center">
