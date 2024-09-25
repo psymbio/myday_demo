@@ -1,0 +1,75 @@
+{
+    "scenarios": [
+      {
+        "id": 1,
+        "scenario_name": "Check Group Office Attendance",
+        "messages": [
+          {
+            "type": "bot",
+            "content": "Hello Matthew how may I help you today?"
+          },
+          {
+            "type": "user",
+            "content": "when are people going to be in office next week?"
+          },
+          {
+            "type": "bot",
+            "content": "Looking at your group here's how it looks like for the next week:",
+            "component": {
+              "type": "calendar",
+              "data": [
+                {
+                  "day": "Monday, 1",
+                  "profiles": [
+                    {
+                      "profile_picture": "fp01.jpg",
+                      "first_name": "Emily",
+                      "last_name": "Johnson",
+                      "email": "emily.johnson@hsbc.com",
+                      "department": "Corporate Services",
+                      "job_title": "Senior Manager"
+                    },
+                    {
+                      "profile_picture": "fp02.jpg",
+                      "first_name": "John",
+                      "last_name": "Doe",
+                      "email": "john.doe@hsbc.com",
+                      "department": "Finance",
+                      "job_title": "Analyst"
+                    }
+                  ]
+                },
+                {
+                  "day": "Tuesday, 2",
+                  "profiles": [
+                    {
+                      "profile_picture": "fp03.jpg",
+                      "first_name": "Sarah",
+                      "last_name": "Williams",
+                      "email": "sarah.williams@hsbc.com",
+                      "department": "Legal",
+                      "job_title": "Advisor"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "type": "bot",
+            "content": "Friday looks like a good day to network. Would you like me to update your status to attending office that day?"
+          },
+          {
+            "type": "user",
+            "content": "Yes"
+          },
+          {
+            "type": "bot",
+            "content": "Great I've done that for you. You've got some meetings that day, click here to add a room booking.",
+            "url": "https://bookaroom.com"
+          }
+        ]
+      }
+    ]
+  }
+  

@@ -1,0 +1,117 @@
+{
+    "scenarios": [
+      {
+        "id": 1,
+        "scenario_name": "Check Group Office Attendance",
+        "messages": [
+          {
+            "type": "bot",
+            "content": "Hello Matthew, how may I help you today?"
+          },
+          {
+            "type": "user",
+            "content": "When are people going to be in the office next week?"
+          },
+          {
+            "type": "bot",
+            "content": "Looking at your group here's how it looks like for the next week:",
+            "component": {
+              "type": "calendar",
+              "data": [
+                { "day": "Monday", "profiles": [
+                    {
+                      "profile_picture": "fp01.jpg",
+                      "first_name": "Emily",
+                      "last_name": "Johnson",
+                      "email": "emily.johnson@hsbc.com",
+                      "department": "Corporate Services",
+                      "job_title": "Senior Manager"
+                    },
+                    {
+                      "profile_picture": "fp02.jpg",
+                      "first_name": "John",
+                      "last_name": "Doe",
+                      "email": "john.doe@hsbc.com",
+                      "department": "Finance",
+                      "job_title": "Analyst"
+                    }
+                  ] },
+                { "day": "Tuesday", "profiles": [
+                    {
+                      "profile_picture": "fp01.jpg",
+                      "first_name": "Emily",
+                      "last_name": "Johnson",
+                      "email": "emily.johnson@hsbc.com",
+                      "department": "Corporate Services",
+                      "job_title": "Senior Manager"
+                    },
+                    {
+                      "profile_picture": "fp02.jpg",
+                      "first_name": "John",
+                      "last_name": "Doe",
+                      "email": "john.doe@hsbc.com",
+                      "department": "Finance",
+                      "job_title": "Analyst"
+                    }
+                  ] }
+              ]
+            }
+          },
+          {
+            "type": "bot",
+            "content": "Friday looks like a good day to network. Would you like me to update your status to attending office that day?"
+          },
+          {
+            "type": "user",
+            "content": "Yes"
+          },
+          {
+            "type": "bot",
+            "content": "Great I've done that for you. You've got some meetings that day, click here to book a room.",
+            "url": {
+              "text": "Click here",
+              "link": "https://example.com/bookaroom"
+            }
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "scenario_name": "Check Restaurant Menu",
+        "messages": [
+          {
+            "type": "bot",
+            "content": "Hello Paul, how can I assist you today?"
+          },
+          {
+            "type": "user",
+            "content": "What are the lunch choices in the restaurant today?"
+          },
+          {
+            "type": "bot",
+            "content": "You've set your preferences for gluten-free food, here are the gluten-free food choices today:",
+            "component": {
+              "type": "foodMenu",
+              "data": [
+                { "id": 1, "name": "Veggie Burger", "cost": 5.99, "glutenFree": true },
+                { "id": 2, "name": "Grilled Chicken Salad", "cost": 7.49, "glutenFree": true }
+              ]
+            }
+          },
+          {
+            "type": "user",
+            "content": "Is it busy now?"
+          },
+          {
+            "type": "bot",
+            "content": "I can see 78% of the seats are occupied and the average wait time is 5 minutes.",
+            "url": {
+              "text": "Click here to order now",
+              "link": "https://example.com/order"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  
