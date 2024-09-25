@@ -75,12 +75,12 @@ export default function MyGroupWidget() {
                   className="object-cover object-center rounded-full" // Add rounded-full to make the image circular
                 />
                 {/* Tooltip */}
-                <div className="absolute left-1/2 bottom-full mb-2 px-2 py-1 bg-gray-800 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity -translate-x-1/2">
+                <div className="absolute left-1/2 bottom-full mb-2 px-2 py-1 min-w-20 max-w-30 bg-gray-800 text-white text-xs text-center rounded-md opacity-0 group-hover:opacity-100 transition-opacity -translate-x-1/2">
                   {status.tooltip}
                 </div>
                 {/* Status Icon */}
                 <div
-                  className={`absolute bottom-0 right-0 w-2 h-2 sm:w-4 sm:h-4 md:w-5 md:h-5 rounded-full border-[1.5px] border-gray-50 flex items-center justify-center ${status.color}`}
+                  className={`absolute bottom-1 right-1 w-2 h-2 sm:w-4 sm:h-4 md:w-5 md:h-5 rounded-full border-[1.5px] border-gray-50 flex items-center justify-center ${status.color}`}
                   title={status.tooltip}
                 >
                   <div className="scale-75 flex">{status.icon}</div>
