@@ -53,11 +53,11 @@ export default function RestaurantDisplay() {
   // Randomize busy status on refresh
   useEffect(() => {
     const updatedStatuses = restaurantStatuses.map((restaurant) => {
-      const randomStatus = Math.random() > 0.5 ? "Busy" : "Not too busy";
+      const randomStatus: "Busy" | "Not too busy" = Math.random() > 0.5 ? "Busy" : "Not too busy";
       return { ...restaurant, busyStatus: randomStatus };
     });
     setRestaurantStatuses(updatedStatuses);
-  }, []); // Empty dependency array to run only once on mount
+  }, []);
 
   return (
     <div className="p-8 bg-gray-100 min-h-screen">
