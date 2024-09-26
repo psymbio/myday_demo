@@ -32,16 +32,6 @@ export default function EventCard({ eventData, onView }: EventCardProps) {
     (state: RootState) => state.registration.registeredEvents
   );
 
-  const handleRegister = (eventId: number) => {
-    if (registeredEvents.includes(eventId)) {
-      console.log("Unregistering for event", eventId);
-      dispatch(unregisterForEvent(eventId));
-    } else {
-      console.log("Registering for event", eventId);
-      dispatch(registerForEvent(eventId));
-    }
-  };
-
   const formatDateRange = (startDate: Date, endDate: Date) => {
     if (isSameDay(startDate, endDate)) {
       return format(startDate, "E d");
