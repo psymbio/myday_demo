@@ -1,29 +1,21 @@
 
 import Head from 'next/head';
-// import FoodItemData from '../components/ui/FoodItemData';
-import FoodItemPage from '../components/ui/FoodItemPage';
+import RestaurantDisplay from '../components/ui/RestDisplay';
 import Header from '../components/ui/Header';
+import NavigationBar from '../components/ui/NavigationBar';
+import ChatBot from '../components/ui/ChatBot';
+import HeaderImage from '../components/ui/HeaderImage';
 
 
-function Home () {
+
+export default function FoodDrink() {
   return (
     <div>
-      <Head>
-        <title>Food Delivery Menu</title>
-        <meta name="description" content="Food items with veg and non-veg options" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <Header />
-      <main className="bg-gray-50 min-h-screen">
-        <section className="max-w-6xl mx-auto py-8">
-         
-          <FoodItemPage />
-        </section>
-      </main>
+      <NavigationBar></NavigationBar>
+      <Header></Header>
+      <HeaderImage></HeaderImage>
+      <RestaurantDisplay></RestaurantDisplay>
+      <ChatBot></ChatBot>
     </div>
   );
-};
-
-export default Home;
-
+}
