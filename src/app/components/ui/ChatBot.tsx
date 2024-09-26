@@ -112,7 +112,7 @@ export default function ChatBot() {
       const scenario = scenarioArray.find((s) => s.id === scenarioId);
       if (scenario) {
         let i = 0;
-        const delay = 2500; // Delay between each message
+        const delay = 3500; // Delay between each message
         const intervalId = setInterval(() => {
           if (i < scenario.messages.length) {
             // Ensure each message from scenario has a defined structure
