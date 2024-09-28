@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React from 'react'; // Removed unused `useState`
 import FoodCard from './FoodCard';
 import foodItems from '../../data/fooditems.json'; // Importing data from a JSON file
 
@@ -14,7 +14,15 @@ interface FoodItem {
 }
 
 const FoodCardDisplay: React.FC = () => {
-  const [cart, setCart] = useState<{ [key: number]: number }>({}); // Cart is a dictionary {id: quantity}
+  const handleAddToCart = (id: number) => {
+    console.log(`Added item with id ${id} to the cart.`);
+    // Implement the add to cart functionality here
+  };
+
+  const handleRemoveFromCart = (id: number) => {
+    console.log(`Removed item with id ${id} from the cart.`);
+    // Implement the remove from cart functionality here
+  };
 
   return (
     <div className="p-6">
@@ -28,11 +36,11 @@ const FoodCardDisplay: React.FC = () => {
             cost={item.cost}
             veg={item.veg}
             pescatarian={item.pescatarian}
-            glutenFree={item.glutenFree} onAddToCart={function (id: number): void {
-              throw new Error('Function not implemented.');
-            } } onRemoveFromCart={function (id: number): void {
-              throw new Error('Function not implemented.');
-            } } cartQuantity={0}          />
+            glutenFree={item.glutenFree}
+            onAddToCart={handleAddToCart}
+            onRemoveFromCart={handleRemoveFromCart}
+            cartQuantity={0}
+          />
         ))}
       </div>
     </div>

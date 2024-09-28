@@ -1,7 +1,9 @@
 "use client";
-import React, { useEffect, useState } from 'react';
+import React from 'react'; // Removed unused `useEffect` and `useState`
 import CustomButton from './CustomButton';
-import restaurants from '../../data/restaurants.json'
+// Removed unused `restaurants` import
+
+import Image from 'next/image'; // Import Next.js Image component
 
 // Define a type for restaurant data
 interface Restaurant {
@@ -16,7 +18,14 @@ interface Restaurant {
 const RestaurantCard: React.FC<{ restaurant: Restaurant }> = ({ restaurant }) => {
   return (
     <div className="max-w-sm bg-white rounded-lg shadow-lg overflow-hidden m-4">
-      <img src={restaurant.image} alt={restaurant.name} className="w-full h-48 object-cover" />
+      {/* Use Next.js Image for optimized image loading */}
+      <Image
+        src={restaurant.image}
+        alt={restaurant.name}
+        width={400}
+        height={192}
+        className="w-full h-48 object-cover"
+      />
       <div className="p-4">
         <h2 className="text-2xl font-semibold">{restaurant.name}</h2>
         <p className="text-gray-500 mt-2">{restaurant.text}</p>
