@@ -1,5 +1,6 @@
 // components/CheckoutPopup.tsx
 import React from "react";
+import CustomButton from "./CustomButton";
 
 interface CheckoutPopupProps {
   itemName: string;
@@ -14,12 +15,18 @@ const CheckoutPopup: React.FC<CheckoutPopupProps> = ({ itemName, onConfirm, onCa
         <h2 className="font-medium text-lg mb-4">Remove Item</h2>
         <p className="text-gray-600 mb-6">Are you sure you want to remove {itemName} from your cart?</p>
         <div className="flex justify-end gap-4">
-          <button className="bg-red-600 text-white px-4 py-2 rounded" onClick={onConfirm}>
-            Yes, Remove
-          </button>
-          <button className="bg-gray-300 text-black px-4 py-2 rounded" onClick={onCancel}>
-            Cancel
-          </button>
+        <CustomButton
+            bgColor="bg-red-600"
+            textColor="text-white"
+            text="Close"
+            onClick={onConfirm}
+          />
+          <CustomButton
+            bgColor="bg-gray-700"
+            textColor="text-white"
+            text="Close"
+            onClick={onCancel}
+          />
         </div>
       </div>
     </div>
