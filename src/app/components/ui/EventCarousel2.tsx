@@ -9,7 +9,7 @@ import CustomButton from "./CustomButton";
 import EventPopup from "./EventPopup";
 import events from "../../data/events.json";
 import { useDispatch, useSelector } from 'react-redux';
-import { registerForEvent, unregisterForEvent } from "@/slices/registrationSlice";
+import { registerForEvent, unregisterForEvent, setDefaultEvents } from "@/slices/registrationSlice";
 import { RootState } from "@/app/store";
 
 interface EventData {
@@ -26,11 +26,17 @@ interface EventData {
 export default function Carousel() {
   const dispatch = useDispatch();
   
-  // Access the list of registered events from Redux state
+  // Load registered events from Redux store
   const registeredEvents = useSelector((state: RootState) => state.registration.registeredEvents);
 
+  // Dispatch default registration status for all events if not already present in store
+  useEffect(() => {
+    const eventIds = events.map(event => event.id);
+    dispatch(setDefaultEvents(eventIds));
+  }, [dispatch]);
+
   const handleRegister = (eventId: number) => {
-    if (registeredEvents.includes(eventId)) {
+    if (registeredEvents[eventId]) {
       console.log("Unregistering for event", eventId);
       dispatch(unregisterForEvent(eventId));
     } else {
@@ -111,9 +117,9 @@ export default function Carousel() {
                       onClick={openPopup}
                     />
                     <CustomButton
-                      bgColor={registeredEvents.includes(slide.id) ? "bg-gray-700" : "bg-gray-700"}
+                      bgColor={registeredEvents[slide.id] ? "bg-gray-700" : "bg-gray-700"}
                       textColor="text-white"
-                      text={registeredEvents.includes(slide.id) ? "Unregister" : "Register"}
+                      text={registeredEvents[slide.id] ? "Unregister" : "Register"}
                       onClick={() => handleRegister(slide.id)}
                     />
                   </div>

@@ -17,11 +17,14 @@ interface EventPopupProps {
 export default function EventPopup({ event, onClose }: EventPopupProps) {
   const dispatch = useDispatch();
 
-  // Access the list of registered events from Redux state
+  // Access the registered events object from Redux state
   const registeredEvents = useSelector((state: RootState) => state.registration.registeredEvents);
 
+  // Check if the event is registered using the event ID
+  const isRegistered = registeredEvents[event.id] ?? false;
+
   const handleRegister = () => {
-    if (registeredEvents.includes(event.id)) {
+    if (isRegistered) {
       console.log("Unregistering for event", event.id);
       dispatch(unregisterForEvent(event.id));
     } else {
@@ -53,9 +56,9 @@ export default function EventPopup({ event, onClose }: EventPopupProps) {
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row sm:gap-4">
           <CustomButton
-            bgColor={registeredEvents.includes(event.id) ? "bg-gray-700" : "bg-red-600"}
+            bgColor={isRegistered ? "bg-gray-700" : "bg-red-600"}
             textColor="text-white"
-            text={registeredEvents.includes(event.id) ? "Unregister" : "Register"}
+            text={isRegistered ? "Unregister" : "Register"}
             onClick={handleRegister}
           />
           <CustomButton

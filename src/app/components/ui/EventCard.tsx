@@ -27,7 +27,7 @@ interface EventCardProps {
 export default function EventCard({ eventData, onView }: EventCardProps) {
   const dispatch = useDispatch();
 
-  // Access the list of registered events from Redux state
+  // Access the registered events from Redux state
   const registeredEvents = useSelector(
     (state: RootState) => state.registration.registeredEvents
   );
@@ -43,7 +43,8 @@ export default function EventCard({ eventData, onView }: EventCardProps) {
   return (
     <div className="flex flex-col space-y-4">
       {eventData.map((event) => {
-        const isRegistered = registeredEvents.includes(event.id);
+        // Use the event ID to check if the event is registered
+        const isRegistered = registeredEvents[event.id] ?? false;
         const start = new Date(event.startDate);
         const end = new Date(event.endDate);
         const isAllDayEvent = event.time.toLowerCase() === "all day";
