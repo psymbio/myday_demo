@@ -2,14 +2,14 @@
 import { useState } from "react";
 import TabCard from "./TabCard";
 // hello
-import TableRestaurantOutlinedIcon from '@mui/icons-material/TableRestaurantOutlined';
-import GroupsOutlinedIcon from '@mui/icons-material/GroupsOutlined';
-import RestaurantOutlinedIcon from '@mui/icons-material/RestaurantOutlined';
-import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
+import TableRestaurantOutlinedIcon from '@mui/icons-material/TableRestaurantRounded';
+import GroupsOutlinedIcon from '@mui/icons-material/GroupsRounded';
+import RestaurantOutlinedIcon from '@mui/icons-material/RestaurantRounded';
+import MapOutlinedIcon from '@mui/icons-material/MapRounded';
 // import EventAvailableOutlinedIcon from '@mui/icons-material/EventAvailableOutlined';
 import MyCombinedMeetings from "./MyCombinedMeetings";
 import MyGroupWidget from "./MyGroupWidget";
-import RestaurantDisplay from "./RestaurantDisplay";
+import RestaurantDisplay from "./RestaurantWidget";
 
 export default function Tabs() {
   const [activeTab, setActiveTab] = useState("Meetings");

@@ -1,6 +1,6 @@
 
 
-import RestaurantDisplay from '../components/ui/RestDisplay';
+import RestaurantDisplay from '../components/ui/RestaurantDisplay';
 import Header from '../components/ui/Header';
 import NavigationBar from '../components/ui/NavigationBar';
 import ChatBot from '../components/ui/ChatBot';

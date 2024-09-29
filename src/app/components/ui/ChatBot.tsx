@@ -3,12 +3,16 @@ import { Key, useEffect, useRef, useState } from "react";
 import scenarios from "../../data/chatbot2.json";
 import ChatBubbleOutlineRoundedIcon from "@mui/icons-material/ChatBubbleOutlineRounded";
 import SendRoundedIcon from "@mui/icons-material/SendRounded";
+import GroupsRoundedIcon from '@mui/icons-material/GroupsRounded';
+import FastfoodRoundedIcon from '@mui/icons-material/FastfoodRounded';
 
 export default function ChatBot() {
   const [messages, setMessages] = useState<any[]>([]);
   const [input, setInput] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+  const [runningScenario, setRunningScenario] = useState<number | null>(null); // Track the running scenario
   const messageContainerRef = useRef<HTMLDivElement>(null);
+  const intervalIdRef = useRef<NodeJS.Timeout | null>(null); // Store the interval ID
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
@@ -105,15 +109,36 @@ export default function ChatBot() {
       setInput(""); // Clear input after sending
     }
   };
-  
+
   const playScenario = (scenarioId: number) => {
     const scenarioArray = scenarios.scenarios;
+
     if (Array.isArray(scenarioArray)) {
       const scenario = scenarioArray.find((s) => s.id === scenarioId);
       if (scenario) {
+        // If a scenario is already running, clear it before starting a new one
+        if (runningScenario !== null && intervalIdRef.current) {
+          clearInterval(intervalIdRef.current);
+          setRunningScenario(null);
+        }
+
+        // Clear existing messages before playing the new scenario
+        setMessages([]);
+        setRunningScenario(scenarioId);
+
         let i = 0;
         const delay = 3500; // Delay between each message
-        const intervalId = setInterval(() => {
+        
+        // Immediately show the first message without delay
+        if (scenario.messages.length > 0) {
+          const firstMessage = scenario.messages[0];
+          if (firstMessage && firstMessage.type && firstMessage.content) {
+            setMessages((prev) => [...prev, firstMessage]);
+            i++; // Move to the next message
+          }
+        }
+
+        intervalIdRef.current = setInterval(() => {
           if (i < scenario.messages.length) {
             // Ensure each message from scenario has a defined structure
             const message = scenario.messages[i];
@@ -122,10 +147,12 @@ export default function ChatBot() {
               i++;
             } else {
               console.error("Invalid message structure in scenario");
-              clearInterval(intervalId); // Stop if invalid structure
+              clearInterval(intervalIdRef.current as NodeJS.Timeout); // Stop if invalid structure
+              setRunningScenario(null);
             }
           } else {
-            clearInterval(intervalId);
+            clearInterval(intervalIdRef.current as NodeJS.Timeout);
+            setRunningScenario(null);
           }
         }, delay);
       } else {
@@ -135,7 +162,6 @@ export default function ChatBot() {
       console.error("Scenarios is not an array");
     }
   };
-  
 
   return (
     <div className="fixed bottom-4 right-4">
@@ -153,7 +179,7 @@ export default function ChatBot() {
               onClick={() => playScenario(1)} // Play the first scenario
               className="rounded-md p-2 text-sm text-white bg-red-600 hover:bg-red-700"
             >
-              My Group
+              <GroupsRoundedIcon />
             </button>
 
             <button
@@ -161,7 +187,7 @@ export default function ChatBot() {
               onClick={() => playScenario(2)} // Play the second scenario (Food menu)
               className="rounded-md p-2 text-sm text-white bg-green-600 hover:bg-green-700"
             >
-              Food Menu
+              <FastfoodRoundedIcon />
             </button>
           </div>
 
