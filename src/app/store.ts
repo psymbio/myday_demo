@@ -3,6 +3,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist';
 import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web
 import registrationReducer from '../slices/registrationSlice';
+import cartReducer from '../slices/cartSlice'; // Import the cart slice
 import { combineReducers } from 'redux';
 
 // Create a persist configuration
@@ -14,6 +15,7 @@ const persistConfig = {
 // Combine reducers if you have multiple slices
 const rootReducer = combineReducers({
   registration: registrationReducer,
+  cart: cartReducer, // Add cart reducer to the combined reducers
 });
 
 // Create a persisted reducer
