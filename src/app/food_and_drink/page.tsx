@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import Header from '../components/ui/Header';
-import Menu from '../components/ui/Menu';
+import Header from '@/app/components/ui/Header';
+import Menu from '@/app/components/ui/Menu';
 
 interface MenuItemProps {
   id: number;
