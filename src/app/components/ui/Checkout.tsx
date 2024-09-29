@@ -67,6 +67,16 @@ export default function Checkout() {
     setIsPopupVisible(false);
   };
 
+  // Calculate subtotal, VAT, and total
+  const subtotal = items.reduce(
+    (total, item) => total + (cartItems[item.id] || 0) * item.cost,
+    0
+  );
+
+  const vat = subtotal * 0.1; // 10% VAT
+  const discount = subtotal * 0.02; // 2% discount
+  const total = subtotal + vat - discount; // Total after discount
+
   return (
     <section>
       <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
@@ -121,48 +131,19 @@ export default function Checkout() {
                 <dl className="space-y-0.5 text-lg text-gray-700">
                   <div className="flex justify-between">
                     <dt>Subtotal</dt>
-                    <dd>
-                      £
-                      {items
-                        .reduce(
-                          (total, item) =>
-                            total + (cartItems[item.id] || 0) * item.cost,
-                          0
-                        )
-                        .toFixed(2)}
-                    </dd>
+                    <dd>£{subtotal.toFixed(2)}</dd>
                   </div>
                   <div className="flex justify-between">
                     <dt>VAT</dt>
-                    <dd>
-                      £
-                      {(
-                        items.reduce(
-                          (total, item) =>
-                            total + (cartItems[item.id] || 0) * item.cost,
-                          0
-                        ) * 0.1
-                      ).toFixed(2)}
-                    </dd>
+                    <dd>£{vat.toFixed(2)}</dd>
                   </div>
                   <div className="flex justify-between">
-                    <dt>Discount</dt>
-                    <dd>-£20.00</dd>
+                    <dt>Discount (2%)</dt>
+                    <dd>-£{discount.toFixed(2)}</dd>
                   </div>
                   <div className="flex justify-between !text-base font-medium">
                     <dt>Total</dt>
-                    <dd>
-                      £
-                      {(
-                        items.reduce(
-                          (total, item) =>
-                            total + (cartItems[item.id] || 0) * item.cost,
-                          0
-                        ) *
-                          1.1 -
-                        20
-                      ).toFixed(2)}
-                    </dd>
+                    <dd>£{total.toFixed(2)}</dd>
                   </div>
                 </dl>
 
