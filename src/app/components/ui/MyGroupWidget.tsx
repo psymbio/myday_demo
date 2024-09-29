@@ -70,7 +70,8 @@ export default function MyGroupWidget() {
 
           return (
             <div key={index} className="relative flex flex-col items-center">
-              <div className="relative group w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full mb-1 border-2 border-gray-200">
+              <div className={`relative group w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full mb-1 border-4 border-${status?.color.replace("bg-", "")}`}>
+              {/* <div className={`relative group w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full mb-1 border-4 border-yellow-400`}> */}
                 {/* Image container without overflow-hidden */}
                 <Image
                   src={`/people/${profile.profile_picture}`}
@@ -84,12 +85,12 @@ export default function MyGroupWidget() {
                   {status.tooltip}
                 </div>
                 {/* Status Icon */}
-                <div
+                {/* <div
                   className={`absolute bottom-1 right-1 w-2 h-2 sm:w-4 sm:h-4 md:w-5 md:h-5 rounded-full border-[1.5px] border-gray-50 flex items-center justify-center ${status.color}`}
                   title={status.tooltip}
                 >
                   <div className="scale-50 flex justify-center">{status.icon}</div>
-                </div>
+                </div> */}
               </div>
               <p className="text-xs sm:text-sm md:text-base font-medium text-gray-800 text-center">
                 {profile.first_name} {profile.last_name}

@@ -101,7 +101,7 @@ export default function MyGroupDisplay() {
               className="bg-white shadow-lg rounded-lg p-5 flex flex-col items-center text-center"
             >
               {/* Profile Picture */}
-              <div className="relative group w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full mb-1 border-2 border-gray-200">
+              <div className={`relative group w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full mb-1 border-4 border-${status?.color.replace("bg-", "")}`}>
                 {/* Image container without overflow-hidden */}
                 <Image
                   src={`/people/${user.profile_picture}`}
@@ -115,14 +115,14 @@ export default function MyGroupDisplay() {
                   {status?.tooltip}
                 </div>
                 {/* Status Icon */}
-                <div
+                {/* <div
                   className={`absolute bottom-1 right-1 w-2 h-2 sm:w-4 sm:h-4 md:w-5 md:h-5 rounded-full border-[1.5px] border-gray-50 flex items-center justify-center ${status?.color}`}
                   title={status?.tooltip}
                 >
                   <div className="scale-50 flex justify-center">
                     {status?.icon}
                   </div>
-                </div>
+                </div> */}
               </div>
               {/* User Info */}
               <h2 className="text-lg font-semibold text-gray-800">
