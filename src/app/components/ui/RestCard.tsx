@@ -1,7 +1,7 @@
 "use client";
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import CustomButton from './CustomButton';
-import restaurants from '../../data/restaurants.json'
+//import restaurants from '../../data/restaurants.json'
 
 // Define a type for restaurant data
 interface Restaurant {

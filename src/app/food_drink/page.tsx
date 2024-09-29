@@ -1,10 +1,9 @@
 
 
 import RestaurantDisplay from '../components/ui/RestDisplay';
-import Header from '../components/ui/Header';
-import NavigationBar from '../components/ui/NavigationBar';
+import Header from '../components/ui/Header2';
 import ChatBot from '../components/ui/ChatBot';
-import HeaderImage from '../components/ui/HeaderImage';
+import HeaderImage from '../components/ui/HeaderImage2';
 
 
 
@@ -12,7 +11,7 @@ import HeaderImage from '../components/ui/HeaderImage';
 export default function FoodDrink() {
   return (
     <div>
-      <NavigationBar></NavigationBar>
+      
       <Header></Header>
       <HeaderImage></HeaderImage>
       <RestaurantDisplay></RestaurantDisplay>
