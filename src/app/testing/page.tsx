@@ -1,4 +1,4 @@
-import Carousel2 from "../components/ui/EventCarousel2";
+import Carousel from "../components/ui/EventCarousel3";
 import ChatBot from "../components/ui/ChatBot";
 import Header from "../components/ui/Header";
 import HeaderImage from "../components/ui/HeaderImage";
@@ -14,7 +14,7 @@ export default function TestingPage() {
       <HeaderImage></HeaderImage>
       <div className="px-5 sm:px-5 mx-10 md:mx-16 lg:mx-32">
         <Tabs />
-        <Carousel2 />
+        <Carousel />
         <QuickLinks />
       </div>
       <ChatBot></ChatBot>
