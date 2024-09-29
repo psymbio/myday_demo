@@ -23,6 +23,7 @@ const FoodCardDisplay: React.FC = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false); // Modal state
   const [tempFilter, setTempFilter] = useState({ ...filter }); // Temporary filter for modal
+  const [showFoodList, setShowFoodList] = useState(false); // State to show or hide the food list
 
   const filteredItems = foodItems.filter((item: FoodItem) => {
     return (
@@ -45,23 +46,42 @@ const FoodCardDisplay: React.FC = () => {
 
   const applyFilters = () => {
     setFilter(tempFilter);
+    setShowFoodList(true); // Show the food list when the filters are applied
     closeModal();
   };
 
+  // Function to clear the filters and hide the food list
+  const clearSelection = () => {
+    setFilter({
+      veg: false,
+      pescatarian: false,
+      glutenFree: false,
+    });
+    setTempFilter({
+      veg: false,
+      pescatarian: false,
+      glutenFree: false,
+    });
+    setShowFoodList(false); // Hide the food list when clearing the selection
+  };
+
   return (
-    <div className="p-6">
-      {/* Filter Menus Button */}
-      <button
-        className="mt-4 p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-800"
-        onClick={openModal}
-      >
-        Filter Menu
-      </button>
+    <div className="p-0 relative">
+      {/* Filter and Clear Selection Buttons Row */}
+      <div className="-mt-7 mb-4">
+        {/* Full-width Clickable Filter Menu Row */}
+        <div
+          className="w-full bg-gray-100 p-4 cursor-pointer hover:bg-gray-200 text-center"
+          onClick={openModal}
+        >
+          FILTER MENU
+        </div>
+      </div>
 
       {/* Modal for filtering */}
       <Modal isOpen={isModalOpen} onClose={closeModal}>
         <div>
-          <h2 className="text-2xl font-bold mb-4">Menu Prefrences</h2>
+          <h2 className="text-2xl font-bold mb-4">Menu Preferences</h2>
 
           {/* Filters inside the Modal */}
           <div className="flex flex-col space-y-2 mb-4">
@@ -115,27 +135,48 @@ const FoodCardDisplay: React.FC = () => {
         </div>
       </Modal>
 
-      {/* Displaying filtered food items after Confirm button */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6">
-        {filteredItems.length > 0 ? (
-          filteredItems.map((item: FoodItem) => (
-            <FoodCard
-              key={item.id}
-              id={item.id}
-              name={item.name}
-              cost={item.cost}
-              veg={item.veg}
-              pescatarian={item.pescatarian}
-              glutenFree={item.glutenFree}
-              onAddToCart={() => {}}
-              onRemoveFromCart={() => {}}
-              cartQuantity={0} // You can set the cart quantity here if needed
-            />
-          ))
-        ) : (
-          <p>No items match your filter criteria.</p>
-        )}
-      </div>
+      {/* Displaying filtered food items with a dark background */}
+      {showFoodList && (
+        <>
+          {/* Dark overlay */}
+          <div className="fixed inset-0 bg-black opacity-50 z-10"></div>
+
+          {/* Food list and Clear Selection button on top of the overlay */}
+          <div className="relative z-20">
+            {/* Clear Selection Button */}
+            <div className="flex justify-center">
+              <button
+                className="p-2 mt-4 mb-4 bg-blue-600 text-white rounded-lg hover:bg-blue-800"
+                onClick={clearSelection}
+              >
+                Clear Selection
+              </button>
+            </div>
+
+            {/* Food List */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6">
+              {filteredItems.length > 0 ? (
+                filteredItems.map((item: FoodItem) => (
+                  <FoodCard
+                    key={item.id}
+                    id={item.id}
+                    name={item.name}
+                    cost={item.cost}
+                    veg={item.veg}
+                    pescatarian={item.pescatarian}
+                    glutenFree={item.glutenFree}
+                    onAddToCart={() => {}}
+                    onRemoveFromCart={() => {}}
+                    cartQuantity={0} // You can set the cart quantity here if needed
+                  />
+                ))
+              ) : (
+                <p>No items match your filter criteria.</p>
+              )}
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 };
