@@ -24,6 +24,7 @@ export default function ChatBot() {
       messageContainerRef.current.scrollTop = messageContainerRef.current.scrollHeight;
     }
   };
+
   // Scroll to the bottom whenever messages change
   useEffect(() => {
     scrollToBottom();
@@ -166,7 +167,7 @@ export default function ChatBot() {
   return (
     <div className="fixed bottom-4 right-4">
       {isOpen && (
-        <div className="w-[25rem] h-[35rem] bg-white border border-gray-300 shadow-md rounded-md flex flex-col p-4 -translate-y-14">
+        <div className="w-[22rem] sm:w-[20rem] h-[35rem] sm:h-[28rem] bg-white border border-gray-300 shadow-md rounded-md flex flex-col p-4 -translate-y-14">
           {/* Header */}
           <div className="text-red-600 p-3 border-b border-gray-300 font-semibold text-lg">
             Chatbot

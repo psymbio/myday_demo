@@ -18,13 +18,13 @@ const CheckoutPopup: React.FC<CheckoutPopupProps> = ({ itemName, onConfirm, onCa
         <CustomButton
             bgColor="bg-red-600"
             textColor="text-white"
-            text="Close"
+            text="Yes"
             onClick={onConfirm}
           />
           <CustomButton
             bgColor="bg-gray-700"
             textColor="text-white"
-            text="Close"
+            text="No"
             onClick={onCancel}
           />
         </div>
