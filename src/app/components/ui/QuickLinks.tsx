@@ -10,61 +10,59 @@ export default function Links() {
     {
       title: "Attractions",
       description:
-        "Located at the heart of London, HSBC's global headquarters offers breathtaking views of the River Thames and is just minutes away from iconic attractions such as the Tower of London, the Shard, and Canary Wharf. Experience the vibrancy of London's financial district while banking with us.",
+        "Explore Panaroma St. Pauls",
       imgSrc: "/attraction.jpg",
     },
     {
       title: "Sustainability",
       description:
-        "At HSBC, sustainability is at the core of everything we do. We are committed to driving positive environmental impact through responsible banking practices, supporting green energy projects, and helping customers transition towards a low-carbon future.",
+        "Climate conscious building",
       imgSrc: "/sustainability-banner.jpg",
-    },
-    {
-      title: "Spinathon-Blog",
-      description:
-        "Join us on our Spinathon Blog where we share exciting updates, stories, and tips from our latest spinathon events. Stay inspired and motivated with our community of fitness enthusiasts.",
-      imgSrc: "/spinathon-blog.jpg",
     },
   ];
 
   return (
-    <div className="py-3 -translate-y-28">
-      <div className="mb-6">
-      <Heading2 heading="Quick Links" />
-        <div className="flex flex-wrap justify-between md:justify-start gap-4 md:gap-6">
-          <a href="#" className="flex flex-col items-center text-center">
-            <QrCodeScannerOutlinedIcon />
+    <div className="py-8 -translate-y-20 px-4 sm:px-6 lg:px-8">
+      {/* Quick Links Section */}
+      <div className="mb-8">
+        <Heading2 heading="Quick Links" />
+        <div className="flex flex-wrap justify-center sm:justify-start gap-6 mt-4">
+          <a href="#" className="flex flex-col items-center text-center text-HSBC-red hover:text-HSBC-darkRed" aria-label="QR Code Scanner">
+            <QrCodeScannerOutlinedIcon fontSize="large" />
+            <span className="mt-2 text-sm">Scan QR</span>
           </a>
-          <a href="#" className="flex flex-col items-center text-center">
-            <DirectionsSubwayFilledOutlinedIcon />
+          <a href="#" className="flex flex-col items-center text-center text-HSBC-red hover:text-HSBC-darkRed" aria-label="Subway Directions">
+            <DirectionsSubwayFilledOutlinedIcon fontSize="large" />
+            <span className="mt-2 text-sm">Directions</span>
           </a>
-          <a href="#" className="flex flex-col items-center text-center">
-            <InfoOutlinedIcon />
+          <a href="#" className="flex flex-col items-center text-center text-HSBC-red hover:text-HSBC-darkRed" aria-label="More Info">
+            <InfoOutlinedIcon fontSize="large" />
+            <span className="mt-2 text-sm">Info</span>
           </a>
-          <a href="#" className="flex flex-col items-center text-center">
-            <PersonAddOutlinedIcon />
+          <a href="#" className="flex flex-col items-center text-center text-HSBC-red hover:text-HSBC-darkRed" aria-label="Add Person">
+            <PersonAddOutlinedIcon fontSize="large" />
+            <span className="mt-2 text-sm">Add Person</span>
           </a>
         </div>
       </div>
 
-      {/* Card Section */}
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+      {/* Cards Section */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
         {cards.map((card, index) => (
           <article
             key={index}
-            className="group bg-white rounded-xl shadow-lg transition-transform transform hover:scale-105 p-4"
-            style={{ maxWidth: '900px', margin: '0 auto' }}
+            className="group bg-white rounded-xl shadow-lg transition-transform transform hover:scale-105 p-4 border border-transparent group-hover:border-HSBC-red flex flex-col"
           >
             <img
               alt={card.title}
               src={card.imgSrc}
-              className="h-30 w-full rounded-t-xl object-cover"
+              className="h-36 w-full rounded-t-xl object-cover"
             />
-            <div className="p-4">
-              <a href="#" className="text-red-700 hover:underline">
-                <h3 className="text-lg font-semibold text-gray-900">{card.title}</h3>
+            <div className="p-4 flex-1 flex flex-col">
+              <a href="#" className="text-HSBC-red hover:underline">
+                <h3 className="text-xl font-semibold text-gray-900">{card.title}</h3>
               </a>
-              <p className="mt-2 text-sm text-gray-600">{card.description}</p>
+              <p className="mt-2 text-sm text-gray-700 flex-1">{card.description}</p>
             </div>
           </article>
         ))}
