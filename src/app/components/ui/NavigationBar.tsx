@@ -6,7 +6,12 @@ import Link from "next/link";
 import { Search, Person, Menu, Close } from "@mui/icons-material";
 
 export default function NavigationBar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false); 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Function to toggle the side menu
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
     <header className="bg-white shadow-sm h-10">
@@ -48,29 +53,57 @@ export default function NavigationBar() {
             <div className="md:hidden">
               <button
                 aria-label="Toggle Menu"
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                onClick={toggleMenu} // Toggle the slide-in menu
                 className="text-black hover:text-black transition-colors"
               >
-                {isMenuOpen ? <Close /> : <Menu />}
+                <Menu />
               </button>
             </div>
           </div>
         </div>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <nav className="md:hidden mt-4">
-            <ul className="flex flex-col gap-4">
-              <li>
-                <Link href="/menu" className="text-black font-medium hover:text-black">
-                  My Menu
-                </Link>
-              </li>
-              {/* Add more links as needed */}
-            </ul>
-          </nav>
-        )}
       </div>
+
+      {/* Slide-in Menu */}
+      <div
+        className={`fixed top-0 right-0 w-64 bg-white shadow-lg transform transition-transform duration-300 ${
+          isMenuOpen ? "translate-x-0" : "translate-x-full"
+        } z-50`}
+        style={{ height: "auto" }} // Height will automatically adjust based on the content
+      >
+        {/* Close Button */}
+        <button
+          className="absolute top-4 right-4 text-black hover:text-red-600"
+          onClick={toggleMenu}
+          aria-label="Close Menu"
+        >
+          <Close />
+        </button>
+
+        {/* Menu Content */}
+        <nav className="mt-16 p-4">
+          <ul className="space-y-4">
+            <li>
+              <Link href="/events" className="text-black text-lg">
+                Events
+              </Link>
+            </li>
+            <li>
+              <Link href="/restaurants" className="text-black text-lg">
+                Restaurants
+              </Link>
+            </li>
+            {/* Add more links as needed */}
+          </ul>
+        </nav>
+      </div>
+
+      {/* Background Overlay (Optional, can close menu by clicking outside) */}
+      {isMenuOpen && (
+        <div
+          className="fixed inset-0 bg-gray-800 bg-opacity-50 z-40"
+          onClick={toggleMenu} // Close menu when clicking outside
+        ></div>
+      )}
     </header>
   );
 }
