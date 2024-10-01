@@ -7,9 +7,11 @@ import GroupsOutlinedIcon from '@mui/icons-material/GroupsRounded';
 import RestaurantOutlinedIcon from '@mui/icons-material/RestaurantRounded';
 import MapOutlinedIcon from '@mui/icons-material/MapRounded';
 // import EventAvailableOutlinedIcon from '@mui/icons-material/EventAvailableOutlined';
-import MyCombinedMeetings from "./MyCombinedMeetings";
+//import MyCombinedMeetings from "./MyCombinedMeetings";
 import MyGroupWidget from "./MyGroupWidget";
 import RestaurantDisplay from "./RestaurantWidget";
+import ReservationData from "../../data/reservation.json"; // Import the JSON data
+import Reservations from "./Reservations";
 
 export default function Tabs() {
   const [activeTab, setActiveTab] = useState("Meetings");
@@ -18,15 +20,35 @@ export default function Tabs() {
     setActiveTab(tabName);
   };
 
-  const meetings = [
+ /* const meetings = [
     { name: "Meeting 1", time: "9:00 AM", location: "Room 101" },
     { name: "Meeting 2", time: "2:00 PM", location: "Room 202" },
-  ];
+  ];*/
   
-  const bookings = [
+ /* const bookings = [
     { name: "John Doe", time: "10:00 AM", location: "Office 1", mygroup: "Group A" },
-  ];
+  ];*/
   
+  const filteredMeetingData = ReservationData.filter((item) => {
+    if(item.Userid==125  && item.Type=="Meeting")
+    {
+    return  item
+   
+    }
+    
+   
+  });
+
+  const filteredReservationData = ReservationData.filter((item) => {
+    if(item.Userid==125 && item.Type=="Desk")
+    {
+    return item
+   
+    }
+    
+   
+  });
+
   return (
     <div>
       {/* Mobile dropdown */}
@@ -110,7 +132,9 @@ export default function Tabs() {
       </div>
 
       {/* Display TabCard based on active tab */}
-      {activeTab === "Meetings" && <MyCombinedMeetings meetings={meetings} bookings={bookings} />}
+      {/*activeTab === "Meetings" && <MyCombinedMeetings meetings={meetings} bookings={bookings} />*/}
+      {activeTab === "Meetings" && <Reservations meetings={filteredMeetingData} bookings={filteredReservationData} /> }
+ 
       {activeTab === "My Group" && <MyGroupWidget></MyGroupWidget>}
       {activeTab === "Food & Drink" && <RestaurantDisplay></RestaurantDisplay>}
       {activeTab === "Maps" && <TabCard title="Maps Content" content="Here is your booking" />}
