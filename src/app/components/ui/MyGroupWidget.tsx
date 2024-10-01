@@ -28,8 +28,8 @@ const statusOptions: Status[] = [
     tooltip: "In office",
   },
   {
-    color: "bg-red-600",
-    borderColor: "border-red-600",
+    color: "bg-gray-100",
+    borderColor: "border-gray-100",
     icon: <CloseIcon fontSize="small" className="text-white" />,
     tooltip: "In a meeting",
   },
@@ -50,7 +50,7 @@ export default function MyGroupWidget() {
   return (
     <div className="mt-4 p-4 border rounded-lg shadow bg-white">
       <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4">
-        {profiles.slice(0, 10).map((profile, index) => {
+        {profiles.slice(0, 6).map((profile, index) => {
           // Limit to first 10 profiles
           const status = getRandomStatus();
 
