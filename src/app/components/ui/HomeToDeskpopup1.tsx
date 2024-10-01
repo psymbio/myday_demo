@@ -1,5 +1,5 @@
 // components/HomeToDeskpopup1.tsx
-import React,{useState} from 'react';
+import React from 'react';
 
 interface HomeToDeskpopup1Props {
   show: boolean;
@@ -17,16 +17,16 @@ const HomeToDeskpopup1: React.FC<HomeToDeskpopup1Props> = ({ show, title, messag
       <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
         <h2 className="text-lg font-semibold mb-4">{title}</h2>
         <p className="mb-6">{message}</p>
-        <div className="flex justify-end space-x-4">
+        <div className="flex justify-center space-x-4">
           <button
             onClick={onYes}
-            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition"
+            className="bg-white text-black border border-black hover:bg-gray font-semibold py-2 px-4 transition"
           >
             Yes
           </button>
           <button
             onClick={onNo}
-            className="bg-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-400 transition"
+            className="bg-white text-black border border-black hover:bg-gray  font-semibold py-2 px-4 transition"
           >
             No
           </button>
