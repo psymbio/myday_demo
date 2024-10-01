@@ -1,6 +1,6 @@
 
 
-
+import PeopleCounter from "@/app/components/ui/PeopleCounter"
 import Header from '@/app/components/ui/HeaderFnD';
 import NavigationBar from '@/app/components/ui/NavigationBar';
 import ChatBot from '@/app/components/ui/ChatBot';
@@ -17,6 +17,11 @@ export default function FoodDrink() {
       <Header></Header>
       <HeaderImage></HeaderImage>
       <RestaurantAndFoodDisplay></RestaurantAndFoodDisplay>
+      <br />
+      <br />
+      <br />
+      <br />
+      <PeopleCounter />
       <ChatBot></ChatBot>
     </div>
   );

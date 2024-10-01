@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Providers from './Providers';  // Import the Providers component
 
+
 const hsbcFont = localFont({
   src: "./fonts/UniversNext.woff",
   variable: "--font-hsbc-font",
