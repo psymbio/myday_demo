@@ -3,8 +3,6 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import DoneIcon from "@mui/icons-material/DoneRounded";
-import RampRightIcon from "@mui/icons-material/RampRightRounded";
-import ArrowOutwardIcon from "@mui/icons-material/ArrowOutwardRounded";
 import CloseIcon from "@mui/icons-material/CloseRounded";
 import myGroupData from "../../data/mygroup.json"; // Import the JSON data
 
