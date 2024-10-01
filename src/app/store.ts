@@ -5,6 +5,7 @@ import storage from 'redux-persist/lib/storage'; // defaults to localStorage for
 import registrationReducer from '../slices/registrationSlice';
 import cartReducer from '../slices/cartSlice'; // Import the cart slice
 import { combineReducers } from 'redux';
+import counterReducer from '../slices/counterSlice';
 
 // Create a persist configuration
 const persistConfig = {
@@ -16,6 +17,7 @@ const persistConfig = {
 const rootReducer = combineReducers({
   registration: registrationReducer,
   cart: cartReducer, // Add cart reducer to the combined reducers
+  counter: counterReducer,
 });
 
 // Create a persisted reducer

@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState } from 'react';
 import FoodCard from './FoodCard';
 import Modal from './Modal';
@@ -25,6 +24,7 @@ const FoodCardDisplay: React.FC = () => {
   const [tempFilter, setTempFilter] = useState({ ...filter }); // Temporary filter for modal
   const [showFoodList, setShowFoodList] = useState(false); // State to show or hide the food list
 
+  // Filter logic for food items
   const filteredItems = foodItems.filter((item: FoodItem) => {
     return (
       (!filter.veg || item.veg) &&
@@ -52,6 +52,7 @@ const FoodCardDisplay: React.FC = () => {
 
   // Function to clear the filters and hide the food list
   const clearSelection = () => {
+    // Reset filters
     setFilter({
       veg: false,
       pescatarian: false,
@@ -63,6 +64,7 @@ const FoodCardDisplay: React.FC = () => {
       glutenFree: false,
     });
     setShowFoodList(false); // Hide the food list when clearing the selection
+    openModal(); // Reopen the modal to show Menu Preferences
   };
 
   return (
