@@ -18,10 +18,6 @@ export default function FoodDrink() {
       <HeaderImage></HeaderImage>
       <RestaurantAndFoodDisplay></RestaurantAndFoodDisplay>
       <br />
-      <br />
-      <br />
-      <br />
-      <PeopleCounter />
       <ChatBot></ChatBot>
     </div>
   );
