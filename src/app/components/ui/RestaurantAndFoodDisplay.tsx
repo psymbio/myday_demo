@@ -6,15 +6,15 @@ import FoodCardDisplay from './FoodDisplay';
 
 const MainPage: React.FC = () => {
   return (
-    <div className="relative">
-      {/* Background: RestaurantList */}
-      <div className="absolute top-0 left-0 w-full h-full z-0">
-        <RestaurantDisplay />
+    <div className="relative p-7">
+      {/* FoodCardDisplay (appears first) */}
+      <div className="relative z-10">
+        <FoodCardDisplay />
       </div>
 
-      {/* Overlay: FoodCardDisplay */}
-      <div className="relative z-10 p-8">
-        <FoodCardDisplay />
+      {/* RestaurantDisplay (appears immediately after FoodCardDisplay) */}
+      <div className="relative z-10">
+        <RestaurantDisplay />
       </div>
     </div>
   );

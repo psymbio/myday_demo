@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import FoodCard from './FoodCard';
 import Modal from './Modal';
 import foodItems from '../../data/fooditems.json'; // Assuming fooditems.json is in this path
+import TeyaCard from './TeyaCard';
 
 interface FoodItem {
   id: number;
@@ -71,7 +72,7 @@ const FoodCardDisplay: React.FC = () => {
   return (
     <div className="p-0 relative">
       {/* Filter and Clear Selection Buttons Row */}
-      <div className="-mt-12 mb-4">
+      <div className="-mt-11 mb-4">
         {/* Full-width Clickable Filter Menu Row */}
         <div
           className="w-full bg-gray-100 cursor-pointer hover:bg-gray-200 text-center"
@@ -80,14 +81,16 @@ const FoodCardDisplay: React.FC = () => {
         >
           FILTER MENUS
         </div>
+        {/* Teya Card Below Filter Menus */}
+      <TeyaCard />
       </div>
 
-      <br />
-      <br />
+      
+
       {/* Modal for filtering */}
       {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
-          <Modal isOpen={isModalOpen}>
+          <Modal isOpen={isModalOpen} onClose={closeModal}>
             <div className="z-50">
               <h2 className="text-2xl font-bold mb-4">Menu Preferences</h2>
 
