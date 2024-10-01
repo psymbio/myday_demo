@@ -87,7 +87,7 @@ const FoodCardDisplay: React.FC = () => {
       {/* Modal for filtering */}
       {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
-          <Modal isOpen={isModalOpen} onClose={closeModal}>
+          <Modal isOpen={isModalOpen}>
             <div className="z-50">
               <h2 className="text-2xl font-bold mb-4">Menu Preferences</h2>
 

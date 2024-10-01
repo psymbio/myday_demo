@@ -55,7 +55,7 @@ const HomeToDeskDisplay: React.FC = () => {
     <div className="">
       <button
         onClick={handleOpenDelayModal}
-        className="bg-white text-white rounded-lg hover:bg-blue-200 transition"
+        className="fixed bottom-4 left-4 z-50 bg-blue-500 text-white rounded-lg hover:bg-blue-200 transition"
       >
         Show
       </button>
@@ -63,8 +63,8 @@ const HomeToDeskDisplay: React.FC = () => {
       {/* First Modal: Delay on Elizabeth Line */}
       <Modal
         show={showDelayModal}
-        title="Line Closure on Elizabeth Line"
-        message="Expected delays of 3 hours. Would you like to update your day?"
+        title="Travel Updates "
+        message="Line Closure on Elizabeth Line Expected delays of 3 hours. Would you like to update your day?"
         onYes={handleYesToDelay}
         onNo={handleNoToDelay}
       />
