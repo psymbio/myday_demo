@@ -42,7 +42,6 @@ const initialRestaurants: Restaurant[] = [
 export default function RestaurantDisplay() {
   const [restaurantStatuses, setRestaurantStatuses] = useState<Restaurant[]>(initialRestaurants);
   const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
 
   // Function to render icons based on type
   const renderIcon = (iconType: string) => {
