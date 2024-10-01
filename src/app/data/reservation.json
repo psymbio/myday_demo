@@ -1,0 +1,112 @@
+[
+    {
+        "Id": 124,
+        "Date": "12/08/2024",
+        "StartTime": "12:30",
+        "EndTime": "14:30",
+        "Userid": 125,
+        "Booking": "LDN-PSP 25.Pod D",
+        "nearby": 1,
+        "Type": "Meeting",
+        "status": "booked"
+    },
+    {
+        "Id": 125,
+        "Date": "18/10/2024",
+        "StartTime": "12:30",
+        "EndTime": "14:30",
+        "Userid": 125,
+        "Booking": "LDN-PSP-Desk/L25/1.DCO0/01/D35",
+        "nearby": 1,
+        "Type": "Desk",
+        "status": "Open"
+    },
+    {
+        "Id": 126,
+        "Date": "18/10/2024",
+        "StartTime": "12:30",
+        "EndTime": "14:30",
+        "Userid": 126,
+        "Booking": "LDN-PSP-Desk/L25/1.DCO0/01/D36",
+        "nearby": 1,
+        "Type": "Desk",
+        "status": "Open"
+    },
+    {
+        "Id": 127,
+        "Date": "18/10/2024",
+        "StartTime": "12:30",
+        "EndTime": "18:30",
+        "Userid": 127,
+        "Booking": "LDN-PSP-Desk/L25/1.CTO/01/D11",
+        "nearby": 1,
+        "Type": "Desk",
+        "status": "Booked"
+    },
+    {
+        "Id": 128,
+        "Date": "19/10/2024",
+        "StartTime": "12:30",
+        "EndTime": "18:30",
+        "Userid": 128,
+        "Booking": "LDN-PSP-Desk/L25/1.CTO/01/D12",
+        "nearby": 1,
+        "Type": "Desk",
+        "status": "Open"
+    },
+    {
+        "Id": 129,
+        "Date": "19/10/2024",
+        "StartTime": "12:30",
+        "EndTime": "18:30",
+        "Userid": 129,
+        "Booking": "LDN-PSP-Desk/L25/1.CTO/01/D13",
+        "nearby": 1,
+        "Type": "Desk",
+        "status": "Booked"
+    },
+    {
+        "Id": 130,
+        "Date": "18/10/2024",
+        "StartTime": "12:30",
+        "EndTime": "18:30",
+        "Userid": 130,
+        "Booking": "LDN-PSP-Desk/L25/1.CTO/01/D14",
+        "nearby": 1,
+        "Type": "Desk",
+        "status": "Open"
+    },
+    {
+        "Id": 221,
+        "Date": "19/10/2024",
+        "StartTime": "12:30",
+        "EndTime": "18:30",
+        "Userid": 221,
+        "Booking": "LDN-PSP-Desk/L15/1.HR/00/D65",
+        "nearby": 1,
+        "Type": "Desk",
+        "status": "Open"
+    },
+    {
+        "Id": 222,
+        "Date": "19/10/2024",
+        "StartTime": "12:30",
+        "EndTime": "18:30",
+        "Userid": 222,
+        "Booking": "LDN-PSP-Desk/L15/1.HR/00/D66",
+        "nearby": 1,
+        "Type": "Desk",
+        "status": "Booked"
+    },
+    {
+        "Id": 223,
+        "Date": "19/10/2024",
+        "StartTime": "12:30",
+        "EndTime": "18:30",
+        "Userid": 223,
+        "Booking": "LDN-PSP-Desk/L15/1.HR/00/D67",
+        "nearby": 1,
+        "Type": "Desk",
+        "status": "Open"
+    }
+]
