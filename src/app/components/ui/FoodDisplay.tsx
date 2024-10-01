@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState } from 'react';
 import FoodCard from './FoodCard';
 import Modal from './Modal';
@@ -75,67 +76,72 @@ const FoodCardDisplay: React.FC = () => {
         <div
           className="w-full bg-gray-100 p-4 cursor-pointer hover:bg-gray-200 text-center"
           onClick={openModal}
+          style={{ zIndex: isModalOpen ? 50 : 1 }} // Adjusting z-index dynamically
         >
           FILTER MENU
         </div>
       </div>
 
       {/* Modal for filtering */}
-      <Modal isOpen={isModalOpen} onClose={closeModal}>
-        <div>
-          <h2 className="text-2xl font-bold mb-4">Menu Preferences</h2>
+      {isModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
+          <Modal isOpen={isModalOpen} onClose={closeModal}>
+            <div className="z-50">
+              <h2 className="text-2xl font-bold mb-4">Menu Preferences</h2>
 
-          {/* Filters inside the Modal */}
-          <div className="flex flex-col space-y-2 mb-4">
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                name="veg"
-                checked={tempFilter.veg}
-                onChange={handleFilterChange}
-                className="mr-2"
-              />
-              Vegetarian
-            </label>
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                name="pescatarian"
-                checked={tempFilter.pescatarian}
-                onChange={handleFilterChange}
-                className="mr-2"
-              />
-              Pescatarian
-            </label>
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                name="glutenFree"
-                checked={tempFilter.glutenFree}
-                onChange={handleFilterChange}
-                className="mr-2"
-              />
-              Gluten-Free
-            </label>
-          </div>
+              {/* Filters inside the Modal */}
+              <div className="flex flex-col space-y-2 mb-4">
+                <label className="flex items-center">
+                  <input
+                    type="checkbox"
+                    name="veg"
+                    checked={tempFilter.veg}
+                    onChange={handleFilterChange}
+                    className="mr-2"
+                  />
+                  Vegetarian
+                </label>
+                <label className="flex items-center">
+                  <input
+                    type="checkbox"
+                    name="pescatarian"
+                    checked={tempFilter.pescatarian}
+                    onChange={handleFilterChange}
+                    className="mr-2"
+                  />
+                  Pescatarian
+                </label>
+                <label className="flex items-center">
+                  <input
+                    type="checkbox"
+                    name="glutenFree"
+                    checked={tempFilter.glutenFree}
+                    onChange={handleFilterChange}
+                    className="mr-2"
+                  />
+                  Gluten-Free
+                </label>
+              </div>
 
-          {/* Confirm and Close buttons */}
-          <div className="flex justify-end space-x-4 mt-6">
-            <button
-              onClick={applyFilters}
-              className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-700"
-            >
-              Confirm
-            </button>
-            <button
-              onClick={closeModal}
-              className="px-4 py-2 bg-gray-300 rounded-lg hover:bg-gray-400"
-            >
-              Close
-            </button>
-          </div>
+              {/* Confirm and Close buttons */}
+              <div className="flex justify-end space-x-4 mt-6">
+                <button
+                  onClick={applyFilters}
+                  className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-700"
+                >
+                  Confirm
+                </button>
+                <button
+                  onClick={closeModal}
+                  className="px-4 py-2 bg-gray-300 rounded-lg hover:bg-gray-400"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </Modal>
         </div>
-      </Modal>
+      )}
 
       {/* Displaying filtered food items with a dark background */}
       {showFoodList && (
