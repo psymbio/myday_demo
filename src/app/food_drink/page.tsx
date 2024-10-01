@@ -1,6 +1,7 @@
 
 
-//import PeopleCounter from "@/app/components/ui/PeopleCounter"
+// import PeopleCounter from "@/app/components/ui/PeopleCounter"
+
 import Header from '@/app/components/ui/HeaderFnD';
 import NavigationBar from '@/app/components/ui/NavigationBar';
 import ChatBot from '@/app/components/ui/ChatBot';
