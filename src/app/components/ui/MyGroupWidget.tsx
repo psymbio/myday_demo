@@ -28,25 +28,10 @@ const statusOptions: Status[] = [
     tooltip: "In office",
   },
   {
-    color: "bg-cyan-500",
-    icon: <RampRightIcon fontSize="small" className="text-white" />,
-    tooltip: "On the way",
-  },
-  {
-    color: "bg-fuchsia-500",
-    icon: <ArrowOutwardIcon fontSize="small" className="text-white" />,
-    tooltip: "OOO",
-  },
-  {
     color: "bg-red-600",
     icon: <CloseIcon fontSize="small" className="text-white" />,
     tooltip: "In a meeting",
-  },
-  {
-    color: "bg-yellow-400",
-    icon: <CloseIcon fontSize="small" className="text-white" />,
-    tooltip: "Away",
-  },
+  }
 ];
 
 export default function MyGroupWidget() {
