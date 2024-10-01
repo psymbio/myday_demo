@@ -71,17 +71,19 @@ const FoodCardDisplay: React.FC = () => {
   return (
     <div className="p-0 relative">
       {/* Filter and Clear Selection Buttons Row */}
-      <div className="-mt-7 mb-4">
+      <div className="-mt-12 mb-4">
         {/* Full-width Clickable Filter Menu Row */}
         <div
-          className="w-full bg-gray-100 p-4 cursor-pointer hover:bg-gray-200 text-center"
+          className="w-full bg-gray-100 cursor-pointer hover:bg-gray-200 text-center"
           onClick={openModal}
           style={{ zIndex: isModalOpen ? 50 : 1 }} // Adjusting z-index dynamically
         >
-          FILTER MENU
+          FILTER MENUS
         </div>
       </div>
 
+      <br />
+      <br />
       {/* Modal for filtering */}
       {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
@@ -162,7 +164,7 @@ const FoodCardDisplay: React.FC = () => {
             </div>
 
             {/* Food List */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-10">
               {filteredItems.length > 0 ? (
                 filteredItems.map((item: FoodItem) => (
                   <FoodCard
