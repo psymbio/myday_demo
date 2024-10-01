@@ -43,7 +43,7 @@ export default function Reservations({ meetings, bookings }: ReservationsDetails
         <div className="flex items-center ">
         <ApartmentIcon color="success"/>
        <div className="pl-4">
-          <Heading3 heading="My Office Bookings" />
+          <b><Heading3 heading="My Office Bookings" /></b>
           {bookings.map((booking, index) => (
             <div key={index} >
               <p> {booking.StartTime} - {booking.EndTime}</p>
@@ -59,7 +59,7 @@ export default function Reservations({ meetings, bookings }: ReservationsDetails
       {meetings && meetings.length > 0 && (
        <div className="flex items-center"> <MeetingRoomIcon color="warning"/>
         <div className="pl-4">
-          <Heading3 heading="My Meetings"/>
+         <b> <Heading3 heading="My Meetings"/></b>
           {meetings.map((meeting, index) => (
             <div key={index} >
               <p> {meeting.StartTime} - {meeting.EndTime}</p>
