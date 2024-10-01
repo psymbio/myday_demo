@@ -5,7 +5,7 @@ export default function Header() {
         <div className="flex flex-col items-start gap-2 md:flex-row md:items-center md:justify-between">
           <div>
             <h1 className="text-xl font-medium text-white sm:text-2xl">
-              Welcome to HSBC MyDay, Matthew
+              Welcome to HSBC MyDay, Matt Potter
             </h1>
           </div>
         </div>
