@@ -37,7 +37,7 @@ export default function Reservations({ meetings, bookings }: ReservationsDetails
   return (
     <>
     
-    <div className="mt-4 border rounded-lg shadow bg-white px-4 py-2">
+    <div className="mt-4 border rounded-lg shadow bg-white px-4 pt-4">
     
       {bookings && bookings.length > 0 && (
         <div className="flex items-center ">
