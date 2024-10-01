@@ -1,78 +1,75 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { Search, Person, Menu, Close } from "@mui/icons-material";
 
 export default function NavigationBar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false); 
+
   return (
-    <header className="bg-white shadow-md">
-      <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
-          <div className="md:flex md:items-center md:gap-12">
-            <a className="block text-red-600" href="testing">
+    <header className="bg-white shadow-sm h-10">
+      <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 h-full">
+        <div className="flex h-full items-center justify-between">
+          {/* Logo Section */}
+          <div className="flex items-center">
+            <Link href="/" className="flex items-center text-red-600">
               <span className="sr-only">Home</span>
               <Image
                 src="/hsbc-logo-without-name.png"
                 alt="HSBC Logo"
-                width={0}
-                height={0}
-                sizes="100vw"
-                style={{ height: "2.5rem", width: "auto" }}
-                className="mx-auto w-auto"
+                width={100}
+                height={24}
+                className="h-6 w-auto"
               />
-            </a>
+            </Link>
           </div>
 
-          <div className="hidden md:block">
-            <nav aria-label="Global">
-              <ul className="flex items-center gap-6 text-sm">
-                <li>
-                  <a
-                    className="text-black font-medium transition hover:text-red-600"
-                    href="#"
-                  >
-                    My Menu
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-
+          {/* Icons Section */}
           <div className="flex items-center gap-4">
-            <div className="sm:flex sm:gap-4">
-              <a
-                className="rounded-md bg-red-600 px-5 py-2.5 text-sm font-medium text-white shadow hover:bg-red-700"
-                href="login"
-              >
-                Log In
-              </a>
-              <div className="hidden sm:flex">
-                <a
-                  className="rounded-md border border-red-600 px-5 py-2.5 text-sm font-medium text-red-600 hover:bg-red-600 hover:text-white transition"
-                  href="#"
-                >
-                  Register
-                </a>
-              </div>
-            </div>
+            {/* Search Icon */}
+            <button
+              aria-label="Search"
+              className="text-black hover:text-black transition-colors"
+            >
+              <Search />
+            </button>
 
-            <div className="block md:hidden">
-              <button className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-800">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
+            {/* User Icon */}
+            <button
+              aria-label="User Profile"
+              className="text-black hover:text-black transition-colors"
+            >
+              <Person />
+            </button>
+
+            {/* Hamburger Menu Icon (Visible on Mobile) */}
+            <div className="md:hidden">
+              <button
+                aria-label="Toggle Menu"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="text-black hover:text-black transition-colors"
+              >
+                {isMenuOpen ? <Close /> : <Menu />}
               </button>
             </div>
           </div>
         </div>
+
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <nav className="md:hidden mt-4">
+            <ul className="flex flex-col gap-4">
+              <li>
+                <Link href="/menu" className="text-black font-medium hover:text-black">
+                  My Menu
+                </Link>
+              </li>
+              {/* Add more links as needed */}
+            </ul>
+          </nav>
+        )}
       </div>
     </header>
   );
