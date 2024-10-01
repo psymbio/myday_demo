@@ -53,7 +53,7 @@ export default function Tabs() {
     <div>
       {/* Mobile dropdown */}
       <div className="sm:hidden">
-        <nav className="flex justify-center border-b border-gray-300 py-5 gap-10">
+        <nav className="flex justify-center border-b border-gray-300 gap-16">
           <a  className={`p-2 ${activeTab === "Meetings" ? "text-red-600" : "text-gray-700"}`}
           onClick={() => handleTabClick("Meetings")}>
             <TableRestaurantOutlinedIcon />
