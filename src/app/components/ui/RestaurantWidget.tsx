@@ -3,8 +3,8 @@
 import React, { useState, useEffect } from "react";
 import RestaurantMenuIcon from "@mui/icons-material/RestaurantMenu";
 import LocalCafeIcon from "@mui/icons-material/LocalCafe";
-import DoneIcon from "@mui/icons-material/DoneRounded";
-import CloseIcon from "@mui/icons-material/CloseRounded";
+// import DoneIcon from "@mui/icons-material/DoneRounded";
+// import CloseIcon from "@mui/icons-material/CloseRounded";
 
 // Enums for better type safety
 enum IconType {
@@ -73,29 +73,17 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({ restaurant, renderIcon 
       </div>
     </div>
 
-    {/* Busy Status */}
-    <div className="w-full mt-1">
-      <div className="flex justify-end items-center mb-1">
-        {restaurant.busyStatus === BusyStatus.Busy ? (
-          <CloseIcon
-            aria-label="Busy"
-            className="text-red-600 mr-1"
-            fontSize="small"
-          />
-        ) : (
-          <DoneIcon
-            aria-label="Not Busy"
-            className="text-green-500 mr-1"
-            fontSize="small"
-          />
-        )}
-        <span className="text-xs font-semibold text-gray-700">
-          {restaurant.busyStatus}
-        </span>
+    {/* Middle Row - Busy Status Pill on the Right */}
+    <div className="flex justify-between items-center mt-2">
+      <div className="text-gray-600 text-xs">
+        {restaurant.schedule.map((time, i) => (
+          <p key={i}>{time}</p>
+        ))}
       </div>
+
       {/* Busy Status Pill */}
       <div
-        className={`px-2 py-0.5 rounded-full text-xs font-semibold text-center w-full ${
+        className={`ml-4 px-4 py-0.5 rounded-full text-xs font-semibold text-center w-auto ${
           restaurant.busyStatus === BusyStatus.Busy
             ? "bg-red-100 text-red-600"
             : "bg-green-100 text-green-600"
