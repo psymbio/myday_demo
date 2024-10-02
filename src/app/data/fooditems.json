@@ -21,7 +21,7 @@
       "id": 3,
       "name": "Tandoori Paneer Flatbread",
       "cost": 7.15,
-      "restaurantId": 2,
+      "restaurantId": 0,
       "veg": true,
       "pescatarian": false,
       "glutenFree": true
@@ -39,7 +39,7 @@
       "id": 5,
       "name": "Fries",
       "cost": 2.20,
-      "restaurantId": 2,
+      "restaurantId": 0,
       "veg": true,
       "pescatarian": true,
       "glutenFree": true
@@ -57,7 +57,7 @@
       "id": 7,
       "name": "Soba Noodle and Sesame Salad",
       "cost": 6.90,
-      "restaurantId": 2,
+      "restaurantId": 1,
       "veg": true,
       "pescatarian": false,
       "glutenFree": true
@@ -75,7 +75,7 @@
       "id": 9,
       "name": "Classic Tiramisu",
       "cost": 3.15,
-      "restaurantId": 2,
+      "restaurantId": 1,
       "veg": true,
       "pescatarian": true,
       "glutenFree": true
@@ -102,7 +102,7 @@
       "id": 12,
       "name": "Soba Noodle and Sesame Salad",
       "cost": 6.90,
-      "restaurantId": 2,
+      "restaurantId": 0,
       "veg": true,
       "pescatarian": false,
       "glutenFree": true
@@ -120,7 +120,7 @@
       "id": 14,
       "name": "Classic mutton curry",
       "cost": 8.15,
-      "restaurantId": 2,
+      "restaurantId": 1,
       "veg": false,
       "pescatarian": true,
       "glutenFree": true
