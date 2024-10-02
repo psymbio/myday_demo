@@ -55,10 +55,10 @@ export default function Carousel() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState<EventData | null>(null);
 
-  const previousSlide = () => {
-    if (current === 0) setCurrent(events.length - 1);
-    else setCurrent(current - 1);
-  };
+  // const previousSlide = () => {
+  //   if (current === 0) setCurrent(events.length - 1);
+  //   else setCurrent(current - 1);
+  // };
 
   const nextSlide = () => {
     if (current === events.length - 1) setCurrent(0);
