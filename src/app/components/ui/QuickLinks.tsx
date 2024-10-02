@@ -22,7 +22,7 @@ export default function Links() {
   ];
 
   return (
-    <div className="py-8 -translate-y-20 px-4 sm:px-6 lg:px-8">
+    <div className="py-8 -translate-y-[9rem] px-4 sm:px-6 lg:px-8">
       {/* Quick Links Section */}
       <div className="mb-8">
         <Heading2 heading="Quick Links" />

@@ -1,15 +1,19 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import ArrowBackIcon from "@mui/icons-material/ArrowBackRounded";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForwardRounded";
+// import ArrowBackIcon from "@mui/icons-material/ArrowBackRounded";
+// import ArrowForwardIcon from "@mui/icons-material/ArrowForwardRounded";
 import Heading2 from "./Heading2";
 import Heading3 from "./Heading3";
 import CustomButton from "./CustomButton";
 import EventPopup from "./EventPopup";
 import events from "../../data/events.json";
-import { useDispatch, useSelector } from 'react-redux';
-import { registerForEvent, unregisterForEvent, setDefaultEvents } from "@/slices/registrationSlice";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  registerForEvent,
+  unregisterForEvent,
+  setDefaultEvents,
+} from "@/slices/registrationSlice";
 import { RootState } from "@/app/store";
 
 interface EventData {
@@ -25,13 +29,15 @@ interface EventData {
 
 export default function Carousel() {
   const dispatch = useDispatch();
-  
+
   // Load registered events from Redux store
-  const registeredEvents = useSelector((state: RootState) => state.registration.registeredEvents);
+  const registeredEvents = useSelector(
+    (state: RootState) => state.registration.registeredEvents
+  );
 
   // Dispatch default registration status for all events if not already present in store
   useEffect(() => {
-    const eventIds = events.map(event => event.id);
+    const eventIds = events.map((event) => event.id);
     dispatch(setDefaultEvents(eventIds));
   }, [dispatch]);
 
@@ -96,15 +102,16 @@ export default function Carousel() {
           {events.map((slide, index) => (
             <div
               key={index}
-              className="flex w-full flex-shrink-0 rounded-lg items-center bg-gray-200 text-black p-6"
+              className="w-full flex-shrink-0 rounded-lg flex flex-row"
             >
-              <div className="w-1/2 flex flex-col justify-center">
+              {/* Left side - Text content */}
+              <div className="w-[56] flex flex-col justify-center items-start p-4 sm:p-10 lg:p-12 text-black bg-white">
                 <Heading3 heading={slide.text} />
                 <p className="text-sm sm:text-lg lg:text-xl mb-4">
                   {slide.subtext}
                 </p>
-                <div className="flex flex-col space-y-2">
-                  <div className="flex space-x-4">
+                <div className="flex justify-between items-center w-full">
+                  <div className="flex space-x-1">
                     <CustomButton
                       bgColor="bg-red-600"
                       textColor="text-white"
@@ -112,34 +119,35 @@ export default function Carousel() {
                       onClick={openPopup}
                     />
                     <CustomButton
-                      bgColor={registeredEvents[slide.id] ? "bg-gray-700" : "bg-gray-700"}
+                      bgColor={
+                        registeredEvents[slide.id]
+                          ? "bg-gray-700"
+                          : "bg-gray-700"
+                      }
                       textColor="text-white"
-                      text={registeredEvents[slide.id] ? "Unregister" : "Register"}
+                      text={
+                        registeredEvents[slide.id] ? "Unregister" : "Register"
+                      }
                       onClick={() => handleRegister(slide.id)}
                     />
                   </div>
-                  {/* Arrow buttons positioned below the other buttons */}
-                  <div className="flex mt-4 space-x-4 pt-32">
-                    <button
-                      onClick={previousSlide}
-                      className="bg-white bg-opacity-90 hover:bg-opacity-70 p-2 sm:p-3 rounded-full text-black"
-                    >
-                      <ArrowBackIcon />
-                    </button>
-                    <button
-                      onClick={nextSlide}
-                      className="bg-white bg-opacity-90 hover:bg-opacity-70 p-2 sm:p-3 rounded-full text-black"
-                    >
-                      <ArrowForwardIcon />
-                    </button>
-                  </div>
                 </div>
               </div>
-              <img
-                src={slide.image}
-                alt={slide.text}
-                className="w-1/2 h-auto object-cover rounded-lg ml-4"
-              />
+
+              {/* Right side - Image content */}
+              <div className="w-2/3 bg-white p-2 flex justify-center items-center">
+                {/* Image Container */}
+                <div
+                  className="w-full"
+                  style={{
+                    backgroundImage: `url(${slide.image})`,
+                    backgroundSize: "cover",
+                    // backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                    height: "100px", // Adjust the height as needed
+                  }}
+                ></div>
+              </div>
             </div>
           ))}
         </div>
