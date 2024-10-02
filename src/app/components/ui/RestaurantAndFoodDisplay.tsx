@@ -8,7 +8,7 @@ const MainPage: React.FC = () => {
   return (
     <div className="relative p-7">
       {/* FoodCardDisplay (appears first) */}
-      <div className="relative z-10">
+      <div className="relative z-50">
         <FoodCardDisplay />
       </div>
 
