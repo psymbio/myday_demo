@@ -22,7 +22,7 @@ const FoodCardDisplay: React.FC = () => {
     glutenFree: false,
   });
 
-  const [isModalOpen, setIsModalOpen] = useState(false); // Modal state
+  const [isModalOpen, setIsModalOpen] = useState(false); // Modal is initially closed
   const [tempFilter, setTempFilter] = useState({ ...filter }); // Temporary filter for modal
   const [showFoodList, setShowFoodList] = useState(false); // State to show or hide the food list
 
@@ -43,8 +43,8 @@ const FoodCardDisplay: React.FC = () => {
     }));
   };
 
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
+  const openModal = () => setIsModalOpen(true); // Open the modal when button is clicked
+  const closeModal = () => setIsModalOpen(false); // Close the modal
 
   const applyFilters = () => {
     setFilter(tempFilter);
@@ -66,7 +66,7 @@ const FoodCardDisplay: React.FC = () => {
       glutenFree: false,
     });
     setShowFoodList(false); // Hide the food list when clearing the selection
-    openModal(); // Reopen the modal to show Menu Preferences
+    setIsModalOpen(true); // Reopen the modal to show Menu Preferences
   };
 
   return (
@@ -76,20 +76,17 @@ const FoodCardDisplay: React.FC = () => {
         {/* Full-width Clickable Filter Menu Row */}
         <div
           className="w-full bg-gray-100 cursor-pointer hover:bg-gray-200 text-center"
-          onClick={openModal}
-          style={{ zIndex: isModalOpen ? 50 : 1 }} // Adjusting z-index dynamically
+          onClick={openModal} // Open modal when button is clicked
         >
           FILTER MENUS
         </div>
         {/* Teya Card Below Filter Menus */}
-      <TeyaCard />
+        <TeyaCard />
       </div>
-
-      
 
       {/* Modal for filtering */}
       {isModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <Modal isOpen={isModalOpen} onClose={closeModal}>
             <div className="z-50">
               <h2 className="text-2xl font-bold mb-4">Menu Preferences</h2>
@@ -148,7 +145,7 @@ const FoodCardDisplay: React.FC = () => {
         </div>
       )}
 
-      {/* Displaying filtered food items with a dark background */}
+      {/* Displaying filtered food items */}
       {showFoodList && (
         <>
           {/* Dark overlay */}
