@@ -84,8 +84,8 @@ export default function Carousel() {
   };
 
   return (
-    <div className="py-5">
-      <div className="flex items-center justify-between mb-4">
+    <div className="py-2">
+      <div className="flex items-center justify-between mb-1">
         <Heading2 heading="Events" />
         <a
           className="bg-red-600 hover:brightness-110 text-white rounded-md px-5 py-2.5 text-sm font-medium shadow"
