@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import foodItems from '../../data/fooditems.json'; // Import food items data
+import CustomButton from './CustomButton';
 
 // Define a type for restaurant data
 interface Restaurant {
@@ -72,13 +73,14 @@ const RestaurantCard: React.FC<{ restaurant: Restaurant }> = ({
     <div className="relative -z-10 max-w-sm bg-white rounded-lg shadow-lg overflow-hidden m-4"> {/* Ensure card has z-index lower than menu */}
       <img src={restaurant.image} alt={restaurant.name} className="w-full h-48 object-cover" />
 
-      {/* Button to open the menu */}
-      <button
-        className="w-full p-2 bg-blue-500 text-white rounded-lg"
-        onClick={openMenu}
-      >
-        {restaurant.name} 
-      </button>
+      <CustomButton
+            bgColor="bg-gray-400 w-full"
+            textColor="text-black-500 text-sm font-bold"
+            text={restaurant.name} 
+            onClick={openMenu}
+          />
+
+     
 
       <div className="p-1">
         {/* Text below the button */}
