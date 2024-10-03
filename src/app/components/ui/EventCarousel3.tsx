@@ -128,7 +128,7 @@ export default function Carousel() {
                 </div>
 
                 {/* Right side - Image and Button */}
-                <div className="absolute ml-[14.5rem] w-2/5 lg:w-1/2 flex flex-col lg:flex-col items-center justify-between p-2">
+                <div className="absolute mt-[0.5rem] ml-[14rem] w-2/5 lg:w-1/2 flex flex-col lg:flex-col items-center justify-between p-2">
                   <div
                     className="w-full rounded"
                     style={{
@@ -140,7 +140,7 @@ export default function Carousel() {
                   ></div>
 
                   {/* Button Container */}
-                  <div className="w-full flex justify-end mt-2">
+                  <div className="w-full flex justify-end mt-2 text-xs">
                     <a href="events" className="text-red-600 hover:underline">
                       View all Events
                     </a>

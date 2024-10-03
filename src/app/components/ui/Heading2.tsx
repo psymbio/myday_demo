@@ -4,7 +4,7 @@ interface Heading2Props {
 
 export default function Heading2({ heading }: Heading2Props) {
   return (
-    <h2 className="text-2xl font-bold text-gray-900 mb-4 text-black">
+    <h2 className="text-xl font-bold text-gray-900 mb-4 text-black">
       {heading}
     </h2>
   );
