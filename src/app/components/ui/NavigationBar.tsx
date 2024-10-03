@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Search, Person, Menu, Close, Favorite } from "@mui/icons-material";
+import { Search, Person, Menu, Close, Star } from "@mui/icons-material";
 
 export default function NavigationBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -41,12 +41,12 @@ export default function NavigationBar() {
               <Search />
             </button>
 
-            {/* Favorite Icon */}
+            {/* Star Icon (Favorites) */}
             <button
-              aria-label="Favorite"
+              aria-label="Favorites"
               className="text-gray-700 hover:text-gray-800 transition-colors"
             >
-              <Favorite />
+              <Star />
             </button>
 
             {/* User Icon */}
@@ -87,14 +87,14 @@ export default function NavigationBar() {
         </button>
 
         {/* Menu Content */}
-        <nav className="mt-16 p-4">
+        <nav className="mt-16 p-4" role="navigation">
           {/* MENU Heading */}
           <h2 className="text-red-600 text-xl font-bold mb-6">MENU</h2>
           <ul className="space-y-4">
             <li>
               <Link
                 href="/"
-                className="text-black text-lg"
+                className="text-black text-lg hover:text-red-600"
                 onClick={toggleMenu}
               >
                 Home
@@ -103,7 +103,7 @@ export default function NavigationBar() {
             <li>
               <Link
                 href="/coming_soon"
-                className="text-black text-lg"
+                className="text-black text-lg hover:text-red-600"
                 onClick={toggleMenu}
               >
                 The Road to PSP
@@ -112,7 +112,7 @@ export default function NavigationBar() {
             <li>
               <Link
                 href="/coming_soon"
-                className="text-black text-lg"
+                className="text-black text-lg hover:text-red-600"
                 onClick={toggleMenu}
               >
                 Bookings
@@ -121,7 +121,7 @@ export default function NavigationBar() {
             <li>
               <Link
                 href="/food_drink"
-                className="text-black text-lg"
+                className="text-black text-lg hover:text-red-600"
                 onClick={toggleMenu}
               >
                 Food and Drink
@@ -130,7 +130,7 @@ export default function NavigationBar() {
             <li>
               <Link
                 href="/events"
-                className="text-black text-lg"
+                className="text-black text-lg hover:text-red-600"
                 onClick={toggleMenu}
               >
                 Events
@@ -139,7 +139,7 @@ export default function NavigationBar() {
             <li>
               <Link
                 href="/coming_soon"
-                className="text-black text-lg"
+                className="text-black text-lg hover:text-red-600"
                 onClick={toggleMenu}
               >
                 Indoor Maps
@@ -148,7 +148,7 @@ export default function NavigationBar() {
             <li>
               <Link
                 href="/coming_soon"
-                className="text-black text-lg"
+                className="text-black text-lg hover:text-red-600"
                 onClick={toggleMenu}
               >
                 Travel
@@ -157,7 +157,7 @@ export default function NavigationBar() {
             <li>
               <Link
                 href="/coming_soon"
-                className="text-black text-lg"
+                className="text-black text-lg hover:text-red-600"
                 onClick={toggleMenu}
               >
                 Raise a Ticket
@@ -166,7 +166,7 @@ export default function NavigationBar() {
             <li>
               <Link
                 href="/coming_soon"
-                className="text-black text-lg"
+                className="text-black text-lg hover:text-red-600"
                 onClick={toggleMenu}
               >
                 New Joiner Onboarding
@@ -175,7 +175,7 @@ export default function NavigationBar() {
             <li>
               <Link
                 href="/coming_soon"
-                className="text-black text-lg"
+                className="text-black text-lg hover:text-red-600"
                 onClick={toggleMenu}
               >
                 Chatbot
@@ -193,7 +193,7 @@ export default function NavigationBar() {
       {/* Background Overlay (Optional, can close menu by clicking outside) */}
       {isMenuOpen && (
         <div
-          className="fixed inset-0 bg-gray-800 bg-opacity-50 z-40"
+          className="fixed inset-0 bg-gray-800 bg-opacity-50 z-40 transition-opacity duration-300 ease-in-out"
           onClick={toggleMenu} // Close menu when clicking outside
         ></div>
       )}
