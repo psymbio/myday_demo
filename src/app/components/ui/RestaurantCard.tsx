@@ -69,7 +69,7 @@ const RestaurantCard: React.FC<{ restaurant: Restaurant }> = ({
   const closeMenu = () => setMenuVisible(false);
 
   return (
-    <div className="relative max-w-sm bg-white rounded-lg shadow-lg overflow-hidden m-4">
+    <div className="relative -z-10 max-w-sm bg-white rounded-lg shadow-lg overflow-hidden m-4"> {/* Ensure card has z-index lower than menu */}
       <img src={restaurant.image} alt={restaurant.name} className="w-full h-48 object-cover" />
 
       {/* Button to open the menu */}
@@ -83,19 +83,18 @@ const RestaurantCard: React.FC<{ restaurant: Restaurant }> = ({
       <div className="p-1">
         {/* Text below the button */}
         <p className="text-black-500 text-sm font-bold mt-2">{restaurant.text}</p>
-      
 
         {/* Menu popup, visible when the menuVisible state is true */}
         {menuVisible && (
           <>
             {/* Overlay to close the menu when clicking outside */}
             <div
-              className="fixed inset-0 bg-black opacity-50 z-20"
+              className="fixed inset-0 bg-black opacity-50 z-20" // Add a higher z-index to the overlay
               onClick={closeMenu}
             ></div>
 
             {/* Menu Dropdown - positioned absolutely to act like a popup */}
-            <div className="absolute top-16 left-0 right-0 bg-white border p-4 rounded-lg shadow-lg z-30">
+            <div className="absolute top-16 left-0 right-0 bg-white border p-4 rounded-lg shadow-lg z-30"> {/* High z-index for popup */}
               <h3 className="text-lg font-semibold mb-4">Menu Preferences</h3>
 
               {/* Menu Preferences as checkbox options */}
@@ -179,4 +178,3 @@ const RestaurantCard: React.FC<{ restaurant: Restaurant }> = ({
 };
 
 export default RestaurantCard;
-

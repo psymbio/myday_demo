@@ -74,7 +74,7 @@ export default function Checkout() {
   );
 
   const vat = subtotal * 0.1; // 10% VAT
-  const discount = subtotal * 0.02; // 2% discount
+  const discount = subtotal * 0.0; // 2% discount
   const total = subtotal + vat - discount; // Total after discount
 
   return (
@@ -137,24 +137,23 @@ export default function Checkout() {
                     <dt>VAT</dt>
                     <dd>£{vat.toFixed(2)}</dd>
                   </div>
-                  <div className="flex justify-between">
+                  {/* <div className="flex justify-between">
                     <dt>Discount (2%)</dt>
                     <dd>-£{discount.toFixed(2)}</dd>
-                  </div>
+                  </div> */}
                   <div className="flex justify-between !text-base font-medium">
                     <dt>Total</dt>
                     <dd>£{total.toFixed(2)}</dd>
                   </div>
                 </dl>
-
-                <div className="flex justify-end">
-                  <CustomButton
-                    bgColor="bg-red-600"
-                    textColor="text-white"
-                    text="Checkout"
-                  />
-                </div>
               </div>
+            </div>
+            <div className="flex justify-center mt-5">
+            <CustomButton
+              bgColor="bg-red-600"
+              textColor="text-white"
+              text="Proceed to Pay"
+            />
             </div>
           </div>
         </div>
