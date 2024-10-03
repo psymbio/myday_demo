@@ -14,10 +14,12 @@ const config: Config = {
         hsbcred: "var(--hsbcred)",
         hsbcreddark: "var(--hsbcreddark)",
       },
-      // Override the default red-600
+      // Use custom colors for form inputs
       backgroundColor: {
-        "red-600": "var(--hsbcred)",
-        "red-700": "var(--hsbcreddark)",
+        "checkbox-bg": "var(--background)",
+        "checkbox-border": "#bbbbbb",
+        "checkbox-checked": "var(--hsbcred)",
+        "checkbox-border-checked": "var(--hsbcreddark)",
       },
     },
   },
