@@ -6,14 +6,14 @@ import FoodCardDisplay from "./FoodDisplay";
 
 const MainPage: React.FC = () => {
   return (
-    <div className="relative p-7">
-      {/* FoodCardDisplay (appears first) */}
-      <div className="relative z-50">
+    <div className="p-7 flex flex-col"> {/* Removed gap or margin class */}
+      {/* FoodCardDisplay */}
+      <div className="m-0 p-0">
         <FoodCardDisplay />
       </div>
 
-      {/* RestaurantDisplay (appears immediately after FoodCardDisplay) */}
-      <div className="relative z-10">
+      {/* RestaurantDisplay */}
+      <div className="m-0 p-0">
         <RestaurantDisplay />
       </div>
     </div>
