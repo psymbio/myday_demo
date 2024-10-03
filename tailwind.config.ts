@@ -11,9 +11,17 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        hsbcred: "var(--hsbcred)",
+        hsbcreddark: "var(--hsbcreddark)",
+      },
+      // Override the default red-600
+      backgroundColor: {
+        'red-600': "var(--hsbcred)",
+        'red-700': "var(--hsbcreddark)",
       },
     },
   },
   plugins: [require("@tailwindcss/forms")],
 };
+
 export default config;

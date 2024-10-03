@@ -3,16 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --background: #f9fafb;
+  --background: #F9FAFB;
   --foreground: #000000;
-  --hsbcred: #dc3c28;
-  --hsbcreddark: #c93926;
-  --hsbcredlight: #fdf7f7;
+  --hsbcred: #DC3C28;
+  --hsbcreddark: #C93926;
+  --hsbcredlight: #FDF7F7;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #f9fafb;
+    --background: #F9FAFB;
     --foreground: #000000;
   }
 }
