@@ -5,6 +5,9 @@ import FoodCard from './FoodCard';
 import Modal from './Modal';
 import foodItems from '../../data/fooditems.json'; // Assuming fooditems.json is in this path
 import TeyaCard from './TeyaCard';
+import CustomButton from './CustomButton';
+import { useRouter } from 'next/navigation';
+
 
 interface FoodItem {
   id: number;
@@ -46,11 +49,18 @@ const FoodCardDisplay: React.FC = () => {
   const openModal = () => setIsModalOpen(true); // Open the modal when button is clicked
   const closeModal = () => setIsModalOpen(false); // Close the modal
 
+  const router = useRouter()
+  
   const applyFilters = () => {
-    setFilter(tempFilter);
-    setShowFoodList(true); // Show the food list when the filters are applied
-    closeModal();
+    const query = new URLSearchParams({
+      veg: String(tempFilter.veg),
+      pescatarian: String(tempFilter.pescatarian),
+      glutenFree: String(tempFilter.glutenFree),
+    }).toString();
+  
+    router.push(`/food_drink/filter?${query}`);
   };
+  
 
   // Function to clear the filters and hide the food list
   const clearSelection = () => {
@@ -127,18 +137,20 @@ const FoodCardDisplay: React.FC = () => {
 
               {/* Confirm and Close buttons */}
               <div className="flex justify-end space-x-4 mt-6">
-                <button
-                  onClick={applyFilters}
-                  className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-green-700"
-                >
-                  Confirm
-                </button>
-                <button
-                  onClick={closeModal}
-                  className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-gray-400"
-                >
-                  Close
-                </button>
+              <CustomButton
+                  bgColor="bg-red-600"
+                  textColor="text-white"
+                  text="Confirm"
+                  onClick={() => applyFilters()}
+                />
+              
+                <CustomButton
+                  bgColor="bg-red-600"
+                  textColor="text-white"
+                  text="Close"
+                  onClick={() => closeModal()}
+                />
+            
               </div>
             </div>
           </Modal>
