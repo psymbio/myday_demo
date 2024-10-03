@@ -73,9 +73,9 @@ export default function Checkout() {
     0
   );
 
-  const vat = subtotal * 0.1; // 10% VAT
-  const discount = subtotal * 0.0; // 2% discount
-  const total = subtotal + vat - discount; // Total after discount
+  // const vat = subtotal * 0.1; // 10% VAT
+  // const discount = subtotal * 0.0; // 2% discount
+  const total = subtotal; // Total after discount
 
   return (
     <section>
@@ -130,18 +130,18 @@ export default function Checkout() {
               <div className="w-screen max-w-lg space-y-4">
                 <dl className="space-y-0.5 text-lg text-gray-700">
                   <div className="flex justify-between">
-                    <dt>Subtotal</dt>
-                    <dd>£{subtotal.toFixed(2)}</dd>
+                    {/* <dt>Subtotal</dt>
+                    <dd>£{subtotal.toFixed(2)}</dd> */}
                   </div>
-                  <div className="flex justify-between">
+                  {/* <div className="flex justify-between">
                     <dt>VAT</dt>
                     <dd>£{vat.toFixed(2)}</dd>
-                  </div>
+                  </div> */}
                   {/* <div className="flex justify-between">
                     <dt>Discount (2%)</dt>
                     <dd>-£{discount.toFixed(2)}</dd>
                   </div> */}
-                  <div className="flex justify-between !text-base font-medium">
+                  <div className="flex justify-between !text-base font-bold">
                     <dt>Total</dt>
                     <dd>£{total.toFixed(2)}</dd>
                   </div>
