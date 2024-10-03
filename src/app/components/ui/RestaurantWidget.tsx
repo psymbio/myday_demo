@@ -1,10 +1,8 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import RestaurantMenuIcon from "@mui/icons-material/RestaurantMenu";
 import LocalCafeIcon from "@mui/icons-material/LocalCafe";
-// import DoneIcon from "@mui/icons-material/DoneRounded";
-// import CloseIcon from "@mui/icons-material/CloseRounded";
 
 // Enums for better type safety
 enum IconType {
@@ -56,24 +54,16 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({
   restaurant,
   renderIcon,
 }) => (
-  <div
-    key={restaurant.id}
-    className="bg-gray-50 shadow-sm rounded-lg p-3 flex flex-col justify-between"
-  >
+  <div className="bg-gray-50 shadow-sm rounded-lg p-3 flex flex-col justify-between">
     {/* Icon and Details */}
     <div className="flex items-start">
       <div className="mr-2">{renderIcon(restaurant.iconType)}</div>
       <div className="flex-grow">
         <h2 className="text-sm font-bold text-black">{restaurant.name}</h2>
-        <div className="text-gray-600 text-xs">
-          {restaurant.schedule.map((time, i) => (
-            <p key={i}>{time}</p>
-          ))}
-        </div>
       </div>
     </div>
 
-    {/* Middle Row - Busy Status Pill on the Right */}
+    {/* Middle Row - Schedule and Busy Status Pill */}
     <div className="flex justify-between items-center mt-2">
       <div className="text-gray-600 text-xs">
         {restaurant.schedule.map((time, i) => (
@@ -88,7 +78,7 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({
             ? "bg-red-100 text-red-600"
             : "bg-green-100 text-green-600"
         }`}
-        aria-label={restaurant.busyStatus}
+        aria-label={`Status: ${restaurant.busyStatus}`}
       >
         {restaurant.busyStatus}
       </div>
@@ -96,34 +86,34 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({
   </div>
 );
 
+// Function to render icons based on type
+const renderIcon = (iconType: IconType): JSX.Element | null => {
+  switch (iconType) {
+    case IconType.Restaurant:
+      return (
+        <RestaurantMenuIcon
+          fontSize="small"
+          className="text-red-600"
+          aria-hidden="true"
+        />
+      );
+    case IconType.Cafe:
+      return (
+        <LocalCafeIcon
+          fontSize="small"
+          className="text-red-600"
+          aria-hidden="true"
+        />
+      );
+    default:
+      return null;
+  }
+};
+
 export default function RestaurantDisplay() {
   const [restaurantStatuses, setRestaurantStatuses] =
     useState<Restaurant[]>(initialRestaurants);
   const [loading, setLoading] = useState<boolean>(true);
-
-  // Function to render icons based on type
-  const renderIcon = (iconType: IconType) => {
-    switch (iconType) {
-      case IconType.Restaurant:
-        return (
-          <RestaurantMenuIcon
-            fontSize="small" // Reduced size
-            className="text-red-600"
-            aria-hidden="true"
-          />
-        );
-      case IconType.Cafe:
-        return (
-          <LocalCafeIcon
-            fontSize="small" // Reduced size
-            className="text-red-600"
-            aria-hidden="true"
-          />
-        );
-      default:
-        return null;
-    }
-  };
 
   // Polling to update restaurant status every 10 seconds
   useEffect(() => {
@@ -151,7 +141,7 @@ export default function RestaurantDisplay() {
   }
 
   return (
-    <div className="mt-2 p-3 border rounded-lg shadow bg-white">
+    <section className="mt-2 p-3 border rounded-lg shadow bg-white">
       {/* Title */}
       {/* <h1 className="text-lg font-bold mb-2 text-red-600">Restaurant Availability</h1> */}
 
@@ -167,14 +157,14 @@ export default function RestaurantDisplay() {
       </div>
 
       {/* Footer */}
-      <div className="flex justify-end mt-2 text-xs">
+      <footer className="flex justify-end mt-2 text-xs">
         <a
           href="/food_drink"
           className="text-red-600 hover:underline font-semibold"
         >
           Go to Restaurants
         </a>
-      </div>
-    </div>
+      </footer>
+    </section>
   );
 }
