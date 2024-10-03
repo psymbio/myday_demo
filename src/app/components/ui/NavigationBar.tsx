@@ -36,7 +36,7 @@ export default function NavigationBar() {
             {/* Search Icon */}
             <button
               aria-label="Search"
-              className="text-black hover:text-black transition-colors"
+              className="text-gray-700 hover:text-gray-800 transition-colors"
             >
               <Search />
             </button>
@@ -44,7 +44,7 @@ export default function NavigationBar() {
             {/* Favorite Icon */}
             <button
               aria-label="Favorite"
-              className="text-black hover:text-black transition-colors"
+              className="text-gray-700 hover:text-gray-800 transition-colors"
             >
               <Favorite />
             </button>
@@ -52,7 +52,7 @@ export default function NavigationBar() {
             {/* User Icon */}
             <button
               aria-label="User Profile"
-              className="text-black hover:text-black transition-colors"
+              className="text-gray-700 hover:text-gray-800 transition-colors"
             >
               <Person />
             </button>
@@ -62,7 +62,7 @@ export default function NavigationBar() {
               <button
                 aria-label="Toggle Menu"
                 onClick={toggleMenu} // Toggle the slide-in menu
-                className="text-black hover:text-black transition-colors"
+                className="text-gray-700 hover:text-gray-800 transition-colors"
               >
                 <Menu />
               </button>

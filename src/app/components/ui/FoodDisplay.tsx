@@ -141,7 +141,7 @@ const FoodCardDisplay: React.FC = () => {
                 onClick={() => applyFilters()}
               />
               <CustomButton
-                bgColor="bg-red-600"
+                bgColor="bg-gray-600"
                 textColor="text-white"
                 text="Close"
                 onClick={() => closeModal()}
