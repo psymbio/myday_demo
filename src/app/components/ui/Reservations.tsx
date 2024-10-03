@@ -42,17 +42,15 @@ export default function Reservations({
           <div className="flex items-center ">
             <ApartmentIcon color="success" />
             <div className="pl-4">
-              <b>
-                <Heading3 heading="My Office Bookings" />
-              </b>
+            <h2 className="text-sm font-bold text-black">My Office Bookings</h2>
               {bookings.map((booking, index) => (
                 <div key={index}>
-                  <p>
+                  <p className="text-gray-600 text-xs">
                     {" "}
                     {booking.StartTime} - {booking.EndTime}
                   </p>
-                  <p>{booking.Booking}</p>
-                  <p>{booking.nearby} in My Group booked nearby</p>
+                  <p className="text-gray-600 text-xs">{booking.Booking}</p>
+                  <p className="text-gray-600 text-xs">{booking.nearby} in My Group booked nearby</p>
                   <br />
                 </div>
               ))}
@@ -65,17 +63,14 @@ export default function Reservations({
             {" "}
             <MeetingRoomIcon color="warning" />
             <div className="pl-4">
-              <b>
-                {" "}
-                <Heading3 heading="My Meetings" />
-              </b>
+            <h2 className="text-sm font-bold text-black">My Meetings</h2>
               {meetings.map((meeting, index) => (
                 <div key={index}>
-                  <p>
+                  <p className="text-gray-600 text-xs">
                     {" "}
                     {meeting.StartTime} - {meeting.EndTime}
                   </p>
-                  <p>{meeting.Booking}</p>
+                  <p className="text-gray-600 text-xs">{meeting.Booking}</p>
                   <br />
                 </div>
               ))}

@@ -5,9 +5,9 @@ import HeaderImage from "@/app/components/ui/HeaderImage";
 import NavigationBar from "@/app/components/ui/NavigationBar";
 import QuickLinks from "@/app/components/ui/QuickLinks";
 import Tabs from "@/app/components/ui/Tabs";
-import PeopleCounter from "@/app/components/ui/PeopleCounter";
+// import PeopleCounter from "@/app/components/ui/PeopleCounter";
 import HomeToDeskDisplay from "@/app/components/ui/HomeToDeskDisplay";
-export default function TestingPage() {
+export default function HomePage() {
   return (
     <div>
       <HomeToDeskDisplay></HomeToDeskDisplay>
@@ -18,7 +18,7 @@ export default function TestingPage() {
         <Tabs />
         <Carousel />
         <QuickLinks />
-        <PeopleCounter />
+        {/* <PeopleCounter /> */}
       </div>
       <ChatBot></ChatBot>
     </div>

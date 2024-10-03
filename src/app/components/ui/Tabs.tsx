@@ -2,10 +2,10 @@
 import { useState } from "react";
 import TabCard from "./TabCard";
 // hello
-import TableRestaurantOutlinedIcon from "@mui/icons-material/TableRestaurantRounded";
-import GroupsOutlinedIcon from "@mui/icons-material/GroupsRounded";
-import RestaurantOutlinedIcon from "@mui/icons-material/RestaurantRounded";
-import MapOutlinedIcon from "@mui/icons-material/MapRounded";
+import TableRestaurantOutlinedIcon from "@mui/icons-material/TableRestaurantTwoTone";
+import GroupsOutlinedIcon from "@mui/icons-material/GroupsTwoTone";
+import RestaurantOutlinedIcon from "@mui/icons-material/RestaurantTwoTone";
+import MapOutlinedIcon from "@mui/icons-material/MapTwoTone";
 // import EventAvailableOutlinedIcon from '@mui/icons-material/EventAvailableOutlined';
 //import MyCombinedMeetings from "./MyCombinedMeetings";
 import MyGroupWidget from "./MyGroupWidget";
@@ -155,7 +155,7 @@ export default function Tabs() {
       {activeTab === "My Group" && <MyGroupWidget></MyGroupWidget>}
       {activeTab === "Food & Drink" && <RestaurantDisplay></RestaurantDisplay>}
       {activeTab === "Maps" && (
-        <TabCard title="Maps Content" content="Here is your booking" />
+        <TabCard title="Maps Content" content="Coming Soon!" />
       )}
     </div>
   );

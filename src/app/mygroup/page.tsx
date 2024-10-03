@@ -4,7 +4,7 @@ import HeaderImage from "@/app/components/ui/HeaderImage";
 import NavigationBar from "@/app/components/ui/NavigationBar";
 import MyGroupDisplay from "@/app/components/ui/MyGroupDisplay";
 
-export default function TestingPage() {
+export default function MyGroupPage() {
   return (
     <div>
       <NavigationBar></NavigationBar>

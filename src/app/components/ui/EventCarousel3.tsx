@@ -85,16 +85,10 @@ export default function Carousel() {
 
   return (
     <div className="py-2">
-      <div className="flex items-center justify-between mb-2 px-2">
+      <div className="flex items-center justify-between px-2">
         <Heading2 heading="Events" />
-        <a
-          className="bg-red-600 hover:brightness-110 text-white rounded-md px-5 py-2.5 text-sm font-medium shadow"
-          href="events"
-        >
-          View all events
-        </a>
       </div>
-      <div className="overflow-hidden relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]">
+      <div className="overflow-hidden relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] -translate-y-3">
         <div
           className="flex rounded-lg transition-transform ease-out duration-500"
           style={{ transform: `translateX(-${current * 100}%)` }}
@@ -105,7 +99,7 @@ export default function Carousel() {
               className="w-full flex-shrink-0 rounded-lg flex flex-row"
             >
               {/* Left side - Text content */}
-              <div className="w-[56] flex flex-col justify-center items-start p-4 sm:p-10 lg:p-12 text-black bg-white">
+              <div className="w-[56] flex flex-col justify-center items-start p-4 sm:p-10 lg:p-12 text-black bg-white rounded-lg shadow border">
                 <Heading3 heading={slide.text} />
                 <p className="text-sm sm:text-lg lg:text-xl mb-4">
                   {slide.subtext}
@@ -135,18 +129,24 @@ export default function Carousel() {
               </div>
 
               {/* Right side - Image content */}
-              <div className="w-2/3 bg-white p-2 flex justify-center items-center">
+              <div className="w-2/3 bg-white p-2 flex flex-col items-center">
                 {/* Image Container */}
                 <div
                   className="w-full"
                   style={{
                     backgroundImage: `url(${slide.image})`,
                     backgroundSize: "cover",
-                    // backgroundPosition: "center",
                     backgroundRepeat: "no-repeat",
                     height: "100px", // Adjust the height as needed
                   }}
                 ></div>
+
+                {/* Button Container */}
+                <div className="w-full flex justify-end mt-4">
+                  <a href="events" className="text-red-600 hover:underline">
+                    View all Events
+                  </a>
+                </div>
               </div>
             </div>
           ))}

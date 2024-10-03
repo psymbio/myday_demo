@@ -16,8 +16,8 @@ const config: Config = {
       },
       // Override the default red-600
       backgroundColor: {
-        'red-600': "var(--hsbcred)",
-        'red-700': "var(--hsbcreddark)",
+        "red-600": "var(--hsbcred)",
+        "red-700": "var(--hsbcreddark)",
       },
     },
   },

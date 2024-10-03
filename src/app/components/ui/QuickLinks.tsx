@@ -20,65 +20,65 @@ export default function Links() {
   ];
 
   return (
-    <div className="py-8 -translate-y-[9rem] px-2 sm:px-6 lg:px-8">
+    <div className="py-8 -translate-y-[10rem] px-2 sm:px-6 lg:px-8">
       {/* Quick Links Section */}
-      <div className="mb-8">
+      <div className="mb-4">
         <Heading2 heading="Quick Links" />
-        <div className="flex flex-wrap justify-center sm:justify-start gap-6 mt-4">
+        <div className="flex flex-wrap justify-center sm:justify-start gap-12 mt-4">
           <a
             href="#"
-            className="flex flex-col items-center text-center text-HSBC-red hover:text-HSBC-darkRed"
+            className="flex flex-col items-center text-center "
             aria-label="QR Code Scanner"
           >
-            <QrCodeScannerOutlinedIcon fontSize="large" />
+            <QrCodeScannerOutlinedIcon fontSize="medium" />
             <span className="mt-2 text-sm">Scan QR</span>
           </a>
           <a
             href="#"
-            className="flex flex-col items-center text-center text-HSBC-red hover:text-HSBC-darkRed"
+            className="flex flex-col items-center text-center"
             aria-label="Subway Directions"
           >
-            <DirectionsSubwayFilledOutlinedIcon fontSize="large" />
+            <DirectionsSubwayFilledOutlinedIcon fontSize="medium" />
             <span className="mt-2 text-sm">Directions</span>
           </a>
           <a
             href="#"
-            className="flex flex-col items-center text-center text-HSBC-red hover:text-HSBC-darkRed"
+            className="flex flex-col items-center text-center"
             aria-label="More Info"
           >
-            <InfoOutlinedIcon fontSize="large" />
+            <InfoOutlinedIcon fontSize="medium" />
             <span className="mt-2 text-sm">Info</span>
           </a>
           <a
             href="#"
-            className="flex flex-col items-center text-center text-HSBC-red hover:text-HSBC-darkRed"
+            className="flex flex-col items-center text-center"
             aria-label="Add Person"
           >
-            <PersonAddOutlinedIcon fontSize="large" />
+            <PersonAddOutlinedIcon fontSize="medium" />
             <span className="mt-2 text-sm">Add Person</span>
           </a>
         </div>
       </div>
 
       {/* Cards Section */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+      <div className="grid grid-cols-2 gap-2">
         {cards.map((card, index) => (
           <article
             key={index}
-            className="group bg-white rounded-xl shadow-lg transition-transform transform hover:scale-105 p-4 border border-transparent group-hover:border-HSBC-red flex flex-col"
+            className="group bg-white rounded-lg shadow transition-transform transform hover:scale-105 p-2 border border-transparent flex flex-col"
           >
             <img
               alt={card.title}
               src={card.imgSrc}
-              className="h-36 w-full rounded-t-xl object-cover"
+              className="h-20 w-full object-cover"
             />
-            <div className="p-4 flex-1 flex flex-col">
-              <a href="#" className="text-HSBC-red hover:underline">
-                <h3 className="text-xl font-semibold text-gray-900">
+            <div className="mt-2 flex-1 flex flex-col">
+              <a href="#" className="hover:underline">
+                <h3 className="text-sm text-black">
                   {card.title}
                 </h3>
               </a>
-              <p className="mt-2 text-sm text-gray-700 flex-1">
+              <p className="text-xs text-gray-600 flex-1">
                 {card.description}
               </p>
             </div>

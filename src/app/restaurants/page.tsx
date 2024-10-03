@@ -4,7 +4,7 @@ import HeaderImage from "@/app/components/ui/HeaderImage";
 import NavigationBar from "@/app/components/ui/NavigationBar";
 import RestaurantDisplay from "@/app/components/ui/RestaurantWidget";
 
-export default function TestingPage() {
+export default function RestaurantPage() {
   return (
     <div>
       <NavigationBar></NavigationBar>

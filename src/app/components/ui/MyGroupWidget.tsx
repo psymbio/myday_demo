@@ -43,8 +43,13 @@ export default function MyGroupWidget() {
     setProfiles(myGroupData);
   }, []);
 
-  const getRandomStatus = (): Status => {
-    return statusOptions[Math.floor(Math.random() * statusOptions.length)];
+  const getStatusByIndex = (index: number): Status => {
+    // Assign lime status to first 4, gray to the rest
+    if (index < 4) {
+      return statusOptions[0]; // lime status
+    } else {
+      return statusOptions[1]; // gray status
+    }
   };
 
   return (
@@ -52,7 +57,7 @@ export default function MyGroupWidget() {
       <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4">
         {profiles.slice(0, 6).map((profile, index) => {
           // Limit to first 10 profiles
-          const status = getRandomStatus();
+          const status = getStatusByIndex(index); // Get status based on index
 
           return (
             <div key={index} className="relative flex flex-col items-center">

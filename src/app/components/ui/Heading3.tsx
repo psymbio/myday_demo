@@ -4,7 +4,7 @@ interface Heading3Props {
 
 export default function Heading3({ heading }: Heading3Props) {
   return (
-    <h3 className="text-base sm:text-xl lg:text-2xl font-bold mb-2">
+    <h3 className="text-base sm:text-xl lg:text-2xl font-bold mb-1">
       {heading}
     </h3>
   );
