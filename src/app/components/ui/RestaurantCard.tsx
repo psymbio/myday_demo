@@ -1,4 +1,5 @@
 "use client";
+<<<<<<< HEAD
 import React, { useState } from "react"; // Removed unused `useEffect`
 //import CustomButton from './CustomButton';
 // Removed unused `restaurants` import
@@ -6,6 +7,10 @@ import React, { useState } from "react"; // Removed unused `useEffect`
 //import Image from 'next/image'; // Import Next.js Image component
 
 import foodItems from "../../data/fooditems.json"; // Import food items data
+=======
+import React, { useState } from 'react';
+import foodItems from '../../data/fooditems.json'; // Import food items data
+>>>>>>> 82e4966 (Updated few changes regarding z-index)
 
 // Define a type for restaurant data
 interface Restaurant {
@@ -75,6 +80,7 @@ const RestaurantCard: React.FC<{ restaurant: Restaurant }> = ({
 
   return (
     <div className="relative max-w-sm bg-white rounded-lg shadow-lg overflow-hidden m-4">
+<<<<<<< HEAD
       <img
         src={restaurant.image}
         alt={restaurant.name}
@@ -84,14 +90,22 @@ const RestaurantCard: React.FC<{ restaurant: Restaurant }> = ({
         <h2 className="text-2xl font-semibold">{restaurant.name}</h2>
         <p className="text-gray-500 mt-2">{restaurant.text}</p>
         <p className="text-gray-400 text-sm mt-1">{restaurant.subtext}</p>
+=======
+      <img src={restaurant.image} alt={restaurant.name} className="w-full h-48 object-cover" />
+>>>>>>> 82e4966 (Updated few changes regarding z-index)
 
-        {/* Button to open the menu */}
-        <button
-          className="w-full p-2 mt-4 bg-blue-500 text-white rounded-lg"
-          onClick={openMenu}
-        >
-          {restaurant.name} Menu
-        </button>
+      {/* Button to open the menu */}
+      <button
+        className="w-full p-2 bg-blue-500 text-white rounded-lg"
+        onClick={openMenu}
+      >
+        {restaurant.name} 
+      </button>
+
+      <div className="p-1">
+        {/* Text below the button */}
+        <p className="text-black-500 text-sm font-bold mt-2">{restaurant.text}</p>
+      
 
         {/* Menu popup, visible when the menuVisible state is true */}
         {menuVisible && (
@@ -104,7 +118,6 @@ const RestaurantCard: React.FC<{ restaurant: Restaurant }> = ({
 
             {/* Menu Dropdown - positioned absolutely to act like a popup */}
             <div className="absolute top-16 left-0 right-0 bg-white border p-4 rounded-lg shadow-lg z-30">
-              {/* Menu now has a white background */}
               <h3 className="text-lg font-semibold mb-4">Menu Preferences</h3>
 
               {/* Menu Preferences as checkbox options */}
