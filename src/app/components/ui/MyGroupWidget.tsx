@@ -28,10 +28,10 @@ const statusOptions: Status[] = [
     tooltip: "In office",
   },
   {
-    color: "bg-gray-100",
-    borderColor: "border-gray-100",
+    color: "bg-gray-600",
+    borderColor: "border-gray-600",
     icon: <CloseIcon fontSize="small" className="text-white" />,
-    tooltip: "In a meeting",
+    tooltip: "Not in Office",
   },
 ];
 
@@ -45,7 +45,7 @@ export default function MyGroupWidget() {
 
   const getStatusByIndex = (index: number): Status => {
     // Assign lime status to first 4, gray to the rest
-    if (index < 4) {
+    if (index < 3) {
       return statusOptions[0]; // lime status
     } else {
       return statusOptions[1]; // gray status
@@ -54,8 +54,8 @@ export default function MyGroupWidget() {
 
   return (
     <div className="mt-4 p-4 border rounded-lg shadow bg-white">
-      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4">
-        {profiles.slice(0, 6).map((profile, index) => {
+      <div className="grid grid-cols-5 sm:grid-cols-4 md:grid-cols-5 gap-4">
+        {profiles.slice(0, 5).map((profile, index) => {
           // Limit to first 10 profiles
           const status = getStatusByIndex(index); // Get status based on index
 
@@ -85,7 +85,7 @@ export default function MyGroupWidget() {
         })}
       </div>
       <br />
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center text-xs">
         <span>Looking for someone else?</span>
         <a href="/mygroup" className="text-red-600 hover:underline">
           Go to My Group

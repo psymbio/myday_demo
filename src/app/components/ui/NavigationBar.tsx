@@ -36,7 +36,7 @@ export default function NavigationBar() {
             {/* Search Icon */}
             <button
               aria-label="Search"
-              className="text-black hover:text-black transition-colors"
+              className="text-gray-700 hover:text-gray-800 transition-colors"
             >
               <Search />
             </button>
@@ -44,7 +44,7 @@ export default function NavigationBar() {
             {/* Favorite Icon */}
             <button
               aria-label="Favorite"
-              className="text-black hover:text-black transition-colors"
+              className="text-gray-700 hover:text-gray-800 transition-colors"
             >
               <Favorite />
             </button>
@@ -52,7 +52,7 @@ export default function NavigationBar() {
             {/* User Icon */}
             <button
               aria-label="User Profile"
-              className="text-black hover:text-black transition-colors"
+              className="text-gray-700 hover:text-gray-800 transition-colors"
             >
               <Person />
             </button>
@@ -62,7 +62,7 @@ export default function NavigationBar() {
               <button
                 aria-label="Toggle Menu"
                 onClick={toggleMenu} // Toggle the slide-in menu
-                className="text-black hover:text-black transition-colors"
+                className="text-gray-700 hover:text-gray-800 transition-colors"
               >
                 <Menu />
               </button>
@@ -102,7 +102,7 @@ export default function NavigationBar() {
             </li>
             <li>
               <Link
-                href="/road-to-psp"
+                href="/coming_soon"
                 className="text-black text-lg"
                 onClick={toggleMenu}
               >
@@ -111,7 +111,7 @@ export default function NavigationBar() {
             </li>
             <li>
               <Link
-                href="/bookings"
+                href="/coming_soon"
                 className="text-black text-lg"
                 onClick={toggleMenu}
               >
@@ -138,7 +138,7 @@ export default function NavigationBar() {
             </li>
             <li>
               <Link
-                href="/indoor-maps"
+                href="/coming_soon"
                 className="text-black text-lg"
                 onClick={toggleMenu}
               >
@@ -147,7 +147,7 @@ export default function NavigationBar() {
             </li>
             <li>
               <Link
-                href="/travel"
+                href="/coming_soon"
                 className="text-black text-lg"
                 onClick={toggleMenu}
               >
@@ -156,7 +156,7 @@ export default function NavigationBar() {
             </li>
             <li>
               <Link
-                href="/raise-ticket"
+                href="/coming_soon"
                 className="text-black text-lg"
                 onClick={toggleMenu}
               >
@@ -165,7 +165,7 @@ export default function NavigationBar() {
             </li>
             <li>
               <Link
-                href="/new-joiner-onboarding"
+                href="/coming_soon"
                 className="text-black text-lg"
                 onClick={toggleMenu}
               >
@@ -174,7 +174,7 @@ export default function NavigationBar() {
             </li>
             <li>
               <Link
-                href="/chatbot"
+                href="/coming_soon"
                 className="text-black text-lg"
                 onClick={toggleMenu}
               >

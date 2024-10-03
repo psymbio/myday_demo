@@ -55,11 +55,6 @@ export default function Carousel() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState<EventData | null>(null);
 
-  // const previousSlide = () => {
-  //   if (current === 0) setCurrent(events.length - 1);
-  //   else setCurrent(current - 1);
-  // };
-
   const nextSlide = () => {
     if (current === events.length - 1) setCurrent(0);
     else setCurrent(current + 1);
@@ -84,7 +79,8 @@ export default function Carousel() {
   };
 
   return (
-    <div className="py-2">
+    <div>
+    <div className="py-2 mx-5 -translate-y-3">
       <div className="flex items-center justify-between px-2">
         <Heading2 heading="Events" />
       </div>
@@ -98,54 +94,58 @@ export default function Carousel() {
               key={index}
               className="w-full flex-shrink-0 rounded-lg flex flex-row"
             >
-              {/* Left side - Text content */}
-              <div className="w-[56] flex flex-col justify-center items-start p-4 sm:p-10 lg:p-12 text-black bg-white rounded-lg shadow border">
-                <Heading3 heading={slide.text} />
-                <p className="text-sm sm:text-lg lg:text-xl mb-4">
-                  {slide.subtext}
-                </p>
-                <div className="flex justify-between items-center w-full">
-                  <div className="flex space-x-1">
-                    <CustomButton
-                      bgColor="bg-red-600"
-                      textColor="text-white"
-                      text="View"
-                      onClick={openPopup}
-                    />
-                    <CustomButton
-                      bgColor={
-                        registeredEvents[slide.id]
-                          ? "bg-gray-700"
-                          : "bg-gray-700"
-                      }
-                      textColor="text-white"
-                      text={
-                        registeredEvents[slide.id] ? "Unregister" : "Register"
-                      }
-                      onClick={() => handleRegister(slide.id)}
-                    />
+              {/* Merged Content - Text and Image */}
+              <div className="w-full flex flex-col lg:flex-row bg-white rounded-lg shadow border">
+                {/* Left side - Text content */}
+                <div className="w-full lg:w-1/2 flex flex-col justify-center items-start p-4 sm:p-10 text-black">
+                  <Heading3 heading={slide.text} />
+                  <p className="text-sm sm:text-lg lg:text-xl mb-4">
+                    {slide.subtext}
+                  </p>
+                  <div className="flex justify-between items-center w-full">
+                    <div className="flex space-x-1">
+                      <CustomButton
+                        bgColor="bg-red-600"
+                        textColor="text-white"
+                        text="View"
+                        onClick={openPopup}
+                      />
+                      <CustomButton
+                        bgColor={
+                          registeredEvents[slide.id]
+                            ? "bg-gray-700"
+                            : "bg-gray-700"
+                        }
+                        textColor="text-white"
+                        text={
+                          registeredEvents[slide.id]
+                            ? "Unregister"
+                            : "Register"
+                        }
+                        onClick={() => handleRegister(slide.id)}
+                      />
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Right side - Image content */}
-              <div className="w-2/3 bg-white p-2 flex flex-col items-center">
-                {/* Image Container */}
-                <div
-                  className="w-full"
-                  style={{
-                    backgroundImage: `url(${slide.image})`,
-                    backgroundSize: "cover",
-                    backgroundRepeat: "no-repeat",
-                    height: "100px", // Adjust the height as needed
-                  }}
-                ></div>
+                {/* Right side - Image and Button */}
+                <div className="absolute mt-[0.5rem] ml-[14rem] w-2/5 lg:w-1/2 flex flex-col lg:flex-col items-center justify-between p-2">
+                  <div
+                    className="w-full rounded"
+                    style={{
+                      backgroundImage: `url(${slide.image})`,
+                      backgroundSize: "cover",
+                      backgroundRepeat: "no-repeat",
+                      height: "85px", // Adjust the height as needed
+                    }}
+                  ></div>
 
-                {/* Button Container */}
-                <div className="w-full flex justify-end mt-4">
-                  <a href="events" className="text-red-600 hover:underline">
-                    View all Events
-                  </a>
+                  {/* Button Container */}
+                  <div className="w-full flex justify-end mt-2 text-xs">
+                    <a href="events" className="text-red-600 hover:underline">
+                      View all Events
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -164,10 +164,12 @@ export default function Carousel() {
           ))}
         </div>
       </div>
-
+    </div>
+    <div>
       {isPopupOpen && selectedEvent && (
         <EventPopup event={selectedEvent} onClose={closePopup} />
       )}
+    </div>
     </div>
   );
 }

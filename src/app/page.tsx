@@ -14,7 +14,7 @@ export default function HomePage() {
       <NavigationBar></NavigationBar>
       <Header></Header>
       <HeaderImage></HeaderImage>
-      <div className="sm:px-2 mx-5 md:mx-16 lg:mx-32 -translate-y-3">
+      <div>
         <Tabs />
         <Carousel />
         <QuickLinks />

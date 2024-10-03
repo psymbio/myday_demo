@@ -1,11 +1,11 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import Header from "@/app/components/ui/Header";
+import HeaderFnD from "@/app/components/ui/HeaderFnD";
 import NavigationBar from "@/app/components/ui/NavigationBar";
 import ChatBot from "@/app/components/ui/ChatBot";
-import HeaderImage from "@/app/components/ui/HeaderImage";
 import Add2Cart from "@/app/components/ui/Add2Cart";
+import HeaderImageFnD from "@/app/components/ui/HeaderImageFnD";
 
 export default function FoodDrink() {
   const searchParams = useSearchParams();
@@ -17,8 +17,8 @@ export default function FoodDrink() {
   return (
     <div>
       <NavigationBar />
-      <Header />
-      <HeaderImage />
+      <HeaderFnD />
+      <HeaderImageFnD />
       <Add2Cart veg={veg} pescatarian={pescatarian} glutenFree={glutenFree} />
       <ChatBot />
     </div>

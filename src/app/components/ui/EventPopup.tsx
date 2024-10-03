@@ -40,7 +40,7 @@ export default function EventPopup({ event, onClose }: EventPopupProps) {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
-      <div className="rounded-2xl border border-blue-100 bg-white p-6 shadow-lg sm:p-6 lg:p-8 max-w-md w-full">
+      <div className="rounded-2xl border border-blue-100 bg-white p-6 shadow-lg sm:p-6 lg:p-8 max-w-md w-10/12">
         {/* Close Button */}
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-4">
@@ -59,7 +59,7 @@ export default function EventPopup({ event, onClose }: EventPopupProps) {
         <p className="text-gray-500 mb-6">{event.subtextLong}</p>
 
         {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row sm:gap-4">
+        <div className="grid grid-cols-2 gap-2">
           <CustomButton
             bgColor={isRegistered ? "bg-gray-700" : "bg-red-600"}
             textColor="text-white"

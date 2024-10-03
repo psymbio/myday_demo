@@ -1,5 +1,6 @@
-// components/HomeToDeskpopup1.tsx
+"use client";
 import React, { useState } from "react";
+import CustomButton from "./CustomButton";
 
 interface HomeToDeskpopup1Props {
   show: boolean;
@@ -109,18 +110,18 @@ const HomeToDeskpopup1: React.FC<HomeToDeskpopup1Props> = ({
         <h2 className="text-lg text-center font-semibold mb-4">{title}</h2>
         <p className="mb-6">{message}</p>
         <div className="flex justify-center space-x-4">
-          <button
+          <CustomButton
+            bgColor="bg-red-600"
+            textColor="text-white"
+            text="Yes"
             onClick={onYes}
-            className="bg-white  text-black border border-black shadow-lg hover:bg-gray font-semibold py-2 px-10 transition"
-          >
-            Yes
-          </button>
-          <button
+          />
+          <CustomButton
+            bgColor="bg-gray-700"
+            textColor="text-white"
+            text="No"
             onClick={onNo}
-            className="bg-white text-black border border-black shadow-lg hover:bg-gray  font-semibold py-2 px-10 transition"
-          >
-            No
-          </button>
+          />
         </div>
       </div>
     </div>

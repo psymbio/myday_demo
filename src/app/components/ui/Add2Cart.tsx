@@ -5,6 +5,8 @@ import FoodCard from "./FoodCard";
 import foodItemsData from "../../data/fooditems.json"; // Import your food items data
 import { useSelector, useDispatch } from "react-redux";
 import { addItemToCart, removeItemFromCart } from "@/slices/cartSlice"; // Adjust the path to your slice
+import CustomButton from "./CustomButton";
+import { useRouter } from "next/navigation"; // Import useRouter
 
 interface FoodItem {
   id: number;
@@ -31,6 +33,7 @@ const Add2Cart: React.FC<Add2CartProps> = ({
     (state: { cart: { items: { [key: number]: number } } }) => state.cart.items
   ); // Get cart items from Redux
   const dispatch = useDispatch();
+  const router = useRouter(); // Initialize the router
 
   useEffect(() => {
     // Filter the food items based on the received props
@@ -57,6 +60,10 @@ const Add2Cart: React.FC<Add2CartProps> = ({
     }
   };
 
+  const handleCheckout = () => {
+    router.push("/food_drink/checkout"); // Navigate to the checkout page
+  };
+
   return (
     <div className="p-4">
       <h1 className="text-2xl font-bold mb-4">Available Items</h1>
@@ -79,6 +86,14 @@ const Add2Cart: React.FC<Add2CartProps> = ({
         ) : (
           <p>No items match your filter criteria.</p>
         )}
+      </div>
+      <div className="flex justify-center mt-5">
+        <CustomButton
+          bgColor="bg-red-600"
+          textColor="text-white"
+          text="Checkout"
+          onClick={handleCheckout} // Call handleCheckout on button click
+        />
       </div>
     </div>
   );

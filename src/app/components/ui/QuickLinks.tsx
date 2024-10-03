@@ -20,7 +20,7 @@ export default function Links() {
   ];
 
   return (
-    <div className="py-8 -translate-y-[10rem] px-2 sm:px-6 lg:px-8">
+    <div className="py-8 -translate-y-[12.5rem] px-2 sm:px-6 lg:px-8 mx-5">
       {/* Quick Links Section */}
       <div className="mb-4">
         <Heading2 heading="Quick Links" />
@@ -65,7 +65,7 @@ export default function Links() {
         {cards.map((card, index) => (
           <article
             key={index}
-            className="group bg-white rounded-lg shadow transition-transform transform hover:scale-105 p-2 border flex flex-col"
+            className="group bg-white rounded-lg shadow transition-transform transform hover:scale-105 p-3 border flex flex-col"
           >
             <img
               alt={card.title}
