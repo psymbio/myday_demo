@@ -1,4 +1,3 @@
-import Heading3 from "./Heading3";
 import ApartmentIcon from "@mui/icons-material/BusinessTwoTone";
 import MeetingRoomIcon from "@mui/icons-material/MeetingRoomTwoTone";
 
