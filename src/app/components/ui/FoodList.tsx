@@ -16,10 +16,9 @@ const MenuItem: React.FC<{ item: MenuItemProps }> = ({ item }) => {
 
 export default MenuItem;*/
 
-
 // components/FoodList.tsx
 
-import FoodItem from './FoodItem';
+import FoodItem from "./FoodItem";
 interface FoodItemProps {
   id: number;
   name: string;
@@ -31,7 +30,12 @@ const FoodList: React.FC<{ items: FoodItemProps[] }> = ({ items }) => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6">
       {items.map((item) => (
-        <FoodItem key={item.id} name={item.name} price={item.price} isVeg={item.isVeg} />
+        <FoodItem
+          key={item.id}
+          name={item.name}
+          price={item.price}
+          isVeg={item.isVeg}
+        />
       ))}
     </div>
   );

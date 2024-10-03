@@ -1,5 +1,5 @@
 // components/HomeToDeskpopup1.tsx
-import React from 'react';
+import React from "react";
 
 interface HomeToDeskpopup1Props {
   show: boolean;
@@ -9,7 +9,13 @@ interface HomeToDeskpopup1Props {
   onNo: () => void;
 }
 
-const HomeToDeskpopup1: React.FC<HomeToDeskpopup1Props> = ({ show, title, message, onYes, onNo  }) => {
+const HomeToDeskpopup1: React.FC<HomeToDeskpopup1Props> = ({
+  show,
+  title,
+  message,
+  onYes,
+  onNo,
+}) => {
   if (!show) return null;
 
   return (

@@ -1,9 +1,9 @@
 // src/app/Providers.tsx
 "use client"; // This file is marked as a Client Component
 
-import { Provider } from 'react-redux';
-import { store, persistor } from './store';
-import { PersistGate } from 'redux-persist/integration/react';
+import { Provider } from "react-redux";
+import { store, persistor } from "./store";
+import { PersistGate } from "redux-persist/integration/react";
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   return (

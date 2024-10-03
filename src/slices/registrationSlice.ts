@@ -1,5 +1,5 @@
 // slices/registrationSlice.ts
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface RegistrationState {
   registeredEvents: { [eventId: number]: boolean };
@@ -10,7 +10,7 @@ const initialState: RegistrationState = {
 };
 
 const registrationSlice = createSlice({
-  name: 'registration',
+  name: "registration",
   initialState,
   reducers: {
     registerForEvent(state, action: PayloadAction<number>) {
@@ -20,7 +20,7 @@ const registrationSlice = createSlice({
       state.registeredEvents[action.payload] = false;
     },
     setDefaultEvents(state, action: PayloadAction<number[]>) {
-      action.payload.forEach(eventId => {
+      action.payload.forEach((eventId) => {
         if (state.registeredEvents[eventId] === undefined) {
           state.registeredEvents[eventId] = false; // Default to false
         }
@@ -29,5 +29,6 @@ const registrationSlice = createSlice({
   },
 });
 
-export const { registerForEvent, unregisterForEvent, setDefaultEvents } = registrationSlice.actions;
+export const { registerForEvent, unregisterForEvent, setDefaultEvents } =
+  registrationSlice.actions;
 export default registrationSlice.reducer;

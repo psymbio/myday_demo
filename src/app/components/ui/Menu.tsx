@@ -1,5 +1,5 @@
 // components/Menu.tsx
-import MenuItem from './MenuItem';
+import MenuItem from "./MenuItem";
 
 interface MenuItemProps {
   id: number;

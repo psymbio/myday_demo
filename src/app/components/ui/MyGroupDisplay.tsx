@@ -101,7 +101,12 @@ export default function MyGroupDisplay() {
               className="bg-white shadow-lg rounded-lg p-5 flex flex-col items-center text-center"
             >
               {/* Profile Picture */}
-              <div className={`relative group w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full mb-1 border-4 border-${status?.color.replace("bg-", "")}`}>
+              <div
+                className={`relative group w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full mb-1 border-4 border-${status?.color.replace(
+                  "bg-",
+                  ""
+                )}`}
+              >
                 {/* Image container without overflow-hidden */}
                 <Image
                   src={`/people/${user.profile_picture}`}

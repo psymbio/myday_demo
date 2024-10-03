@@ -1,7 +1,7 @@
 "use client";
-import React, { useState } from 'react';
-import RestaurantCard from './RestaurantCard';
-import restaurantsData from '../../data/restaurants.json'; // Assuming data is imported from a JSON file
+import React, { useState } from "react";
+import RestaurantCard from "./RestaurantCard";
+import restaurantsData from "../../data/restaurants.json"; // Assuming data is imported from a JSON file
 
 // Define a type for restaurant data
 interface Restaurant {

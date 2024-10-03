@@ -1,6 +1,6 @@
-import Head from 'next/head';
-import Header from '@/app/components/ui/Header';
-import Menu from '@/app/components/ui/Menu';
+import Head from "next/head";
+import Header from "@/app/components/ui/Header";
+import Menu from "@/app/components/ui/Menu";
 
 interface MenuItemProps {
   id: number;
@@ -11,12 +11,12 @@ interface MenuItemProps {
 const Home: React.FC = () => {
   // Example data, in a real app you would fetch this from an API
   const menuItems: MenuItemProps[] = [
-    { id: 1, name: 'Pizza', price: 12.99 },
-    { id: 2, name: 'Burger', price: 9.99 },
-    { id: 3, name: 'Pasta', price: 14.49 },
-    { id: 4, name: 'Salad', price: 8.99 },
-    { id: 5, name: 'Sushi', price: 18.99 },
-    { id: 6, name: 'Steak', price: 24.99 },
+    { id: 1, name: "Pizza", price: 12.99 },
+    { id: 2, name: "Burger", price: 9.99 },
+    { id: 3, name: "Pasta", price: 14.49 },
+    { id: 4, name: "Salad", price: 8.99 },
+    { id: 5, name: "Sushi", price: 18.99 },
+    { id: 6, name: "Steak", price: 24.99 },
   ];
 
   return (

@@ -1,5 +1,5 @@
 "use client";
-import React from 'react';
+import React from "react";
 
 const TeyaCard: React.FC = () => {
   return (
@@ -21,7 +21,8 @@ const TeyaCard: React.FC = () => {
       {/* Section 3: Subtext */}
       <div className="w-1/3 px-2">
         <p className="text-gray-500 text-xs">
-          PSP is a cashless building. Purchases can be made via Teya, Chip and Pin, Apple Pay, or Google Pay.
+          PSP is a cashless building. Purchases can be made via Teya, Chip and
+          Pin, Apple Pay, or Google Pay.
         </p>
       </div>
     </div>

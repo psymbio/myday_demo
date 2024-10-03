@@ -28,9 +28,15 @@ export default function Home() {
 
         <div>
           <ul>
-            <li><Link href="/testing">Testing Page</Link></li>
-            <li><Link href="/login">Login Page</Link></li>
-            <li><Link href="/food_and_drink">Food and Drink Page</Link></li>
+            <li>
+              <Link href="/testing">Testing Page</Link>
+            </li>
+            <li>
+              <Link href="/login">Login Page</Link>
+            </li>
+            <li>
+              <Link href="/food_and_drink">Food and Drink Page</Link>
+            </li>
           </ul>
         </div>
 

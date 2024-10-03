@@ -56,7 +56,9 @@ export default function MyGroupWidget() {
 
           return (
             <div key={index} className="relative flex flex-col items-center">
-              <div className={`relative group w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full mb-1 border-4 ${status.borderColor}`}>
+              <div
+                className={`relative group w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full mb-1 border-4 ${status.borderColor}`}
+              >
                 {/* Image container */}
                 <Image
                   src={`/people/${profile.profile_picture}`}

@@ -92,52 +92,92 @@ export default function NavigationBar() {
           <h2 className="text-red-600 text-xl font-bold mb-6">MENU</h2>
           <ul className="space-y-4">
             <li>
-              <Link href="/" className="text-black text-lg" onClick={toggleMenu}>
+              <Link
+                href="/"
+                className="text-black text-lg"
+                onClick={toggleMenu}
+              >
                 Home
               </Link>
             </li>
             <li>
-              <Link href="/road-to-psp" className="text-black text-lg" onClick={toggleMenu}>
+              <Link
+                href="/road-to-psp"
+                className="text-black text-lg"
+                onClick={toggleMenu}
+              >
                 The Road to PSP
               </Link>
             </li>
             <li>
-              <Link href="/bookings" className="text-black text-lg" onClick={toggleMenu}>
+              <Link
+                href="/bookings"
+                className="text-black text-lg"
+                onClick={toggleMenu}
+              >
                 Bookings
               </Link>
             </li>
             <li>
-              <Link href="/food_drink" className="text-black text-lg" onClick={toggleMenu}>
+              <Link
+                href="/food_drink"
+                className="text-black text-lg"
+                onClick={toggleMenu}
+              >
                 Food and Drink
               </Link>
             </li>
             <li>
-              <Link href="/events" className="text-black text-lg" onClick={toggleMenu}>
+              <Link
+                href="/events"
+                className="text-black text-lg"
+                onClick={toggleMenu}
+              >
                 Events
               </Link>
             </li>
             <li>
-              <Link href="/indoor-maps" className="text-black text-lg" onClick={toggleMenu}>
+              <Link
+                href="/indoor-maps"
+                className="text-black text-lg"
+                onClick={toggleMenu}
+              >
                 Indoor Maps
               </Link>
             </li>
             <li>
-              <Link href="/travel" className="text-black text-lg" onClick={toggleMenu}>
+              <Link
+                href="/travel"
+                className="text-black text-lg"
+                onClick={toggleMenu}
+              >
                 Travel
               </Link>
             </li>
             <li>
-              <Link href="/raise-ticket" className="text-black text-lg" onClick={toggleMenu}>
+              <Link
+                href="/raise-ticket"
+                className="text-black text-lg"
+                onClick={toggleMenu}
+              >
                 Raise a Ticket
               </Link>
             </li>
             <li>
-              <Link href="/new-joiner-onboarding" className="text-black text-lg" onClick={toggleMenu}>
+              <Link
+                href="/new-joiner-onboarding"
+                className="text-black text-lg"
+                onClick={toggleMenu}
+              >
                 New Joiner Onboarding
               </Link>
             </li>
             <li>
-              <Link href="/chatbot" className="text-black text-lg" onClick={toggleMenu}>
+              <Link
+                href="/chatbot"
+                className="text-black text-lg"
+                onClick={toggleMenu}
+              >
                 Chatbot
               </Link>
             </li>

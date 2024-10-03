@@ -1,13 +1,12 @@
 "use client";
 
-import React, { useState } from 'react';
-import FoodCard from './FoodCard';
-import Modal from './Modal';
-import foodItems from '../../data/fooditems.json'; // Assuming fooditems.json is in this path
-import TeyaCard from './TeyaCard';
-import CustomButton from './CustomButton';
-import { useRouter } from 'next/navigation';
-
+import React, { useState } from "react";
+import FoodCard from "./FoodCard";
+import Modal from "./Modal";
+import foodItems from "../../data/fooditems.json"; // Assuming fooditems.json is in this path
+import TeyaCard from "./TeyaCard";
+import CustomButton from "./CustomButton";
+import { useRouter } from "next/navigation";
 
 interface FoodItem {
   id: number;
@@ -49,18 +48,17 @@ const FoodCardDisplay: React.FC = () => {
   const openModal = () => setIsModalOpen(true); // Open the modal when button is clicked
   const closeModal = () => setIsModalOpen(false); // Close the modal
 
-  const router = useRouter()
-  
+  const router = useRouter();
+
   const applyFilters = () => {
     const query = new URLSearchParams({
       veg: String(tempFilter.veg),
       pescatarian: String(tempFilter.pescatarian),
       glutenFree: String(tempFilter.glutenFree),
     }).toString();
-  
+
     router.push(`/food_drink/filter?${query}`);
   };
-  
 
   // Function to clear the filters and hide the food list
   const clearSelection = () => {
@@ -137,20 +135,19 @@ const FoodCardDisplay: React.FC = () => {
 
               {/* Confirm and Close buttons */}
               <div className="flex justify-end space-x-4 mt-6">
-              <CustomButton
+                <CustomButton
                   bgColor="bg-red-600"
                   textColor="text-white"
                   text="Confirm"
                   onClick={() => applyFilters()}
                 />
-              
+
                 <CustomButton
                   bgColor="bg-red-600"
                   textColor="text-white"
                   text="Close"
                   onClick={() => closeModal()}
                 />
-            
               </div>
             </div>
           </Modal>

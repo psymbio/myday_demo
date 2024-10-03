@@ -1,7 +1,10 @@
 import React from "react";
 import CustomButton from "./CustomButton";
 import { useDispatch, useSelector } from "react-redux";
-import { registerForEvent, unregisterForEvent } from "@/slices/registrationSlice";
+import {
+  registerForEvent,
+  unregisterForEvent,
+} from "@/slices/registrationSlice";
 import { RootState } from "@/app/store";
 
 interface EventPopupProps {
@@ -18,7 +21,9 @@ export default function EventPopup({ event, onClose }: EventPopupProps) {
   const dispatch = useDispatch();
 
   // Access the registered events object from Redux state
-  const registeredEvents = useSelector((state: RootState) => state.registration.registeredEvents);
+  const registeredEvents = useSelector(
+    (state: RootState) => state.registration.registeredEvents
+  );
 
   // Check if the event is registered using the event ID
   const isRegistered = registeredEvents[event.id] ?? false;

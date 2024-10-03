@@ -3,8 +3,8 @@ import { Key, useEffect, useRef, useState } from "react";
 import scenarios from "../../data/chatbot2.json";
 import ChatBubbleOutlineRoundedIcon from "@mui/icons-material/ChatBubbleOutlineRounded";
 import SendRoundedIcon from "@mui/icons-material/SendRounded";
-import GroupsRoundedIcon from '@mui/icons-material/GroupsRounded';
-import FastfoodRoundedIcon from '@mui/icons-material/FastfoodRounded';
+import GroupsRoundedIcon from "@mui/icons-material/GroupsRounded";
+import FastfoodRoundedIcon from "@mui/icons-material/FastfoodRounded";
 
 export default function ChatBot() {
   const [messages, setMessages] = useState<any[]>([]);
@@ -21,7 +21,8 @@ export default function ChatBot() {
   // Function to scroll to the bottom of the chat
   const scrollToBottom = () => {
     if (messageContainerRef.current) {
-      messageContainerRef.current.scrollTop = messageContainerRef.current.scrollHeight;
+      messageContainerRef.current.scrollTop =
+        messageContainerRef.current.scrollHeight;
     }
   };
 
@@ -129,7 +130,7 @@ export default function ChatBot() {
 
         let i = 0;
         const delay = 3500; // Delay between each message
-        
+
         // Immediately show the first message without delay
         if (scenario.messages.length > 0) {
           const firstMessage = scenario.messages[0];
@@ -165,7 +166,7 @@ export default function ChatBot() {
   };
 
   return (
-    <div className={`fixed bottom-4 right-4 ${isOpen ? 'z-[100]' : 'z-10'}`}>
+    <div className={`fixed bottom-4 right-4 ${isOpen ? "z-[100]" : "z-10"}`}>
       {isOpen && (
         <div className="w-[22rem] sm:w-[20rem] h-[35rem] sm:h-[28rem] bg-white border border-gray-300 shadow-md rounded-md flex flex-col p-4 -translate-y-14 z-[100]">
           {/* Header */}

@@ -1,11 +1,11 @@
 "use client";
-import React, { useState } from 'react'; // Removed unused `useEffect` 
+import React, { useState } from "react"; // Removed unused `useEffect`
 //import CustomButton from './CustomButton';
 // Removed unused `restaurants` import
 
 //import Image from 'next/image'; // Import Next.js Image component
 
-import foodItems from '../../data/fooditems.json'; // Import food items data
+import foodItems from "../../data/fooditems.json"; // Import food items data
 
 // Define a type for restaurant data
 interface Restaurant {
@@ -28,7 +28,9 @@ interface FoodItem {
 }
 
 // Restaurant Card Component
-const RestaurantCard: React.FC<{ restaurant: Restaurant }> = ({ restaurant }) => {
+const RestaurantCard: React.FC<{ restaurant: Restaurant }> = ({
+  restaurant,
+}) => {
   // Filter state for menu preferences
   const initialFilterState = {
     veg: false,
@@ -40,7 +42,8 @@ const RestaurantCard: React.FC<{ restaurant: Restaurant }> = ({ restaurant }) =>
   const [menuVisible, setMenuVisible] = useState(false); // Control the visibility of the menu
 
   // Check if any preference is selected
-  const isAnyPreferenceSelected = filter.veg || filter.pescatarian || filter.glutenFree;
+  const isAnyPreferenceSelected =
+    filter.veg || filter.pescatarian || filter.glutenFree;
 
   // Filter food items for this restaurant based on the selected preferences
   const restaurantFoodItems = foodItems.filter((item: FoodItem) => {
@@ -72,7 +75,11 @@ const RestaurantCard: React.FC<{ restaurant: Restaurant }> = ({ restaurant }) =>
 
   return (
     <div className="relative max-w-sm bg-white rounded-lg shadow-lg overflow-hidden m-4">
-      <img src={restaurant.image} alt={restaurant.name} className="w-full h-48 object-cover" />
+      <img
+        src={restaurant.image}
+        alt={restaurant.name}
+        className="w-full h-48 object-cover"
+      />
       <div className="p-4">
         <h2 className="text-2xl font-semibold">{restaurant.name}</h2>
         <p className="text-gray-500 mt-2">{restaurant.text}</p>
@@ -137,22 +144,32 @@ const RestaurantCard: React.FC<{ restaurant: Restaurant }> = ({ restaurant }) =>
               {/* Conditionally show food items based on preference selection */}
               {isAnyPreferenceSelected ? (
                 <>
-                  <h3 className="text-lg font-semibold mb-2">Available Food Items</h3>
+                  <h3 className="text-lg font-semibold mb-2">
+                    Available Food Items
+                  </h3>
                   {restaurantFoodItems.length > 0 ? (
                     <ul className="space-y-2">
                       {restaurantFoodItems.map((foodItem) => (
-                        <li key={foodItem.id} className="flex justify-between items-center">
+                        <li
+                          key={foodItem.id}
+                          className="flex justify-between items-center"
+                        >
                           <span>{foodItem.name}</span>
                           <span>${foodItem.cost.toFixed(2)}</span>
                         </li>
                       ))}
                     </ul>
                   ) : (
-                    <p>No food items available based on selected preferences.</p>
+                    <p>
+                      No food items available based on selected preferences.
+                    </p>
                   )}
                 </>
               ) : (
-                <p>Please select at least one preference to view available food items.</p>
+                <p>
+                  Please select at least one preference to view available food
+                  items.
+                </p>
               )}
 
               {/* Button to close the menu */}

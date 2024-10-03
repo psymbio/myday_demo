@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 // Define FoodItemData type
 interface FoodItemData {
@@ -13,10 +13,42 @@ interface FoodItemData {
 
 // Sample data
 const foodData: FoodItemData[] = [
-  { id: 1, name: 'Veggie Burger', cost: 5.99, restaurantId: 0, veg: true, pescatarian: false, glutenFree: false },
-  { id: 2, name: 'Grilled Salmon', cost: 12.99, restaurantId: 1, veg: false, pescatarian: true, glutenFree: true },
-  { id: 3, name: 'Gluten-Free Pasta', cost: 9.99, restaurantId: 2, veg: true, pescatarian: false, glutenFree: true },
-  { id: 4, name: 'Chicken Sandwich', cost: 7.99, restaurantId: 1, veg: false, pescatarian: false, glutenFree: false }
+  {
+    id: 1,
+    name: "Veggie Burger",
+    cost: 5.99,
+    restaurantId: 0,
+    veg: true,
+    pescatarian: false,
+    glutenFree: false,
+  },
+  {
+    id: 2,
+    name: "Grilled Salmon",
+    cost: 12.99,
+    restaurantId: 1,
+    veg: false,
+    pescatarian: true,
+    glutenFree: true,
+  },
+  {
+    id: 3,
+    name: "Gluten-Free Pasta",
+    cost: 9.99,
+    restaurantId: 2,
+    veg: true,
+    pescatarian: false,
+    glutenFree: true,
+  },
+  {
+    id: 4,
+    name: "Chicken Sandwich",
+    cost: 7.99,
+    restaurantId: 1,
+    veg: false,
+    pescatarian: false,
+    glutenFree: false,
+  },
 ];
 
 // Unfiltered and Filtered Page Component
@@ -24,14 +56,14 @@ const FoodItemsPage: React.FC = () => {
   const [filters, setFilters] = useState({
     veg: false,
     pescatarian: false,
-    glutenFree: false
+    glutenFree: false,
   });
 
   // Function to toggle filters
   const toggleFilter = (filterName: string) => {
     setFilters({
       ...filters,
-      [filterName]: !filters[filterName as keyof typeof filters]
+      [filterName]: !filters[filterName as keyof typeof filters],
     });
   };
 
@@ -50,25 +82,29 @@ const FoodItemsPage: React.FC = () => {
       {/* Filter Options */}
       <div className="flex justify-center space-x-4 mb-8">
         <button
-          onClick={() => toggleFilter('veg')}
+          onClick={() => toggleFilter("veg")}
           className={`px-4 py-2 border rounded ${
-            filters.veg ? 'bg-green-500 text-white' : 'bg-white text-black'
+            filters.veg ? "bg-green-500 text-white" : "bg-white text-black"
           }`}
         >
           Vegetarian
         </button>
         <button
-          onClick={() => toggleFilter('pescatarian')}
+          onClick={() => toggleFilter("pescatarian")}
           className={`px-4 py-2 border rounded ${
-            filters.pescatarian ? 'bg-blue-500 text-white' : 'bg-white text-black'
+            filters.pescatarian
+              ? "bg-blue-500 text-white"
+              : "bg-white text-black"
           }`}
         >
           Pescatarian
         </button>
         <button
-          onClick={() => toggleFilter('glutenFree')}
+          onClick={() => toggleFilter("glutenFree")}
           className={`px-4 py-2 border rounded ${
-            filters.glutenFree ? 'bg-purple-500 text-white' : 'bg-white text-black'
+            filters.glutenFree
+              ? "bg-purple-500 text-white"
+              : "bg-white text-black"
           }`}
         >
           Gluten-Free
@@ -82,14 +118,26 @@ const FoodItemsPage: React.FC = () => {
             <h3 className="text-lg font-semibold">{item.name}</h3>
             <p className="text-gray-500">Cost: £{item.cost.toFixed(2)}</p>
             <p className="text-gray-500">Restaurant ID: {item.restaurantId}</p>
-            <p className={`text-sm ${item.veg ? 'text-green-600' : 'text-red-600'}`}>
-              {item.veg ? 'Vegetarian' : 'Non-Vegetarian'}
+            <p
+              className={`text-sm ${
+                item.veg ? "text-green-600" : "text-red-600"
+              }`}
+            >
+              {item.veg ? "Vegetarian" : "Non-Vegetarian"}
             </p>
-            <p className={`text-sm ${item.pescatarian ? 'text-blue-600' : 'text-red-600'}`}>
-              {item.pescatarian ? 'Pescatarian' : 'Not Pescatarian'}
+            <p
+              className={`text-sm ${
+                item.pescatarian ? "text-blue-600" : "text-red-600"
+              }`}
+            >
+              {item.pescatarian ? "Pescatarian" : "Not Pescatarian"}
             </p>
-            <p className={`text-sm ${item.glutenFree ? 'text-purple-600' : 'text-red-600'}`}>
-              {item.glutenFree ? 'Gluten-Free' : 'Contains Gluten'}
+            <p
+              className={`text-sm ${
+                item.glutenFree ? "text-purple-600" : "text-red-600"
+              }`}
+            >
+              {item.glutenFree ? "Gluten-Free" : "Contains Gluten"}
             </p>
           </div>
         ))}

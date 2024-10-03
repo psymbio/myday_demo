@@ -1,16 +1,25 @@
 // src/store.ts
-import { configureStore } from '@reduxjs/toolkit';
-import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist';
-import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web
-import registrationReducer from '../slices/registrationSlice';
-import cartReducer from '../slices/cartSlice'; // Import the cart slice
-import { combineReducers } from 'redux';
-import counterReducer from '../slices/counterSlice';
+import { configureStore } from "@reduxjs/toolkit";
+import {
+  persistStore,
+  persistReducer,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from "redux-persist";
+import storage from "redux-persist/lib/storage"; // defaults to localStorage for web
+import registrationReducer from "../slices/registrationSlice";
+import cartReducer from "../slices/cartSlice"; // Import the cart slice
+import { combineReducers } from "redux";
+import counterReducer from "../slices/counterSlice";
 
 // Create a persist configuration
 const persistConfig = {
-  key: 'root',  // Key for storage
-  storage,      // Using localStorage (can change to sessionStorage if needed)
+  key: "root", // Key for storage
+  storage, // Using localStorage (can change to sessionStorage if needed)
 };
 
 // Combine reducers if you have multiple slices

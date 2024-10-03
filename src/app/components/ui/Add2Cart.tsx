@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useEffect, useState } from 'react';
-import FoodCard from './FoodCard';
-import foodItemsData from '../../data/fooditems.json'; // Import your food items data
-import { useSelector, useDispatch } from 'react-redux';
-import { addItemToCart, removeItemFromCart } from '@/slices/cartSlice'; // Adjust the path to your slice
+import React, { useEffect, useState } from "react";
+import FoodCard from "./FoodCard";
+import foodItemsData from "../../data/fooditems.json"; // Import your food items data
+import { useSelector, useDispatch } from "react-redux";
+import { addItemToCart, removeItemFromCart } from "@/slices/cartSlice"; // Adjust the path to your slice
 
 interface FoodItem {
   id: number;
@@ -21,9 +21,15 @@ interface Add2CartProps {
   glutenFree: boolean;
 }
 
-const Add2Cart: React.FC<Add2CartProps> = ({ veg, pescatarian, glutenFree }) => {
+const Add2Cart: React.FC<Add2CartProps> = ({
+  veg,
+  pescatarian,
+  glutenFree,
+}) => {
   const [foodItems, setFoodItems] = useState<FoodItem[]>([]); // Holds filtered items
-  const cartItems = useSelector((state: { cart: { items: { [key: number]: number } } }) => state.cart.items); // Get cart items from Redux
+  const cartItems = useSelector(
+    (state: { cart: { items: { [key: number]: number } } }) => state.cart.items
+  ); // Get cart items from Redux
   const dispatch = useDispatch();
 
   useEffect(() => {

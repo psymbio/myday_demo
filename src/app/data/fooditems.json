@@ -1,137 +1,137 @@
 [
-    {
-      "id": 1,
-      "name": "Verbena and Lemon Halloumi",
-      "cost": 8.20,
-      "restaurantId": 0,
-      "veg": true,
-      "pescatarian": false,
-      "glutenFree": false
-    },
-    {
-      "id": 2,
-      "name": "Thai Green Vegetable Curry",
-      "cost": 6.50,
-      "restaurantId": 1,
-      "veg": true,
-      "pescatarian": true,
-      "glutenFree": true
-    },
-    {
-      "id": 3,
-      "name": "Tandoori Paneer Flatbread",
-      "cost": 7.15,
-      "restaurantId": 0,
-      "veg": true,
-      "pescatarian": false,
-      "glutenFree": true
-    },
-    {
-      "id": 4,
-      "name": "Thai Green Vegetable Curry",
-      "cost": 7.99,
-      "restaurantId": 1,
-      "veg": true,
-      "pescatarian": false,
-      "glutenFree": false
-    },
-    {
-      "id": 5,
-      "name": "Fries",
-      "cost": 2.20,
-      "restaurantId": 0,
-      "veg": true,
-      "pescatarian": true,
-      "glutenFree": true
-    },
-    {
-      "id": 6,
-      "name": "Ramen Mushroom and Egg",
-      "cost": 7.80,
-      "restaurantId": 1,
-      "veg": true,
-      "pescatarian": false,
-      "glutenFree": false
-    },
-    {
-      "id": 7,
-      "name": "Soba Noodle and Sesame Salad",
-      "cost": 6.90,
-      "restaurantId": 1,
-      "veg": true,
-      "pescatarian": false,
-      "glutenFree": true
-    },
-    {
-      "id": 8,
-      "name": "Bread Roll",
-      "cost": 0.75,
-      "restaurantId": 1,
-      "veg": true,
-      "pescatarian": true,
-      "glutenFree": false
-    },
-    {
-      "id": 9,
-      "name": "Classic Tiramisu",
-      "cost": 3.15,
-      "restaurantId": 1,
-      "veg": true,
-      "pescatarian": true,
-      "glutenFree": true
-    },
-    {
-      "id": 10,
-      "name": "Veggie Sandwich",
-      "cost": 7.99,
-      "restaurantId": 1,
-      "veg": false,
-      "pescatarian": true,
-      "glutenFree": false
-    },
-    {
-      "id": 11,
-      "name": "Ramen Mushroom and Egg",
-      "cost": 7.80,
-      "restaurantId": 1,
-      "veg": true,
-      "pescatarian": false,
-      "glutenFree": false
-    },
-    {
-      "id": 12,
-      "name": "Soba Noodle and Sesame Salad",
-      "cost": 6.90,
-      "restaurantId": 0,
-      "veg": true,
-      "pescatarian": false,
-      "glutenFree": true
-    },
-    {
-      "id": 13,
-      "name": "Mutton Roll",
-      "cost": 7.75,
-      "restaurantId": 1,
-      "veg": false,
-      "pescatarian": true,
-      "glutenFree": false
-    },
-    {
-      "id": 14,
-      "name": "Classic mutton curry",
-      "cost": 8.15,
-      "restaurantId": 1,
-      "veg": false,
-      "pescatarian": true,
-      "glutenFree": true
-    },
-    {
-      "id": 15,
-      "name": "Chicken Sandwich",
-      "cost": 7.99,
-      "restaurantId": 0,
-      "veg": false,
-      "pescatarian": true,
-      "glutenFree": false
-    }
-  ]
+  {
+    "id": 1,
+    "name": "Verbena and Lemon Halloumi",
+    "cost": 8.20,
+    "restaurantId": 0,
+    "veg": true,
+    "pescatarian": false,
+    "glutenFree": false
+  },
+  {
+    "id": 2,
+    "name": "Thai Green Vegetable Curry",
+    "cost": 6.50,
+    "restaurantId": 1,
+    "veg": true,
+    "pescatarian": true,
+    "glutenFree": true
+  },
+  {
+    "id": 3,
+    "name": "Tandoori Paneer Flatbread",
+    "cost": 7.15,
+    "restaurantId": 0,
+    "veg": true,
+    "pescatarian": false,
+    "glutenFree": true
+  },
+  {
+    "id": 4,
+    "name": "Thai Green Vegetable Curry",
+    "cost": 7.99,
+    "restaurantId": 1,
+    "veg": true,
+    "pescatarian": false,
+    "glutenFree": false
+  },
+  {
+    "id": 5,
+    "name": "Fries",
+    "cost": 2.20,
+    "restaurantId": 0,
+    "veg": true,
+    "pescatarian": true,
+    "glutenFree": true
+  },
+  {
+    "id": 6,
+    "name": "Ramen Mushroom and Egg",
+    "cost": 7.80,
+    "restaurantId": 1,
+    "veg": true,
+    "pescatarian": false,
+    "glutenFree": false
+  },
+  {
+    "id": 7,
+    "name": "Soba Noodle and Sesame Salad",
+    "cost": 6.90,
+    "restaurantId": 1,
+    "veg": true,
+    "pescatarian": false,
+    "glutenFree": true
+  },
+  {
+    "id": 8,
+    "name": "Bread Roll",
+    "cost": 0.75,
+    "restaurantId": 1,
+    "veg": true,
+    "pescatarian": true,
+    "glutenFree": false
+  },
+  {
+    "id": 9,
+    "name": "Classic Tiramisu",
+    "cost": 3.15,
+    "restaurantId": 1,
+    "veg": true,
+    "pescatarian": true,
+    "glutenFree": true
+  },
+  {
+    "id": 10,
+    "name": "Veggie Sandwich",
+    "cost": 7.99,
+    "restaurantId": 1,
+    "veg": false,
+    "pescatarian": true,
+    "glutenFree": false
+  },
+  {
+    "id": 11,
+    "name": "Ramen Mushroom and Egg",
+    "cost": 7.80,
+    "restaurantId": 1,
+    "veg": true,
+    "pescatarian": false,
+    "glutenFree": false
+  },
+  {
+    "id": 12,
+    "name": "Soba Noodle and Sesame Salad",
+    "cost": 6.90,
+    "restaurantId": 0,
+    "veg": true,
+    "pescatarian": false,
+    "glutenFree": true
+  },
+  {
+    "id": 13,
+    "name": "Mutton Roll",
+    "cost": 7.75,
+    "restaurantId": 1,
+    "veg": false,
+    "pescatarian": true,
+    "glutenFree": false
+  },
+  {
+    "id": 14,
+    "name": "Classic mutton curry",
+    "cost": 8.15,
+    "restaurantId": 1,
+    "veg": false,
+    "pescatarian": true,
+    "glutenFree": true
+  },
+  {
+    "id": 15,
+    "name": "Chicken Sandwich",
+    "cost": 7.99,
+    "restaurantId": 0,
+    "veg": false,
+    "pescatarian": true,
+    "glutenFree": false
+  }
+]

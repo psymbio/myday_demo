@@ -9,15 +9,16 @@ import PeopleCounter from "@/app/components/ui/PeopleCounter";
 import HomeToDeskDisplay from "../components/ui/HomeToDeskDisplay";
 export default function TestingPage() {
   return (
-    <div><HomeToDeskDisplay></HomeToDeskDisplay>
-      <NavigationBar></NavigationBar> 
+    <div>
+      <HomeToDeskDisplay></HomeToDeskDisplay>
+      <NavigationBar></NavigationBar>
       <Header></Header>
       <HeaderImage></HeaderImage>
       <div className="sm:px-2 mx-5 md:mx-16 lg:mx-32 -translate-y-3">
         <Tabs />
         <Carousel />
         <QuickLinks />
-       <PeopleCounter />
+        <PeopleCounter />
       </div>
       <ChatBot></ChatBot>
     </div>

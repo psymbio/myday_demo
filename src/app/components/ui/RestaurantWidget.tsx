@@ -42,10 +42,7 @@ const initialRestaurants: Restaurant[] = [
     id: "starbucks",
     name: "Starbucks",
     iconType: IconType.Cafe,
-    schedule: [
-      "Mon-Fri: 07:00 - 16:00",
-      "Tue & Thu: 07:00 - 17:00",
-    ],
+    schedule: ["Mon-Fri: 07:00 - 16:00", "Tue & Thu: 07:00 - 17:00"],
     busyStatus: BusyStatus.NotBusy, // Default status
   },
 ];
@@ -55,7 +52,10 @@ interface RestaurantCardProps {
   renderIcon: (iconType: IconType) => JSX.Element | null;
 }
 
-const RestaurantCard: React.FC<RestaurantCardProps> = ({ restaurant, renderIcon }) => (
+const RestaurantCard: React.FC<RestaurantCardProps> = ({
+  restaurant,
+  renderIcon,
+}) => (
   <div
     key={restaurant.id}
     className="bg-gray-50 shadow-sm rounded-lg p-3 flex flex-col justify-between"
@@ -97,7 +97,8 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({ restaurant, renderIcon 
 );
 
 export default function RestaurantDisplay() {
-  const [restaurantStatuses, setRestaurantStatuses] = useState<Restaurant[]>(initialRestaurants);
+  const [restaurantStatuses, setRestaurantStatuses] =
+    useState<Restaurant[]>(initialRestaurants);
   const [loading, setLoading] = useState<boolean>(true);
 
   // Function to render icons based on type
@@ -146,11 +147,7 @@ export default function RestaurantDisplay() {
   }, []);
 
   if (loading) {
-    return (
-      <div className="p-1 text-center text-sm">
-        Loading...
-      </div>
-    );
+    return <div className="p-1 text-center text-sm">Loading...</div>;
   }
 
   return (
@@ -171,7 +168,10 @@ export default function RestaurantDisplay() {
 
       {/* Footer */}
       <div className="flex justify-end mt-2 text-xs">
-        <a href="/food_drink" className="text-red-600 hover:underline font-semibold">
+        <a
+          href="/food_drink"
+          className="text-red-600 hover:underline font-semibold"
+        >
           Go to Restaurants
         </a>
       </div>

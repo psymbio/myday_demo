@@ -1,8 +1,8 @@
 "use client";
 
-import React from 'react';
-import RestaurantDisplay from './RestaurantDisplay';
-import FoodCardDisplay from './FoodDisplay';
+import React from "react";
+import RestaurantDisplay from "./RestaurantDisplay";
+import FoodCardDisplay from "./FoodDisplay";
 
 const MainPage: React.FC = () => {
   return (
