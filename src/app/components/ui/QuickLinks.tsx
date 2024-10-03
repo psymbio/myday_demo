@@ -65,12 +65,12 @@ export default function Links() {
         {cards.map((card, index) => (
           <article
             key={index}
-            className="group bg-white rounded-lg shadow transition-transform transform hover:scale-105 p-2 border border-transparent flex flex-col"
+            className="group bg-white rounded-lg shadow transition-transform transform hover:scale-105 p-2 border flex flex-col"
           >
             <img
               alt={card.title}
               src={card.imgSrc}
-              className="h-20 w-full object-cover"
+              className="h-20 w-full object-cover rounded"
             />
             <div className="mt-2 flex-1 flex flex-col">
               <a href="#" className="hover:underline">
