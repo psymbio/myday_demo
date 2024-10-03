@@ -65,7 +65,7 @@ export default function Links() {
         {cards.map((card, index) => (
           <article
             key={index}
-            className="group bg-white rounded-lg shadow transition-transform transform hover:scale-105 p-2 border flex flex-col"
+            className="group bg-white rounded-lg shadow transition-transform transform hover:scale-105 p-3 border flex flex-col"
           >
             <img
               alt={card.title}
