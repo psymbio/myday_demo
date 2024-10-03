@@ -21,9 +21,9 @@ const HomeToDeskpopup1: React.FC<HomeToDeskpopup1Props> = ({
   onClose,
   flag,
 }) => {
-  if (!show) return null;
   const [selectedOption, setSelectedOption] = useState<string>("");
 
+  if (!show) return null;
   // Handle change for radio buttons
   const handleOptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedOption(event.target.value);
