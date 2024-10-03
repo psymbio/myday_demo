@@ -80,7 +80,7 @@ export default function Checkout() {
 
   return (
     <section>
-      <div className="mx-5 max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+      <div className="-translate-y-10 mx-5 max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
         <div className="mx-auto max-w-3xl">
           <header className="">
             <Heading2 heading="Your Cart" />
