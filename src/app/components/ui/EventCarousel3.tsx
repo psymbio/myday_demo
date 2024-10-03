@@ -79,7 +79,8 @@ export default function Carousel() {
   };
 
   return (
-    <div className="py-2 mx-5">
+    <div>
+    <div className="py-2 mx-5 -translate-y-3">
       <div className="flex items-center justify-between px-2">
         <Heading2 heading="Events" />
       </div>
@@ -163,10 +164,12 @@ export default function Carousel() {
           ))}
         </div>
       </div>
-
+    </div>
+    <div>
       {isPopupOpen && selectedEvent && (
         <EventPopup event={selectedEvent} onClose={closePopup} />
       )}
+    </div>
     </div>
   );
 }
