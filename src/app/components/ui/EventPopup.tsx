@@ -59,7 +59,7 @@ export default function EventPopup({ event, onClose }: EventPopupProps) {
         <p className="text-gray-500 mb-6">{event.subtextLong}</p>
 
         {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row sm:gap-4">
+        <div className="grid grid-cols-2 gap-2">
           <CustomButton
             bgColor={isRegistered ? "bg-gray-700" : "bg-red-600"}
             textColor="text-white"

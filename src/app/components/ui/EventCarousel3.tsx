@@ -79,7 +79,7 @@ export default function Carousel() {
   };
 
   return (
-    <div className="py-2">
+    <div className="py-2 mx-5">
       <div className="flex items-center justify-between px-2">
         <Heading2 heading="Events" />
       </div>
