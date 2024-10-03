@@ -40,7 +40,7 @@ export default function EventPopup({ event, onClose }: EventPopupProps) {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
-      <div className="rounded-2xl border border-blue-100 bg-white p-6 shadow-lg sm:p-6 lg:p-8 max-w-md w-full">
+      <div className="rounded-2xl border border-blue-100 bg-white p-6 shadow-lg sm:p-6 lg:p-8 max-w-md w-10/12">
         {/* Close Button */}
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-4">

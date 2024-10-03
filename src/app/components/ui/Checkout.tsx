@@ -13,6 +13,7 @@ import {
   updateItemQuantity,
 } from "@/slices/cartSlice"; // Adjust path accordingly
 import CustomButton from "./CustomButton";
+import Heading2 from "./Heading2";
 
 interface FoodItem {
   id: number;
@@ -79,12 +80,10 @@ export default function Checkout() {
 
   return (
     <section>
-      <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+      <div className="-translate-y-10 mx-5 max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
         <div className="mx-auto max-w-3xl">
-          <header className="text-center">
-            <h1 className="text-xl font-bold text-gray-900 sm:text-3xl">
-              Your Cart
-            </h1>
+          <header className="">
+            <Heading2 heading="Your Cart" />
           </header>
 
           <div className="mt-8">
@@ -97,10 +96,10 @@ export default function Checkout() {
                       className="flex items-center justify-between"
                     >
                       <div className="flex-grow">
-                        <h3 className="text-lg font-semibold text-gray-900">
+                        <h3 className="text-base font-semibold text-gray-600">
                           {item.name}
                         </h3>
-                        <p className="text-lg text-gray-600">
+                        <p className="text-base text-gray-600">
                           £{item.cost.toFixed(2)}
                         </p>
                       </div>

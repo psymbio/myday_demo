@@ -34,6 +34,9 @@ export default function Reservations({
   meetings,
   bookings,
 }: ReservationsDetailsProps) {
+
+ //const visibleFlag = useState(localStorage.getItem("visible"))
+
   return (
     <>
       <div className="mt-4 border rounded-lg shadow bg-white px-4 pt-4">
@@ -42,7 +45,7 @@ export default function Reservations({
             <ApartmentIcon color="success" />
             <div className="pl-4">
             <h2 className="text-sm font-bold text-black">My Office Bookings</h2>
-              {bookings.map((booking, index) => (
+              {  bookings.map((booking, index) => (
                 <div key={index}>
                   <p className="text-gray-600 text-xs">
                     {" "}

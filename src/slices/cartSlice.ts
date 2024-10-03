@@ -7,8 +7,6 @@ interface CartState {
 
 const initialState: CartState = {
   items: {
-    1: 2, // Initial quantity for item ID 1
-    2: 3, // Initial quantity for item ID 2
   },
 };
 
