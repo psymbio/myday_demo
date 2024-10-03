@@ -22,16 +22,20 @@ const HomeToDeskDisplay: React.FC = () => {
 
   const handleNoToDelay = () => {
     setShowDelayModal(false);
+    setShowCancelPassModal(true);
   };
 
   const handleYesToCancelPass = () => {
-    console.log("Floor pass cancelled");
+   
     setShowCancelPassModal(false);
     setshowaddzoomlinkModal(true);
+   //call function to delete the data from screen
+   localStorage.setItem("visible","no")
   };
 
   const handleNoToCancelPass = () => {
     setShowCancelPassModal(false);
+    setshowaddzoomlinkModal(true);
   };
   const handleshowaddzoomlinkModalConfirm = () => {
     setShowDelayModal(false);
@@ -44,9 +48,15 @@ const HomeToDeskDisplay: React.FC = () => {
     setShowCancelPassModal(false);
     setshowaddzoomlinkModal(false);
     setshownotifyModal(false);
-    //call function to delete the data from screen
+   
   };
   const handleshownotifyModalno = () => {
+    setShowDelayModal(false);
+    setShowCancelPassModal(false);
+    setshowaddzoomlinkModal(false);
+    setshownotifyModal(false);
+  };
+  const handleclose = () => {
     setShowDelayModal(false);
     setShowCancelPassModal(false);
     setshowaddzoomlinkModal(false);
@@ -57,9 +67,9 @@ const HomeToDeskDisplay: React.FC = () => {
     <div className="">
       <button
         onClick={handleOpenDelayModal}
-        className="fixed bottom-4 left-4 z-50 bg-blue-500 text-white rounded-lg hover:bg-blue-200 transition"
+        className="fixed bottom-4 left-4 z-50 bg-blue-200 text-white rounded-lg hover:bg-blue-100 transition"
       >
-        Show
+        O
       </button>
 
       {/* First Modal: Delay on Elizabeth Line */}
@@ -69,6 +79,8 @@ const HomeToDeskDisplay: React.FC = () => {
         message="Line Closure on Elizabeth Line Expected delays of 3 hours. Would you like to update your day?"
         onYes={handleYesToDelay}
         onNo={handleNoToDelay}
+        onClose={handleclose}
+        flag="yes"
       />
 
       {/* Second Modal: Cancel desk */}
@@ -78,6 +90,8 @@ const HomeToDeskDisplay: React.FC = () => {
         message="LDN-PSP-Desk/L25/1.DCO0/01/D35"
         onYes={handleYesToCancelPass}
         onNo={handleNoToCancelPass}
+        onClose={handleclose}
+         flag="yes"
       />
       {/* Third Modal: Add Zoom Links */}
       <Modal
@@ -86,6 +100,8 @@ const HomeToDeskDisplay: React.FC = () => {
         message="LDN-PSP 25.Pod D"
         onYes={handleshowaddzoomlinkModalConfirm}
         onNo={handleNoToCancelPass}
+        onClose={handleclose}
+         flag="confirm"
       />
 
       {/* Fourth Modal: Add Zoom Links */}
@@ -95,6 +111,8 @@ const HomeToDeskDisplay: React.FC = () => {
         message=""
         onYes={handleshownotifyModalyes}
         onNo={handleshownotifyModalno}
+        onClose={handleclose}
+         flag="yes"
       />
     </div>
   );
