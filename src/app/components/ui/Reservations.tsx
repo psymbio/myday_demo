@@ -1,6 +1,5 @@
 import ApartmentIcon from "@mui/icons-material/BusinessTwoTone";
 import MeetingRoomIcon from "@mui/icons-material/MeetingRoomTwoTone";
-import { useState } from "react";
 
 interface MeetingDetails {
   Id: number;
