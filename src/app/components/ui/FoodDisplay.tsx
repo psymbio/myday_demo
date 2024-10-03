@@ -1,12 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
-import FoodCard from "./FoodCard";
-import Modal from "./Modal";
-import foodItems from "../../data/fooditems.json"; // Assuming fooditems.json is in this path
-import TeyaCard from "./TeyaCard";
-import CustomButton from "./CustomButton";
-import { useRouter } from "next/navigation";
+import React, { useState } from 'react';
+import FoodCard from './FoodCard';
+import Modal from './Modal';
+import foodItems from '../../data/fooditems.json'; // Assuming fooditems.json is in this path
+import TeyaCard from './TeyaCard';
+import CustomButton from './CustomButton';
+import { useRouter } from 'next/navigation';
 
 interface FoodItem {
   id: number;
@@ -50,6 +50,8 @@ const FoodCardDisplay: React.FC = () => {
 
   const router = useRouter();
 
+  const router = useRouter();
+
   const applyFilters = () => {
     const query = new URLSearchParams({
       veg: String(tempFilter.veg),
@@ -57,12 +59,12 @@ const FoodCardDisplay: React.FC = () => {
       glutenFree: String(tempFilter.glutenFree),
     }).toString();
 
+
     router.push(`/food_drink/filter?${query}`);
   };
 
   // Function to clear the filters and hide the food list
   const clearSelection = () => {
-    // Reset filters
     setFilter({
       veg: false,
       pescatarian: false,
@@ -94,74 +96,68 @@ const FoodCardDisplay: React.FC = () => {
 
       {/* Modal for filtering */}
       {isModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <Modal isOpen={isModalOpen} onClose={closeModal}>
-            <div className="z-50">
-              <h2 className="text-2xl font-bold mb-4">Menu Preferences</h2>
+        <Modal isOpen={isModalOpen} onClose={closeModal}>
+          <div>
+            <h2 className="text-2xl font-bold mb-4">Menu Preferences</h2>
 
-              {/* Filters inside the Modal */}
-              <div className="flex flex-col space-y-2 mb-4">
-                <label className="flex items-center">
-                  <input
-                    type="checkbox"
-                    name="veg"
-                    checked={tempFilter.veg}
-                    onChange={handleFilterChange}
-                    className="mr-2"
-                  />
-                  Vegetarian
-                </label>
-                <label className="flex items-center">
-                  <input
-                    type="checkbox"
-                    name="pescatarian"
-                    checked={tempFilter.pescatarian}
-                    onChange={handleFilterChange}
-                    className="mr-2"
-                  />
-                  Pescatarian
-                </label>
-                <label className="flex items-center">
-                  <input
-                    type="checkbox"
-                    name="glutenFree"
-                    checked={tempFilter.glutenFree}
-                    onChange={handleFilterChange}
-                    className="mr-2"
-                  />
-                  Gluten-Free
-                </label>
-              </div>
-
-              {/* Confirm and Close buttons */}
-              <div className="flex justify-end space-x-4 mt-6">
-                <CustomButton
-                  bgColor="bg-red-600"
-                  textColor="text-white"
-                  text="Confirm"
-                  onClick={() => applyFilters()}
+            {/* Filters inside the Modal */}
+            <div className="flex flex-col space-y-2 mb-4">
+              <label className="flex items-center">
+                <input
+                  type="checkbox"
+                  name="veg"
+                  checked={tempFilter.veg}
+                  onChange={handleFilterChange}
+                  className="mr-2"
                 />
-
-                <CustomButton
-                  bgColor="bg-red-600"
-                  textColor="text-white"
-                  text="Close"
-                  onClick={() => closeModal()}
+                Vegetarian
+              </label>
+              <label className="flex items-center">
+                <input
+                  type="checkbox"
+                  name="pescatarian"
+                  checked={tempFilter.pescatarian}
+                  onChange={handleFilterChange}
+                  className="mr-2"
                 />
-              </div>
+                Pescatarian
+              </label>
+              <label className="flex items-center">
+                <input
+                  type="checkbox"
+                  name="glutenFree"
+                  checked={tempFilter.glutenFree}
+                  onChange={handleFilterChange}
+                  className="mr-2"
+                />
+                Gluten-Free
+              </label>
             </div>
-          </Modal>
-        </div>
+
+            {/* Confirm and Close buttons */}
+            <div className="flex justify-end space-x-4 mt-6">
+              <CustomButton
+                bgColor="bg-red-600"
+                textColor="text-white"
+                text="Confirm"
+                onClick={() => applyFilters()}
+              />
+              <CustomButton
+                bgColor="bg-red-600"
+                textColor="text-white"
+                text="Close"
+                onClick={() => closeModal()}
+              />
+            </div>
+          </div>
+        </Modal>
       )}
 
       {/* Displaying filtered food items */}
       {showFoodList && (
         <>
-          {/* Dark overlay */}
-          <div className="fixed inset-0 bg-black opacity-50 z-10"></div>
-
-          {/* Food list and Clear Selection button on top of the overlay */}
-          <div className="relative z-20">
+          {/* Food list and Clear Selection button */}
+          <div>
             {/* Clear Selection Button */}
             <div className="flex justify-center">
               <button
@@ -201,3 +197,4 @@ const FoodCardDisplay: React.FC = () => {
 };
 
 export default FoodCardDisplay;
+
