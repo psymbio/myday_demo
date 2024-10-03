@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import RestaurantMenuIcon from "@mui/icons-material/RestaurantMenu";
 import LocalCafeIcon from "@mui/icons-material/LocalCafe";
 
@@ -72,15 +72,17 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({
       </div>
 
       {/* Busy Status Pill */}
-      <div
-        className={`ml-4 px-4 py-0.5 rounded-full text-xs font-semibold text-center w-auto ${
-          restaurant.busyStatus === BusyStatus.Busy
-            ? "bg-red-100 text-red-600"
-            : "bg-green-100 text-green-600"
-        }`}
-        aria-label={`Status: ${restaurant.busyStatus}`}
-      >
-        {restaurant.busyStatus}
+      <div className="translate-y-1">
+        <div
+          className={`ml-4 px-4 py-0.5 rounded-full text-xs font-semibold text-center w-auto ${
+            restaurant.busyStatus === BusyStatus.Busy
+              ? "bg-red-100 text-red-600"
+              : "bg-green-100 text-green-600"
+          }`}
+          aria-label={`Status: ${restaurant.busyStatus}`}
+        >
+          {restaurant.busyStatus}
+        </div>
       </div>
     </div>
   </div>
