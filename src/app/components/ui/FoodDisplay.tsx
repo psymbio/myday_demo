@@ -50,8 +50,6 @@ const FoodCardDisplay: React.FC = () => {
 
   const router = useRouter();
 
-  const router = useRouter();
-
   const applyFilters = () => {
     const query = new URLSearchParams({
       veg: String(tempFilter.veg),
