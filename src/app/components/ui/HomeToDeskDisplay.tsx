@@ -4,7 +4,7 @@ import { useState } from "react";
 import Modal from "./HomeToDeskpopup";
 import { useDispatch } from "react-redux";
 import { hideReservation } from "@/slices/hideshowmeetingSlice";
-import { hideMeeting } from "@/slices/hideshowmeetingSlice";
+//import { hideMeeting } from "@/slices/hideshowmeetingSlice";
 
 
 const HomeToDeskDisplay: React.FC = () => {
@@ -50,7 +50,7 @@ const HomeToDeskDisplay: React.FC = () => {
     setshownotifyModal(true);
     //hide meetings from resetvation 
     console.log("Dispatching action - hideMeeting ")
-    dispatch(hideMeeting(false));
+    //dispatch(hideMeeting(false));
   };
   const handleshownotifyModalyes = () => {
     setShowDelayModal(false);
@@ -84,12 +84,12 @@ const HomeToDeskDisplay: React.FC = () => {
       {/* First Modal: Delay on Elizabeth Line */}
       <Modal
         show={showDelayModal}
-        title="Travel Updates "
-        message="Line Closure on Elizabeth Line Expected delays of 3 hours. Would you like to update your day?"
+        title="TRAVEL ALERT"
+        message="Line Closure on Elizabeth Line. Expected delays of 3 hours.  Would you like to update your day?"
         onYes={handleYesToDelay}
         onNo={handleNoToDelay}
         onClose={handleclose}
-        flag="yes"
+        flag="Travel"
       />
 
       {/* Second Modal: Cancel desk */}
