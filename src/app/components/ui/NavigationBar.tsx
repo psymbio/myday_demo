@@ -100,13 +100,22 @@ export default function NavigationBar() {
                 Home
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link
                 href="/coming_soon"
                 className="text-black text-lg hover:text-red-600"
                 onClick={toggleMenu}
               >
                 The Road to PSP
+              </Link>
+            </li> */}
+            <li>
+              <Link
+                href="/mygroup"
+                className="text-black text-lg hover:text-red-600"
+                onClick={toggleMenu}
+              >
+                My Group
               </Link>
             </li>
             <li>
@@ -115,7 +124,7 @@ export default function NavigationBar() {
                 className="text-black text-lg hover:text-red-600"
                 onClick={toggleMenu}
               >
-                Bookings
+                My Bookings
               </Link>
             </li>
             <li>
@@ -142,10 +151,10 @@ export default function NavigationBar() {
                 className="text-black text-lg hover:text-red-600"
                 onClick={toggleMenu}
               >
-                Indoor Maps
+                Maps
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link
                 href="/coming_soon"
                 className="text-black text-lg hover:text-red-600"
@@ -153,8 +162,8 @@ export default function NavigationBar() {
               >
                 Travel
               </Link>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <Link
                 href="/coming_soon"
                 className="text-black text-lg hover:text-red-600"
@@ -162,8 +171,8 @@ export default function NavigationBar() {
               >
                 Raise a Ticket
               </Link>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <Link
                 href="/coming_soon"
                 className="text-black text-lg hover:text-red-600"
@@ -171,8 +180,8 @@ export default function NavigationBar() {
               >
                 New Joiner Onboarding
               </Link>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <Link
                 href="/coming_soon"
                 className="text-black text-lg hover:text-red-600"
@@ -180,7 +189,7 @@ export default function NavigationBar() {
               >
                 Chatbot
               </Link>
-            </li>
+            </li> */}
           </ul>
         </nav>
 
