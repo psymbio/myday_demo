@@ -56,8 +56,8 @@ const ComingSoon: React.FC<ComingSoonProps> = ({
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-white p-4">
-      <div className="flex flex-col items-center bg-gray-100 shadow-md rounded-lg p-8 max-w-md w-full">
+    <div className="flex items-center justify-center min-h-screen bg-hsbc-bg p-4">
+      <div className="flex flex-col items-center bg-white shadow-lg rounded-lg p-8 max-w-md w-full">
         {/* HSBC Logo */}
         <div className="mb-6">
           <Image
@@ -78,12 +78,12 @@ const ComingSoon: React.FC<ComingSoonProps> = ({
         <p className="text-hsbc-grey mb-6 text-center">
           Redirecting in {countdown} second{countdown !== 1 ? 's' : ''}.
         </p>
-        <a
+        <button
           onClick={handleRedirect}
-          className="text-red-600 hover:underline font-semibold"
+          className="bg-hsbc-red text-white font-semibold py-2 px-4 rounded hover:bg-hsbc-red-dark transition duration-300"
         >
           Go Back
-        </a>
+        </button>
       </div>
     </div>
   );
