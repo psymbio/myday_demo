@@ -96,7 +96,7 @@ const FoodCardDisplay: React.FC = () => {
       {isModalOpen && (
         <Modal isOpen={isModalOpen} onClose={closeModal}>
           <div>
-            <h2 className="text-xl font-bold mb-4 w-10/12">Menu Preferences</h2>
+            <h2 className="text-2xl font-bold mb-4 ">Menu Preferences</h2>
 
             {/* Filters inside the Modal */}
             <div className="flex flex-col space-y-2 mb-4">
@@ -141,7 +141,9 @@ const FoodCardDisplay: React.FC = () => {
                 onClick={() => applyFilters()}
               />
               <CustomButton
-                bgColor="bg-gray-600"
+
+                bgColor="bg-gray-700"
+
                 textColor="text-white"
                 text="Close"
                 onClick={() => closeModal()}
@@ -195,4 +197,3 @@ const FoodCardDisplay: React.FC = () => {
 };
 
 export default FoodCardDisplay;
-
