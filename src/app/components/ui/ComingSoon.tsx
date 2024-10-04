@@ -14,12 +14,6 @@ interface ComingSoonProps {
   message?: string;
 
   /**
-   * The path to redirect the user to after the delay.
-   * @default "/"
-   */
-  redirectPath?: string;
-
-  /**
    * The delay before automatic redirection (in milliseconds).
    * @default 5000 (5 seconds)
    */
@@ -28,7 +22,6 @@ interface ComingSoonProps {
 
 const ComingSoon: React.FC<ComingSoonProps> = ({
   message = "This feature is coming soon!",
-  redirectPath = "/",
   redirectDelay = 5000,
 }) => {
   const router = useRouter();
@@ -37,7 +30,7 @@ const ComingSoon: React.FC<ComingSoonProps> = ({
   useEffect(() => {
     // Timer for automatic redirection
     const timer = setTimeout(() => {
-      router.push(redirectPath);
+      router.back(); // Go back in history
     }, redirectDelay);
 
     // Countdown interval
@@ -56,10 +49,10 @@ const ComingSoon: React.FC<ComingSoonProps> = ({
       clearTimeout(timer);
       clearInterval(countdownInterval);
     };
-  }, [redirectDelay, redirectPath, router]);
+  }, [redirectDelay, router]);
 
   const handleRedirect = () => {
-    router.push(redirectPath);
+    router.back(); // Go back in history
   };
 
   return (

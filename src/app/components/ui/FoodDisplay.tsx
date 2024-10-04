@@ -78,9 +78,9 @@ const FoodCardDisplay: React.FC = () => {
   };
 
   return (
-    <div className="p-0 relative">
+    <div className="p-0 relative content-center">
       {/* Filter and Clear Selection Buttons Row */}
-      <div className="-mt-11 mb-4">
+      <div className="-mt-5 mb-4">
         {/* Full-width Clickable Filter Menu Row */}
         <div
           className="w-full bg-gray-100 cursor-pointer hover:bg-gray-200 text-center"
@@ -89,8 +89,11 @@ const FoodCardDisplay: React.FC = () => {
           FILTER MENUS
         </div>
         {/* Teya Card Below Filter Menus */}
-        <TeyaCard />
+        
       </div>
+      <div className="flex justify-center -mt-4">
+  <TeyaCard />
+</div>
 
       {/* Modal for filtering */}
       {isModalOpen && (
