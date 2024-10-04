@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import CustomButton from "./CustomButton";
 
-interface HomeToDeskpopup1Props {
+interface HomeToDeskPopupProps {
   show: boolean;
   title: string;
   message: string;
@@ -12,7 +12,7 @@ interface HomeToDeskpopup1Props {
   flag: string;
 }
 
-const HomeToDeskpopup1: React.FC<HomeToDeskpopup1Props> = ({
+const HomeToDeskPopup: React.FC<HomeToDeskPopupProps> = ({
   show,
   title,
   message,
@@ -66,12 +66,12 @@ const HomeToDeskpopup1: React.FC<HomeToDeskpopup1Props> = ({
                 <input
                   type="radio"
                   name="options"
-                  value={message}
+                  value="Booking"
                   checked={selectedOption === "Booking"}
                   onChange={handleOptionChange}
                   className="mr-2"
                 />
-                Booking
+               {message}
               </label>
 
               <label className="block mb-2">
@@ -101,4 +101,4 @@ const HomeToDeskpopup1: React.FC<HomeToDeskpopup1Props> = ({
   );
 };
 
-export default HomeToDeskpopup1;
+export default HomeToDeskPopup;
