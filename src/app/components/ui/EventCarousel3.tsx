@@ -129,7 +129,7 @@ export default function Carousel() {
                 </div>
 
                 {/* Right side - Image and Button */}
-                <div className="absolute mt-[0.5rem] ml-[14rem] w-2/5 lg:w-1/2 flex flex-col lg:flex-col items-center justify-between p-2">
+                <div className="absolute mt-[0.5rem] ml-[14rem] w-2/5 lg:w-1/2 flex flex-col lg:flex-col items-center p-2">
                   <div
                     className="w-full rounded"
                     style={{
