@@ -12,7 +12,7 @@ export default function TabCard({
   buttonLink,
 }: TabCardProps) {
   return (
-    <div className="mt-4 p-4 border rounded-lg shadow bg-white">
+    <div className="mt-4 p-4 border rounded-lg shadow bg-white h-[12rem] overflow-scroll">
       <h3 className="text-lg font-medium">{title}</h3>
       <p>{content}</p>
       <br />

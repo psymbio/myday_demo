@@ -54,7 +54,7 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({
   restaurant,
   renderIcon,
 }) => (
-  <div className="bg-gray-50 shadow-sm rounded-lg p-3 flex flex-col justify-between">
+  <div className="bg-gray-50 shadow-sm rounded-lg p-1 flex flex-col justify-between">
     {/* Icon and Details */}
     <div className="flex items-start">
       <div className="mr-2">{renderIcon(restaurant.iconType)}</div>
@@ -143,7 +143,7 @@ export default function RestaurantDisplay() {
   }
 
   return (
-    <section className="mt-2 p-3 border rounded-lg shadow bg-white">
+    <section className="mt-4 p-2 border rounded-lg shadow bg-white h-[12rem] overflow-scroll">
       {/* Title */}
       {/* <h1 className="text-lg font-bold mb-2 text-red-600">Restaurant Availability</h1> */}
 

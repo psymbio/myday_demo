@@ -53,7 +53,7 @@ export default function MyGroupWidget() {
   };
 
   return (
-    <div className="mt-4 p-4 border rounded-lg shadow bg-white">
+    <div className="mt-4 p-4 border rounded-lg shadow bg-white h-[12rem] overflow-scroll">
       <div className="grid grid-cols-5 sm:grid-cols-4 md:grid-cols-5 gap-4">
         {profiles.slice(0, 5).map((profile, index) => {
           // Limit to first 10 profiles
@@ -85,7 +85,7 @@ export default function MyGroupWidget() {
         })}
       </div>
       <br />
-      <div className="flex justify-between items-center text-xs">
+      <div className="flex justify-between items-center text-xs mt-4">
         <span>Looking for someone else?</span>
         <a href="/mygroup" className="text-red-600 hover:underline">
           Search

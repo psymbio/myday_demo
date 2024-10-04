@@ -39,7 +39,7 @@ export default function Reservations({
 
   return (
     <>
-      <div className="mt-4 border rounded-lg shadow bg-white px-4 pt-4">
+      <div className="mt-4 border rounded-lg shadow bg-white px-4 pt-4 h-[12rem] overflow-scroll">
         {bookings && bookings.length > 0 && (
           <div className="flex items-center ">
             <ApartmentIcon color="success" />
