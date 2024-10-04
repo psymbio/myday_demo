@@ -15,6 +15,7 @@ import registrationReducer from "../slices/registrationSlice";
 import cartReducer from "../slices/cartSlice"; // Import the cart slice
 import { combineReducers } from "redux";
 import counterReducer from "../slices/counterSlice";
+import meetingreservationReducer from "../slices/hideshowmeetingSlice"
 
 // Create a persist configuration
 const persistConfig = {
@@ -27,6 +28,7 @@ const rootReducer = combineReducers({
   registration: registrationReducer,
   cart: cartReducer, // Add cart reducer to the combined reducers
   counter: counterReducer,
+  meetingreservation:meetingreservationReducer
 });
 
 // Create a persisted reducer
