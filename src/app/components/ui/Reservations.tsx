@@ -1,5 +1,9 @@
 import ApartmentIcon from "@mui/icons-material/BusinessTwoTone";
 import MeetingRoomIcon from "@mui/icons-material/MeetingRoomTwoTone";
+import { RootState } from "@/app/store";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { setDefaultReservations } from "@/slices/hideshowmeetingSlice";
 
 interface MeetingDetails {
   Id: number;
@@ -35,8 +39,18 @@ export default function Reservations({
   bookings,
 }: ReservationsDetailsProps) {
 
- //const visibleFlag = useState(localStorage.getItem("visible"))
+  const reservationState = useSelector(
+    (state:RootState) => state.meetingreservation
+  );
 
+  const dispatch = useDispatch();
+
+  
+
+  useEffect(() => {
+    dispatch(setDefaultReservations(true));
+  }, [dispatch]);
+ 
   return (
     <>
       <div className="mt-4 border rounded-lg shadow bg-white px-4 pt-4 h-[12rem] overflow-scroll">
@@ -45,7 +59,7 @@ export default function Reservations({
             <ApartmentIcon color="success" />
             <div className="pl-4">
             <h2 className="text-sm font-bold text-black">My Office Bookings</h2>
-              {  bookings.map((booking, index) => (
+              { reservationState.reservation == true ?  bookings.map((booking, index) => (
                 <div key={index}>
                   <p className="text-gray-600 text-xs">
                     {" "}
@@ -55,7 +69,10 @@ export default function Reservations({
                   <p className="text-gray-600 text-xs">{booking.nearby} in My Group booked nearby</p>
                   <br />
                 </div>
-              ))}
+              )) : <> <p>No upcoming booking </p>
+              <br/>
+              <br/></>
+              }
             </div>
           </div>
         )}
@@ -66,7 +83,7 @@ export default function Reservations({
             <MeetingRoomIcon color="warning" />
             <div className="pl-4">
             <h2 className="text-sm font-bold text-black">My Meetings</h2>
-              {meetings.map((meeting, index) => (
+              { reservationState.meeting == true ? meetings.map((meeting, index) => (
                 <div key={index}>
                   <p className="text-gray-600 text-xs">
                     {" "}
@@ -75,7 +92,10 @@ export default function Reservations({
                   <p className="text-gray-600 text-xs">{meeting.Booking}</p>
                   <br />
                 </div>
-              ))}
+              )             
+            ) : <> <p>No upcoming meetings </p>
+            <br/>
+            <br/></>}
             </div>
           </div>
         )}

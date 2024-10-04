@@ -1,7 +1,11 @@
 // pages/index.tsx
 "use client";
 import { useState } from "react";
-import Modal from "./HomeToDeskpopup1";
+import Modal from "./HomeToDeskpopup";
+import { useDispatch } from "react-redux";
+import { hideReservation } from "@/slices/hideshowmeetingSlice";
+import { hideMeeting } from "@/slices/hideshowmeetingSlice";
+
 
 const HomeToDeskDisplay: React.FC = () => {
   const [showDelayModal, setShowDelayModal] = useState<boolean>(false);
@@ -10,6 +14,7 @@ const HomeToDeskDisplay: React.FC = () => {
   const [showaddzoomlinkModal, setshowaddzoomlinkModal] =
     useState<boolean>(false);
   const [shownotifyModal, setshownotifyModal] = useState<boolean>(false);
+  const dispatch = useDispatch();
 
   const handleOpenDelayModal = () => {
     setShowDelayModal(true);
@@ -30,7 +35,8 @@ const HomeToDeskDisplay: React.FC = () => {
     setShowCancelPassModal(false);
     setshowaddzoomlinkModal(true);
    //call function to delete the data from screen
-   localStorage.setItem("visible","no")
+   console.log("Dispatching action - hideReservation ")
+   dispatch(hideReservation(false));
   };
 
   const handleNoToCancelPass = () => {
@@ -42,6 +48,9 @@ const HomeToDeskDisplay: React.FC = () => {
     setShowCancelPassModal(false);
     setshowaddzoomlinkModal(false);
     setshownotifyModal(true);
+    //hide meetings from resetvation 
+    console.log("Dispatching action - hideMeeting ")
+    dispatch(hideMeeting(false));
   };
   const handleshownotifyModalyes = () => {
     setShowDelayModal(false);
@@ -67,9 +76,9 @@ const HomeToDeskDisplay: React.FC = () => {
     <div className="">
       <button
         onClick={handleOpenDelayModal}
-        className="fixed bottom-4 left-4 z-50 bg-blue-200 text-white rounded-lg hover:bg-blue-100 transition"
+        className="fixed bottom-4 left-4 z-50 bg-gray-500 bg-opacity-50 hover:bg-opacity-75 text-white font-bold py-2 px-2 rounded-full"
       >
-        O
+       ↑
       </button>
 
       {/* First Modal: Delay on Elizabeth Line */}
