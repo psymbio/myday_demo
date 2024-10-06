@@ -78,15 +78,15 @@ const FoodCardDisplay: React.FC = () => {
   };
 
   return (
-    <div className="p-0 relative content-center">
+    <div className="p-0 relative content-center font-bold">
       {/* Filter and Clear Selection Buttons Row */}
       <div className="-mt-5 mb-4">
         {/* Full-width Clickable Filter Menu Row */}
         <div
-          className="w-full bg-gray-100 cursor-pointer hover:bg-gray-200 text-center"
+          className="w-full bg-red-500 cursor-pointer hover:bg-gray-200 text-white font-bold flex items-center justify-center"
           onClick={openModal} // Open modal when button is clicked
         >
-          FILTER MENUS
+          FILTER
         </div>
         {/* Teya Card Below Filter Menus */}
         
@@ -99,7 +99,7 @@ const FoodCardDisplay: React.FC = () => {
       {isModalOpen && (
         <Modal isOpen={isModalOpen} onClose={closeModal}>
           <div>
-            <h2 className="text-2xl font-bold mb-4 ">Menu Preferences</h2>
+            <h2 className="text-2xl text-red-500 font-bold mb-4 ">Dietary Preferences</h2>
 
             {/* Filters inside the Modal */}
             <div className="flex flex-col space-y-2 mb-4">
