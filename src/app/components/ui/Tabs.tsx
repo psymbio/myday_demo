@@ -7,7 +7,7 @@ import LocalDiningOutlinedIcon from '@mui/icons-material/LocalDiningTwoTone';
 import MapOutlinedIcon from "@mui/icons-material/MapTwoTone";
 import MyGroupWidget from "./MyGroupWidget";
 import RestaurantDisplay from "./RestaurantWidget";
-import ReservationData from "../../data/reservation.json"; // Import the JSON data
+import ReservationData from "../../data/reservation.json";
 import Reservations from "./Reservations";
 
 export default function Tabs() {
@@ -16,7 +16,7 @@ export default function Tabs() {
   const handleTabClick = (tabName: string) => {
     setActiveTab(tabName);
   };
-  
+
   const filteredMeetingData = ReservationData.filter((item) => {
     if (item.Userid == 125 && item.Type == "Meeting") {
       return item;

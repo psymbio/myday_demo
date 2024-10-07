@@ -5,6 +5,9 @@ import ChatBubbleOutlineRoundedIcon from "@mui/icons-material/ChatBubbleOutlineR
 import SendRoundedIcon from "@mui/icons-material/SendRounded";
 import GroupsRoundedIcon from "@mui/icons-material/GroupsRounded";
 import FastfoodRoundedIcon from "@mui/icons-material/FastfoodRounded";
+import RoomRoundedIcon from "@mui/icons-material/RoomRounded";
+import ReportProblemRoundedIcon from "@mui/icons-material/ReportProblemRounded";
+import EventRoundedIcon from "@mui/icons-material/EventRounded";
 
 export default function ChatBot() {
   const [messages, setMessages] = useState<any[]>([]);
@@ -96,6 +99,26 @@ export default function ChatBot() {
             )}
           </div>
         );
+      case "map":
+        return (
+          <div>
+            <img
+              src={`/maps/${component.data.map_image}`}
+              alt={component.data.alt_text}
+              className="w-full h-auto rounded-md"
+            />
+          </div>
+        );
+      case "image":
+        return (
+          <div>
+            <img
+              src={`/user_uploaded_images/${component.data.image_url}`}
+              alt={component.data.alt_text}
+              className="w-full h-auto rounded-md"
+            />
+          </div>
+        );
       default:
         return null;
     }
@@ -175,7 +198,7 @@ export default function ChatBot() {
           </div>
 
           {/* Scenario Buttons */}
-          <div className="flex gap-2 mt-2 mb-4">
+          <div className="flex justify-center items-center gap-4 mt-2 mb-4">
             <button
               type="button"
               onClick={() => playScenario(1)} // Play the first scenario
@@ -190,6 +213,30 @@ export default function ChatBot() {
               className="rounded-md p-2 text-sm text-white bg-green-600 hover:bg-green-700"
             >
               <FastfoodRoundedIcon />
+            </button>
+
+            <button
+              type="button"
+              onClick={() => playScenario(3)} // Play the third scenario (Find Pod C)
+              className="rounded-md p-2 text-sm text-white bg-blue-600 hover:bg-blue-700"
+            >
+              <RoomRoundedIcon />
+            </button>
+
+            <button
+              type="button"
+              onClick={() => playScenario(4)} // Play the fourth scenario (Report Issue)
+              className="rounded-md p-2 text-sm text-white bg-yellow-600 hover:bg-yellow-700"
+            >
+              <ReportProblemRoundedIcon />
+            </button>
+
+            <button
+              type="button"
+              onClick={() => playScenario(5)} // Play the fifth scenario (Choir Info)
+              className="rounded-md p-2 text-sm text-white bg-purple-600 hover:bg-purple-700"
+            >
+              <EventRoundedIcon />
             </button>
           </div>
 
