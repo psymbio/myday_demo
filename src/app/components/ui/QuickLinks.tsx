@@ -23,7 +23,7 @@ export default function Links() {
     <div className="py-8 -translate-y-[12.5rem] px-2 sm:px-6 lg:px-8 mx-5">
       {/* Quick Links Section */}
       <div className="mb-4">
-        <Heading2 heading="Quick Links" />
+        {/* <Heading2 heading="Quick Links" /> */}
         <div className="flex flex-wrap justify-center sm:justify-start gap-12 mt-4">
           <a
             href="#"
