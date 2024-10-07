@@ -140,18 +140,19 @@ export default function Checkout() {
                     <dt>Discount (2%)</dt>
                     <dd>-£{discount.toFixed(2)}</dd>
                   </div> */}
-                  <div className="flex justify-between !text-base font-bold">
-                    <dt>Total</dt>
-                    <dd>£{total.toFixed(2)}</dd>
-                  </div>
+              <div className="flex justify-between !text-base font-bold bg-gray-200 p-4 rounded-md">
+  <dt>Total</dt>
+  <dd>£{total.toFixed(2)}</dd>
+</div>
+
                 </dl>
               </div>
             </div>
-            <div className="flex justify-center mt-5">
+            <div className="flex justify-center p-1 mt-5">
             <CustomButton
-              bgColor="bg-red-600"
+              bgColor="w-full bg-red-600"
               textColor="text-white"
-              text="Proceed to Pay"
+              text="Payment"
             />
             </div>
           </div>

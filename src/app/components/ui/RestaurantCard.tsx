@@ -19,12 +19,12 @@ const RestaurantCard: React.FC<{ restaurant: Restaurant }> = ({ restaurant }) =>
       <img
         src={restaurant.image}
         alt={restaurant.name}
-        className="w-full h-48 object-cover rounded-lg"
+        className="w-full h-40 object-cover rounded-lg"
       />
 
       {/* Button with Chevron */}
       <button
-        className="w-full flex items-center justify-between p-3 mt-2 bg-gray-100 text-black rounded-lg hover:bg-blue-700 hover:text-white transition duration-300 border border-black"
+        className="w-full flex items-center justify-between p-2 mt-2 bg-gray-100 text-black rounded-lg hover:bg-blue-700 hover:text-white transition duration-300 border border-black"
       >
         <span className="text-md font-semibold">{restaurant.name}</span>
         <ChevronRightRoundedIcon className="ml-2" />

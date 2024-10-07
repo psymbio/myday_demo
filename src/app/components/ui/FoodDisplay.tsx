@@ -83,7 +83,7 @@ const FoodCardDisplay: React.FC = () => {
       <div className="-mt-5 mb-4">
         {/* Full-width Clickable Filter Menu Row */}
         <div
-          className="w-full bg-red-500 cursor-pointer hover:bg-gray-200 text-white font-bold flex items-center justify-center"
+          className="w-full bg-red-500 cursor-pointer hover:bg-gray-200 text-white font-bold flex items-center justify-center underline"
           onClick={openModal} // Open modal when button is clicked
         >
           FILTER
