@@ -2,9 +2,9 @@
 import { useState } from "react";
 import TabCard from "./TabCard";
 // hello
-import TableRestaurantOutlinedIcon from "@mui/icons-material/TableRestaurantTwoTone";
+import TableLocalDiningOutlinedIcon from "@mui/icons-material/TableRestaurantTwoTone";
 import GroupsOutlinedIcon from "@mui/icons-material/GroupsTwoTone";
-import RestaurantOutlinedIcon from "@mui/icons-material/RestaurantTwoTone";
+import LocalDiningOutlinedIcon from '@mui/icons-material/LocalDiningTwoTone';
 import MapOutlinedIcon from "@mui/icons-material/MapTwoTone";
 // import EventAvailableOutlinedIcon from '@mui/icons-material/EventAvailableOutlined';
 //import MyCombinedMeetings from "./MyCombinedMeetings";
@@ -52,7 +52,7 @@ export default function Tabs() {
             }`}
             onClick={() => handleTabClick("Meetings")}
           >
-            <TableRestaurantOutlinedIcon />
+            <TableLocalDiningOutlinedIcon />
           </a>
 
           <a
@@ -70,7 +70,7 @@ export default function Tabs() {
             }`}
             onClick={() => handleTabClick("Food & Drink")}
           >
-            <RestaurantOutlinedIcon />
+            <LocalDiningOutlinedIcon />
           </a>
 
           <a
@@ -97,7 +97,7 @@ export default function Tabs() {
                   : "border-transparent text-gray-700"
               } px-2 pb-4 text-sm font-medium transition-colors duration-200`}
             >
-              <TableRestaurantOutlinedIcon />
+              <TableLocalDiningOutlinedIcon />
               Meetings
             </a>
 
@@ -123,7 +123,7 @@ export default function Tabs() {
                   : "border-transparent text-gray-700"
               } px-2 pb-4 text-sm font-medium transition-colors duration-200`}
             >
-              <RestaurantOutlinedIcon />
+              <LocalDiningOutlinedIcon />
               Food & Drink
             </a>
 
