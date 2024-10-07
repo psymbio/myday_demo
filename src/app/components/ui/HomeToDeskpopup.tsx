@@ -65,7 +65,7 @@ const HomeToDeskPopup: React.FC<HomeToDeskPopupProps> = ({
           <>
            <p className="mb-6  text-center npm  ">Line closure on Elizabeth line. Expected delays of 3 hours.</p>
    
-          <div className="bg-gray-200 shadow-lg p-4 rounded-md">
+          {/* <div className="bg-white shadow-lg p-4 rounded-md"> */}
           <p className="text-gray-700 font-semibold text-center npm ">Would you like to update your day?</p>
           <br/>
             <div className="flex justify-center space-x-4">
@@ -82,7 +82,7 @@ const HomeToDeskPopup: React.FC<HomeToDeskPopupProps> = ({
                 onClick={onNo}
               />
             </div>
-            </div>
+            {/* </div> */}
           </>
           :
           <>
