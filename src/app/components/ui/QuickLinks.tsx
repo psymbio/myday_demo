@@ -1,5 +1,5 @@
 import React from "react";
-import Heading2 from "./Heading2";
+// import Heading2 from "./Heading2";
 import QrCodeScannerOutlinedIcon from "@mui/icons-material/QrCodeScannerOutlined";
 import DirectionsSubwayFilledOutlinedIcon from "@mui/icons-material/DirectionsSubwayFilledOutlined";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
