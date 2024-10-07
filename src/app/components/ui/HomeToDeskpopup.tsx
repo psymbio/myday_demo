@@ -39,11 +39,11 @@ const HomeToDeskPopup: React.FC<HomeToDeskPopupProps> = ({
           &times;
         </button>
 
-        <h2 className="text-lg text-center font-semibold mb-4">{title}</h2>
+        <h2 className="text-lg text-center font-bold mb-4">{title}</h2>
 
         {flag == "yes" ? (
           <>
-            <p className="mb-6">{message}</p>
+            <p className="mb-6  text-center npm ">{message}</p>
             <div className="flex justify-center space-x-4">
               <CustomButton
                 bgColor="bg-red-600"
@@ -60,6 +60,31 @@ const HomeToDeskPopup: React.FC<HomeToDeskPopupProps> = ({
             </div>
           </>
         ) : (
+
+          flag=="Travel"?
+          <>
+           <p className="mb-6  text-center npm  ">Line closure on Elizabeth line. Expected delays of 3 hours.</p>
+   
+          <div className="bg-gray-200 shadow-lg p-4 rounded-md">
+          <p className="text-gray-700 font-semibold text-center npm ">Would you like to update your day?</p>
+          <br/>
+            <div className="flex justify-center space-x-4">
+              <CustomButton
+                bgColor="bg-red-600"
+                textColor="text-white"
+                text="Yes"
+                onClick={onYes}
+              />
+              <CustomButton
+                bgColor="bg-gray-700"
+                textColor="text-white"
+                text="No"
+                onClick={onNo}
+              />
+            </div>
+            </div>
+          </>
+          :
           <>
             <div className="mb-4">
               <label className="block mb-2">

@@ -69,7 +69,7 @@ export default function Reservations({
                   <p className="text-gray-600 text-xs">{booking.nearby} in My Group booked nearby</p>
                   <br />
                 </div>
-              )) : <> <p>No upcoming booking </p>
+              )) : <> <p className="text-gray-600 text-xs">No upcoming booking </p>
               <br/>
               <br/></>
               }
@@ -93,7 +93,7 @@ export default function Reservations({
                   <br />
                 </div>
               )             
-            ) : <> <p>No upcoming meetings </p>
+            ) : <> <p className="text-gray-600 text-xs">No upcoming meetings </p>
             <br/>
             <br/></>}
             </div>
