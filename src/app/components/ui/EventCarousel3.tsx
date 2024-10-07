@@ -74,7 +74,7 @@ export default function Carousel() {
         <div className="flex items-center justify-between px-2">
           <Heading2 heading="Events" />
         </div>
-        <div className="overflow-hidden relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] -translate-y-3">
+        <div className="overflow-hidden relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] -translate-y-4">
           <div
             className="flex rounded-lg transition-transform ease-out duration-500"
             style={{ transform: `translateX(-${current * 100}%)` }}
