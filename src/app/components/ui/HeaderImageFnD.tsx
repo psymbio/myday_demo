@@ -2,13 +2,13 @@ import Image from "next/image";
 
 export default function HeaderImageFnD() {
   return (
-    <header className="w-full">
-      <div className="relative h-24 md:h-40 lg:h-56 w-screen -translate-y-7">
+    <header className="flex justify-center w-full px-4">
+      <div className="relative h-36  md:h-64 lg:h-80 w-full max-w-2xl -translate-y-4">
         {" "}
         {/* Use responsive heights */}
         <Image
-          src="/Food-Drink.png"
-          alt="Food and Drink"
+          src="/food_drink.png"
+          alt="PSP"
           layout="fill"
           objectFit="cover"
           priority={true}
