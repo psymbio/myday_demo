@@ -54,9 +54,13 @@ export default function MyGroupWidget() {
 
   return (
     <div className="mt-4 p-4 border rounded-lg shadow bg-white h-[12rem] overflow-scroll">
+      {/* Heading */}
+      <h2 className="text-black font-bold text-base sm:text-2xl mb-4">
+        Who&apos;s in the office today
+      </h2>
       <div className="grid grid-cols-5 sm:grid-cols-4 md:grid-cols-5 gap-4">
         {profiles.slice(0, 5).map((profile, index) => {
-          // Limit to first 10 profiles
+          // Limit to first 5 profiles
           const status = getStatusByIndex(index); // Get status based on index
 
           return (
@@ -84,8 +88,7 @@ export default function MyGroupWidget() {
           );
         })}
       </div>
-      <br />
-      <div className="flex justify-between items-center text-xs mt-4">
+      <div className="flex justify-between items-center text-xs mt-4"> {/* Adjusted margin here */}
         <span>Looking for someone else?</span>
         <a href="/mygroup" className="text-red-600 hover:underline">
           Search
