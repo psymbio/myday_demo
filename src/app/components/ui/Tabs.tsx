@@ -1,13 +1,10 @@
 "use client";
 import { useState } from "react";
 import TabCard from "./TabCard";
-// hello
 import TableLocalDiningOutlinedIcon from "@mui/icons-material/TableRestaurantTwoTone";
 import GroupsOutlinedIcon from "@mui/icons-material/GroupsTwoTone";
 import LocalDiningOutlinedIcon from '@mui/icons-material/LocalDiningTwoTone';
 import MapOutlinedIcon from "@mui/icons-material/MapTwoTone";
-// import EventAvailableOutlinedIcon from '@mui/icons-material/EventAvailableOutlined';
-//import MyCombinedMeetings from "./MyCombinedMeetings";
 import MyGroupWidget from "./MyGroupWidget";
 import RestaurantDisplay from "./RestaurantWidget";
 import ReservationData from "../../data/reservation.json"; // Import the JSON data
@@ -19,16 +16,7 @@ export default function Tabs() {
   const handleTabClick = (tabName: string) => {
     setActiveTab(tabName);
   };
-
-  /* const meetings = [
-    { name: "Meeting 1", time: "9:00 AM", location: "Room 101" },
-    { name: "Meeting 2", time: "2:00 PM", location: "Room 202" },
-  ];*/
-
-  /* const bookings = [
-    { name: "John Doe", time: "10:00 AM", location: "Office 1", mygroup: "Group A" },
-  ];*/
-
+  
   const filteredMeetingData = ReservationData.filter((item) => {
     if (item.Userid == 125 && item.Type == "Meeting") {
       return item;
