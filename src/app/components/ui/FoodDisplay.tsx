@@ -96,65 +96,110 @@ const FoodCardDisplay: React.FC = () => {
 </div>
 
       {/* Modal for filtering */}
-      {isModalOpen && (
-        <Modal isOpen={isModalOpen} onClose={closeModal}>
-          <div>
-            <h2 className="text-2xl text-red-500 font-bold mb-4 ">Dietary Preferences</h2>
+{isModalOpen && (
+  <Modal isOpen={isModalOpen} onClose={closeModal}>
+    {/* Semi-transparent background */}
+    <div className="fixed inset-0 w-screen h-screen bg-black bg-opacity-50 flex items-center justify-center z-50">
+      <div className="w-full max-w-md p-6 bg-white rounded-lg shadow-lg">
+        <h2 className="text-2xl text-center text-red-500 font-bold mb-4">Dietary Preferences</h2>
 
-            {/* Filters inside the Modal */}
-            <div className="flex flex-col space-y-2 mb-4">
-              <label className="flex items-center">
-                <input
-                  type="checkbox"
-                  name="veg"
-                  checked={tempFilter.veg}
-                  onChange={handleFilterChange}
-                  className="mr-2"
-                />
-                Vegetarian
-              </label>
-              <label className="flex items-center">
-                <input
-                  type="checkbox"
-                  name="pescatarian"
-                  checked={tempFilter.pescatarian}
-                  onChange={handleFilterChange}
-                  className="mr-2"
-                />
-                Pescatarian
-              </label>
-              <label className="flex items-center">
-                <input
-                  type="checkbox"
-                  name="glutenFree"
-                  checked={tempFilter.glutenFree}
-                  onChange={handleFilterChange}
-                  className="mr-2"
-                />
-                Gluten-Free
-              </label>
-            </div>
+        {/* Filters inside the Modal */}
+        <div className="flex flex-col space-y-2 mb-4">
+        <label className="flex items-center">
+  <input
+    type="checkbox"
+    name="Allergies"
+    checked={tempFilter.pescatarian}
+    onChange={handleFilterChange}
+    className="mr-3 w-6 h-6"  // Increase the size of the checkbox
+  />
+  <span className="text-lg font-medium">Allergies</span>  
+</label>
 
-            {/* Confirm and Close buttons */}
-            <div className="flex justify-end space-x-4 mt-6">
-              <CustomButton
-                bgColor="bg-red-600"
-                textColor="text-white"
-                text="Confirm"
-                onClick={() => applyFilters()}
-              />
-              <CustomButton
+          <label className="flex items-center">
+  <input
+    type="checkbox"
+    name="pescatarian"
+    checked={tempFilter.pescatarian}
+    onChange={handleFilterChange}
+    className="mr-3 w-6 h-6"  // Increase the size of the checkbox
+  />
+  <span className="text-lg font-medium">Dairy-free</span> 
+</label>
 
-                bgColor="bg-gray-700"
+<label className="flex items-center">
+  <input
+    type="checkbox"
+    name="Gluten-free"
+    checked={tempFilter.glutenFree}
+    onChange={handleFilterChange}
+    className="mr-3 w-6 h-6"  // Increase the size of the checkbox
+  />
+  <span className="text-lg font-medium">Gluten-free</span> 
+</label>
 
-                textColor="text-white"
-                text="Close"
-                onClick={() => closeModal()}
-              />
-            </div>
-          </div>
-        </Modal>
-      )}
+          <label className="flex items-center">
+            <input
+              type="checkbox"
+              name="Vegetarian"
+              checked={tempFilter.pescatarian}
+              onChange={handleFilterChange}
+              className="mr-3 w-6 h-6"
+            />
+            <span className="text-lg font-medium">Lactose-free</span>
+          </label>
+          <label className="flex items-center">
+            <input
+              type="checkbox"
+              name="pescatarian"
+              checked={tempFilter.pescatarian}
+              onChange={handleFilterChange}
+              className="mr-3 w-6 h-6"
+            />
+            <span className="text-lg font-medium">Pescatarian</span>
+          </label>
+          <label className="flex items-center">
+            <input
+              type="checkbox"
+              name="pescatarian"
+              checked={tempFilter.pescatarian}
+              onChange={handleFilterChange}
+              className="mr-3 w-6 h-6"
+            />
+            <span className="text-lg font-medium">Vegan</span>
+          </label>
+          <label className="flex items-center">
+            <input
+              type="checkbox"
+              name="pescatarian"
+              checked={tempFilter.veg}
+              onChange={handleFilterChange}
+              className="mr-3 w-6 h-6"
+            />
+            <span className="text-lg font-medium">Vegetarian</span>
+          </label>
+        </div>
+
+        {/* Confirm and Close buttons */}
+        <div className="flex justify-center space-x-4 mt-6">
+          <CustomButton
+            bgColor="bg-red-600"
+            textColor="text-white"
+            text="Confirm"
+            onClick={() => applyFilters()}
+          />
+          <CustomButton
+            bgColor="bg-gray-700"
+            textColor="text-white"
+            text="Close"
+            onClick={() => closeModal()}
+          />
+        </div>
+      </div>
+    </div>
+  </Modal>
+)}
+
 
       {/* Displaying filtered food items */}
       {showFoodList && (
