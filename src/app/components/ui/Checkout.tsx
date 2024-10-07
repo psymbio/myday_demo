@@ -82,7 +82,7 @@ export default function Checkout() {
     <section>
       <div className="-translate-y-10 mx-5 max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
         <div className="mx-auto max-w-3xl">
-          <header className="">
+          <header className="flex justify-center !text-base font-bold bg-gray-200 p-1 rounded-md">
             <Heading2 heading="Your Cart" />
           </header>
 
