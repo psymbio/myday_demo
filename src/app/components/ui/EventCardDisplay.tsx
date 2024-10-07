@@ -59,8 +59,8 @@ export default function EventCardDisplay() {
   };
 
   return (
-    <div className="p-8 bg-gray-100">
-      <h1 className="text-2xl font-bold mb-6 text-gray-800">Upcoming Events</h1>
+    <div className="p-6">
+      {/* <h1 className="text-2xl font-bold mb-6 text-gray-800">Upcoming Events</h1> */}
 
       <div className="flex justify-between items-center mb-6">
         <span className="text-lg font-semibold text-gray-800">
