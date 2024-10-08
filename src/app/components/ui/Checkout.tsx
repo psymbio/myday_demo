@@ -24,6 +24,9 @@ interface FoodItem {
   veg: boolean;
   pescatarian: boolean;
   glutenFree: boolean;
+  vegetarian: boolean;
+  dairyFree: boolean; // notice camelCase
+  lactoseFree: boolean; // notice camelCase
 }
 
 interface CartState {
@@ -43,8 +46,15 @@ export default function Checkout() {
 
   useEffect(() => {
     if (Object.keys(cartItems).length > 0) {
-      const updatedItems = foodItems.filter((item) => cartItems[item.id] > 0);
-      setItems(updatedItems);
+      const updatedItems = foodItems
+        .filter((item) => cartItems[item.id] > 0)
+        .map((item) => ({
+          ...item,
+          restaurantId: item.restaurantID, // Convert restaurantID to restaurantId
+          veg: item.vegetarian || item.vegan, // Assuming vegetarian/vegan means veg
+        }));
+  
+      setItems(updatedItems as FoodItem[]);
     } else {
       setItems([]);
     }

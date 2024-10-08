@@ -7,7 +7,7 @@ import restaurantsData from "../../data/restaurants.json"; // Assuming data is i
 interface Restaurant {
   id: number;
   name: string;
-  text: string;
+  schedule: string[];
   image: string;
 }
 
@@ -17,7 +17,7 @@ const RestaurantList: React.FC = () => {
   const [restaurants] = useState<Restaurant[]>(restaurantsData);
 
   return (
-    <div className="flex flex-wrap justify-center">
+    <div className="flex flex-wrap justify-center gap-4">
       {restaurants.map((restaurant) => (
         <RestaurantCard key={restaurant.id} restaurant={restaurant} />
       ))}

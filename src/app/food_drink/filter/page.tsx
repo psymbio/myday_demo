@@ -10,16 +10,18 @@ import HeaderImageFnD from "@/app/components/ui/HeaderImageFnD";
 export default function FoodDrink() {
   const searchParams = useSearchParams();
 
-  const veg = searchParams.get("veg") === "true";
+  const vegan = searchParams.get("vegan") === "true";
   const pescatarian = searchParams.get("pescatarian") === "true";
   const glutenFree = searchParams.get("glutenFree") === "true";
-
+  const vegatarian = searchParams.get("vegetarian") === "true";
+  const dairyFree = searchParams.get("dairy-free") === "true";
+  const lactoseFree = searchParams.get("lactose-free") === "true";
   return (
     <div>
       <NavigationBar />
       <HeaderFnD />
       <HeaderImageFnD />
-      <Add2Cart veg={veg} pescatarian={pescatarian} glutenFree={glutenFree} />
+      <Add2Cart vegan={vegan} pescatarian={pescatarian} glutenFree={glutenFree} vegetarian={vegatarian} dairyFree={dairyFree} lactoseFree={lactoseFree} />
       <ChatBot />
     </div>
   );

@@ -3,7 +3,7 @@
 
 import React, { useEffect, useState } from "react";
 import FoodCard from "./FoodCard";
-import foodItemsData from "../../data/fooditems.json"; // Import your food items data
+ //import foodItemsData from "../../data/fooditems.json"; // Import your food items data
 import { useSelector, useDispatch } from "react-redux";
 import { addItemToCart, removeItemFromCart } from "@/slices/cartSlice"; // Adjust the path to your slice
 import CustomButton from "./CustomButton";
@@ -11,23 +11,35 @@ import { useRouter } from "next/navigation"; // Import useRouter
 
 interface FoodItem {
   id: number;
+  restaurantID: number;
   name: string;
-  cost: number;
-  veg: boolean;
+  vegan: boolean;
+  vegetarian: boolean;
+  dairyFree: boolean; // notice camelCase
+  lactoseFree: boolean; // notice camelCase
   pescatarian: boolean;
   glutenFree: boolean;
+  cost: number;
+  imagePath: string;
+  type: string;
 }
 
 interface Add2CartProps {
-  veg: boolean;
+  vegan: boolean;
   pescatarian: boolean;
   glutenFree: boolean;
+  vegetarian: boolean;
+  dairyFree: boolean; // notice camelCase
+  lactoseFree: boolean; // notice camelCase
 }
 
 const Add2Cart: React.FC<Add2CartProps> = ({
-  veg,
+  vegan,
   pescatarian,
   glutenFree,
+  vegetarian,
+  dairyFree, // notice camelCase
+  lactoseFree, // notice camelCase
 }) => {
   const [foodItems, setFoodItems] = useState<FoodItem[]>([]); // Holds filtered items
   const cartItems = useSelector(
@@ -38,17 +50,20 @@ const Add2Cart: React.FC<Add2CartProps> = ({
 
   useEffect(() => {
     // Filter the food items based on the received props
-    const filteredItems = foodItemsData.filter((item: FoodItem) => {
+    const filteredItems = foodItems.filter((item: FoodItem) => {
       return (
-        (!veg || item.veg) &&
+        (!vegan || item.vegan) &&  // Use vegan prop from the component
         (!pescatarian || item.pescatarian) &&
-        (!glutenFree || item.glutenFree)
+        (!glutenFree || item.glutenFree) &&
+        (!vegetarian || item.vegetarian) &&
+        (!dairyFree || item.dairyFree) &&
+        (!lactoseFree || item.lactoseFree)
       );
     });
-
+  
     setFoodItems(filteredItems); // Set filtered items in state
-  }, [veg, pescatarian, glutenFree]); // Re-run when props change
-
+  }, [vegan, pescatarian, glutenFree, vegetarian, dairyFree, lactoseFree, foodItems]); // Re-run when props or foodItems change
+  
   const handleAddToCart = (id: number) => {
     dispatch(addItemToCart({ itemId: id, quantity: 1 }));
   };
@@ -76,9 +91,12 @@ const Add2Cart: React.FC<Add2CartProps> = ({
               id={item.id}
               name={item.name}
               cost={item.cost}
-              veg={item.veg}
+              vegan={item.vegan}
               pescatarian={item.pescatarian}
               glutenFree={item.glutenFree}
+              vegetarian={item.vegetarian}
+              dairyFree={item.dairyFree}
+              lactoseFree={item.lactoseFree}
               onAddToCart={handleAddToCart}
               onRemoveFromCart={handleRemoveFromCart}
               cartQuantity={cartItems[item.id] || 0} // Pass the current cart quantity

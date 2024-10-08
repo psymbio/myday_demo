@@ -10,32 +10,66 @@ import FilterAltRoundedIcon from "@mui/icons-material/FilterAltRounded";
 
 interface FoodItem {
   id: number;
+  restaurantID: number;
   name: string;
-  cost: number;
-  veg: boolean;
+  vegan: boolean;
+  vegetarian: boolean;
+  "dairy-free": boolean;  // Use kebab-case if JSON uses this format
+  "lactose-free": boolean; // Use kebab-case if JSON uses this format
   pescatarian: boolean;
   glutenFree: boolean;
+  cost: number;
+  imagePath: string;
+  type: string;
 }
+
 
 const FoodCardDisplay: React.FC = () => {
   const [filter, setFilter] = useState({
-    veg: false,
+    vegan: false,
     pescatarian: false,
     glutenFree: false,
+    vegetarian: false,
+    dairyFree: false,
+    lactoseFree:false,
   });
 
   const [isModalOpen, setIsModalOpen] = useState(false); // Modal is initially closed
   const [tempFilter, setTempFilter] = useState({ ...filter }); // Temporary filter for modal
   const [showFoodList, setShowFoodList] = useState(false); // State to show or hide the food list
 
-  // Filter logic for food items
-  const filteredItems = foodItems.filter((item: FoodItem) => {
-    return (
-      (!filter.veg || item.veg) &&
-      (!filter.pescatarian || item.pescatarian) &&
-      (!filter.glutenFree || item.glutenFree)
-    );
-  });
+// Helper function to convert kebab-case or snake-case to camelCase
+const normalizeKeys = (item: any): FoodItem => {
+  return {
+    id: item.id,
+    restaurantID: item.restaurantID,
+    name: item.name,
+    vegan: item.vegan,
+    vegetarian: item.vegetarian,
+    'dairy-free': item["dairy-free"], // Handle both cases
+    'lactose-free': item["lactose-free"], // Handle both cases
+    pescatarian: item.pescatarian,
+    glutenFree: item.glutenFree,
+    cost: item.cost,
+    imagePath: item.imagePath,
+    type: item.type
+  };
+};
+
+// Use the normalized data
+const normalizedFoodItems = foodItems.map(normalizeKeys);
+
+// Now filter the normalized food items
+const filteredItems = normalizedFoodItems.filter((item: FoodItem) => {
+  return (
+    (!filter.vegan || item.vegan) &&
+    (!filter.pescatarian || item.pescatarian) &&
+    (!filter.glutenFree || item.glutenFree) &&
+    (!filter.vegetarian || item.vegetarian) &&
+    (!filter.dairyFree || item["dairy-free"]) &&
+    (!filter.lactoseFree || item["lactose-free"])
+  );
+});
 
   const handleFilterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, checked } = e.target;
@@ -52,9 +86,12 @@ const FoodCardDisplay: React.FC = () => {
 
   const applyFilters = () => {
     const query = new URLSearchParams({
-      veg: String(tempFilter.veg),
+      vegan: String(tempFilter.vegan),
       pescatarian: String(tempFilter.pescatarian),
       glutenFree: String(tempFilter.glutenFree),
+      vegetarian: String(tempFilter.vegetarian),
+      dairyfree: String(tempFilter.dairyFree),
+      lactosefree: String(tempFilter.lactoseFree),
     }).toString();
 
     router.push(`/food_drink/filter?${query}`);
@@ -63,14 +100,20 @@ const FoodCardDisplay: React.FC = () => {
   // Function to clear the filters and hide the food list
   const clearSelection = () => {
     setFilter({
-      veg: false,
+      vegan: false,
       pescatarian: false,
       glutenFree: false,
+      vegetarian: false,
+      dairyFree: false,
+      lactoseFree: false,
     });
     setTempFilter({
-      veg: false,
+      vegan: false,
       pescatarian: false,
       glutenFree: false,
+      vegetarian: false,
+      dairyFree: false,
+      lactoseFree: false,
     });
     setShowFoodList(false); // Hide the food list when clearing the selection
     setIsModalOpen(true); // Reopen the modal to show Menu Preferences
@@ -82,7 +125,7 @@ const FoodCardDisplay: React.FC = () => {
       <div className="mb-4 flex items-center justify-center">
         {/* Full-width Clickable Filter Menu Row */}
         <button
-          className="w-10/12 p-2 bg-red-600 text-white font-bold flex items-center justify-center rounded-lg shadow-lg hover:bg-red-700 hover:text-white transition duration-300 ease-in-out cursor-pointer"
+          className="w-9/12 p-3 bg-red-600 text-white font-bold flex items-center justify-center rounded-lg shadow-lg hover:bg-red-700 hover:text-white transition duration-300 ease-in-out cursor-pointer"
           onClick={openModal}
         >
           <FilterAltRoundedIcon className="mr-2" />
@@ -170,7 +213,7 @@ const FoodCardDisplay: React.FC = () => {
                   <input
                     type="checkbox"
                     name="pescatarian"
-                    checked={tempFilter.veg}
+                    checked={tempFilter.vegan}
                     onChange={handleFilterChange}
                     className="mr-3 w-6 h-6"
                   />
@@ -222,9 +265,12 @@ const FoodCardDisplay: React.FC = () => {
                     id={item.id}
                     name={item.name}
                     cost={item.cost}
-                    veg={item.veg}
+                    vegan={item.vegan}
                     pescatarian={item.pescatarian}
+                    vegetarian={item.vegetarian}
                     glutenFree={item.glutenFree}
+                    dairyFree={item["dairy-free"]}
+                   lactoseFree={item["lactose-free"]}
                     onAddToCart={() => {}}
                     onRemoveFromCart={() => {}}
                     cartQuantity={0} // You can set the cart quantity here if needed

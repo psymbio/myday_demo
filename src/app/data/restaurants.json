@@ -2,13 +2,21 @@
   {
     "id": 0,
     "name": "Mezzanine Restaurant",
-    "text": "Breakfast: Mon-Fri: 07:30 - 10:30,   Lunch: Mon-Fri: 11:30 - 14:00 ",
+    "schedule": [
+      "Breakfast: 07:30 - 10:30 (Mon-Fri)",
+      "Lunch: 11:30 - 14:00 (Mon-Fri)",
+      "Locaton: "
+    ],
     "image": "/restaurants/Mezzanine.jpg"
   },
   {
     "id": 1,
     "name": "Starbucks",
-    "text": "Breakfast: Mon-Fri: 07:00 - 16:00,   Lunch: Tue & Thu: 07:00 - 17:00 ",
+    "schedule": [
+      "Breakfast: 07:00 - 16:00 (Mon-Fri)",
+      "Lunch: 07:00 - 17:00 (Mon-Fri)",
+      "Locaton: "
+    ],
     "image": "/restaurants/starbucks.jpg"
   }
 ]
