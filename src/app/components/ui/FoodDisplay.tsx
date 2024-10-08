@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import FoodCard from "./FoodCard";
 import Modal from "./Modal";
 import foodItems from "../../data/fooditems.json"; // Assuming fooditems.json is in this path
-import TeyaCard from "./TeyaCard";
 import CustomButton from "./CustomButton";
 import { useRouter } from "next/navigation";
 import FilterAltRoundedIcon from "@mui/icons-material/FilterAltRounded";
@@ -90,9 +89,6 @@ const FoodCardDisplay: React.FC = () => {
           FILTER
         </button>
         {/* Teya Card Below Filter Menus */}
-      </div>
-      <div className="flex justify-center -mt-4">
-        <TeyaCard />
       </div>
 
       {/* Modal for filtering */}
