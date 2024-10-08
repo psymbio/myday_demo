@@ -82,7 +82,7 @@ const FoodCardDisplay: React.FC = () => {
       <div className="mb-4 flex items-center justify-center">
         {/* Full-width Clickable Filter Menu Row */}
         <button
-          className="w-9/12 p-3 bg-red-600 text-white font-bold flex items-center justify-center rounded-lg shadow-lg hover:bg-red-700 hover:text-white transition duration-300 ease-in-out cursor-pointer"
+          className="w-10/12 p-2 bg-red-600 text-white font-bold flex items-center justify-center rounded-lg shadow-lg hover:bg-red-700 hover:text-white transition duration-300 ease-in-out cursor-pointer"
           onClick={openModal}
         >
           <FilterAltRoundedIcon className="mr-2" />

@@ -13,7 +13,7 @@ interface Restaurant {
 // Restaurant Card Component
 const RestaurantCard: React.FC<{ restaurant: Restaurant }> = ({ restaurant }) => {
   return (
-    <div className="relative max-w-sm bg-white rounded-lg shadow-lg border border-gray-200 p-4 -mt-1 transition-all duration-300 hover:shadow-xl -z-10">
+    <div className="relative max-w-sm bg-white rounded-lg shadow-lg border border-gray-200 p-4 mt-2 transition-all duration-300 hover:shadow-xl -z-10">
       {/* Restaurant Image */}
       <img
         src={restaurant.image}
@@ -31,8 +31,8 @@ const RestaurantCard: React.FC<{ restaurant: Restaurant }> = ({ restaurant }) =>
 
       {/* Restaurant Info */}
       <div className="mt-2">
-        <p className="text-gray-800 text-sm font-medium mb-2"></p>
-        <p className="text-gray-600 text-xs">{restaurant.text}</p>
+        {/* <p className="text-gray-800 text-base font-medium mb-2"></p> */}
+        <p className="text-gray-800 text-sm">{restaurant.text}</p>
       </div>
     </div>
   );
