@@ -139,6 +139,8 @@ export default function NavigationBar() {
             <li>
               <Link
                 href="https://workspaces.dnaspaces.eu/?token=cb3c8ae0-7267-4db4-831a-9b90515da1ad#/dashboard"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-black text-lg hover:text-red-600"
                 onClick={toggleMenu}
               >
