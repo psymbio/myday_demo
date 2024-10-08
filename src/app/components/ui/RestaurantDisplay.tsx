@@ -8,7 +8,6 @@ interface Restaurant {
   id: number;
   name: string;
   text: string;
-  subtext: string;
   image: string;
 }
 
