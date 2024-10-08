@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import TabCard from "./TabCard";
+// import TabCard from "./TabCard";
 import TableLocalDiningOutlinedIcon from "@mui/icons-material/TableRestaurantTwoTone";
 import GroupsOutlinedIcon from "@mui/icons-material/GroupsTwoTone";
 import LocalDiningOutlinedIcon from '@mui/icons-material/LocalDiningTwoTone';
@@ -9,6 +9,7 @@ import MyGroupWidget from "./MyGroupWidget";
 import RestaurantDisplay from "./RestaurantWidget";
 import ReservationData from "../../data/reservation.json"; // Import the JSON data
 import Reservations from "./Reservations";
+import IndoorMapWidget from "./IndoorMapWidget";
 
 export default function Tabs() {
   const [activeTab, setActiveTab] = useState("Meetings");
@@ -142,9 +143,7 @@ export default function Tabs() {
 
       {activeTab === "My Group" && <MyGroupWidget></MyGroupWidget>}
       {activeTab === "Food & Drink" && <RestaurantDisplay></RestaurantDisplay>}
-      {activeTab === "Maps" && (
-        <TabCard title="Maps Content" content="Coming Soon!" />
-      )}
+      {activeTab === "Maps" && <IndoorMapWidget></IndoorMapWidget>}
     </div>
   );
 }
