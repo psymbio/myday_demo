@@ -127,6 +127,110 @@
           }
         }
       ]
+    },
+    {
+      "id": 3,
+      "scenario_name": "Find Pod C",
+      "messages": [
+        {
+          "type": "bot",
+          "content": "Hello Matthew, how can I assist you today?"
+        },
+        {
+          "type": "user",
+          "content": "Where is pod C?"
+        },
+        {
+          "type": "bot",
+          "content": "I can see that you are on Level 38, here is the route to Pod C, Level 38",
+          "component": {
+            "type": "map",
+            "data": {
+              "map_image": "indoor_map.jpg",
+              "alt_text": "Map showing the route to Pod C on Level 38"
+            }
+          }
+        },
+        {
+          "type": "bot",
+          "content": "Need help getting there? Touch here",
+          "url": {
+            "text": "map.com",
+            "link": "https://map.com/guided-navigation"
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "scenario_name": "Report Leaking Tap",
+      "messages": [
+        {
+          "type": "bot",
+          "content": "Hello Matthew, how can I assist you today?"
+        },
+        {
+          "type": "user",
+          "content": "A tap is leaking in the toilets"
+        },
+        {
+          "type": "bot",
+          "content": "I'll ensure that the maintenance team is notified right away. Can you scan the QR code at the exit so that I can confirm your location. Touch here to open camera and scan the code",
+          "url": {
+            "text": "Touch here",
+            "link": "https://example.com/open-camera"
+          }
+        },
+        {
+          "type": "user",
+          "content": "[image of qr code]",
+          "component": {
+            "type": "image",
+            "data": {
+              "image_url": "qr_code.png",
+              "alt_text": "Image of QR code"
+            }
+          }
+        },
+        {
+          "type": "bot",
+          "content": "Thanks for reporting it, you are helping us save water. Did you know a running tap wastes up to 6 litres per minute 💧?"
+        },
+        {
+          "type": "bot",
+          "content": "Is there anything else I can help you with?"
+        },
+        {
+          "type": "user",
+          "content": "nope"
+        },
+        {
+          "type": "bot",
+          "content": "In that case, have a great day!"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "scenario_name": "Choir Information",
+      "messages": [
+        {
+          "type": "bot",
+          "content": "Hello Matthew, how can I assist you today?"
+        },
+        {
+          "type": "user",
+          "content": "Is there a choir based in the building?"
+        },
+        {
+          "type": "bot",
+          "content": "The Voices of Opportunity choir meet up every Thursday evening and welcome new members. Touch here to find out more.",
+          "url": {
+            "text": "choirlink",
+            "link": "https://example.com/choir"
+          }
+        }
+      ]
     }
   ]
 }
