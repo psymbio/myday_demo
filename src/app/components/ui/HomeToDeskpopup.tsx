@@ -9,6 +9,7 @@ interface HomeToDeskPopupProps {
   onYes: () => void;
   onNo: () => void;
   onClose: () => void;
+  onBack: () => void;
   flag: string;
 }
 
@@ -19,6 +20,7 @@ const HomeToDeskPopup: React.FC<HomeToDeskPopupProps> = ({
   onYes,
   onNo,
   onClose,
+  onBack,
   flag,
 }) => {
   const [selectedOption, setSelectedOption] = useState<string>("");
@@ -32,6 +34,16 @@ const HomeToDeskPopup: React.FC<HomeToDeskPopupProps> = ({
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
       <div className="relative bg-white p-6 rounded-lg shadow-lg max-w-md w-10/12">
         {/* Close Button */}
+
+        {flag !="Travel"?
+        <>       
+  <button onClick={onBack} // Function to handle closing the popup
+          className="absolute top-2 left-2 text-black font-bold text-xl hover:text-gray-500"
+     >
+    ← 
+  </button>
+      </>: <></>
+}
         <button
           onClick={onClose} // Function to handle closing the popup
           className="absolute top-2 right-2 text-black font-bold text-xl hover:text-gray-500"
