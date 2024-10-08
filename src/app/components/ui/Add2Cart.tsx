@@ -1,3 +1,4 @@
+// Add2Cart.tsx
 "use client";
 
 import React, { useEffect, useState } from "react";
@@ -65,9 +66,9 @@ const Add2Cart: React.FC<Add2CartProps> = ({
   };
 
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Available Items</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <div className="p-6 bg-gray-100 min-h-screen">
+      <h1 className="text-2xl font-bold text-black mb-6">Available Items</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {foodItems.length > 0 ? (
           foodItems.map((item) => (
             <FoodCard
@@ -84,14 +85,14 @@ const Add2Cart: React.FC<Add2CartProps> = ({
             />
           ))
         ) : (
-          <p>No items match your filter criteria.</p>
+          <p className="text-gray-700 text-lg">No items match your filter criteria.</p>
         )}
       </div>
-      <div className="flex justify-center mt-5">
+      <div className="flex justify-center mt-8">
         <CustomButton
-          bgColor="bg-red-600"
+          bgColor="bg-red-600 hover:bg-red-700"
           textColor="text-white"
-          text="Checkout"
+          text="Proceed to Checkout"
           onClick={handleCheckout} // Call handleCheckout on button click
         />
       </div>
