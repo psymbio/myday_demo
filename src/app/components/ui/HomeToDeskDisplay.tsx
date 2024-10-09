@@ -18,22 +18,37 @@ const HomeToDeskDisplay: React.FC = () => {
 
   const handleOpenDelayModal = () => {
     setShowDelayModal(true);
+    setShowCancelPassModal(false);
+    setshowaddzoomlinkModal(false);
+    setshownotifyModal(false);
   };
 
+  const  handleback=()=>
+    {
+      setShowDelayModal(true);
+      setShowCancelPassModal(false);
+      setshowaddzoomlinkModal(false);
+      setshownotifyModal(false);
+    }
   const handleYesToDelay = () => {
     setShowDelayModal(false);
     setShowCancelPassModal(true);
+    setshowaddzoomlinkModal(false);
+    setshownotifyModal(false);
   };
 
   const handleNoToDelay = () => {
     setShowDelayModal(false);
     setShowCancelPassModal(true);
+    setshowaddzoomlinkModal(false);
+    setshownotifyModal(false);
   };
 
   const handleYesToCancelPass = () => {
-   
+    setShowDelayModal(false);
     setShowCancelPassModal(false);
     setshowaddzoomlinkModal(true);
+    setshownotifyModal(false);
    //call function to delete the data from screen
    console.log("Dispatching action - hideReservation ")
    dispatch(hideReservation(false));
@@ -89,6 +104,7 @@ const HomeToDeskDisplay: React.FC = () => {
         onYes={handleYesToDelay}
         onNo={handleNoToDelay}
         onClose={handleclose}
+        onBack={handleback}
         flag="Travel"
       />
 
@@ -100,6 +116,7 @@ const HomeToDeskDisplay: React.FC = () => {
         onYes={handleYesToCancelPass}
         onNo={handleNoToCancelPass}
         onClose={handleclose}
+        onBack={handleOpenDelayModal}
          flag="yes"
       />
       {/* Third Modal: Add Zoom Links */}
@@ -110,6 +127,7 @@ const HomeToDeskDisplay: React.FC = () => {
         onYes={handleshowaddzoomlinkModalConfirm}
         onNo={handleNoToCancelPass}
         onClose={handleclose}
+        onBack={handleYesToDelay}
          flag="confirm"
       />
 
@@ -121,6 +139,7 @@ const HomeToDeskDisplay: React.FC = () => {
         onYes={handleshownotifyModalyes}
         onNo={handleshownotifyModalno}
         onClose={handleclose}
+        onBack={handleYesToCancelPass}
          flag="yes"
       />
     </div>
