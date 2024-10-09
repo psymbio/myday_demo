@@ -55,7 +55,7 @@ export default function ChatBot() {
                 <div key={i}>
                   <strong>{day.day}:</strong>
                   <div>
-                    {day.profiles.map(
+                    {day.profiles.slice(0, 4).map(
                       (
                         profile: {
                           profile_picture: string;
@@ -72,6 +72,11 @@ export default function ChatBot() {
                           className="inline-block object-cover object-center rounded-full h-10 w-10"
                         />
                       )
+                    )}
+                    {day.profiles.length > 4 && (
+                      <span className="text-base text-gray-600">
+                        {" "}+{day.profiles.length - 4}
+                      </span>
                     )}
                   </div>
                 </div>
@@ -264,6 +269,7 @@ export default function ChatBot() {
                     {message.url.text}
                   </a>
                 )}
+                {message.afterLinkText && message.afterLinkText}
               </div>
             ))}
           </div>
