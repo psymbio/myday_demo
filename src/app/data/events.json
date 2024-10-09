@@ -1,42 +1,92 @@
 [
   {
     "id": 1,
-    "startDate": "2024-09-02T00:00:00Z",
-    "endDate": "2024-09-02T00:00:00Z",
-    "time": "16:00 - 17:00",
-    "text": "DevOps",
-    "subtext": "Event for DevOps Training",
-    "image": "/events/easter.jpg",
-    "subtextLong": "In-depth training on DevOps principles, tools, and workflows."
+    "startDate": "2024-10-02T00:00:00Z",
+    "endDate": "2024-10-02T00:00:00Z",
+    "time": "14:00 - 15:00",
+    "text": "MyDay Basics",
+    "subtext": "Elevate your MyDay experience",
+    "image": "/events/myday.png",
+    "subtextLong": "MyDay makes it easier to manage your working day, whether you are at home, in the office, or on-the-go."
   },
   {
     "id": 2,
-    "startDate": "2024-09-02T00:00:00Z",
-    "endDate": "2024-09-04T00:00:00Z",
-    "time": "16:00 - 17:00",
-    "text": "Scrum Meeting",
-    "subtext": "Daily Scrum Stand-up",
-    "image": "/events/easter.jpg",
-    "subtextLong": "In-depth training on DevOps principles, tools, and workflows."
+    "startDate": "2024-10-05T00:00:00Z",
+    "endDate": "2024-10-05T00:00:00Z",
+    "time": "12:00 - 13:00",
+    "text": "World Environment Day",
+    "subtext": "Protect the environment",
+    "image": "/events/wed.png",
+    "subtextLong": "Join the UK Climate Action Network and our corporate services partners JLL for a webinar."
   },
   {
     "id": 3,
-    "startDate": "2024-09-02T00:00:00Z",
-    "endDate": "2024-09-04T00:00:00Z",
-    "time": "All day",
-    "text": "Frontend Review",
-    "subtext": "Discuss UI Improvements",
-    "image": "/events/easter.jpg",
-    "subtextLong": "In-depth training on DevOps principles, tools, and workflows."
+    "startDate": "2024-10-10T00:00:00Z",
+    "endDate": "2024-10-10T00:00:00Z",
+    "time": "16:30 - 18:00",
+    "text": "CTO Product Showcase",
+    "subtext": "Explore smart building tech",
+    "image": "/events/cto.jpg",
+    "subtextLong": "See AI in action and learn how Microsoft Viva Insights boosts productivity and wellbeing. Plus, get the latest on Zoom—all with refreshments served!"
   },
   {
     "id": 4,
-    "startDate": "2024-10-05T00:00:00Z",
-    "endDate": "2024-10-05T00:00:00Z",
-    "time": "09:00 - 10:00",
-    "text": "Backend Review",
-    "subtext": "Review backend architecture",
-    "image": "/events/easter.jpg",
-    "subtextLong": "In-depth training on DevOps principles, tools, and workflows."
+    "startDate": "2024-10-18T00:00:00Z",
+    "endDate": "2024-10-18T00:00:00Z",
+    "time": "14:00 - 17:00",
+    "text": "British Pub Quiz Night",
+    "subtext": "Get your quiz team ready!",
+    "image": "/events/pubquiz.jpg",
+    "subtextLong": "Test your knowledge on all things Britain, including British TV and film, seaside attractions, sports, festivals and even traditional desserts!."
+  },
+  {
+    "id": 5,
+    "startDate": "2024-10-22T00:00:00Z",
+    "endDate": "2024-10-22T00:00:00Z",
+    "time": "17:00 - 18:00",
+    "text": "Black Heritage Month Event",
+    "subtext": "Explore corporate evolution",
+    "image": "/events/bhm.png",
+    "subtextLong": "This event will shine a spotlight on how the corporate landscape has transformed over recent decades offering new opportunities while also highlighting persistent challenges."
+  },
+  {
+    "id": 6,
+    "startDate": "2024-11-04T00:00:00Z",
+    "endDate": "2024-11-04T00:00:00Z",
+    "time": "14:00 - 15:00",
+    "text": "Women in Tech: Gen AI",
+    "subtext": "Panel on Generative AI",
+    "image": "/events/wit.png",
+    "subtextLong": "Join this panel discussion and Q&A, discussing Generative AI with our internal & external speakers."
+  },
+  {
+    "id": 7,
+    "startDate": "2024-11-12T00:00:00Z",
+    "endDate": "2024-10-12T00:00:00Z",
+    "time": "11:00 - 18:00",
+    "text": "PSP Spinathon Challenge",
+    "subtext": "Cycle for the Paris Olympics!",
+    "image": "/events/spinathon.jpg",
+    "subtextLong": "Sign up to start your journey and the Nuffield team will be in contact to book your place in the race! Contact greg.blue@hsbc.com to register."
+  },
+  {
+    "id": 8,
+    "startDate": "2024-11-20T00:00:00Z",
+    "endDate": "2024-10-20T00:00:00Z",
+    "time": "12:30 - 13:30",
+    "text": "Wellness Seminar Event",
+    "subtext": "Stress management seminar",
+    "image": "/events/stress.jpg",
+    "subtextLong": "Stress Management and resilience seminar with Matthew from Nuffield Health. Exploring practical approaches at work and home, to build resilience for challenging situations, identify and apply a toolbox of stress management skills to positively adapt in constantly changing environments."
+  },
+  {
+    "id": 9,
+    "startDate": "2024-11-28T00:00:00Z",
+    "endDate": "2024-11-28T00:00:00Z",
+    "time": "12:00 - 12:45",
+    "text": "PSP Art Collection Tour",
+    "subtext": "Guided tour of our Art Collection",
+    "image": "/events/arttour.jpg",
+    "subtextLong": "The HSBC collection celebrates different perspectives of our people and the communities we serve by acquiring artists who either depict the people and landscapes around them, or those who explore the feelings, thoughts, and emotional landscapes of subjects such as identity, society or the environment."
   }
 ]

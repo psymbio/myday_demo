@@ -25,11 +25,10 @@ const FoodCard: React.FC<FoodCardProps> = ({
   cartQuantity,
 }) => {
   return (
-    <div className="bg-white shadow-md rounded-lg p-4 flex flex-col justify-between h-full">
+    <div className="bg-white shadow-md rounded-lg p-3 flex flex-col justify-between h-auto">
       <div>
-        <h3 className="text-lg font-bold">
-          {name} £{cost.toFixed(2)}
-        </h3>
+        <h2 className="text-lg font-semibold text-black">{name}</h2>
+        <p className="text-lg text-gray-800">${cost.toFixed(2)}</p> {/* Cost appears under the name */}
       </div>
 
       {/* Align the Quantity and Cart Controls to the bottom */}
