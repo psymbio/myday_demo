@@ -6,14 +6,15 @@ import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 interface Restaurant {
   id: number;
   name: string;
-  text: string;
+  schedule: string[];
   image: string;
+  text: string; 
 }
 
 // Restaurant Card Component
 const RestaurantCard: React.FC<{ restaurant: Restaurant }> = ({ restaurant }) => {
   return (
-    <div className="relative max-w-sm bg-white rounded-lg shadow-lg border border-gray-200 p-4 mt-2 transition-all duration-300 hover:shadow-xl -z-10">
+    <div className="relative w-full px-4 bg-white rounded-lg shadow-lg border border-gray-200 p-1 mt-1 transition-all duration-300 hover:shadow-xl -z-10">
       {/* Restaurant Image */}
       <img
         src={restaurant.image}
@@ -29,10 +30,17 @@ const RestaurantCard: React.FC<{ restaurant: Restaurant }> = ({ restaurant }) =>
         <ChevronRightRoundedIcon className="ml-2" />
       </button>
 
-      {/* Restaurant Info */}
-      <div className="mt-2">
-        {/* <p className="text-gray-800 text-base font-medium mb-2"></p> */}
-        <p className="text-gray-800 text-sm">{restaurant.text}</p>
+       {/* Restaurant Schedule */}
+       <div className="mt-2">
+        <ul className="text-gray-800 text-sm font-semibold">
+          {restaurant.schedule.map((time, index) => (
+            <li key={index}>{time}</li>
+          ))}
+        </ul>
+      </div>
+      {/* Restaurant Description */}
+      <div className="mt-2 text-gray-600 text-sm">
+        <p>{restaurant.text}</p>
       </div>
     </div>
   );
