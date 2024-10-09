@@ -1,4 +1,3 @@
-// Checkout.tsx
 "use client";
 
 import React, { useEffect, useState } from "react";
@@ -20,10 +19,12 @@ interface FoodItem {
   id: number;
   name: string;
   cost: number;
-  restaurantId: number;
+  restaurant: string; // Use 'restaurant' instead of 'restaurantId'
   veg: boolean;
   pescatarian: boolean;
   glutenFree: boolean;
+  courseType: string;
+  image: string;
 }
 
 interface CartState {

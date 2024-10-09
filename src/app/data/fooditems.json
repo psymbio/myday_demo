@@ -3,135 +3,165 @@
     "id": 1,
     "name": "Verbena and Lemon Halloumi",
     "cost": 8.20,
-    "restaurantId": 0,
+    "restaurant": "Mezzanine",
     "veg": true,
     "pescatarian": false,
-    "glutenFree": false
+    "glutenFree": false,
+    "courseType": "main",
+    "image": "Verbena_Lemon_Halloumi.jpg"
   },
   {
     "id": 2,
     "name": "Thai Green Vegetable Curry",
     "cost": 6.50,
-    "restaurantId": 1,
+    "restaurant": "Starbucks",
     "veg": true,
     "pescatarian": true,
-    "glutenFree": true
+    "glutenFree": true,
+    "courseType": "main",
+    "image": "Thai_Green_Veg_Curry.jpg"
   },
   {
     "id": 3,
     "name": "Tandoori Paneer Flatbread",
     "cost": 7.15,
-    "restaurantId": 0,
+    "restaurant": "Mezzanine",
     "veg": true,
     "pescatarian": false,
-    "glutenFree": true
+    "glutenFree": true,
+    "courseType": "main",
+    "image": "Tandoori_Paneer_Flatbread.jpg"
   },
   {
     "id": 4,
     "name": "Thai Green Vegetable Curry",
     "cost": 7.99,
-    "restaurantId": 1,
+    "restaurant": "Starbucks",
     "veg": true,
     "pescatarian": false,
-    "glutenFree": false
+    "glutenFree": false,
+    "courseType": "main",
+    "image": "Thai_Green_Veg_Curry.jpg"
   },
   {
     "id": 5,
     "name": "Fries",
     "cost": 2.20,
-    "restaurantId": 0,
+    "restaurant": "Mezzanine",
     "veg": true,
     "pescatarian": true,
-    "glutenFree": true
+    "glutenFree": true,
+    "courseType": "starter",
+    "image": "Fries.jpg"
   },
   {
     "id": 6,
     "name": "Ramen Mushroom and Egg",
     "cost": 7.80,
-    "restaurantId": 1,
+    "restaurant": "Starbucks",
     "veg": true,
     "pescatarian": false,
-    "glutenFree": false
+    "glutenFree": false,
+    "courseType": "main",
+    "image": "Ramen_Mushroom_Egg.jpg"
   },
   {
     "id": 7,
     "name": "Soba Noodle and Sesame Salad",
     "cost": 6.90,
-    "restaurantId": 1,
+    "restaurant": "Starbucks",
     "veg": true,
     "pescatarian": false,
-    "glutenFree": true
+    "glutenFree": true,
+    "courseType": "main",
+    "image": "Soba_Noodle_Sesame_Salad.png"
   },
   {
     "id": 8,
     "name": "Bread Roll",
     "cost": 0.75,
-    "restaurantId": 1,
+    "restaurant": "Starbucks",
     "veg": true,
     "pescatarian": true,
-    "glutenFree": false
+    "glutenFree": false,
+    "courseType": "starter",
+    "image": "Bread_Roll.jpg"
   },
   {
     "id": 9,
     "name": "Classic Tiramisu",
     "cost": 3.15,
-    "restaurantId": 1,
+    "restaurant": "Starbucks",
     "veg": true,
     "pescatarian": true,
-    "glutenFree": true
+    "glutenFree": true,
+    "courseType": "dessert",
+    "image": "Classic_Tiramisu.jpg"
   },
   {
     "id": 10,
     "name": "Veggie Sandwich",
     "cost": 7.99,
-    "restaurantId": 1,
+    "restaurant": "Starbucks",
     "veg": false,
     "pescatarian": true,
-    "glutenFree": false
+    "glutenFree": false,
+    "courseType": "main",
+    "image": "Veggie_Sandwich.png"
   },
   {
     "id": 11,
     "name": "Ramen Mushroom and Egg",
     "cost": 7.80,
-    "restaurantId": 1,
+    "restaurant": "Starbucks",
     "veg": true,
     "pescatarian": false,
-    "glutenFree": false
+    "glutenFree": false,
+    "courseType": "main",
+    "image": "Ramen_Mushroom_Egg.jpg"
   },
   {
     "id": 12,
     "name": "Soba Noodle and Sesame Salad",
     "cost": 6.90,
-    "restaurantId": 0,
+    "restaurant": "Mezzanine",
     "veg": true,
     "pescatarian": false,
-    "glutenFree": true
+    "glutenFree": true,
+    "courseType": "main",
+    "image": "Soba_Noodle_Sesame_Salad.png"
   },
   {
     "id": 13,
     "name": "Mutton Roll",
     "cost": 7.75,
-    "restaurantId": 1,
+    "restaurant": "Starbucks",
     "veg": false,
     "pescatarian": true,
-    "glutenFree": false
+    "glutenFree": false,
+    "courseType": "main",
+    "image": "Mutton_Roll.png"
   },
   {
     "id": 14,
-    "name": "Classic mutton curry",
+    "name": "Classic Mutton Curry",
     "cost": 8.15,
-    "restaurantId": 1,
+    "restaurant": "Starbucks",
     "veg": false,
     "pescatarian": true,
-    "glutenFree": true
+    "glutenFree": true,
+    "courseType": "main",
+    "image": "Classic_mutton_curry.jpg"
   },
   {
     "id": 15,
     "name": "Chicken Sandwich",
     "cost": 7.99,
-    "restaurantId": 0,
+    "restaurant": "Mezzanine",
     "veg": false,
     "pescatarian": true,
-    "glutenFree": false
+    "glutenFree": false,
+    "courseType": "main",
+    "image": "Chicken_Sandwich.jpg"
   }
 ]

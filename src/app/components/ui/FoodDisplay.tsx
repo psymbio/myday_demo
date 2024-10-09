@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 import FilterAltRoundedIcon from "@mui/icons-material/FilterAltRounded";
 
 interface FoodItem {
+  image: string;
   id: number;
   name: string;
   cost: number;
@@ -225,10 +226,11 @@ const FoodCardDisplay: React.FC = () => {
                     veg={item.veg}
                     pescatarian={item.pescatarian}
                     glutenFree={item.glutenFree}
-                    onAddToCart={() => {}}
-                    onRemoveFromCart={() => {}}
-                    cartQuantity={0} // You can set the cart quantity here if needed
-                  />
+                    onAddToCart={() => { } }
+                    onRemoveFromCart={() => { } }
+                    cartQuantity={0}
+                    image={item.image}
+                    />
                 ))
               ) : (
                 <p>No items match your filter criteria.</p>
