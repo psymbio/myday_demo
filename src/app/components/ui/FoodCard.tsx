@@ -43,11 +43,11 @@ const FoodCard: React.FC<FoodCardProps> = ({
       <div className="flex flex-col justify-between flex-1 ml-3">
         <div>
           {/* Name of the food item with Vegetarian (V) icon if applicable */}
-          <h2 className="text-lg font-semibold text-black flex items-center">
+          <h2 className="text-base font-semibold text-gray-600 flex items-center">
             {name}
-            {veg && <span className="ml-2 text-green-600 font-bold">(V)</span>}
+            {veg && <span className="text-base font-semibold text-gray-600 ml-2 text-green-600">(V)</span>}
           </h2>
-          <p className="text-lg text-gray-800">${cost.toFixed(2)}</p>
+          <p className="text-base font-semibold text-gray-600">£{cost.toFixed(2)}</p>
         </div>
 
         {/* Align the Quantity and Cart Controls to the bottom */}

@@ -103,11 +103,8 @@ export default function Checkout() {
 
   return (
     <section>
-      <div className="-translate-y-10 mx-5 max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
-        <div className="mx-auto max-w-3xl">
-          <header className="flex justify-center bg-gray-200 p-2 rounded-md">
-            <Heading2 heading="Your Cart" />
-          </header>
+      <div className="p-6 min-h-screen">
+      <h1 className="flex justify-center text-2xl font-bold text-black mb-6">Your Cart</h1>
 
           {error && <div className="text-red-500 text-center">{error}</div>}
 
@@ -116,7 +113,7 @@ export default function Checkout() {
               Your cart is empty. Go add some items!
             </div>
           ) : (
-            <div className="mt-8">
+            <div className="">
               <ul className="space-y-4">
                 {items.map((item) => (
                   <li key={item.id} className="flex items-center justify-between">
@@ -179,8 +176,6 @@ export default function Checkout() {
             </div>
           )}
         </div>
-      </div>
-
       {isPopupVisible && itemToRemove !== null && (
         <CheckoutPopup
           itemName={items.find((item) => item.id === itemToRemove)?.name || ""}
