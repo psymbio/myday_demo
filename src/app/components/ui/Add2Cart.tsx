@@ -12,12 +12,11 @@ interface FoodItem {
   id: number;
   name: string;
   cost: number;
-  restaurant: string; // Ensure this property exists in your data
   veg: boolean;
   pescatarian: boolean;
   glutenFree: boolean;
-  courseType: string; // Match this with your data
   image: string;
+  courseType: string; // assuming courseType is used in your sorting logic
 }
 
 interface Add2CartProps {

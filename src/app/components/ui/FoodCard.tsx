@@ -10,6 +10,8 @@ interface FoodCardProps {
   name: string;
   cost: number;
   veg: boolean;
+  pescatarian: boolean;
+  glutenFree: boolean;
   onAddToCart: (id: number) => void;
   onRemoveFromCart: (id: number) => void;
   cartQuantity: number; // The current quantity in the cart
