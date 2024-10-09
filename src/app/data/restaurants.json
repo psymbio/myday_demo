@@ -5,7 +5,7 @@
     "schedule": [
       "Breakfast: 07:30 - 10:30 (Mon-Fri)",
       "Lunch: 11:30 - 14:00 (Mon-Fri)",
-      "Location :"
+      "Location: "
     ],
     "text":"The HSBC restaurant serves breakfast and lunch presenting a variety of cuisines intended to showcase local and seasonal produce, reflected in our weekly changing menu.",
     "image": "/restaurants/Mezzanine.jpg"
@@ -16,7 +16,7 @@
     "schedule": [
       "Breakfast: 07:00 - 16:00 (Mon-Fri)",
       "Lunch: 07:00 - 17:00 (Tue-Thu)",
-      "Location :"
+      "Location: "
     ],
     "text":"Currently the world's largest coffeehouse chain. Barista hot drinks, grab and go including pastries, light lunches, sandwiches, salads, indulgent and healthy snacks.",
     "image": "/restaurants/starbucks.jpg"
