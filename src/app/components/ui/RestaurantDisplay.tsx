@@ -7,8 +7,9 @@ import restaurantsData from "../../data/restaurants.json"; // Assuming data is i
 interface Restaurant {
   id: number;
   name: string;
-  text: string;
+  schedule: string[];
   image: string;
+  text: string; 
 }
 
 // Restaurant List Component
