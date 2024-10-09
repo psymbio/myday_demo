@@ -37,12 +37,12 @@ const HomeToDeskDisplay: React.FC = () => {
     setshownotifyModal(false);
   };
 
-  const handleNoToDelay = () => {
+  /* const handleNoToDelay = () => {
     setShowDelayModal(false);
     setShowCancelPassModal(true);
     setshowaddzoomlinkModal(false);
     setshownotifyModal(false);
-  };
+  }; */
 
   const handleYesToCancelPass = () => {
     setShowDelayModal(false);
