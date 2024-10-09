@@ -31,8 +31,8 @@ const initialRestaurants: Restaurant[] = [
     name: "Mezzanine Restaurant",
     iconType: IconType.Restaurant,
     schedule: [
-      "Breakfast: 07:30 - 10:30 (Mon-Fri)",
-      "Lunch: 11:30 - 14:00 (Mon-Fri)",
+      "Mon-Fri 07:30 - 10:30 (Breakfast)",
+      "Mon-Fri 11:30 - 14:00 (Lunch)",
     ],
     busyStatus: BusyStatus.NotBusy, // Default status
   },
@@ -40,7 +40,10 @@ const initialRestaurants: Restaurant[] = [
     id: "starbucks",
     name: "Starbucks",
     iconType: IconType.Cafe,
-    schedule: ["Mon-Fri: 07:00 - 16:00", "Tue & Thu: 07:00 - 17:00"],
+    schedule: [
+      "Mon & Fri 07:00 - 16:00", 
+      "Tue - Thu 07:00 - 17:00",
+    ],
     busyStatus: BusyStatus.NotBusy, // Default status
   },
 ];
@@ -164,7 +167,7 @@ export default function RestaurantDisplay() {
           href="/food_drink"
           className="text-red-600 hover:underline font-semibold"
         >
-          Go to Restaurants
+          View all Food and Drink
         </a>
       </footer>
     </section>
