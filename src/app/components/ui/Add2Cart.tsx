@@ -12,10 +12,12 @@ interface FoodItem {
   id: number;
   name: string;
   cost: number;
+  restaurant: string; // Ensure this property exists in your data
   veg: boolean;
   pescatarian: boolean;
   glutenFree: boolean;
-  image: string; // No methods here, just the data
+  courseType: string; // Match this with your data
+  image: string;
 }
 
 interface Add2CartProps {
@@ -46,7 +48,27 @@ const Add2Cart: React.FC<Add2CartProps> = ({
       );
     });
 
-    setFoodItems(filteredItems); // Set filtered items in state
+    // Define sort order for course items
+    const sortOrder: { [key: string]: number } = {
+      starter: 1, // Ensure this matches your data
+      main: 2,
+      dessert: 3, // Make sure "dessert" is in your dataset if needed
+    };
+
+    // Debugging: Check filtered items
+    console.log("Filtered Items: ", filteredItems);
+
+    // Sort the filtered items by courseType
+    const sortedItems = filteredItems.sort((a, b) => {
+      const orderA = sortOrder[a.courseType.toLowerCase()] || 0; // Ensure case-insensitive
+      const orderB = sortOrder[b.courseType.toLowerCase()] || 0; // Ensure case-insensitive
+      return orderA - orderB;
+    });
+
+    // Debugging: Check sorted items
+    console.log("Sorted Items: ", sortedItems);
+
+    setFoodItems(sortedItems); // Set filtered and sorted items in state
   }, [veg, pescatarian, glutenFree]); // Re-run when props change
 
   const handleAddToCart = (id: number) => {
@@ -66,7 +88,7 @@ const Add2Cart: React.FC<Add2CartProps> = ({
   };
 
   return (
-    <div className="p-6 bg-gray-100 min-h-screen">
+    <div className="p-6 min-h-screen">
       <h1 className="text-2xl font-bold text-black mb-6">Available Items</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {foodItems.length > 0 ? (
