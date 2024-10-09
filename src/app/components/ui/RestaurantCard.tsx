@@ -19,7 +19,7 @@ const RestaurantCard: React.FC<{ restaurant: Restaurant }> = ({ restaurant }) =>
       <img
         src={restaurant.image}
         alt={restaurant.name}
-        className="w-full h-40 object-cover rounded-lg"
+        className="w-full h-24 object-cover rounded-lg"
       />
 
       {/* Button with Chevron */}
@@ -31,7 +31,7 @@ const RestaurantCard: React.FC<{ restaurant: Restaurant }> = ({ restaurant }) =>
       </button>
 
        {/* Restaurant Schedule */}
-       <div className="mt-2">
+       <div className="mt-3">
         <ul className="text-gray-800 text-sm font-semibold">
           {restaurant.schedule.map((time, index) => (
             <li key={index}>{time}</li>
