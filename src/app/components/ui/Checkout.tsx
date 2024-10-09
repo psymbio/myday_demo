@@ -12,7 +12,6 @@ import {
   updateItemQuantity,
 } from "@/slices/cartSlice";
 import CustomButton from "./CustomButton";
-import Heading2 from "./Heading2";
 import CircularProgress from "@mui/material/CircularProgress";
 
 interface FoodItem {
