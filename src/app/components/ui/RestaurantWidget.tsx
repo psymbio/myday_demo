@@ -31,8 +31,8 @@ const initialRestaurants: Restaurant[] = [
     name: "Mezzanine Restaurant",
     iconType: IconType.Restaurant,
     schedule: [
-      "Mon-Fri 07:30 - 10:30 (Breakfast)",
-      "Mon-Fri 11:30 - 14:00 (Lunch)",
+      "Mon - Fri 07:30 - 10:30 (Breakfast)",
+      "Mon - Fri 11:30 - 14:00 (Lunch)",
     ],
     busyStatus: BusyStatus.NotBusy, // Default status
   },
