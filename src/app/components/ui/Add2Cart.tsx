@@ -1,4 +1,3 @@
-// Add2Cart.tsx
 "use client";
 
 import React, { useEffect, useState } from "react";
@@ -16,6 +15,7 @@ interface FoodItem {
   veg: boolean;
   pescatarian: boolean;
   glutenFree: boolean;
+  image: string; // No methods here, just the data
 }
 
 interface Add2CartProps {
@@ -77,10 +77,11 @@ const Add2Cart: React.FC<Add2CartProps> = ({
               name={item.name}
               cost={item.cost}
               veg={item.veg}
+              image={item.image}
               pescatarian={item.pescatarian}
               glutenFree={item.glutenFree}
-              onAddToCart={handleAddToCart}
-              onRemoveFromCart={handleRemoveFromCart}
+              onAddToCart={handleAddToCart} // Add functionality
+              onRemoveFromCart={handleRemoveFromCart} // Remove functionality
               cartQuantity={cartItems[item.id] || 0} // Pass the current cart quantity
             />
           ))
