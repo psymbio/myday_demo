@@ -102,7 +102,7 @@ const HomeToDeskDisplay: React.FC = () => {
         title="TRAVEL ALERT"
         message="Line Closure on Elizabeth Line. Expected delays of 3 hours.  Would you like to update your day?"
         onYes={handleYesToDelay}
-        onNo={handleNoToDelay}
+        onNo={handleclose}
         onClose={handleclose}
         onBack={handleback}
         flag="Travel"
