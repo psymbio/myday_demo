@@ -31,24 +31,21 @@ const FoodCard: React.FC<FoodCardProps> = ({
   return (
     <div className="bg-white shadow-md rounded-lg p-3 flex items-start justify-between h-auto">
       {/* Image on the left side */}
-      <div className="mr-4 w-20 h-20">
+      <div className="w-20 h-20 relative">
         <Image
           src={`/food_items/${image}`}
           alt={name}
-          width={80}
-          height={80}
+          fill
           className="object-cover rounded-lg"
         />
       </div>
 
-      <div className="flex flex-col justify-between flex-1">
+      <div className="flex flex-col justify-between flex-1 ml-3">
         <div>
           {/* Name of the food item with Vegetarian (V) icon if applicable */}
           <h2 className="text-lg font-semibold text-black flex items-center">
             {name}
-            {veg && (
-              <span className="ml-2 text-green-600 font-bold">(V)</span>
-            )}
+            {veg && <span className="ml-2 text-green-600 font-bold">(V)</span>}
           </h2>
           <p className="text-lg text-gray-800">${cost.toFixed(2)}</p>
         </div>
