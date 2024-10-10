@@ -29,14 +29,14 @@ const FoodCard: React.FC<FoodCardProps> = ({
   image, // New prop for the image
 }) => {
   return (
-    <div className="bg-white shadow-md rounded-lg p-3 flex items-center justify-between h-auto">
+    <div className="bg-white shadow-md rounded-lg p-4 flex items-start justify-between h-auto">
       
       {/* Name and Price on the left side */}
-      <div className="flex flex-col justify-between flex-1">
+      <div className="flex flex-col justify-start flex-1">
         <div>
           {/* Name of the food item with Vegetarian (V) icon if applicable */}
-          <h2 className="-mt-8 text-base font-semibold text-gray-600">
-            {name}{veg && <span className="text-green-600 ml-1">(V)</span>}
+          <h2 className="text-base font-semibold text-gray-600">
+            {name} {veg && <span className="text-green-600">(V)</span>}
           </h2>
           <p className="text-base font-semibold text-gray-600">£{cost.toFixed(2)}</p>
         </div>
