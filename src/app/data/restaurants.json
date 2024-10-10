@@ -7,7 +7,7 @@
       "Monday - Friday: 11:30 - 14:00 (Lunch)",
       "Location: Level 1"
     ],
-    "text":"Presenting a variety of cuisines to support your wellbeing, additionally we focus on vegan, vegetarian and flexitarian diets.Microwaves are available for use to the rear of the restaurant.",
+    "text":"",
     "image": "/restaurants/Mezzanine.jpg"
   },
   {
@@ -16,9 +16,9 @@
     "schedule": [
       "Monday - Friday: 07:00 - 16:00 (Breakfast)",
       "Tuesday - Thursday: 07:00 - 17:00 (Lunch)",
-      "Location: Level 1 & Level 5 MC KB"
+      "Location: Level 1 & Level 5"
     ],
-    "text":"Barista hot drinks, grab and go including pastries, light lunches, sandwiches, salads, indulgent and healthy snacks.",
+    "text":"",
     "image": "/restaurants/starbucks.jpg"
   }
 ]

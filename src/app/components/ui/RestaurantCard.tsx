@@ -39,9 +39,9 @@ const RestaurantCard: React.FC<{ restaurant: Restaurant }> = ({ restaurant }) =>
         </ul>
       </div>
       {/* Restaurant Description */}
-      <div className="mt-2 text-gray-600 text-sm">
+      {/* <div className="mt-2 text-gray-600 text-sm">
         <p>{restaurant.text}</p>
-      </div>
+      </div> */}
     </div>
   );
 };
