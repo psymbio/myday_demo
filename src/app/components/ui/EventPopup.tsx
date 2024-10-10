@@ -9,10 +9,14 @@ import { RootState } from "@/app/store";
 
 interface EventPopupProps {
   event: {
-    id: number; // Include the event ID
+    id: number;
+    startDate: string;
+    endDate: string;
+    time: string;
     text: string;
-    subtextLong: string;
+    subtext: string;
     image: string;
+    subtextLong: string;
   };
   onClose: () => void;
 }
@@ -54,7 +58,13 @@ export default function EventPopup({ event, onClose }: EventPopupProps) {
           alt={event.text}
           className="w-full h-auto rounded-lg mb-4"
         />
-
+        <p className="text-sm sm:text-lg lg:text-xl">
+          {new Date(event.startDate).toLocaleDateString("en-US", {
+            weekday: "long",
+            day: "numeric",
+            month: "long",
+          })}
+        </p>
         {/* Event Description */}
         <p className="text-gray-500 mb-6">{event.subtextLong}</p>
 
