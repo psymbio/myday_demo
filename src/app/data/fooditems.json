@@ -8,7 +8,11 @@
     "pescatarian": false,
     "glutenFree": false,
     "courseType": "main",
-    "image": "Verbena_Lemon_Halloumi.jpg"
+    "image": "Verbena_Lemon_Halloumi.jpg",
+    "allergies": true,
+    "dairyFree": false,
+    "lactoseFree": false,
+    "vegan": false
   },
   {
     "id": 2,
@@ -16,10 +20,14 @@
     "cost": 6.50,
     "restaurant": "Starbucks",
     "veg": true,
-    "pescatarian": true,
+    "pescatarian": false,
     "glutenFree": true,
     "courseType": "main",
-    "image": "Thai_Green_Veg_Curry.jpg"
+    "image": "Thai_Green_Veg_Curry.jpg",
+    "allergies": false,
+    "dairyFree": true,
+    "lactoseFree": true,
+    "vegan": true
   },
   {
     "id": 3,
@@ -27,10 +35,14 @@
     "cost": 7.15,
     "restaurant": "Mezzanine",
     "veg": true,
-    "pescatarian": false,
+    "pescatarian": true,
     "glutenFree": true,
     "courseType": "main",
-    "image": "Tandoori_Paneer_Flatbread.jpg"
+    "image": "Tandoori_Paneer_Flatbread.jpg",
+    "allergies": true,
+    "dairyFree": false,
+    "lactoseFree": false,
+    "vegan": false
   },
   {
     "id": 4,
@@ -41,7 +53,11 @@
     "pescatarian": false,
     "glutenFree": false,
     "courseType": "main",
-    "image": "Thai_Green_Veg_Curry.jpg"
+    "image": "Thai_Green_Veg_Curry.jpg",
+    "allergies": false,
+    "dairyFree": true,
+    "lactoseFree": true,
+    "vegan": true
   },
   {
     "id": 5,
@@ -49,10 +65,14 @@
     "cost": 2.20,
     "restaurant": "Mezzanine",
     "veg": true,
-    "pescatarian": true,
+    "pescatarian": false,
     "glutenFree": true,
     "courseType": "starter",
-    "image": "Fries.jpg"
+    "image": "Fries.jpg",
+    "allergies": false,
+    "dairyFree": true,
+    "lactoseFree": true,
+    "vegan": true
   },
   {
     "id": 6,
@@ -60,10 +80,14 @@
     "cost": 7.80,
     "restaurant": "Starbucks",
     "veg": true,
-    "pescatarian": false,
+    "pescatarian": true,
     "glutenFree": false,
     "courseType": "main",
-    "image": "Ramen_Mushroom_Egg.jpg"
+    "image": "Ramen_Mushroom_Egg.jpg",
+    "allergies": true,
+    "dairyFree": true,
+    "lactoseFree": true,
+    "vegan": false
   },
   {
     "id": 7,
@@ -74,7 +98,11 @@
     "pescatarian": false,
     "glutenFree": true,
     "courseType": "main",
-    "image": "Soba_Noodle_Sesame_Salad.png"
+    "image": "Soba_Noodle_Sesame_Salad.png",
+    "allergies": true,
+    "dairyFree": true,
+    "lactoseFree": true,
+    "vegan": true
   },
   {
     "id": 8,
@@ -82,10 +110,14 @@
     "cost": 0.75,
     "restaurant": "Starbucks",
     "veg": true,
-    "pescatarian": true,
+    "pescatarian": false,
     "glutenFree": false,
     "courseType": "starter",
-    "image": "Bread_Roll.jpg"
+    "image": "Bread_Roll.jpg",
+    "allergies": true,
+    "dairyFree": true,
+    "lactoseFree": true,
+    "vegan": true
   },
   {
     "id": 9,
@@ -93,21 +125,29 @@
     "cost": 3.15,
     "restaurant": "Starbucks",
     "veg": true,
-    "pescatarian": true,
-    "glutenFree": true,
+    "pescatarian": false,
+    "glutenFree": false,
     "courseType": "dessert",
-    "image": "Classic_Tiramisu.jpg"
+    "image": "Classic_Tiramisu.jpg",
+    "allergies": true,
+    "dairyFree": false,
+    "lactoseFree": false,
+    "vegan": false
   },
   {
     "id": 10,
     "name": "Veggie Sandwich",
     "cost": 7.99,
     "restaurant": "Starbucks",
-    "veg": false,
-    "pescatarian": true,
+    "veg": true,
+    "pescatarian": false,
     "glutenFree": false,
     "courseType": "main",
-    "image": "Veggie_Sandwich.png"
+    "image": "Veggie_Sandwich.png",
+    "allergies": true,
+    "dairyFree": false,
+    "lactoseFree": false,
+    "vegan": false
   },
   {
     "id": 11,
@@ -118,7 +158,11 @@
     "pescatarian": false,
     "glutenFree": false,
     "courseType": "main",
-    "image": "Ramen_Mushroom_Egg.jpg"
+    "image": "Ramen_Mushroom_Egg.jpg",
+    "allergies": true,
+    "dairyFree": true,
+    "lactoseFree": true,
+    "vegan": false
   },
   {
     "id": 12,
@@ -129,7 +173,11 @@
     "pescatarian": false,
     "glutenFree": true,
     "courseType": "main",
-    "image": "Soba_Noodle_Sesame_Salad.png"
+    "image": "Soba_Noodle_Sesame_Salad.png",
+    "allergies": true,
+    "dairyFree": true,
+    "lactoseFree": true,
+    "vegan": true
   },
   {
     "id": 13,
@@ -137,10 +185,14 @@
     "cost": 7.75,
     "restaurant": "Starbucks",
     "veg": false,
-    "pescatarian": true,
+    "pescatarian": false,
     "glutenFree": false,
     "courseType": "main",
-    "image": "Mutton_Roll.png"
+    "image": "Mutton_Roll.png",
+    "allergies": true,
+    "dairyFree": true,
+    "lactoseFree": true,
+    "vegan": false
   },
   {
     "id": 14,
@@ -148,10 +200,14 @@
     "cost": 8.15,
     "restaurant": "Starbucks",
     "veg": false,
-    "pescatarian": true,
+    "pescatarian": false,
     "glutenFree": true,
     "courseType": "main",
-    "image": "Classic_mutton_curry.jpg"
+    "image": "Classic_mutton_curry.jpg",
+    "allergies": true,
+    "dairyFree": true,
+    "lactoseFree": true,
+    "vegan": false
   },
   {
     "id": 15,
@@ -159,9 +215,13 @@
     "cost": 7.99,
     "restaurant": "Mezzanine",
     "veg": false,
-    "pescatarian": true,
+    "pescatarian": false,
     "glutenFree": false,
     "courseType": "main",
-    "image": "Chicken_Sandwich.jpg"
+    "image": "Chicken_Sandwich.jpg",
+    "allergies": true,
+    "dairyFree": false,
+    "lactoseFree": false,
+    "vegan": false
   }
 ]
