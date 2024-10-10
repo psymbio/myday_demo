@@ -31,7 +31,7 @@ export default function Tabs() {
   });
 
   return (
-    <div className="mx-5 -translate-y-3">
+    <div className="mx-4 -translate-y-3">
       {/* Mobile dropdown */}
       <div className="sm:hidden">
         <nav className="flex justify-center border-b border-gray-300 gap-16">

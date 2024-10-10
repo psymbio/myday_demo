@@ -182,11 +182,11 @@ const FoodCardDisplay: React.FC = () => {
   };
 
   return (
-    <div className="p-0 relative content-center font-bold">
+    <div className="mx-4 p-0 relative content-center font-bold">
       {/* Filter Button */}
       <div className="mb-4 flex items-center justify-center">
         <button
-          className="w-10/12 p-2 bg-red-600 text-white font-bold flex items-center justify-center rounded-lg shadow-lg hover:bg-red-700 transition duration-300 ease-in-out cursor-pointer"
+          className="w-full p-2 bg-red-600 text-white font-bold flex items-center justify-center rounded-lg shadow-lg hover:bg-red-700 transition duration-300 ease-in-out cursor-pointer"
           onClick={openModal}
         >
           <FilterAltRoundedIcon className="mr-2" />
