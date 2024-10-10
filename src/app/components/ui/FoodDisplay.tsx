@@ -104,22 +104,13 @@ const FoodCardDisplay: React.FC = () => {
 
               {/* Filters inside the Modal */}
               <div className="flex flex-col space-y-2 mb-4">
-                <label className="flex items-center">
-                  <input
-                    type="checkbox"
-                    name="Allergies"
-                    checked={tempFilter.pescatarian}
-                    onChange={handleFilterChange}
-                    className="mr-3 w-6 h-6" // Increase the size of the checkbox
-                  />
-                  <span className="text-lg font-medium">Allergies</span>
-                </label>
+          
 
                 <label className="flex items-center">
                   <input
                     type="checkbox"
-                    name="pescatarian"
-                    checked={tempFilter.pescatarian}
+                    name="Dairy-free"
+                    checked={tempFilter.veg}
                     onChange={handleFilterChange}
                     className="mr-3 w-6 h-6" // Increase the size of the checkbox
                   />
@@ -140,8 +131,8 @@ const FoodCardDisplay: React.FC = () => {
                 <label className="flex items-center">
                   <input
                     type="checkbox"
-                    name="Vegetarian"
-                    checked={tempFilter.pescatarian}
+                    name="Lactose-free"
+                    checked={tempFilter.veg}
                     onChange={handleFilterChange}
                     className="mr-3 w-6 h-6"
                   />
@@ -161,7 +152,7 @@ const FoodCardDisplay: React.FC = () => {
                   <input
                     type="checkbox"
                     name="pescatarian"
-                    checked={tempFilter.pescatarian}
+                    checked={tempFilter.glutenFree}
                     onChange={handleFilterChange}
                     className="mr-3 w-6 h-6"
                   />
