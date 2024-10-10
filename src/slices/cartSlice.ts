@@ -35,9 +35,13 @@ const cartSlice = createSlice({
         state.items[itemId] = quantity; // Update quantity
       }
     },
+     // New reducer to empty the cart
+     emptyCart(state) {
+      state.items = {}; // Reset items to an empty object
+    },
   },
 });
 
-export const { addItemToCart, removeItemFromCart, updateItemQuantity } =
+export const { addItemToCart, removeItemFromCart, updateItemQuantity ,emptyCart } =
   cartSlice.actions;
 export default cartSlice.reducer;
