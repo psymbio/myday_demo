@@ -18,7 +18,7 @@ const RestaurantList: React.FC = () => {
   const [restaurants] = useState<Restaurant[]>(restaurantsData);
 
   return (
-    <div className="flex flex-wrap justify-center">
+    <div className="mx-4">
       {restaurants.map((restaurant) => (
         <RestaurantCard key={restaurant.id} restaurant={restaurant} />
       ))}
