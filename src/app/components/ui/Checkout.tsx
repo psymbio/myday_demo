@@ -113,7 +113,7 @@ export default function Checkout() {
   const router = useRouter();
   const handleEndJourney = () => {
    
-    router.push(`/food_drink/`);
+    router.push(`/`);
     dispatch(emptyCart());
     setshownotifyModal(false);
   };
@@ -209,8 +209,8 @@ export default function Checkout() {
       {/* First Modal: Delay on Elizabeth Line */}
       <Modal
         show={shownotifyModal}
-        title="Checkout"
-        message=" "
+        title="Your Order is Placed"
+        message=""
         onYes={handleEndJourney}
         onNo={handleEndJourney}
         onClose={handleclose}

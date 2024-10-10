@@ -87,7 +87,7 @@ const Add2Cart: React.FC<Add2CartProps> = ({
   };
 
   return (
-    <div className="p-6 min-h-screen">
+    <div className="mx-4">
       <h1 className="flex justify-center text-2xl font-bold text-black mb-6">Available Items</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {foodItems.length > 0 ? (

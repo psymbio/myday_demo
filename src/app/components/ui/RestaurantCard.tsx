@@ -14,7 +14,9 @@ interface Restaurant {
 // Restaurant Card Component
 const RestaurantCard: React.FC<{ restaurant: Restaurant }> = ({ restaurant }) => {
   return (
+
     <div className="relative w-10/12 p-8 bg-white rounded-lg shadow-lg border border-gray-200 p-1 mt-0 transition-all duration-300 hover:shadow-xl -z-10">
+
       {/* Restaurant Image */}
       <img
         src={restaurant.image}
