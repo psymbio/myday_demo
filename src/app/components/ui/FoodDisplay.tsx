@@ -204,7 +204,7 @@ const FoodCardDisplay: React.FC = () => {
           {/* Filters inside the Modal */}
           <div className="flex flex-col space-y-2 mb-4">
             {[
-              { name: "allergies", label: "Allergies" },
+              // { name: "allergies", label: "Allergies" },
               { name: "dairyFree", label: "Dairy-free" },
               { name: "glutenFree", label: "Gluten-free" },
               { name: "lactoseFree", label: "Lactose-free" },
