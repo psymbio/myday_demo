@@ -10,9 +10,12 @@ import {
   addItemToCart,
   removeItemFromCart,
   updateItemQuantity,
+  emptyCart
 } from "@/slices/cartSlice";
 import CustomButton from "./CustomButton";
 import CircularProgress from "@mui/material/CircularProgress";
+import Modal from "./HomeToDeskpopup";
+import { useRouter } from "next/navigation";
 
 interface FoodItem {
   id: number;
@@ -40,6 +43,8 @@ export default function Checkout() {
   const [itemToRemove, setItemToRemove] = useState<number | null>(null);
   const [loadingItem, setLoadingItem] = useState<number | null>(null);
   const [error, setError] = useState<string | null>(null);
+
+  const [shownotifyModal, setshownotifyModal] = useState<boolean>(false);
 
   useEffect(() => {
     if (Object.keys(cartItems).length > 0) {
@@ -99,6 +104,23 @@ export default function Checkout() {
     (total, item) => total + (cartItems[item.id] || 0) * item.cost,
     0
   );
+
+  const handleclose = () => {
+   
+    setshownotifyModal(false);
+  };
+
+  const router = useRouter();
+  const handleEndJourney = () => {
+   
+    router.push(`/food_drink/`);
+    dispatch(emptyCart());
+    setshownotifyModal(false);
+  };
+
+  const handleOpenshownotifyModal = () => {
+    setshownotifyModal(true);
+  };
 
   return (
     <section>
@@ -170,6 +192,7 @@ export default function Checkout() {
                   bgColor="w-full bg-red-600"
                   textColor="text-white"
                   text="Proceed to Payment"
+                  onClick={handleOpenshownotifyModal}
                 />
               </div>
             </div>
@@ -182,6 +205,18 @@ export default function Checkout() {
           onCancel={cancelRemove}
         />
       )}
+
+      {/* First Modal: Delay on Elizabeth Line */}
+      <Modal
+        show={shownotifyModal}
+        title="Checkout"
+        message=" "
+        onYes={handleEndJourney}
+        onNo={handleEndJourney}
+        onClose={handleclose}
+        onBack={handleclose}
+        flag="Checkout"
+      />
     </section>
   );
 }

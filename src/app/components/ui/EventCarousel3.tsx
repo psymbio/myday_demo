@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react";
 import Heading2 from "./Heading2";
 import Heading3 from "./Heading3";
-import CustomButton from "./CustomButton";
 import EventPopup from "./EventPopup";
 import events from "../../data/events.json";
 import { useDispatch, useSelector } from "react-redux";
@@ -12,6 +11,7 @@ import {
   setDefaultEvents,
 } from "@/slices/registrationSlice";
 import { RootState } from "@/app/store";
+import CustomButtonSmall from "./CustomButtonSmall";
 
 interface EventData {
   id: number;
@@ -97,17 +97,25 @@ export default function Carousel() {
                     </div>
                   </div>
                   <Heading3 heading={slide.text} />
-                  <p className="text-sm sm:text-lg lg:text-xl mb-4">
+                  <p className="text-sm sm:text-lg lg:text-xl">
                     {slide.subtext}
                   </p>
+                  <p className="text-sm sm:text-lg lg:text-xl">
+                    {new Date(slide.startDate).toLocaleDateString("en-US", {
+                      weekday: "long",
+                      day: "numeric",
+                      month: "long",
+                    })}
+                  </p>
+
                   <div className="flex space-x-2 mt-2">
-                    <CustomButton
+                    <CustomButtonSmall
                       bgColor="bg-red-600"
                       textColor="text-white"
                       text="View"
                       onClick={openPopup}
                     />
-                    <CustomButton
+                    <CustomButtonSmall
                       bgColor={
                         registeredEvents[slide.id]
                           ? "bg-gray-700"

@@ -14,7 +14,7 @@
         },
         {
           "type": "bot",
-          "content": "Looking at your group here's how it looks like for the next week:",
+          "content": "People in your group coming to office next week:",
           "component": {
             "type": "calendar",
             "data": [
@@ -81,6 +81,149 @@
                     "email": "john.doe@hsbc.com",
                     "department": "Finance",
                     "job_title": "Analyst"
+                  }
+                ]
+              },
+              {
+                "day": "Wednesday",
+                "profiles": [
+                  {
+                    "profile_picture": "mp03.jpg",
+                    "first_name": "Noah",
+                    "last_name": "Bennett",
+                    "email": "noah.bennett@hsbc.com",
+                    "department": "Market and Security Services",
+                    "job_title": "Security Consultant"
+                  },
+                  {
+                    "profile_picture": "fp04.jpg",
+                    "first_name": "Ava",
+                    "last_name": "Williams",
+                    "email": "ava.williams@hsbc.com",
+                    "department": "Wealth and Personal Banking",
+                    "job_title": "Investment Advisor"
+                  },
+                  {
+                    "profile_picture": "mp04.jpg",
+                    "first_name": "Ethan",
+                    "last_name": "Robinson",
+                    "email": "ethan.robinson@hsbc.com",
+                    "department": "Global Data Technology",
+                    "job_title": "Data Engineer"
+                  },
+                  {
+                    "profile_picture": "fp05.jpg",
+                    "first_name": "Charlotte",
+                    "last_name": "Brown",
+                    "email": "charlotte.brown@hsbc.com",
+                    "department": "Chief Technology Office",
+                    "job_title": "System Administrator"
+                  }
+                ]
+              },
+              {
+                "day": "Thursday",
+                "profiles": [
+                  {
+                    "profile_picture": "mp04.jpg",
+                    "first_name": "Ethan",
+                    "last_name": "Robinson",
+                    "email": "ethan.robinson@hsbc.com",
+                    "department": "Global Data Technology",
+                    "job_title": "Data Engineer"
+                  },
+                  {
+                    "profile_picture": "fp05.jpg",
+                    "first_name": "Charlotte",
+                    "last_name": "Brown",
+                    "email": "charlotte.brown@hsbc.com",
+                    "department": "Chief Technology Office",
+                    "job_title": "System Administrator"
+                  },
+                  {
+                    "profile_picture": "fp06.jpg",
+                    "first_name": "Isabella",
+                    "last_name": "Davis",
+                    "email": "isabella.davis@hsbc.com",
+                    "department": "Market and Security Services",
+                    "job_title": "Risk Analyst"
+                  },
+                  {
+                    "profile_picture": "fp07.jpg",
+                    "first_name": "Mia",
+                    "last_name": "Clark",
+                    "email": "mia.clark@hsbc.com",
+                    "department": "Enterprise Technology",
+                    "job_title": "Cloud Engineer"
+                  },
+                  {
+                    "profile_picture": "fp08.jpg",
+                    "first_name": "Amelia",
+                    "last_name": "Martinez",
+                    "email": "amelia.martinez@hsbc.com",
+                    "department": "Corporate Services",
+                    "job_title": "Project Coordinator"
+                  }
+                ]
+              },
+              {
+                "day": "Friday",
+                "profiles": [
+                  {
+                    "profile_picture": "fp02.jpg",
+                    "first_name": "Sophia",
+                    "last_name": "Miller",
+                    "email": "sophia.miller@hsbc.com",
+                    "department": "Global Data Technology",
+                    "job_title": "Data Scientist"
+                  },
+                  {
+                    "profile_picture": "mp02.jpg",
+                    "first_name": "Liam",
+                    "last_name": "Anderson",
+                    "email": "liam.anderson@hsbc.com",
+                    "department": "Chief Technology Office",
+                    "job_title": "Software Engineer"
+                  },
+                  {
+                    "profile_picture": "fp03.jpg",
+                    "first_name": "Olivia",
+                    "last_name": "Taylor",
+                    "email": "olivia.taylor@hsbc.com",
+                    "department": "Enterprise Technology",
+                    "job_title": "IT Specialist"
+                  },
+                  {
+                    "profile_picture": "mp03.jpg",
+                    "first_name": "Noah",
+                    "last_name": "Bennett",
+                    "email": "noah.bennett@hsbc.com",
+                    "department": "Market and Security Services",
+                    "job_title": "Security Consultant"
+                  },
+                  {
+                    "profile_picture": "fp04.jpg",
+                    "first_name": "Ava",
+                    "last_name": "Williams",
+                    "email": "ava.williams@hsbc.com",
+                    "department": "Wealth and Personal Banking",
+                    "job_title": "Investment Advisor"
+                  },
+                  {
+                    "profile_picture": "mp04.jpg",
+                    "first_name": "Ethan",
+                    "last_name": "Robinson",
+                    "email": "ethan.robinson@hsbc.com",
+                    "department": "Global Data Technology",
+                    "job_title": "Data Engineer"
+                  },
+                  {
+                    "profile_picture": "fp05.jpg",
+                    "first_name": "Charlotte",
+                    "last_name": "Brown",
+                    "email": "charlotte.brown@hsbc.com",
+                    "department": "Chief Technology Office",
+                    "job_title": "System Administrator"
                   }
                 ]
               }
@@ -152,7 +295,6 @@
           },
           "afterLinkText": " to order now."
         }
-        
       ]
     },
     {

@@ -35,6 +35,35 @@ const HomeToDeskPopup: React.FC<HomeToDeskPopupProps> = ({
       <div className="relative bg-white p-6 rounded-lg shadow-lg max-w-md w-10/12">
         {/* Close Button */}
 
+{
+  flag =="Checkout"?
+  <>
+  
+  <button
+          onClick={onClose} // Function to handle closing the popup
+          className="absolute top-2 right-2 text-black font-bold text-xl hover:text-gray-500"
+        >
+          &times;
+        </button>
+
+        <br/>
+            <div className="flex justify-center space-x-4">
+              <CustomButton
+                bgColor="bg-red-600"
+                textColor="text-white"
+                text="Click and Collect"
+                onClick={onYes}
+              />
+              <CustomButton
+                bgColor="bg-gray-700"
+                textColor="text-white"
+                text="Deliver to Desk"
+                onClick={onNo}
+              />
+            </div>
+  </>
+  :
+  <>
         {flag !="Travel"?
         <>       
   <button onClick={onBack} // Function to handle closing the popup
@@ -133,6 +162,8 @@ const HomeToDeskPopup: React.FC<HomeToDeskPopupProps> = ({
             </div>
           </>
         )}
+        </>
+      }
       </div>
     </div>
   );
