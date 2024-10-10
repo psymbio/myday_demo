@@ -22,6 +22,10 @@ interface FoodItem {
   vegan?: boolean;
 }
 
+interface CartItem extends FoodItem {
+  quantity: number;
+}
+
 const FoodCardDisplay: React.FC = () => {
   const [filter, setFilter] = useState({
     veg: false,
@@ -36,6 +40,7 @@ const FoodCardDisplay: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [tempFilter, setTempFilter] = useState({ ...filter });
   const [showFoodList, setShowFoodList] = useState(false);
+  const [cart, setCart] = useState<CartItem[]>([]);
 
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -145,6 +150,37 @@ const FoodCardDisplay: React.FC = () => {
     router.push(`/food_drink/filter?${query}`);
   };
 
+  // Cart management functions
+  const addToCart = (id: number) => {
+    const item = foodItems.find((food) => food.id === id);
+    if (item) {
+      setCart((prevCart) => {
+        const existingItem = prevCart.find((cartItem) => cartItem.id === id);
+        if (existingItem) {
+          return prevCart.map((cartItem) =>
+            cartItem.id === id
+              ? { ...cartItem, quantity: cartItem.quantity + 1 }
+              : cartItem
+          );
+        } else {
+          return [...prevCart, { ...item, quantity: 1 }];
+        }
+      });
+    }
+  };
+
+  const removeFromCart = (id: number) => {
+    setCart((prevCart) =>
+      prevCart
+        .map((cartItem) =>
+          cartItem.id === id
+            ? { ...cartItem, quantity: cartItem.quantity - 1 }
+            : cartItem
+        )
+        .filter((cartItem) => cartItem.quantity > 0)
+    );
+  };
+
   return (
     <div className="p-0 relative content-center font-bold">
       {/* Filter Button */}
@@ -167,82 +203,26 @@ const FoodCardDisplay: React.FC = () => {
 
           {/* Filters inside the Modal */}
           <div className="flex flex-col space-y-2 mb-4">
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                name="allergies"
-                checked={tempFilter.allergies}
-                onChange={handleFilterChange}
-                className="mr-3 w-6 h-6"
-              />
-              <span className="text-lg font-medium">Allergies</span>
-            </label>
-
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                name="dairyFree"
-                checked={tempFilter.dairyFree}
-                onChange={handleFilterChange}
-                className="mr-3 w-6 h-6"
-              />
-              <span className="text-lg font-medium">Dairy-free</span>
-            </label>
-
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                name="glutenFree"
-                checked={tempFilter.glutenFree}
-                onChange={handleFilterChange}
-                className="mr-3 w-6 h-6"
-              />
-              <span className="text-lg font-medium">Gluten-free</span>
-            </label>
-
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                name="lactoseFree"
-                checked={tempFilter.lactoseFree}
-                onChange={handleFilterChange}
-                className="mr-3 w-6 h-6"
-              />
-              <span className="text-lg font-medium">Lactose-free</span>
-            </label>
-
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                name="pescatarian"
-                checked={tempFilter.pescatarian}
-                onChange={handleFilterChange}
-                className="mr-3 w-6 h-6"
-              />
-              <span className="text-lg font-medium">Pescatarian</span>
-            </label>
-
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                name="vegan"
-                checked={tempFilter.vegan}
-                onChange={handleFilterChange}
-                className="mr-3 w-6 h-6"
-              />
-              <span className="text-lg font-medium">Vegan</span>
-            </label>
-
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                name="veg"
-                checked={tempFilter.veg}
-                onChange={handleFilterChange}
-                className="mr-3 w-6 h-6"
-              />
-              <span className="text-lg font-medium">Vegetarian</span>
-            </label>
+            {[
+              { name: "allergies", label: "Allergies" },
+              { name: "dairyFree", label: "Dairy-free" },
+              { name: "glutenFree", label: "Gluten-free" },
+              { name: "lactoseFree", label: "Lactose-free" },
+              { name: "pescatarian", label: "Pescatarian" },
+              { name: "vegan", label: "Vegan" },
+              { name: "veg", label: "Vegetarian" },
+            ].map((filterOption) => (
+              <label className="flex items-center" key={filterOption.name}>
+                <input
+                  type="checkbox"
+                  name={filterOption.name}
+                  checked={tempFilter[filterOption.name as keyof typeof tempFilter]}
+                  onChange={handleFilterChange}
+                  className="mr-3 w-6 h-6"
+                />
+                <span className="text-lg font-medium">{filterOption.label}</span>
+              </label>
+            ))}
           </div>
 
           {/* Confirm and Close buttons */}
@@ -288,17 +268,37 @@ const FoodCardDisplay: React.FC = () => {
                   veg={item.veg}
                   pescatarian={item.pescatarian}
                   glutenFree={item.glutenFree}
-                  image={item.image} onAddToCart={function (id: number): void {
-                    throw new Error("Function not implemented.");
-                  } } onRemoveFromCart={function (id: number): void {
-                    throw new Error("Function not implemented.");
-                  } } cartQuantity={0}                />
+                  image={item.image}
+                  onAddToCart={addToCart}
+                  onRemoveFromCart={removeFromCart}
+                  cartQuantity={cart.find((cartItem) => cartItem.id === item.id)?.quantity || 0}
+                />
               ))
             ) : (
               <p className="text-center col-span-full">No items match your filter criteria.</p>
             )}
           </div>
         </>
+      )}
+
+      {/* Optional: Display Cart Summary */}
+      {cart.length > 0 && (
+        <div className="fixed bottom-4 right-4 bg-white shadow-lg rounded-lg p-4">
+          <h3 className="text-xl font-bold mb-2">Cart</h3>
+          <ul>
+            {cart.map((cartItem) => (
+              <li key={cartItem.id} className="flex justify-between items-center mb-1">
+                <span>
+                  {cartItem.name} x {cartItem.quantity}
+                </span>
+                <span>${(cartItem.cost * cartItem.quantity).toFixed(2)}</span>
+              </li>
+            ))}
+          </ul>
+          <button className="mt-2 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700">
+            Checkout
+          </button>
+        </div>
       )}
     </div>
   );
