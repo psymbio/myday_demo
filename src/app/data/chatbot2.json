@@ -14,7 +14,7 @@
         },
         {
           "type": "bot",
-          "content": "Looking at your group here's how it looks like for the next week:",
+          "content": "People in your group coming to office next week:",
           "component": {
             "type": "calendar",
             "data": [
