@@ -38,14 +38,15 @@ const HomeToDeskPopup: React.FC<HomeToDeskPopupProps> = ({
 {
   flag =="Checkout"?
   <>
-  
+   <h2 className="text-lg text-center font-bold mb-4">{title}</h2>
+   
   <button
           onClick={onClose} // Function to handle closing the popup
           className="absolute top-2 right-2 text-black font-bold text-xl hover:text-gray-500"
         >
           &times;
         </button>
-
+        <p className="mb-6  text-center npm ">{message}</p>
         <br/>
             <div className="flex justify-center space-x-4">
               <CustomButton
