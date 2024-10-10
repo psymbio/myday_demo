@@ -3,8 +3,8 @@
     "id": 0,
     "name": "Mezzanine Restaurant",
     "schedule": [
-      "Breakfast: 07:30 - 10:30 (Mon-Fri)",
-      "Lunch: 11:30 - 14:00 (Mon-Fri)",
+      "Monday - Friday: 07:30 - 10:30 (Breakfast)",
+      "Monday - Friday: 11:30 - 14:00 (Lunch)",
       "Location: Level 1"
     ],
     "text":"Presenting a variety of cuisines to support your wellbeing, additionally we focus on vegan, vegetarian and flexitarian diets.Microwaves are available for use to the rear of the restaurant.",
@@ -14,8 +14,8 @@
     "id": 1,
     "name": "Starbucks",
     "schedule": [
-      "Breakfast: 07:00 - 16:00 (Mon-Fri)",
-      "Lunch: 07:00 - 17:00 (Tue-Thu)",
+      "Monday - Friday: 07:00 - 16:00 (Breakfast)",
+      "Tuesday - Thursday: 07:00 - 17:00 (Lunch)",
       "Location: Level 1 & Level 5 MC KB"
     ],
     "text":"Barista hot drinks, grab and go including pastries, light lunches, sandwiches, salads, indulgent and healthy snacks.",
