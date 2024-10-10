@@ -14,12 +14,14 @@ interface Restaurant {
 // Restaurant Card Component
 const RestaurantCard: React.FC<{ restaurant: Restaurant }> = ({ restaurant }) => {
   return (
-    <div className="relative w-full p-4 bg-white rounded-lg shadow-lg border border-gray-200 p-1 mt-2 transition-all duration-300 hover:shadow-xl -z-10">
+
+    <div className="relative w-full p-4 bg-white rounded-lg shadow-lg border border-gray-200 p-0 mt-2 transition-all duration-300 hover:shadow-xl -z-10">
+
       {/* Restaurant Image */}
       <img
         src={restaurant.image}
         alt={restaurant.name}
-        className="w-full h-24 object-cover rounded-lg"
+        className="w-full h-25 object-cover rounded-lg"
       />
 
       {/* Button with Chevron */}
@@ -39,9 +41,9 @@ const RestaurantCard: React.FC<{ restaurant: Restaurant }> = ({ restaurant }) =>
         </ul>
       </div>
       {/* Restaurant Description */}
-      <div className="mt-2 text-gray-600 text-sm">
+      {/* <div className="mt-2 text-gray-600 text-sm">
         <p>{restaurant.text}</p>
-      </div>
+      </div> */}
     </div>
   );
 };
