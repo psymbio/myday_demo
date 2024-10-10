@@ -151,7 +151,7 @@ const FoodCardDisplay: React.FC = () => {
                 <label className="flex items-center">
                   <input
                     type="checkbox"
-                    name="pescatarian"
+                    name="Vegan"
                     checked={tempFilter.glutenFree}
                     onChange={handleFilterChange}
                     className="mr-3 w-6 h-6"
@@ -161,7 +161,7 @@ const FoodCardDisplay: React.FC = () => {
                 <label className="flex items-center">
                   <input
                     type="checkbox"
-                    name="pescatarian"
+                    name="Vegetarian"
                     checked={tempFilter.veg}
                     onChange={handleFilterChange}
                     className="mr-3 w-6 h-6"
