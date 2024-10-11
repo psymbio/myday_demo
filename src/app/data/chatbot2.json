@@ -263,20 +263,20 @@
         },
         {
           "type": "bot",
-          "content": "You've set your preferences for gluten-free food, here are the gluten-free food choices today:",
+          "content": "You've set your preferences for gluten-free food before, here are the gluten-free food choices today:",
           "component": {
             "type": "foodMenu",
             "data": [
               {
                 "id": 1,
-                "name": "Veggie Burger",
-                "cost": 5.99,
+                "name": "Thai Green Vegetable Curry",
+                "cost": 6.50,
                 "glutenFree": true
               },
               {
                 "id": 2,
-                "name": "Grilled Chicken Salad",
-                "cost": 7.49,
+                "name": "Soba Noodle and Sesame Salad",
+                "cost": 6.90,
                 "glutenFree": true
               }
             ]
@@ -324,7 +324,7 @@
           "type": "bot",
           "content": "Need help getting there?",
           "url": {
-            "text": "Visit indoor maps.",
+            "text": " Visit indoor maps.",
             "link": "https://workspaces.dnaspaces.io/?token=e82c58a2-ed80-4304-a056-99c0ffdf93b1"
           }
         }
@@ -346,13 +346,13 @@
           "type": "bot",
           "content": "I'll ensure that the maintenance team is notified right away. To confirm location, ",
           "url": {
-            "text": "scan qr code",
-            "link": "https://scanqr.org/#scan"
+            "text": "scan qr code.",
+            "link": "https://example.com/open-camera"
           }
         },
         {
           "type": "user",
-          "content": "",
+          "content": " ",
           "component": {
             "type": "image",
             "data": {
@@ -363,7 +363,7 @@
         },
         {
           "type": "bot",
-          "content": "Thanks for reporting it, you are helping us save water. Did you know a running tap wastes up to 6 litres per minute 💧?"
+          "content": "I have registered a ticket for MENS_WC_38. Thanks for reporting it, you are helping us save water. Did you know a running tap wastes up to 6 litres per minute 💧?"
         },
         {
           "type": "bot",

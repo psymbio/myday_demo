@@ -18,6 +18,7 @@ export default function ChatBot() {
   const intervalIdRef = useRef<NodeJS.Timeout | null>(null); // Store the interval ID
 
   const handleToggle = () => {
+    console.log("Chatbot toggle clicked.");
     setIsOpen(!isOpen);
   };
 
@@ -31,11 +32,13 @@ export default function ChatBot() {
 
   // Scroll to the bottom whenever messages change
   useEffect(() => {
+    console.log("Messages updated:", messages);
     scrollToBottom();
   }, [messages]);
 
   // Rendering dynamic components based on type
   const renderComponent = (component: any) => {
+    console.log("Rendering component:", component);
     switch (component.type) {
       case "calendar":
         return (
@@ -75,7 +78,8 @@ export default function ChatBot() {
                     )}
                     {day.profiles.length > 4 && (
                       <span className="text-base text-gray-600">
-                        {" "}+{day.profiles.length - 4}
+                        {" "}
+                        +{day.profiles.length - 4}
                       </span>
                     )}
                   </div>
@@ -98,7 +102,7 @@ export default function ChatBot() {
                 i: Key
               ) => (
                 <div key={i}>
-                  <strong>{item.name}</strong>: ${item.cost.toFixed(2)}
+                  <strong>{item.name}</strong>: £{item.cost.toFixed(2)}
                 </div>
               )
             )}
@@ -131,16 +135,19 @@ export default function ChatBot() {
 
   const sendMessage = () => {
     if (input.trim()) {
-      // Ensure each user message has a defined structure
+      console.log("Sending message:", input); // Log the message
       setMessages((prev) => [
         ...prev,
         { type: "user", content: input }, // User message
       ]);
       setInput(""); // Clear input after sending
+    } else {
+      console.log("Input is empty, message not sent.");
     }
   };
 
   const playScenario = (scenarioId: number) => {
+    console.log("Playing scenario:", scenarioId); // Log the scenario being played
     const scenarioArray = scenarios.scenarios;
 
     if (Array.isArray(scenarioArray)) {
@@ -163,6 +170,7 @@ export default function ChatBot() {
         if (scenario.messages.length > 0) {
           const firstMessage = scenario.messages[0];
           if (firstMessage && firstMessage.type && firstMessage.content) {
+            console.log("First message:", firstMessage); // Log the first message
             setMessages((prev) => [...prev, firstMessage]);
             i++; // Move to the next message
           }
@@ -170,13 +178,14 @@ export default function ChatBot() {
 
         intervalIdRef.current = setInterval(() => {
           if (i < scenario.messages.length) {
-            // Ensure each message from scenario has a defined structure
             const message = scenario.messages[i];
             if (message && message.type && message.content) {
+              console.log("Next message:", message); // Log each message being sent
               setMessages((prev) => [...prev, message]);
               i++;
             } else {
               console.error("Invalid message structure in scenario");
+              console.log("message: ", message)
               clearInterval(intervalIdRef.current as NodeJS.Timeout); // Stop if invalid structure
               setRunningScenario(null);
             }

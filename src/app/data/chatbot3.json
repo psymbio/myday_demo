@@ -1,116 +1,187 @@
 {
-    "scenarios": [
-      {
-        "id": 1,
-        "scenario_name": "Check Group Office Attendance",
-        "messages": [
-          {
-            "type": "bot",
-            "content": "Hello Matthew, how may I help you today?"
+  "scenarios": [
+    {
+      "id": 1,
+      "scenario_name": "Check Group Office Attendance",
+      "messages": [
+        {
+          "type": "bot",
+          "content": "Hello Matthew, how may I help you today?"
+        },
+        {
+          "type": "user",
+          "content": "When are people going to be in the office next week?"
+        },
+        {
+          "type": "bot",
+          "content": "People in your group coming to office next week:",
+          "component": {
+            "type": "calendar",
+            "data": [
+              {
+                "day": "Monday",
+                "profiles": [
+                  {
+                    "profile_picture": "fp01.jpg",
+                    "first_name": "Emily",
+                    "last_name": "Johnson",
+                    "email": "emily.johnson@hsbc.com",
+                    "department": "Corporate Services",
+                    "job_title": "Senior Manager"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "bot",
+          "content": "Friday looks like a good day to network. Would you like me to update your status to attending office that day?"
+        },
+        {
+          "type": "user",
+          "content": "Yes"
+        },
+        {
+          "type": "bot",
+          "content": "Great I've done that for you. You've got some meetings that day, ",
+          "url": {
+            "text": "click here",
+            "link": "https://example.com/bookaroom"
           },
-          {
-            "type": "user",
-            "content": "When are people going to be in the office next week?"
+          "afterLinkText": " to find out more."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "scenario_name": "Check Restaurant Menu",
+      "messages": [
+        {
+          "type": "bot",
+          "content": "Hello Matthew, how can I assist you today?"
+        },
+        {
+          "type": "user",
+          "content": "What are the lunch choices in the restaurant today?"
+        },
+        {
+          "type": "bot",
+          "content": "You've set your preferences for gluten-free food before, here are the gluten-free food choices today:",
+          "component": {
+            "type": "foodMenu",
+            "data": [
+              {
+                "id": 1,
+                "name": "Thai Green Vegetable Curry",
+                "cost": 6.50,
+                "glutenFree": true
+              },
+              {
+                "id": 2,
+                "name": "Soba Noodle and Sesame Salad",
+                "cost": 6.90,
+                "glutenFree": true
+              }
+            ]
+          }
+        },
+        {
+          "type": "user",
+          "content": "Is it busy now?"
+        },
+        {
+          "type": "bot",
+          "content": "I can see 78% of the seats are occupied and the average wait time is 5 minutes. ",
+          "url": {
+            "text": "Click here",
+            "link": "https://myday-demo-six.vercel.app/food_drink/filter?veg=false&pescatarian=false&glutenFree=true&allergies=false&dairyFree=false&lactoseFree=false&vegan=false"
           },
-          {
-            "type": "bot",
-            "content": "Looking at your group here's how it looks like for the next week:",
-            "component": {
-              "type": "calendar",
-              "data": [
-                {
-                  "day": "Monday",
-                  "profiles": [
-                    {
-                      "profile_picture": "fp01.jpg",
-                      "first_name": "Emily",
-                      "last_name": "Johnson",
-                      "email": "emily.johnson@hsbc.com",
-                      "department": "Corporate Services",
-                      "job_title": "Senior Manager"
-                    }
-                  ]
-                },
-                {
-                  "day": "Tuesday",
-                  "profiles": [
-                    {
-                      "profile_picture": "fp01.jpg",
-                      "first_name": "Emily",
-                      "last_name": "Johnson",
-                      "email": "emily.johnson@hsbc.com",
-                      "department": "Corporate Services",
-                      "job_title": "Senior Manager"
-                    }
-                  ]
-                }
-              ]
-            }
-          },
-          {
-            "type": "bot",
-            "content": "Friday looks like a good day to network. Would you like me to update your status to attending office that day?"
-          },
-          {
-            "type": "user",
-            "content": "Yes"
-          },
-          {
-            "type": "bot",
-            "content": "Great I've done that for you. You've got some meetings that day, click here to book a room.",
-            "url": {
-              "text": "Click here",
-              "link": "https://example.com/bookaroom"
+          "afterLinkText": " to order now."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "scenario_name": "Find Pod C",
+      "messages": [
+        {
+          "type": "bot",
+          "content": "Hello Matthew, how can I assist you today?"
+        },
+        {
+          "type": "user",
+          "content": "Where is pod C?"
+        },
+        {
+          "type": "bot",
+          "content": "I can see that you are on Level 38, here is the route to Pod C, Level 38",
+          "component": {
+            "type": "map",
+            "data": {
+              "map_image": "indoor_map.jpg",
+              "alt_text": "Map showing the route to Pod C on Level 38"
             }
           }
-        ]
-      },
-      {
-        "id": 2,
-        "scenario_name": "Check Restaurant Menu",
-        "messages": [
-          {
-            "type": "bot",
-            "content": "Hello Matthew, how can I assist you today?"
-          },
-          {
-            "type": "user",
-            "content": "What are the lunch choices in the restaurant today?"
-          },
-          {
-            "type": "bot",
-            "content": "You've set your preferences for gluten-free food, here are the gluten-free food choices today:",
-            "component": {
-              "type": "foodMenu",
-              "data": [
-                {
-                  "id": 1,
-                  "name": "Veggie Burger",
-                  "cost": 5.99,
-                  "glutenFree": true
-                },
-                {
-                  "id": 2,
-                  "name": "Grilled Chicken Salad",
-                  "cost": 7.49,
-                  "glutenFree": true
-                }
-              ]
-            }
-          },
-          {
-            "type": "user",
-            "content": "Is it busy now?"
-          },
-          {
-            "type": "bot",
-            "content": "I can see 78% of the seats are occupied and the average wait time is 5 minutes.",
-            "url": {
-              "text": "Click here to order now",
-              "link": "https://example.com/order"
+        },
+        {
+          "type": "bot",
+          "content": "Need help getting there?",
+          "url": {
+            "text": " Visit indoor maps.",
+            "link": "https://workspaces.dnaspaces.io/?token=e82c58a2-ed80-4304-a056-99c0ffdf93b1"
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "scenario_name": "Report Leaking Tap",
+      "messages": [
+        {
+          "type": "bot",
+          "content": "Hello Matthew, how can I assist you today?"
+        },
+        {
+          "type": "user",
+          "content": "A tap is leaking in the toilets"
+        },
+        {
+          "type": "bot",
+          "content": "I'll ensure that the maintenance team is notified right away. To confirm location, ",
+          "url": {
+            "text": "scan qr code",
+            "link": "https://example.com/open-camera"
+          }
+        },
+        {
+          "type": "user",
+          "content": " ",
+          "component": {
+            "type": "image",
+            "data": {
+              "image_url": "qr_code.jpg",
+              "alt_text": "Image of QR code"
             }
           }
-        ]
-      }
-    ]
-  }
+        },
+        {
+          "type": "bot",
+          "content": "Thanks for reporting it, you are helping us save water. Did you know a running tap wastes up to 6 litres per minute 💧?"
+        },
+        {
+          "type": "bot",
+          "content": "Is there anything else I can help you with?"
+        },
+        {
+          "type": "user",
+          "content": "nope"
+        },
+        {
+          "type": "bot",
+          "content": "In that case, have a great day!"
+        }
+      ]
+    }
+  ]
+}
