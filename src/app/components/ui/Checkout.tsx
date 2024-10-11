@@ -43,9 +43,10 @@ export default function Checkout() {
   const [itemToRemove, setItemToRemove] = useState<number | null>(null);
   const [loadingItem, setLoadingItem] = useState<number | null>(null);
   const [error, setError] = useState<string | null>(null);
-
+  
+  const [sendtodeskModal, setsendtodeskModal] = useState<boolean>(false);
   const [shownotifyModal, setshownotifyModal] = useState<boolean>(false);
-
+  
   useEffect(() => {
     if (Object.keys(cartItems).length > 0) {
       const updatedItems = foodItems.filter((item) => cartItems[item.id] > 0);
@@ -108,14 +109,22 @@ export default function Checkout() {
   const handleclose = () => {
    
     setshownotifyModal(false);
+    setsendtodeskModal(false);
   };
 
   const router = useRouter();
+
   const handleEndJourney = () => {
-   
     router.push(`/`);
     dispatch(emptyCart());
     setshownotifyModal(false);
+    setsendtodeskModal(false);
+  };
+
+  const handlesendtodesk = () => {
+    dispatch(emptyCart());
+    setshownotifyModal(false);
+    setsendtodeskModal(true);
   };
 
   const handleOpenshownotifyModal = () => {
@@ -209,13 +218,23 @@ export default function Checkout() {
       {/* First Modal: Delay on Elizabeth Line */}
       <Modal
         show={shownotifyModal}
-        title="Your Order is Placed"
-        message=""
+        title="Payment Successful"
+        message="How would you like to receive your order?"
+        onYes={handleEndJourney}
+        onNo={handlesendtodesk}
+        onClose={handleclose}
+        onBack={handleclose}
+        flag="Checkout"
+      />
+       <Modal
+        show={sendtodeskModal}
+        title="Thank you, your order has been placed and will be delivered to"
+        message="LDN-PSP-Desk/L25/D35 at 13:00 "
         onYes={handleEndJourney}
         onNo={handleEndJourney}
         onClose={handleclose}
         onBack={handleclose}
-        flag="Checkout"
+        flag="Send to Desk"
       />
     </section>
   );

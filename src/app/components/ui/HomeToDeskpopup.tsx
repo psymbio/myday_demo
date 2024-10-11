@@ -36,6 +36,23 @@ const HomeToDeskPopup: React.FC<HomeToDeskPopupProps> = ({
         {/* Close Button */}
 
 {
+flag=="Send to Desk"?
+<>
+<h2 className="text-lg text-center font-bold mb-4">{title}</h2>
+      <p className="mb-6  text-center npm ">{message}</p>
+        
+             <div className="flex justify-center space-x-4">
+               <CustomButton
+                 bgColor="bg-red-600"
+                 textColor="text-white"
+                 text="Close"
+                 onClick={onYes}
+               />
+             </div>
+</>:
+<>
+
+{
   flag =="Checkout"?
   <>
    <h2 className="text-lg text-center font-bold mb-4">{title}</h2>
@@ -47,7 +64,7 @@ const HomeToDeskPopup: React.FC<HomeToDeskPopupProps> = ({
           &times;
         </button>
         <p className="mb-6  text-center npm ">{message}</p>
-        <br/>
+       
             <div className="flex justify-center space-x-4">
               <CustomButton
                 bgColor="bg-red-600"
@@ -165,6 +182,8 @@ const HomeToDeskPopup: React.FC<HomeToDeskPopupProps> = ({
         )}
         </>
       }
+</>
+}
       </div>
     </div>
   );
