@@ -243,7 +243,7 @@
           "content": "Great I've done that for you. You've got some meetings that day, ",
           "url": {
             "text": "click here",
-            "link": "https://example.com/bookaroom"
+            "link": "https://myday-demo-six.vercel.app/"
           },
           "afterLinkText": " to find out more."
         }
