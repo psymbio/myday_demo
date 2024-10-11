@@ -177,10 +177,10 @@ export default function Checkout() {
                 ))}
               </ul>
 
-              <div className="mt-8 flex justify-end border-t border-gray-100 pt-8">
+              <div className="mt-8 flex justify-center border-t border-gray-100 pt-8">
                 <div className="w-screen max-w-lg space-y-4">
                   <dl className="space-y-0.5 text-lg text-gray-700">
-                    <div className="flex justify-between font-bold bg-gray-200 p-2 rounded-md">
+                    <div className="flex justify-between items-center font-bold bg-gray-200 p-2 rounded-md">
                       <dt>Total</dt>
                       <dd>£{subtotal.toFixed(2)}</dd>
                     </div>
