@@ -18,7 +18,7 @@ const PSPDisplay: React.FC = () => {
       {/* Footer with Styled Button */}
       <footer className="flex justify-end items-center mt-2 text-xs">
         <a
-          href="https://workspaces.dnaspaces.eu/?token=cb3c8ae0-7267-4db4-831a-9b90515da1ad#/dashboard"
+          href="https://workspaces.dnaspaces.io/?token=a1000c06-e96d-4cca-bb71-780e5718e04a#/"
           target="_blank"
           rel="noopener noreferrer"
           className="text-red-600 hover:underline font-semibold"
