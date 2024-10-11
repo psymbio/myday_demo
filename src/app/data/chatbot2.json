@@ -291,7 +291,7 @@
           "content": "I can see 78% of the seats are occupied and the average wait time is 5 minutes. ",
           "url": {
             "text": "Click here",
-            "link": "https://example.com/order"
+            "link": "https://myday-demo-six.vercel.app/food_drink/filter?veg=false&pescatarian=false&glutenFree=true&allergies=false&dairyFree=false&lactoseFree=false&vegan=false"
           },
           "afterLinkText": " to order now."
         }
@@ -325,7 +325,7 @@
           "content": "Need help getting there?",
           "url": {
             "text": "Visit indoor maps.",
-            "link": "https://map.com/guided-navigation"
+            "link": "https://workspaces.dnaspaces.io/?token=e82c58a2-ed80-4304-a056-99c0ffdf93b1"
           }
         }
       ]
@@ -347,7 +347,7 @@
           "content": "I'll ensure that the maintenance team is notified right away. To confirm location, ",
           "url": {
             "text": "scan qr code",
-            "link": "https://example.com/open-camera"
+            "link": "https://scanqr.org/#scan"
           }
         },
         {
@@ -396,7 +396,7 @@
           "content": "The Voices of Opportunity choir meet up every Thursday evening and welcome new members.",
           "url": {
             "text": " Touch here",
-            "link": "https://example.com/choir"
+            "link": "https://myday-demo-six.vercel.app/events"
           },
           "afterLinkText": " to find out more."
         }
