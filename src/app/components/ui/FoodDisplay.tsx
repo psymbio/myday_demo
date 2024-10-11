@@ -122,34 +122,6 @@ const FoodCardDisplay: React.FC = () => {
     router.push(`/food_drink/filter?${query}`);
   };
 
-  const clearSelection = () => {
-    const clearedFilter = {
-      veg: false,
-      pescatarian: false,
-      glutenFree: false,
-      allergies: false,
-      dairyFree: false,
-      lactoseFree: false,
-      vegan: false,
-    };
-    setFilter(clearedFilter);
-    setTempFilter(clearedFilter);
-    setShowFoodList(false);
-    closeModal();
-
-    const query = new URLSearchParams({
-      veg: "false",
-      pescatarian: "false",
-      glutenFree: "false",
-      allergies: "false",
-      dairyFree: "false",
-      lactoseFree: "false",
-      vegan: "false",
-    }).toString();
-
-    router.push(`/food_drink/filter?${query}`);
-  };
-
   // Cart management functions
   const addToCart = (id: number) => {
     const item = foodItems.find((food) => food.id === id);
