@@ -112,7 +112,7 @@ const HomeToDeskDisplay: React.FC = () => {
       <Modal
         show={showCancelPassModal}
         title="Cancel Desk Booking?"
-        message="LDN-PSP-Desk/L25/1.DCO0/01/D35"
+        message="LDN-PSP-Desk/L25/D35"
         onYes={handleYesToCancelPass}
         onNo={handleNoToCancelPass}
         onClose={handleclose}
