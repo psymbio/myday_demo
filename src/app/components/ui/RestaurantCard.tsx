@@ -15,14 +15,16 @@ interface Restaurant {
 const RestaurantCard: React.FC<{ restaurant: Restaurant }> = ({ restaurant }) => {
   return (
 
-    <div className="relative w-full p-4 bg-white rounded-lg shadow-lg border border-gray-200 p-0 mt-2 transition-all duration-300 hover:shadow-xl -z-10">
+    <div className="relative w-full p-2 bg-white rounded-lg shadow-lg border border-gray-200 p-2 -mt-2 transition-all duration-300 hover:shadow-xl -z-10">
 
       {/* Restaurant Image */}
-      <img
-        src={restaurant.image}
-        alt={restaurant.name}
-        className="w-full h-25 object-cover rounded-lg"
-      />
+      <div className="w-full h-40 overflow-hidden rounded-lg">
+        <img
+          src={restaurant.image}
+          alt={restaurant.name}
+          className="w-full h-full object-cover object-center"
+        />
+      </div>
 
       {/* Button with Chevron */}
       <button
