@@ -246,16 +246,6 @@ const FoodCardDisplay: React.FC = () => {
       {/* Displaying filtered food items */}
       {showFoodList && (
         <>
-          {/* Clear Selection Button */}
-          <div className="flex justify-center">
-            <button
-              className="p-2 mt-4 mb-4 bg-blue-600 text-white rounded-lg hover:bg-blue-800"
-              onClick={clearSelection}
-            >
-              Clear Selection
-            </button>
-          </div>
-
           {/* Food List */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-10">
             {filteredItems.length > 0 ? (
