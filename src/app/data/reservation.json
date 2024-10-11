@@ -16,7 +16,7 @@
         "StartTime": "12:30",
         "EndTime": "14:30",
         "Userid": 125,
-        "Booking": "LDN-PSP-Desk/L25/1.DCO0/01/D35",
+        "Booking": "LDN-PSP-Desk/L25/D35",
         "nearby": 1,
         "Type": "Desk",
         "status": "Open"

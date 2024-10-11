@@ -229,7 +229,7 @@ export default function Checkout() {
        <Modal
         show={sendtodeskModal}
         title="Thank you, your order has been placed and will be delivered to"
-        message="LDN-PSP-Desk/L25/1.DCO0/01/D35 at 12:30 "
+        message="LDN-PSP-Desk/L25/D35 at 12:30 "
         onYes={handleEndJourney}
         onNo={handleEndJourney}
         onClose={handleclose}
