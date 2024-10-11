@@ -9,7 +9,8 @@ interface Restaurant {
   name: string;
   schedule: string[];
   image: string;
-  text: string; 
+  text: string;
+  route: string; 
 }
 
 // Restaurant List Component

@@ -7,8 +7,9 @@
       "Monday - Friday: 11:30 - 14:00 (Lunch)",
       "Location: Level 1"
     ],
-    "text":"",
-    "image": "/restaurants/Mezzanine.jpg"
+    "text": "",
+    "image": "/restaurants/Mezzanine.jpg",
+    "route": "/food_drink/filter/mezzanine" 
   },
   {
     "id": 1,
@@ -18,7 +19,8 @@
       "Tuesday - Thursday: 07:00 - 17:00 (Lunch)",
       "Location: Level 1 & Level 5"
     ],
-    "text":"",
-    "image": "/restaurants/starbucks.jpg"
+    "text": "",
+    "image": "/restaurants/starbucks.jpg",
+    "route": "/food_drink/filter/starbucks" 
   }
 ]
