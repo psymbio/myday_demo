@@ -124,7 +124,7 @@ export default function Checkout() {
 
   return (
     <section>
-      <div className="p-6 min-h-screen">
+      <div className="p-6 -translate-y-6">
       <h1 className="flex justify-center text-2xl font-bold text-black mb-6">Your Cart</h1>
 
           {error && <div className="text-red-500 text-center">{error}</div>}
