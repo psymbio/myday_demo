@@ -164,7 +164,7 @@ export default function ChatBot() {
         setRunningScenario(scenarioId);
 
         let i = 0;
-        const delay = 1750; // Delay between each message
+        const delay = 1950; // Delay between each message
 
         // Immediately show the first message without delay
         if (scenario.messages.length > 0) {
