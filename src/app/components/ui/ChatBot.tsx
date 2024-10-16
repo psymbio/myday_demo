@@ -167,7 +167,7 @@ export default function ChatBot() {
         const delay = 1950; // Delay between each message
 
         // Immediately show the first message without delay
-        if (scenario.messages.length > 0) {
+        if (scenario.messages.length > 1) {
           const firstMessage = scenario.messages[0];
           if (firstMessage && firstMessage.type && firstMessage.content) {
             console.log("First message:", firstMessage); // Log the first message
