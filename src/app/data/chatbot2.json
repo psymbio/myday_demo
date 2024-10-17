@@ -6,7 +6,7 @@
       "messages": [
         {
           "type": "bot",
-          "content": "Hello Stacey, how may I help you today?"
+          "content": "Hello Clemmie, how may I help you today?"
         },
         {
           "type": "user",
@@ -255,7 +255,7 @@
       "messages": [
         {
           "type": "bot",
-          "content": "Hello Stacey, how can I assist you today?"
+          "content": "Hello Clemmie, how can I assist you today?"
         },
         {
           "type": "user",
@@ -303,7 +303,7 @@
       "messages": [
         {
           "type": "bot",
-          "content": "Hello Stacey, how can I assist you today?"
+          "content": "Hello Clemmie, how can I assist you today?"
         },
         {
           "type": "user",
@@ -336,7 +336,7 @@
       "messages": [
         {
           "type": "bot",
-          "content": "Hello Stacey, how can I assist you today?"
+          "content": "Hello Clemmie, how can I assist you today?"
         },
         {
           "type": "user",
@@ -385,7 +385,7 @@
       "messages": [
         {
           "type": "bot",
-          "content": "Hello Stacey, how can I assist you today?"
+          "content": "Hello Clemmie, how can I assist you today?"
         },
         {
           "type": "user",
